@@ -1,0 +1,20 @@
+{
+  "name": "trickingcombogenerator",
+  "version": "1.0.0",
+  "description": "Tricking Combo Generator app project",
+  "main": "tricks.js",
+  "scripts": {
+    "lint": "npx eslint tricks.js",
+    "build": "babel src -d lib"
+  },
+  "author": "Beau Sherman",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0"
+  }
+}
