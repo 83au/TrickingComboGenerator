@@ -23,8 +23,8 @@ const takeoffs = {
   ],
   backFullTwist: [
     'Shosei step',
-    'backside pop',
-    'backside punch',
+    'Front Sweep',
+    'Tornado',
     'invert backside pop',
     'invert backside punch',
   ],
@@ -463,7 +463,15 @@ const tricks = {
       starter: true,
       notFinisher: true,
       setups: ['backside', 'frontside', 'vanish', 'outside leg reversal'],
-      landings: ['inside', 'Scoot', 'Scoot Hyper', 'boneless', 'boneless cheat', 'inside pop'],
+      landings: [
+        'inside',
+        'inside leg hyper',
+        'Scoot',
+        'Scoot Hyper',
+        'boneless',
+        'boneless cheat',
+        'inside pop',
+      ],
     },
 
     {
