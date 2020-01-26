@@ -70,7 +70,7 @@ h1 {
 }
 
 #combo {
-  margin: 2rem auto 0 auto;
+  margin: 2rem auto;
   width: 100%;
   line-height: 1.8;
   text-align: center;
@@ -88,4 +88,38 @@ h1 {
 .trick {
   font-size: 3.3rem;
   font-style: italic; 
+}
+
+
+/* ===== Tablet ===== */
+@media only screen and (min-width: 700px) and (orientation: portrait) { /* 700px */
+  html {
+    font-size: 70%;
+  }
+
+  h1 {
+    font-size: 6rem;
+  }
+
+  .randomComboBox {
+    margin-top: 6rem;
+  }
+
+  .randomComboBox .btn {
+    margin: 3rem 0;
+  }
+}
+
+@media only screen and (min-width: 700px) and (orientation: landscape) {
+  html {
+    font-size: 70%;
+  }
+
+  h1 {
+    font-size: 6rem;
+  }
+
+  .randomComboBox .btn:hover {
+    opacity: .9;
+  }
 }

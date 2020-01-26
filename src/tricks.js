@@ -128,7 +128,7 @@ const tricks = {
     {
       name: '360 Wheel Kick',
       starter: true,
-      setups: ['inside pop', 'frontside pop', 'inside punch', 'frontside punch'],
+      setups: ['inside pop', 'frontside pop', 'inside punch', 'frontside punch', 'cheat', 'boneless cheat'],
       landings: ['frontside', 'frontside punch'],
     },
 
@@ -191,6 +191,8 @@ const tricks = {
         'frontside pop',
         'frontside punch',
         'inside punch',
+        'cheat',
+        'boneless cheat',
       ],
       landings: landingPositions.round,
     },
@@ -212,6 +214,14 @@ const tricks = {
     },
 
     {
+      name: 'Jump Round',
+      starter: true,
+      notFinisher: true,
+      setups: ['backside', 'inside leg reversal'], // pop is implied
+      landings: landingPositions.round,
+    },
+
+    {
       name: 'Narabong',
       starter: true,
       setups: ['Hook Kick', 'hook carry-through', 'outside leg reversal', 'reverse pop'],
@@ -227,10 +237,18 @@ const tricks = {
     },
 
     {
-      name: 'Tornado Kick',
+      name: 'Roundhouse Kick',
       starter: true,
       notFinisher: true,
-      setups: ['vanish', 'hook carry-through', 'boneless cheat', 'reverse pop'], // cheat is implied
+      setups: ['backside', 'inside leg reversal'],
+      landings: landingPositions.round,
+    },
+
+    {
+      name: 'Tornado',
+      starter: true,
+      notFinisher: true,
+      setups: ['vanish', 'hook carry-through', 'boneless cheat', 'reverse pop', 'frontside pop'], // cheat is implied
       landings: landingPositions.round,
     },
 
@@ -378,7 +396,7 @@ const tricks = {
     {
       name: 'Hyper Feilong',
       starter: true,
-      setups: ['frontside pop', 'frontside punch'],
+      setups: ['frontside pop', 'frontside punch', 'cheat', 'boneless cheat'],
       landings: ['inside leg hyper', 'boneless', 'boneless cheat', 'skip hook'],
     },
 
@@ -459,6 +477,7 @@ const tricks = {
     {
       name: 'Coin Drop',
       starter: false,
+      notFinisher: true,
       setups: ['vanish', 'reverse pop', 'inside leg hyper', 'Butterfly Kick'],
       landings: ['cheat', 'reverse pop'],
     },
