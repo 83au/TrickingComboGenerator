@@ -38,6 +38,7 @@ const takeoffs = {
 const landingPositions = {
   eagle: [
     'invert backside pop',
+    'backside',
     'back swing',
     'missleg',
     'skip invert', // skip from eagle into mega for a front swing
@@ -268,6 +269,14 @@ const tricks = {
       notFinisher: true,
       setups: ['boneless', 'inside'],
       landings: ['back swing', 'backside', 'backside pop', 'invert backside pop', 'vanish'],
+    },
+
+    {
+      name: 'Macaco',
+      starter: true,
+      notFinisher: true,
+      setups: ['backside'], // Pop is implied
+      landings: landingPositions.eagle.concat(['boneless', 'boneless cheat']),
     },
 
     {
@@ -540,7 +549,7 @@ const tricks = {
     {
       name: 'Suicide Kip Up',
       starter: true,
-      setups: ['backside pop', 'inside pop', 'invert backside pop', 'invert inside pop'],
+      setups: ['backside', 'inside'],
       landings: ['backside punch', 'inside punch', 'reverse pop'],
     },
 
