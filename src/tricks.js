@@ -46,6 +46,7 @@ const landingPositions = {
   ],
 
   round: [
+    'backside',
     'frontside pop',
     'inside leg reversal',
     'round carry-through',
@@ -324,14 +325,14 @@ const tricks = {
       name: 'Arabian',
       starter: false,
       setups: ['Scoot', 'Aerial', 'invert backside pop', 'invert backside punch'],
-      landings: ['invert frontside punch', 'boneless'],
+      landings: ['invert frontside punch', 'Scoot'],
     },
 
     {
       name: 'Cart Arabian',
       starter: false,
       setups: takeoffs.cartwheel,
-      landings: ['invert frontside punch', 'boneless'],
+      landings: ['invert frontside punch', 'Scoot'],
     },
 
     {
@@ -391,7 +392,7 @@ const tricks = {
     {
       name: 'Backside 900',
       starter: true,
-      setups: ['inside leg reversal', 'backside', 'backside pop', 'backside punch'],
+      setups: ['backside', 'backside pop', 'backside punch'],
       landings: landingPositions.round,
     },
 
