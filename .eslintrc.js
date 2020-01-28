@@ -17,5 +17,6 @@ module.exports = {
   rules: {
     "no-console": "off",
     "arrow-parens": ["error", "as-needed"],
+    "no-use-before-define": ["error", { "functions": false, "classes": true }],
   },
 };

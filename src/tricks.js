@@ -103,7 +103,7 @@ const transitions = [
 
   'vanish', // make invert and vert variations?
   'reverse vanish', // was boneless before
-  'vanish cheat',
+  'vanish cheat', // TODO: CHANGE THIS TO REDIRECT
 
   'wrap',
 
@@ -307,7 +307,7 @@ const tricks = {
       name: 'Spyder',
       starter: true,
       notFinisher: true,
-      setups: ['backside', 'frontside', 'vanish', 'outside leg reversal'],
+      setups: ['backside', 'frontside', 'vanish', 'outside leg reversal', 'hook carry-through'],
       landings: ['backside', 'frontside', 'backside pop', 'frontside pop', 'vanish'],
     },
 
@@ -315,7 +315,12 @@ const tricks = {
       name: 'Transformer/Machine',
       starter: true,
       notFinisher: true,
-      setups: ['backside', 'frontside', 'vanish', 'outside leg reversal'],
+      setups: [
+        'backside',
+        'frontside',
+        'vanish',
+        'outside leg reversal',
+        'hook carry-through'],
       landings: ['backside', 'frontside', 'backside pop', 'frontside pop', 'vanish'],
     },
 
@@ -324,14 +329,14 @@ const tricks = {
       name: 'Arabian',
       starter: false,
       setups: ['Scoot', 'Aerial', 'invert backside pop', 'invert backside punch'],
-      landings: ['invert frontside punch', 'Scoot'],
+      landings: ['invert frontside punch', 'semi'],
     },
 
     {
       name: 'Cart Arabian',
       starter: false,
       setups: takeoffs.cartwheel,
-      landings: ['invert frontside punch', 'Scoot'],
+      landings: ['invert frontside punch', 'semi'],
     },
 
     {
@@ -573,7 +578,7 @@ const tricks = {
       name: 'Valdez',
       starter: false,
       notFinisher: true,
-      setups: ['backside', 'invert backside pop', 'invert backside punch', 'back swing'],
+      setups: ['invert backside pop', 'invert backside punch', 'back swing'],
       landings: ['invert backside pop', 'invert backside punch', 'back swing'],
     },
 
@@ -582,7 +587,7 @@ const tricks = {
       name: 'Aerial',
       starter: true,
       setups: ['inside', 'reverse vanish', 'reverse pop'],
-      landings: ['inside', 'reverse vanish', 'vanish cheat', 'outside leg reversal', 'inside pop', 'frontside pop'],
+      landings: ['inside', 'reverse vanish', 'vanish cheat', 'outside leg reversal', 'semi', 'inside pop', 'frontside pop'],
     },
 
     {
@@ -923,9 +928,54 @@ const tricks = {
 // NEXT TODO: ADD LANDING MODIFIERS
 // make landing modifiers like transitions?
 
+// =========== EVENT LISTENERS ============
+document.getElementById('generateRandomCombo').onclick = generateCombo;
+
 
 // =============== FUNCTIONS ==================
 // ============================================
+
+// APP CONTROLLER
+function generateCombo() {
+  let transition;
+
+  // Clear container
+  const comboContainer = document.getElementById('combo');
+  while (comboContainer.firstChild) {
+    comboContainer.firstChild.remove();
+  }
+
+  let randomLevel = generateLevel(2);
+  const trick1 = generateFirstTrick(tricks[randomLevel]);
+  createTrickElement(trick1, comboContainer, generateMod(trick1.setups));
+  createConnector(comboContainer);
+
+  console.log(trick1.name);
+
+  randomLevel = generateLevel(2);
+  const trick2 = generateTrick(tricks[randomLevel], trick1);
+  transition = generateTransition(trick1, trick2);
+  createTrickElement(trick2, comboContainer, transition);
+  createConnector(comboContainer);
+
+  console.log(trick2.name);
+
+  randomLevel = generateLevel(2);
+  const trick3 = generateTrick(tricks[randomLevel], trick2);
+  transition = generateTransition(trick2, trick3);
+  createTrickElement(trick3, comboContainer, transition);
+  createConnector(comboContainer);
+
+  console.log(trick3.name);
+
+  randomLevel = generateLevel(2);
+  const trick4 = generateLastTrick(tricks[randomLevel], trick3);
+  transition = generateTransition(trick3, trick4);
+  createTrickElement(trick4, comboContainer, transition);
+
+  console.log(trick4.name);
+}
+
 
 // DATA CONTROLLER
 function generateLevel(max) {
@@ -962,15 +1012,11 @@ function generateMod(setups) {
 // DATA CONTROLLER
 function formatMod(mod, trickName) {
   if (mod) {
-    // Use Regex here to avoid repetition
     if (/^(vanish|missleg|reverse pop|vanish cheat|cheat)$/.test(mod)) return mod;
-    if (mod.endsWith('pop')) return 'pop';
-    if (mod.endsWith('punch')) return 'punch';
-    if (mod.endsWith('hyper')) return 'hyper';
-    if (mod.endsWith('vanish')) return 'vanish';
-    if (mod.endsWith('reversal')) return 'reversal';
-    if (mod.endsWith('carry-through')) return 'carry-through';
     if (mod.startsWith('skip')) return trickName === '900 Kick' ? 'skip wrap' : 'skip';
+
+    const isTrans = /(pop|punch|hyper|vanish|reversal|carry-through|skip)$/.test(mod);
+    if (isTrans) return mod.split(' ').pop();
   }
   return undefined;
 }
@@ -1016,6 +1062,7 @@ function generateTrick(level, prevTrick) {
   // Filter list of tricks for tricks that can be done from the last trick's landings/transitions
   const possibleTricks = level.filter(trick => {
     const match = trick.setups.some(setup => prevTrick.landings.includes(setup));
+    // previous trick name as fallback measure
     return match || trick.setups.includes(prevTrick.name);
   });
 
@@ -1028,7 +1075,7 @@ function generateTrick(level, prevTrick) {
 // DATA CONTROLLER
 function generateTransition(prevTrick, current) {
   if (current.setups) {
-    // filter current tricks setups for ones that match previous trick's landings
+    // Filter current tricks setups for ones that match previous trick's landings
     const matches = current.setups.filter(setup => prevTrick.landings.includes(setup));
 
     if (matches.length > 0) {
@@ -1062,49 +1109,6 @@ function generateLastTrick(level, prevTrick) {
   return trick;
 }
 
-
-// APP CONTROLLER
-function generateCombo() {
-  let transition;
-
-  const comboContainer = document.getElementById('combo');
-  while (comboContainer.firstChild) {
-    comboContainer.firstChild.remove();
-  }
-
-  let randomLevel = generateLevel(1);
-  const trick1 = generateFirstTrick(tricks[randomLevel]);
-  createTrickElement(trick1, comboContainer, generateMod(trick1.setups));
-  createConnector(comboContainer);
-
-  console.log(trick1.name);
-
-  randomLevel = generateLevel(2);
-  const trick2 = generateTrick(tricks[randomLevel], trick1);
-  transition = generateTransition(trick1, trick2);
-  createTrickElement(trick2, comboContainer, transition);
-  createConnector(comboContainer);
-
-  console.log(trick2.name);
-
-  randomLevel = generateLevel(2);
-  const trick3 = generateTrick(tricks[randomLevel], trick2);
-  transition = generateTransition(trick2, trick3);
-  createTrickElement(trick3, comboContainer, transition);
-  createConnector(comboContainer);
-
-  console.log(trick3.name);
-
-  randomLevel = generateLevel(2);
-  const trick4 = generateLastTrick(tricks[randomLevel], trick3);
-  transition = generateTransition(trick3, trick4);
-  createTrickElement(trick4, comboContainer, transition);
-
-  console.log(trick4.name);
-}
-
-// EVENT LISTENERS
-document.getElementById('generateRandomCombo').onclick = generateCombo;
 
 // document.getElementById('randomComboOption').addEventListener('click', () => {
 //   document.querySelector('.start-screen').style.display = 'none';
