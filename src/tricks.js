@@ -1,4 +1,4 @@
-// DATA CONTROLLER
+// *********************************************** DATA CONTROLLER **********************************************
 
 const takeoffs = {
   swing: ['back swing', 'j step', 'pivot step', 'skip hook', 'left right redirect'],
@@ -6,7 +6,7 @@ const takeoffs = {
     'right left redirect',
     'front swing',
     'semi',
-    'Hook Kick',
+    'hook',
     'outside leg reversal',
     'skip invert',
     'vanish',
@@ -22,7 +22,7 @@ const takeoffs = {
     'Aerial',
     'Slant Gainer',
   ],
-  cartwheel: ['reverse vanish'],
+  cartwheel: ['reverse vanish', 'inside leg reversal', 'Arabian', 'Cart Arabian'],
 };
 
 const landingPositions = {
@@ -44,8 +44,8 @@ const landingPositions = {
   ],
 
   hook: [
+    'cheat',
     'reverse vanish',
-    'right left redirect',
     'frontside pop',
     'hook carry-through',
     'inside leg hyper',
@@ -77,6 +77,8 @@ const takeoffModifiers = [ // if transition is a takeoff mod, prepend the trick 
 // ];
 
 const transitions = [
+  'hook', // *
+  'hook cheat', // *
   'hook carry-through',
   'round carry-through',
 
@@ -127,8 +129,9 @@ const tricks = {
         'frontside punch',
         'cheat',
         'right left redirect',
+        'hook',
       ],
-      landings: ['frontside', 'frontside punch'],
+      landings: ['frontside', 'frontside punch', 'hook'],
     },
 
     // {
@@ -141,14 +144,21 @@ const tricks = {
     {
       name: '540 Kick',
       starter: true,
-      setups: ['cheat', 'vanish', 'right left redirect', 'frontside pop', 'reverse pop'],
+      setups: ['cheat', 'vanish', 'right left redirect', 'frontside pop', 'reverse pop', 'hook'],
       landings: ['inside leg hyper', 'reverse vanish', 'right left redirect', 'skip hook'],
     },
 
     {
       name: 'Auto-Bahn',
       starter: true,
-      setups: ['reverse pop', 'hook carry-through', 'outside leg reversal', 'right left redirect'],
+      setups: [
+        'reverse pop',
+        'hook carry-through',
+        'outside leg reversal',
+        'right left redirect',
+        'cheat',
+        'hook',
+      ],
       landings: landingPositions.hook,
     },
 
@@ -163,14 +173,14 @@ const tricks = {
       name: 'Back Sweep',
       starter: true,
       notFinisher: true,
-      setups: ['frontside', 'Hook Kick'],
+      setups: ['frontside', 'hook'],
       landings: ['frontside', 'frontside pop'],
     },
 
     {
       name: 'Butterfly Kick',
       starter: true,
-      setups: ['turn step', 'Hook Kick', 'reverse vanish'],
+      setups: ['turn step', 'hook', 'reverse vanish'],
       landings: ['reverse vanish', 'outside leg reversal', 'inside pop'],
     },
 
@@ -179,7 +189,7 @@ const tricks = {
       starter: true,
       notFinisher: true,
       setups: ['inside', 'frontside', 'Tornado Kick'],
-      landings: landingPositions.hook.concat(['outside leg reversal']),
+      landings: landingPositions.hook,
     },
 
     {
@@ -204,13 +214,13 @@ const tricks = {
       landings: ['backside', 'backside pop'],
     },
 
-    {
-      name: 'Hook Kick',
-      starter: true,
-      notFinisher: true,
-      setups: ['inside', 'frontside', 'right left redirect', 'vanish'],
-      landings: landingPositions.hook,
-    },
+    // {
+    //   name: 'hook',
+    //   starter: true,
+    //   notFinisher: true,
+    //   setups: ['inside', 'frontside', 'right left redirect', 'vanish'],
+    //   landings: landingPositions.hook,
+    // },
 
     {
       name: 'Jump Round',
@@ -247,7 +257,7 @@ const tricks = {
       name: 'Tornado',
       starter: true,
       notFinisher: true,
-      setups: ['vanish', 'hook carry-through', 'right left redirect', 'reverse pop', 'frontside pop'], // cheat is implied
+      setups: ['vanish', 'hook carry-through', 'right left redirect', 'reverse pop', 'frontside pop', 'hook'], // cheat is implied
       landings: landingPositions.round,
     },
 
@@ -336,14 +346,14 @@ const tricks = {
       name: 'Arabian',
       starter: false,
       setups: ['Scoot', 'Aerial', 'invert backside pop', 'invert backside punch'],
-      landings: ['invert frontside punch', 'semi'],
+      landings: ['invert frontside punch'],
     },
 
     {
       name: 'Cart Arabian',
       starter: false,
       setups: takeoffs.cartwheel,
-      landings: ['invert frontside punch', 'semi'],
+      landings: ['invert frontside punch'],
     },
 
     // {
@@ -525,7 +535,7 @@ const tricks = {
       name: 'Master Scoot',
       starter: true,
       notFinisher: true,
-      setups: ['Back Sweep', 'Front Sweep', 'Hook Kick', 'skip round', 'inside leg hyper', 'vanish'],
+      setups: ['Back Sweep', 'Front Sweep', 'hook', 'skip round', 'inside leg hyper', 'vanish'],
       landings: landingPositions.eagle,
     },
 
@@ -595,7 +605,7 @@ const tricks = {
     {
       name: 'Aerial',
       starter: true,
-      setups: ['inside', 'reverse vanish'],
+      setups: ['inside', 'reverse vanish', 'inside leg reversal'],
       landings: ['inside', 'reverse vanish', 'right left redirect', 'outside leg reversal', 'semi', 'inside pop'],
     },
 
@@ -644,28 +654,28 @@ const tricks = {
     {
       name: 'Butterfly Twist',
       starter: true,
-      setups: ['Hook Kick', 'reverse vanish', 'missleg'],
+      setups: ['hook', 'reverse vanish', 'missleg'],
       landings: landingPositions.eagle,
     },
 
     {
       name: 'Butterfly Twist Round',
       starter: true,
-      setups: ['Hook Kick', 'reverse vanish', 'hyper'],
+      setups: ['hook', 'reverse vanish', 'hyper'],
       landings: landingPositions.round,
     },
 
     {
       name: 'Butterfly Switch',
       starter: true,
-      setups: ['Hook Kick', 'reverse vanish', 'hyper', 'missleg'],
+      setups: ['hook', 'reverse vanish', 'hyper', 'missleg'],
       landings: landingPositions.eagle,
     },
 
     {
       name: 'Butter Knife',
       starter: true,
-      setups: ['Hook Kick', 'reverse vanish', 'hyper', 'missleg'],
+      setups: ['hook', 'reverse vanish', 'hyper', 'missleg'],
       landings: landingPositions.hook,
     },
 
@@ -791,7 +801,7 @@ const tricks = {
     {
       name: 'Illusion Twist',
       starter: true,
-      setups: ['Hook Kick', 'reverse vanish', 'hyper'],
+      setups: ['hook', 'reverse vanish', 'hyper'],
       landings: ['frontside', 'frontside punch'],
     },
 
@@ -819,7 +829,7 @@ const tricks = {
     {
       name: 'Shuriken Twist',
       starter: true,
-      setups: ['Hook Kick', 'reverse vanish', 'hyper'],
+      setups: ['hook', 'reverse vanish', 'hyper'],
       landings: ['frontside', 'outside', 'vanish'],
     },
 
@@ -950,6 +960,7 @@ document.getElementById('generateRandomCombo').onclick = generateCombo;
 function generateCombo() {
   console.clear();
   let transition;
+  let takeoff;
 
   // Clear container
   const comboContainer = document.getElementById('combo');
@@ -967,7 +978,8 @@ function generateCombo() {
   randomLevel = generateLevel(2);
   const trick2 = generateTrick(tricks[randomLevel], trick1);
   transition = generateTransition(trick1, trick2);
-  createTrickElement(trick2, comboContainer, transition);
+  takeoff = handleHook(transition, trick2);
+  createTrickElement(trick2, comboContainer, transition, takeoff);
   createConnector(comboContainer);
 
   console.log(trick2.name);
@@ -975,7 +987,8 @@ function generateCombo() {
   randomLevel = generateLevel(2);
   const trick3 = generateTrick(tricks[randomLevel], trick2);
   transition = generateTransition(trick2, trick3);
-  createTrickElement(trick3, comboContainer, transition);
+  takeoff = handleHook(transition, trick3);
+  createTrickElement(trick3, comboContainer, transition, takeoff);
   createConnector(comboContainer);
 
   console.log(trick3.name);
@@ -983,7 +996,8 @@ function generateCombo() {
   randomLevel = generateLevel(2);
   const trick4 = generateLastTrick(tricks[randomLevel], trick3);
   transition = generateTransition(trick3, trick4);
-  createTrickElement(trick4, comboContainer, transition);
+  takeoff = handleHook(transition, trick4);
+  createTrickElement(trick4, comboContainer, transition, takeoff);
 
   console.log(trick4.name);
 }
@@ -1024,39 +1038,58 @@ function generateMod(setups) {
 // DATA CONTROLLER
 function formatMod(mod, trickName) {
   if (mod) {
-    if (/^(vanish|missleg|reverse pop|cheat)$/.test(mod)) return mod;
+    if (/^(vanish|missleg|reverse pop|cheat|hook)$/.test(mod)) return mod;
     if (mod.startsWith('skip')) return trickName === '900 Kick' ? 'skip wrap' : 'skip';
 
-    const isTrans = /(pop|punch|hyper|vanish|reversal|redirect|carry-through|skip)$/.test(mod);
+    const isTrans = /(pop|punch|hyper|vanish|reversal|redirect|carry-through)$/.test(mod);
     if (isTrans) return mod.split(' ').pop();
   }
   return undefined;
 }
 
 
+// DATA CONTROLLER
+function handleHook(transition, trick) {
+  if (transition === 'hook') {
+    const possibleTakeoffs = trick.setups.filter(setup => landingPositions.hook.includes(setup));
+    return generateMod(possibleTakeoffs);
+  }
+  return undefined;
+}
+
+
 // UI CONTROLLER
-function createTrickElement(trick, container, mod) {
+function createTrickElement(trick, container, transition, takeoff) {
   const trickEl = document.createElement('div');
   trickEl.className = 'trick';
 
-  let fixedMod;
-  if (!mod) {
-    fixedMod = formatMod(generateMod(trick.setups), trick.name);
-  } else if (!(/cheat|j step|pivot step/.test(mod))) {
-    fixedMod = formatMod(mod, trick.name);
+  let fixedTrans;
+  let fixedTakeoff;
+
+  if (!transition) {
+    fixedTrans = formatMod(generateMod(trick.setups), trick.name);
   } else {
-    fixedMod = mod;
+    fixedTrans = formatMod(transition, trick.name);
   }
 
-  if (fixedMod) {
+  if (takeoff) {
+    if (takeoffModifiers.includes(takeoff)) fixedTakeoff = formatMod(mod, trick.name);
+  }
+
+  if (fixedTrans) {
     const transEl = document.createElement('div');
     transEl.className = 'transition';
-    transEl.textContent = `- ${fixedMod} -`;
+    transEl.textContent = `- ${fixedTrans} -`;
     container.append(transEl);
+    trickEl.textContent = trick.name;
+    container.append(trickEl);
+  } else if (fixedTakeoff) {
+    trickEl.textContent = `${fixedTakeoff} ${trick.name}`;
+    container.append(trickEl);
+  } else {
+    trickEl.textContent = trick.name;
+    container.append(trickEl);
   }
-
-  trickEl.textContent = trick.name;
-  container.append(trickEl);
 }
 
 
@@ -1088,7 +1121,7 @@ function generateTrick(level, prevTrick) {
 // DATA CONTROLLER
 function generateTransition(prevTrick, current) {
   if (current.setups) {
-    // Filter current tricks setups for ones that match previous trick's landings
+    // Filter current trick's setups for ones that match previous trick's landings
     const matches = current.setups.filter(setup => prevTrick.landings.includes(setup));
 
     if (matches.length > 0) {
