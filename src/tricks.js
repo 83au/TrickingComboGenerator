@@ -13,8 +13,6 @@ const takeoffs = {
   ],
   backFullTwist: [
     'Shosei step',
-    'Front Sweep',
-    'Tornado',
     'invert backside pop',
     'invert backside punch',
   ],
@@ -346,7 +344,7 @@ const tricks = {
     {
       name: 'Arabian',
       starter: false,
-      setups: ['Scoot', 'Aerial', 'invert backside pop', 'invert backside punch'],
+      setups: ['Aerial', 'invert backside pop', 'invert backside punch'],
       landings: ['invert frontside punch', 'hook'],
     },
 
@@ -461,7 +459,7 @@ const tricks = {
     },
 
     {
-      name: 'Swing 360', // hyper and turbo variations are implied
+      name: 'Swing 360 Wheel Kick', // hyper and turbo variations are implied
       starter: true,
       setups: [
         'back swing',
