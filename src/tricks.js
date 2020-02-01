@@ -155,7 +155,6 @@ const tricks = {
         'hook carry-through',
         'outside leg reversal',
         'right left redirect',
-        'cheat',
         'hook',
       ],
       landings: landingPositions.hook,
@@ -419,7 +418,7 @@ const tricks = {
     {
       name: 'Backside 900',
       starter: true,
-      setups: ['backside', 'backside pop', 'backside punch'],
+      setups: ['backside', 'backside punch'], // pop is implied
       landings: landingPositions.round,
     },
 
@@ -560,7 +559,7 @@ const tricks = {
       starter: true,
       notFinisher: true,
       setups: takeoffs.raiz,
-      landings: ['mega', 'frontside pop', 'inside leg reversal'],
+      landings: ['mega', 'backside pop', 'inside leg reversal'],
     },
 
     {
@@ -576,7 +575,7 @@ const tricks = {
       starter: true,
       notFinisher: true,
       setups: takeoffs.raiz,
-      landings: ['mega', 'frontside pop', 'inside leg reversal'],
+      landings: ['mega', 'backside pop', 'inside leg reversal'],
     },
 
     {
@@ -987,6 +986,7 @@ function generateCombo() {
   const trick2 = generateTrick(tricks[randomLevel], trick1);
   transition = generateTransition(trick1, trick2);
   takeoff = handleHook(transition, trick2);
+  takeoff = handleTakeoff(transition, takeoff, trick2);
   createTrickElement(trick2, comboContainer, transition, takeoff);
   createConnector(comboContainer);
 
@@ -996,6 +996,7 @@ function generateCombo() {
   const trick3 = generateTrick(tricks[randomLevel], trick2);
   transition = generateTransition(trick2, trick3);
   takeoff = handleHook(transition, trick3);
+  takeoff = handleTakeoff(transition, takeoff, trick3);
   createTrickElement(trick3, comboContainer, transition, takeoff);
   createConnector(comboContainer);
 
@@ -1005,6 +1006,7 @@ function generateCombo() {
   const trick4 = generateLastTrick(tricks[randomLevel], trick3);
   transition = generateTransition(trick3, trick4);
   takeoff = handleHook(transition, trick4);
+  takeoff = handleTakeoff(transition, takeoff, trick4);
   createTrickElement(trick4, comboContainer, transition, takeoff);
 
   console.log(trick4.name);
@@ -1019,14 +1021,6 @@ function generateLevel(max) {
 
 
 // DATA CONTROLLER
-function randomMove(list) {
-  const random = Math.floor(Math.random() * list.length);
-  const move = list[random];
-  return move;
-}
-
-
-// DATA CONTROLLER
 function generateFirstTrick(level) {
   const starters = level.filter(trick => trick.starter === true);
   const trick = randomMove(starters);
@@ -1035,34 +1029,10 @@ function generateFirstTrick(level) {
 
 
 // DATA CONTROLLER
-function generateMod(setups) {
-  if (setups) {
-    const setupMods = setups.filter(setup => takeoffModifiers.includes(setup));
-    return randomMove(setupMods);
-  }
-  return undefined;
-}
-
-// DATA CONTROLLER
-function formatMod(mod, trickName) {
-  if (mod) {
-    if (/^(vanish|missleg|reverse pop|cheat|hook)$/.test(mod)) return mod;
-    if (mod.startsWith('skip')) return trickName === '900 Kick' ? 'skip wrap' : 'skip';
-
-    const isTrans = /(pop|punch|hyper|vanish|reversal|redirect|carry-through)$/.test(mod);
-    if (isTrans) return mod.split(' ').pop();
-  }
-  return undefined;
-}
-
-
-// DATA CONTROLLER
-function handleHook(transition, trick) {
-  if (transition === 'hook') {
-    const possibleTakeoffs = trick.setups.filter(setup => landingPositions.hook.includes(setup));
-    return generateMod(possibleTakeoffs);
-  }
-  return undefined;
+function randomMove(list) {
+  const random = Math.floor(Math.random() * list.length);
+  const move = list[random];
+  return move;
 }
 
 
@@ -1074,16 +1044,17 @@ function createTrickElement(trick, container, transition, takeoff) {
   let fixedTrans;
   let fixedTakeoff;
 
-  if (!transition) {
-    fixedTrans = formatMod(generateMod(trick.setups), trick.name);
-  } else if (/cheat|j step|pivot step/.test(transition)) {
-    fixedTrans = transition;
-  } else {
-    fixedTrans = formatMod(transition, trick.name);
+  // Check if transition is a takeoff Modifier
+  if (transition) {
+    if (/cheat|j step|pivot step|pop$/.test(transition)) {
+      fixedTakeoff = formatMod(transition, trick.name);
+    } else {
+      fixedTrans = formatMod(transition, trick.name);
+    }
   }
 
   if (takeoff) {
-    if (takeoffModifiers.includes(takeoff)) fixedTakeoff = formatMod(takeoff, trick.name);
+    fixedTakeoff = takeoff;
   }
 
   if (fixedTrans) {
@@ -1111,6 +1082,46 @@ function createConnector(container) {
   connector.className = 'connector';
   connector.innerHTML = '&darr;';
   container.append(connector);
+}
+
+
+// DATA CONTROLLER
+function generateMod(setups) {
+  if (setups) {
+    const setupMods = setups.filter(setup => takeoffModifiers.includes(setup));
+    return randomMove(setupMods);
+  }
+  return undefined;
+}
+
+// DATA CONTROLLER
+function formatMod(mod, trickName) {
+  if (mod) {
+    if (/^(vanish|missleg|reverse pop|cheat|hook|j step|pivot step)$/.test(mod)) return mod;
+    if (mod.startsWith('skip')) return trickName === '900 Kick' ? 'skip wrap' : 'skip';
+
+    const isTrans = /(pop|punch|hyper|vanish|reversal|redirect|carry-through)$/.test(mod);
+    if (isTrans) return mod.split(' ').pop();
+  }
+  return undefined;
+}
+
+
+// DATA CONTROLLER
+function handleHook(transition, trick) {
+  if (transition === 'hook') {
+    const possibleTakeoffs = trick.setups.filter(setup => landingPositions.hook.includes(setup));
+    return generateMod(possibleTakeoffs);
+  }
+  return undefined;
+}
+
+function handleTakeoff(transition, takeoff, trick) {
+  if (!takeoff) {
+    if (takeoffModifiers.includes(transition)) return formatMod(transition, trick.name);
+  }
+  if (takeoffModifiers.includes(takeoff)) return formatMod(takeoff, trick.name);
+  return undefined;
 }
 
 
