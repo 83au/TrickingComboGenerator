@@ -1044,7 +1044,6 @@ function createTrickElement(trick, container, transition, takeoff) {
   let fixedTrans;
   let fixedTakeoff;
 
-  // Check if transition is a takeoff Modifier
   if (transition) {
     if (/cheat|j step|pivot step|pop$/.test(transition)) {
       fixedTakeoff = formatMod(transition, trick.name);
