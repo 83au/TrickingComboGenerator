@@ -1,5 +1,6 @@
 // *********************************************** DATA CONTROLLER **********************************************
 
+// To reduce repetition
 const takeoffs = {
   swing: ['back swing', 'j step', 'pivot step', 'skip hook', 'left right redirect'],
   raiz: [
@@ -53,7 +54,10 @@ const landingPositions = {
   ],
 };
 
-const takeoffModifiers = [ // if transition is a takeoff mod, prepend the trick with it
+
+// *** TRANSITIONS AND MODIFIERS ***
+const takeoffModifiers = [ // if transition is a takeoff mod, prepend new trick with it
+  'hook',
   'cheat',
   'frontside pop',
   'inside pop',
@@ -69,15 +73,14 @@ const takeoffModifiers = [ // if transition is a takeoff mod, prepend the trick 
 // const landingModifiers = [ // if the transition is a landing, append previous trick with it?
 //   'complete', // backside
 //   'hyper', // inside (mainstream: land on kicking leg)
-//   'mega', // frontside
+//   'mega', // frontside land left foot first - transitions into Aerial
 //   'turbo', // outside kick landing frontside both feet at same time
-//   'semi', // outside
-//   'gyro'
+//   'semi', // frontside land right foot first, transitions into Raiz
+//   'gyro', // A vert twist, usually 180 degrees
 // ];
 
 const transitions = [
   'hook', // *
-  'hook cheat', // *
   'hook carry-through',
   'round carry-through',
 
@@ -143,7 +146,7 @@ const tricks = {
     {
       name: '540 Kick',
       starter: true,
-      setups: ['cheat', 'vanish', 'right left redirect', 'frontside pop', 'reverse pop', 'hook'],
+      setups: ['cheat', 'vanish', 'right left redirect', 'frontside pop', 'reverse pop'],
       landings: ['inside leg hyper', 'reverse vanish', 'right left redirect', 'skip hook'],
     },
 
@@ -244,7 +247,7 @@ const tricks = {
     },
 
     {
-      name: 'Roundhouse Kick',
+      name: 'Round Kick',
       starter: true,
       notFinisher: true,
       setups: ['backside', 'inside leg reversal'],
@@ -397,7 +400,7 @@ const tricks = {
     {
       name: '720 Kick', // Pop variation
       starter: true,
-      setups: ['frontside pop'],
+      setups: ['frontside pop', 'hook'],
       landings: landingPositions.hook,
     },
 
@@ -1030,9 +1033,12 @@ function generateFirstTrick(level) {
 
 // DATA CONTROLLER
 function randomMove(list) {
-  const random = Math.floor(Math.random() * list.length);
-  const move = list[random];
-  return move;
+  if (list.length > 0) {
+    const random = Math.floor(Math.random() * list.length);
+    const move = list[random];
+    return move;
+  }
+  return undefined;
 }
 
 
@@ -1097,6 +1103,7 @@ function generateMod(setups) {
 function formatMod(mod, trickName) {
   if (mod) {
     if (/^(vanish|missleg|reverse pop|cheat|hook|j step|pivot step)$/.test(mod)) return mod;
+
     if (mod.startsWith('skip')) return trickName === '900 Kick' ? 'skip wrap' : 'skip';
 
     const isTrans = /(pop|punch|hyper|vanish|reversal|redirect|carry-through)$/.test(mod);
@@ -1117,9 +1124,9 @@ function handleHook(transition, trick) {
 
 function handleTakeoff(transition, takeoff, trick) {
   if (!takeoff) {
-    if (takeoffModifiers.includes(transition)) return formatMod(transition, trick.name);
+    if (takeoffModifiers.includes(transition) && transition !== 'hook') return formatMod(transition, trick.name);
   }
-  if (takeoffModifiers.includes(takeoff)) return formatMod(takeoff, trick.name);
+  if (takeoffModifiers.includes(takeoff) && takeoff !== 'hook') return formatMod(takeoff, trick.name);
   return undefined;
 }
 
