@@ -2,18 +2,19 @@
 
 // To reduce repetition
 const takeoffs = {
-  swing: ['back swing', 'j step', 'pivot step', 'skip hook', 'left right redirect'],
+  swing: ['back swing', 'skip hook', 'left right redirect'],
   raiz: [
     'right left redirect',
     'front swing',
     'semi',
     'hook',
+    'turn step',
+    'step behind',
     'outside leg reversal',
     'skip invert',
     'vanish',
   ],
   backFullTwist: [
-    'Shosei step',
     'invert backside pop',
     'invert backside punch',
   ],
@@ -21,7 +22,15 @@ const takeoffs = {
     'Aerial',
     'Slant Gainer',
   ],
-  cartwheel: ['reverse vanish', 'inside leg reversal', 'Arabian', 'Cart Arabian'],
+  cartwheel: [
+    'reverse vanish',
+    'inside leg reversal',
+    'Arabian',
+    'Cart Arabian',
+    'hook',
+    'turn step',
+    'step behind',
+  ],
 };
 
 const landingPositions = {
@@ -57,13 +66,11 @@ const landingPositions = {
 
 // *** TRANSITIONS AND MODIFIERS ***
 const takeoffModifiers = [ // if transition is a takeoff mod, prepend new trick with it
-  'hook',
+  'turn step',
+  'step behind',
   'cheat',
   'frontside pop',
   'inside pop',
-  'j step',
-  'pivot step',
-  'Shosei step',
   'swing',
   'wrap',
   // "back swing",
@@ -242,7 +249,7 @@ const tricks = {
       name: 'Palm Kick',
       starter: true,
       notFinisher: true,
-      setups: ['reverse vanish', 'missleg'],
+      setups: ['reverse vanish', 'missleg', 'hook'],
       landings: ['inside', 'inside pop', 'reverse vanish', 'outside leg reversal', 'right left redirect'],
     },
 
@@ -300,7 +307,7 @@ const tricks = {
       name: 'Scoot',
       starter: true,
       notFinisher: true,
-      setups: ['skip round', 'inside leg hyper', 'semi'],
+      setups: ['skip round', 'semi'],
       landings: landingPositions.eagle,
     },
 
@@ -664,28 +671,28 @@ const tricks = {
     {
       name: 'Butterfly Twist',
       starter: true,
-      setups: ['hook', 'reverse vanish', 'missleg'],
+      setups: ['hook', 'reverse vanish', 'missleg', 'turn step'],
       landings: landingPositions.eagle,
     },
 
     {
       name: 'Butterfly Twist Round',
       starter: true,
-      setups: ['hook', 'reverse vanish', 'hyper'],
+      setups: ['hook', 'reverse vanish', 'hyper', 'turn step'],
       landings: landingPositions.round,
     },
 
     {
       name: 'Butterfly Switch',
       starter: true,
-      setups: ['hook', 'reverse vanish', 'hyper', 'missleg'],
+      setups: ['hook', 'reverse vanish', 'hyper', 'missleg', 'turn step'],
       landings: landingPositions.eagle,
     },
 
     {
       name: 'Butter Knife',
       starter: true,
-      setups: ['hook', 'reverse vanish', 'hyper', 'missleg'],
+      setups: ['hook', 'reverse vanish', 'hyper', 'missleg', 'turn step'],
       landings: landingPositions.hook,
     },
 
@@ -980,6 +987,7 @@ function generateCombo() {
 
   let randomLevel = generateLevel(2);
   const trick1 = generateFirstTrick(tricks[randomLevel]);
+  // TODO: Add handle hook functionality here (perhaps no generateFirstTrick function?)
   createTrickElement(trick1, comboContainer, generateMod(trick1.setups));
   createConnector(comboContainer);
 
@@ -1051,7 +1059,7 @@ function createTrickElement(trick, container, transition, takeoff) {
   let fixedTakeoff;
 
   if (transition) {
-    if (/cheat|j step|pivot step|pop$/.test(transition)) {
+    if (/cheat|pop$/.test(transition)) {
       fixedTakeoff = formatMod(transition, trick.name);
     } else {
       fixedTrans = formatMod(transition, trick.name);
@@ -1094,6 +1102,10 @@ function createConnector(container) {
 function generateMod(setups) {
   if (setups) {
     const setupMods = setups.filter(setup => takeoffModifiers.includes(setup));
+    // if (setupMods.includes('hook')) {
+    //   setupMods.push(undefined);
+    //   return randomMove(setupMods);
+    // }
     return randomMove(setupMods);
   }
   return undefined;
@@ -1102,7 +1114,7 @@ function generateMod(setups) {
 // DATA CONTROLLER
 function formatMod(mod, trickName) {
   if (mod) {
-    if (/^(vanish|missleg|reverse pop|cheat|hook|j step|pivot step)$/.test(mod)) return mod;
+    if (/^(vanish|missleg|reverse pop|cheat|hook)$/.test(mod)) return mod;
 
     if (mod.startsWith('skip')) return trickName === '900 Kick' ? 'skip wrap' : 'skip';
 
@@ -1127,6 +1139,7 @@ function handleTakeoff(transition, takeoff, trick) {
     if (takeoffModifiers.includes(transition) && transition !== 'hook') return formatMod(transition, trick.name);
   }
   if (takeoffModifiers.includes(takeoff) && takeoff !== 'hook') return formatMod(takeoff, trick.name);
+  // If takeoff is not a takeoff mod or it is a hook, then return undefined
   return undefined;
 }
 
