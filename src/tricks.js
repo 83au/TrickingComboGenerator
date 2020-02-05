@@ -987,7 +987,6 @@ function generateCombo() {
 
   let randomLevel = generateLevel(2);
   const trick1 = generateFirstTrick(tricks[randomLevel]);
-  // TODO: Add handle hook functionality here (perhaps no generateFirstTrick function?)
   createTrickElement(trick1, comboContainer, generateMod(trick1.setups));
   createConnector(comboContainer);
 
