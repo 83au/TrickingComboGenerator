@@ -965,6 +965,9 @@ const tricks = {
 
 // NEXT TODO: ADD LANDING MODIFIERS
 // make landing modifiers like transitions?
+/*
+  If transition is a landing modifier, append previous trick with it
+*/
 
 // =========== EVENT LISTENERS ============
 document.getElementById('generateRandomCombo').onclick = generateCombo;
@@ -1101,10 +1104,6 @@ function createConnector(container) {
 function generateMod(setups) {
   if (setups) {
     const setupMods = setups.filter(setup => takeoffModifiers.includes(setup));
-    // if (setupMods.includes('hook')) {
-    //   setupMods.push(undefined);
-    //   return randomMove(setupMods);
-    // }
     return randomMove(setupMods);
   }
   return undefined;
@@ -1135,10 +1134,9 @@ function handleHook(transition, trick) {
 
 function handleTakeoff(transition, takeoff, trick) {
   if (!takeoff) {
-    if (takeoffModifiers.includes(transition) && transition !== 'hook') return formatMod(transition, trick.name);
+    if (takeoffModifiers.includes(transition)) return formatMod(transition, trick.name);
   }
-  if (takeoffModifiers.includes(takeoff) && takeoff !== 'hook') return formatMod(takeoff, trick.name);
-  // If takeoff is not a takeoff mod or it is a hook, then return undefined
+  if (takeoffModifiers.includes(takeoff)) return formatMod(takeoff, trick.name);
   return undefined;
 }
 
