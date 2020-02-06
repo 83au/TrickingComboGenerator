@@ -73,7 +73,6 @@ const takeoffModifiers = [ // if transition is a takeoff mod, prepend new trick 
   'frontside pop',
   'inside pop',
   'swing',
-  'wrap',
   // "back swing",
   // "front swing",
 ];
@@ -155,7 +154,13 @@ const tricks = {
       name: '540 Kick',
       starter: true,
       setups: ['cheat', 'vanish', 'right left redirect', 'frontside pop'],
-      landings: ['inside leg hyper', 'reverse vanish', 'right left redirect', 'skip hook'],
+      landings: [
+        'inside leg hyper',
+        'reverse vanish',
+        'right left redirect',
+        'skip hook',
+        'wrap',
+      ],
     },
 
     {
@@ -432,7 +437,7 @@ const tricks = {
     {
       name: '900 Kick',
       starter: true,
-      setups: ['cheat', 'vanish', 'right left redirect', 'skip round', 'hook'],
+      setups: ['cheat', 'vanish', 'right left redirect', 'skip round', 'hook', 'wrap'],
       landings: landingPositions.round,
     },
 
@@ -1130,7 +1135,7 @@ function generateMod(setups) {
 // DATA CONTROLLER
 function formatMod(mod, trickName) {
   if (mod) {
-    if (/^(vanish|missleg|reverse pop|cheat|hook)$/.test(mod)) return mod;
+    if (/^(vanish|missleg|reverse pop|cheat|hook|wrap)$/.test(mod)) return mod;
 
     if (mod.startsWith('skip')) return trickName === '900 Kick' ? 'skip wrap' : 'skip';
 
