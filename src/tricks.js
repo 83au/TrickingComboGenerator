@@ -15,7 +15,7 @@ const takeoffs = {
     'vanish',
   ],
   backFullTwist: [
-    'invert backside pop',
+    'invert backside pop', // pop is implied so need to fix this somehow
     'invert backside punch',
   ],
   insideFullTwist: [
@@ -173,7 +173,7 @@ const tricks = {
     {
       name: 'Backside 720 Kick',
       starter: true,
-      setups: ['backside pop', 'backside punch'],
+      setups: ['backside punch', 'backside'],
       landings: landingPositions.hook,
     },
 
@@ -414,7 +414,7 @@ const tricks = {
     {
       name: '720 Double',
       starter: true,
-      setups: ['cheat', 'right left redirect', 'vanish', 'hook'],
+      setups: ['cheat', 'right left redirect', 'vanish', 'hook', 'frontside pop'],
       landings: landingPositions.hook,
     },
 
@@ -622,8 +622,15 @@ const tricks = {
     {
       name: 'Aerial',
       starter: true,
-      setups: ['inside', 'reverse vanish', 'inside leg reversal'],
-      landings: ['inside', 'reverse vanish', 'right left redirect', 'outside leg reversal', 'semi', 'inside pop'],
+      setups: ['inside', 'reverse vanish', 'inside leg reversal', 'hook'],
+      landings: [
+        'inside',
+        'inside pop',
+        'reverse vanish',
+        'right left redirect',
+        'outside leg reversal',
+        'semi',
+      ],
     },
 
     {
@@ -1043,7 +1050,7 @@ function generateFirstTrick(level) {
 
 // DATA CONTROLLER
 function randomMove(list) {
-  if (list.length > 0) {
+  if (list.length) {
     const random = Math.floor(Math.random() * list.length);
     const move = list[random];
     return move;
@@ -1061,7 +1068,7 @@ function createTrickElement(trick, container, transition, takeoff) {
   let fixedTakeoff;
 
   if (transition) {
-    if (/cheat|pop$/.test(transition)) {
+    if (/cheat|pop|punch$/.test(transition)) {
       fixedTakeoff = formatMod(transition, trick.name);
     } else {
       fixedTrans = formatMod(transition, trick.name);
