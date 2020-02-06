@@ -21,6 +21,7 @@ const takeoffs = {
   insideFullTwist: [
     'Aerial',
     'Slant Gainer',
+    'Cartwheel',
   ],
   cartwheel: [
     'reverse vanish',
@@ -153,7 +154,7 @@ const tricks = {
     {
       name: '540 Kick',
       starter: true,
-      setups: ['cheat', 'vanish', 'right left redirect', 'frontside pop', 'reverse pop'],
+      setups: ['cheat', 'vanish', 'right left redirect', 'frontside pop'],
       landings: ['inside leg hyper', 'reverse vanish', 'right left redirect', 'skip hook'],
     },
 
@@ -288,6 +289,16 @@ const tricks = {
     },
 
     {
+      name: 'Cartwheel',
+      starter: true,
+      notFinisher: true,
+      setups: takeoffs.cartwheel,
+      landings: [
+        'inside pop',
+      ],
+    },
+
+    {
       name: 'Macaco',
       starter: true,
       notFinisher: true,
@@ -353,16 +364,16 @@ const tricks = {
     {
       name: 'Arabian',
       starter: false,
-      setups: ['Aerial', 'invert backside pop', 'invert backside punch'],
+      setups: ['Aerial', 'Cartwheel', 'invert backside pop', 'invert backside punch'],
       landings: ['invert frontside punch', 'hook'],
     },
 
-    {
-      name: 'Cart Arabian',
-      starter: false,
-      setups: takeoffs.cartwheel,
-      landings: ['invert frontside punch', 'hook'],
-    },
+    // {
+    //   name: 'Cart Arabian',
+    //   starter: false,
+    //   setups: takeoffs.cartwheel,
+    //   landings: ['invert frontside punch', 'hook'],
+    // },
 
     // {
     //   name: 'Front Flip',
@@ -636,7 +647,7 @@ const tricks = {
     {
       name: 'Arabian Scissor Swipe',
       starter: false,
-      setups: ['invert backside pop', 'Aerial'],
+      setups: ['invert backside pop', 'Aerial', 'Cartwheel'],
       landings: ['frontside pop', 'hook'],
     },
 
@@ -703,40 +714,40 @@ const tricks = {
       landings: landingPositions.hook,
     },
 
-    {
-      name: 'Cart Arabian Scissor Swipe',
-      starter: false,
-      setups: takeoffs.cartwheel,
-      landings: ['frontside', 'frontside pop', 'hook'],
-    },
+    // {
+    //   name: 'Cart Arabian Scissor Swipe',
+    //   starter: false,
+    //   setups: takeoffs.cartwheel,
+    //   landings: ['frontside', 'frontside pop', 'hook'],
+    // },
 
-    {
-      name: 'Cart Full Hyper',
-      starter: true,
-      setups: takeoffs.cartwheel,
-      landings: ['inside leg hyper', 'reverse vanish', 'right left redirect', 'inside pop'],
-    },
+    // {
+    //   name: 'Cart Full Hyper',
+    //   starter: true,
+    //   setups: takeoffs.cartwheel,
+    //   landings: ['inside leg hyper', 'reverse vanish', 'right left redirect', 'inside pop'],
+    // },
 
-    {
-      name: 'Cart Full Round',
-      starter: true,
-      setups: takeoffs.cartwheel,
-      landings: landingPositions.round,
-    },
+    // {
+    //   name: 'Cart Full Round',
+    //   starter: true,
+    //   setups: takeoffs.cartwheel,
+    //   landings: landingPositions.round,
+    // },
 
-    {
-      name: 'Cart Full Twist',
-      starter: true,
-      setups: takeoffs.cartwheel,
-      landings: landingPositions.eagle,
-    },
+    // {
+    //   name: 'Cart Full Twist',
+    //   starter: true,
+    //   setups: takeoffs.cartwheel,
+    //   landings: landingPositions.eagle,
+    // },
 
-    {
-      name: 'Cart Full Swipe',
-      starter: true,
-      setups: takeoffs.cartwheel,
-      landings: ['inside leg hyper', 'reverse vanish', 'right left redirect'],
-    },
+    // {
+    //   name: 'Cart Full Swipe',
+    //   starter: true,
+    //   setups: takeoffs.cartwheel,
+    //   landings: ['inside leg hyper', 'reverse vanish', 'right left redirect'],
+    // },
 
     {
       name: 'Corkscrew',
