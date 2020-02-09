@@ -84,6 +84,8 @@ const takeoffModifiers = [ // if transition is a takeoff mod, prepend new trick 
 //   'turbo', // outside kick landing frontside both feet at same time
 //   'semi', // frontside land right foot first, transitions into Raiz
 //   'gyro', // A vert twist, usually 180 degrees
+//   'rapid round',
+//   'rapid hook',
 // ];
 
 const transitions = [
@@ -92,6 +94,7 @@ const transitions = [
   'round carry-through',
 
   'reverse pop',
+  'irregular swing reverse pop',
   'frontside pop',
   'inside pop',
   'backside pop',
@@ -109,6 +112,9 @@ const transitions = [
   'wrap',
 
   'cheat',
+
+  'rapid round',
+  'rapid hook',
 
   'skip round', // for wraps and scoot setups
   'skip hook', // for back swing
@@ -140,7 +146,7 @@ const tricks = {
         'right left redirect',
         'hook',
       ],
-      landings: ['frontside', 'frontside punch', 'hook'],
+      landings: ['frontside', 'frontside punch', 'hook', 'irregular swing reverse pop'],
     },
 
     // {
@@ -236,13 +242,13 @@ const tricks = {
     //   landings: landingPositions.hook,
     // },
 
-    {
-      name: 'Jump Round',
-      starter: true,
-      notFinisher: true,
-      setups: ['backside'], // pop is implied
-      landings: landingPositions.round,
-    },
+    // {
+    //   name: 'Jump Round',
+    //   starter: true,
+    //   notFinisher: true,
+    //   setups: ['backside'], // pop is implied
+    //   landings: landingPositions.round,
+    // },
 
     {
       name: 'Narabong',
@@ -278,7 +284,12 @@ const tricks = {
     {
       name: 'Tsunami Kick',
       starter: true,
-      setups: ['back swing', 'round carry-through', 'inside leg reversal', 'reverse pop'],
+      setups: [
+        'back swing',
+        'round carry-through',
+        'inside leg reversal',
+        'irregular swing reverse pop',
+      ],
       landings: landingPositions.hook,
     },
 
@@ -492,14 +503,29 @@ const tricks = {
         'inside leg reversal',
         'left right redirect',
         'skip hook',
+        'outside leg hyper',
+        'irregular swing reverse pop',
       ],
-      landings: ['outside leg hyper', 'vanish', 'frontside pop', 'frontside punch', 'hook'],
+      landings: [
+        'outside leg hyper',
+        'vanish',
+        'frontside pop',
+        'frontside punch',
+        'hook',
+        'irregular swing reverse pop'],
     },
 
     {
       name: 'Swing 900 Kick',
       starter: true,
-      setups: ['back swing', 'round carry-through', 'inside leg reversal', 'left right redirect'],
+      setups: [
+        'back swing',
+        'round carry-through',
+        'inside leg reversal',
+        'left right redirect',
+        'outside leg hyper',
+        'irregular swing reverse pop',
+      ],
       landings: landingPositions.round,
     },
 
@@ -527,7 +553,15 @@ const tricks = {
     {
       name: 'Triple Kick',
       starter: true,
-      setups: ['j step', 'back swing', 'round carry-through', 'inside leg reversal', 'left right redirect'],
+      setups: [
+        'j step',
+        'back swing',
+        'round carry-through',
+        'inside leg reversal',
+        'left right redirect',
+        'outside leg hyper',
+        'irregular swing reverse pop',
+      ],
       landings: landingPositions.round,
     },
 
@@ -1125,7 +1159,7 @@ function createConnector(container) {
 
 // DATA CONTROLLER
 function generateMod(setups) {
-  if (setups) {
+  if (setups.length) {
     const setupMods = setups.filter(setup => takeoffModifiers.includes(setup));
     return randomMove(setupMods);
   }
@@ -1136,7 +1170,7 @@ function generateMod(setups) {
 function formatMod(mod, trickName) {
   if (mod) {
     if (/^(vanish|missleg|reverse pop|cheat|hook|wrap)$/.test(mod)) return mod;
-
+    if (/reverse pop$/.test(mod)) return 'reverse pop';
     if (mod.startsWith('skip')) return trickName === '900 Kick' ? 'skip wrap' : 'skip';
 
     const isTrans = /(pop|punch|hyper|vanish|reversal|redirect|carry-through)$/.test(mod);
