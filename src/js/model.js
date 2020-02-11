@@ -1,7 +1,7 @@
 // *********************************************** DATA CONTROLLER **********************************************
 
 // To reduce repetition
-const takeoffs = {
+export const takeoffs = {
   swing: ['back swing', 'skip hook', 'left right redirect'],
   raiz: [
     'right left redirect',
@@ -34,7 +34,7 @@ const takeoffs = {
   ],
 };
 
-const landingPositions = {
+export const landingPositions = {
   eagle: [
     'invert backside pop',
     'back swing',
@@ -66,7 +66,7 @@ const landingPositions = {
 
 
 // *** TRANSITIONS AND MODIFIERS ***
-const takeoffModifiers = [ // if transition is a takeoff mod, prepend new trick with it
+export const takeoffModifiers = [ // if transition is a takeoff mod, prepend new trick with it
   'turn step',
   'step behind',
   'cheat',
@@ -88,7 +88,7 @@ const takeoffModifiers = [ // if transition is a takeoff mod, prepend new trick 
 //   'rapid hook',
 // ];
 
-const transitions = [
+export const transitions = [
   'hook', // *
   'hook carry-through',
   'round carry-through',
@@ -129,7 +129,7 @@ const transitions = [
 ];
 
 
-const tricks = {
+export const tricks = {
 
   // *** NOVICE ***
   level1: [
@@ -1020,86 +1020,23 @@ const tricks = {
 };
 
 
-// NEXT TODO: ADD LANDING MODIFIERS
-// make landing modifiers like transitions?
-/*
-  If transition is a landing modifier, append previous trick with it
-*/
+// ========================= FUNCTIONS ==========================
+// ==============================================================
 
-// =========== EVENT LISTENERS ============
-document.getElementById('generateRandomCombo').onclick = generateCombo;
-
-
-// =============== FUNCTIONS ==================
-// ============================================
-
-// APP CONTROLLER
-function generateCombo() {
-  console.clear();
-  let transition;
-  let takeoff;
-
-  // Clear container
-  const comboContainer = document.getElementById('combo');
-  while (comboContainer.firstChild) {
-    comboContainer.firstChild.remove();
-  }
-
-  let randomLevel = generateLevel(2);
-  const trick1 = generateFirstTrick(tricks[randomLevel]);
-  createTrickElement(trick1, comboContainer, generateMod(trick1.setups));
-  createConnector(comboContainer);
-
-  console.log(trick1.name);
-
-  randomLevel = generateLevel(2);
-  const trick2 = generateTrick(tricks[randomLevel], trick1);
-  transition = generateTransition(trick1, trick2);
-  takeoff = handleHook(transition, trick2);
-  takeoff = handleTakeoff(transition, takeoff, trick2);
-  createTrickElement(trick2, comboContainer, transition, takeoff);
-  createConnector(comboContainer);
-
-  console.log(trick2.name);
-
-  randomLevel = generateLevel(2);
-  const trick3 = generateTrick(tricks[randomLevel], trick2);
-  transition = generateTransition(trick2, trick3);
-  takeoff = handleHook(transition, trick3);
-  takeoff = handleTakeoff(transition, takeoff, trick3);
-  createTrickElement(trick3, comboContainer, transition, takeoff);
-  createConnector(comboContainer);
-
-  console.log(trick3.name);
-
-  randomLevel = generateLevel(2);
-  const trick4 = generateLastTrick(tricks[randomLevel], trick3);
-  transition = generateTransition(trick3, trick4);
-  takeoff = handleHook(transition, trick4);
-  takeoff = handleTakeoff(transition, takeoff, trick4);
-  createTrickElement(trick4, comboContainer, transition, takeoff);
-
-  console.log(trick4.name);
-}
-
-
-// DATA CONTROLLER
-function generateLevel(max) {
+export function generateLevel(max) {
   const random = Math.floor(Math.random() * max + 1);
   return `level${random}`;
 }
 
 
-// DATA CONTROLLER
-function generateFirstTrick(level) {
+export function generateFirstTrick(level) {
   const starters = level.filter(trick => trick.starter === true);
   const trick = randomMove(starters);
   return trick;
 }
 
 
-// DATA CONTROLLER
-function randomMove(list) {
+export function randomMove(list) {
   if (list.length) {
     const random = Math.floor(Math.random() * list.length);
     const move = list[random];
@@ -1109,56 +1046,7 @@ function randomMove(list) {
 }
 
 
-// UI CONTROLLER
-function createTrickElement(trick, container, transition, takeoff) {
-  const trickEl = document.createElement('div');
-  trickEl.className = 'trick';
-
-  let fixedTrans;
-  let fixedTakeoff;
-
-  if (transition) {
-    if (/cheat|pop|punch$/.test(transition)) {
-      fixedTakeoff = formatMod(transition, trick.name);
-    } else {
-      fixedTrans = formatMod(transition, trick.name);
-    }
-  }
-
-  if (takeoff) {
-    fixedTakeoff = takeoff;
-  }
-
-  if (fixedTrans) {
-    const transEl = document.createElement('div');
-    transEl.className = 'transition';
-    transEl.textContent = `- ${fixedTrans} -`;
-    container.append(transEl);
-    trickEl.textContent = trick.name;
-    container.append(trickEl);
-  }
-
-  if (fixedTakeoff) {
-    trickEl.textContent = `${fixedTakeoff} ${trick.name}`;
-    container.append(trickEl);
-  } else {
-    trickEl.textContent = trick.name;
-    container.append(trickEl);
-  }
-}
-
-
-// UI CONTROLLER
-function createConnector(container) {
-  const connector = document.createElement('div');
-  connector.className = 'connector';
-  connector.innerHTML = '&darr;';
-  container.append(connector);
-}
-
-
-// DATA CONTROLLER
-function generateMod(setups) {
+export function generateMod(setups) {
   if (setups.length) {
     const setupMods = setups.filter(setup => takeoffModifiers.includes(setup));
     return randomMove(setupMods);
@@ -1166,8 +1054,8 @@ function generateMod(setups) {
   return undefined;
 }
 
-// DATA CONTROLLER
-function formatMod(mod, trickName) {
+
+export function formatMod(mod, trickName) {
   if (mod) {
     if (/^(vanish|missleg|reverse pop|cheat|hook|wrap)$/.test(mod)) return mod;
     if (/reverse pop$/.test(mod)) return 'reverse pop';
@@ -1180,8 +1068,7 @@ function formatMod(mod, trickName) {
 }
 
 
-// DATA CONTROLLER
-function handleHook(transition, trick) {
+export function handleHook(transition, trick) {
   if (transition === 'hook') {
     const possibleTakeoffs = trick.setups.filter(setup => landingPositions.hook.includes(setup));
     return generateMod(possibleTakeoffs);
@@ -1189,7 +1076,8 @@ function handleHook(transition, trick) {
   return undefined;
 }
 
-function handleTakeoff(transition, takeoff, trick) {
+
+export function handleTakeoff(transition, takeoff, trick) {
   if (!takeoff) {
     if (takeoffModifiers.includes(transition)) return formatMod(transition, trick.name);
   }
@@ -1199,8 +1087,7 @@ function handleTakeoff(transition, takeoff, trick) {
 
 
 // *** CORE ALGORITHM ***
-// DATA CONTROLLER
-function generateTrick(level, prevTrick) {
+export function generateTrick(level, prevTrick) {
   // Filter list for tricks that have a setup that matches at least one landing of prevTrick
   const possibleTricks = level.filter(trick => {
     const match = trick.setups.some(setup => prevTrick.landings.includes(setup));
@@ -1214,8 +1101,7 @@ function generateTrick(level, prevTrick) {
 }
 
 
-// DATA CONTROLLER
-function generateTransition(prevTrick, current) {
+export function generateTransition(prevTrick, current) {
   if (current.setups) {
     // Filter current trick's setups for ones that match previous trick's landings
     const matches = current.setups.filter(setup => prevTrick.landings.includes(setup));
@@ -1237,12 +1123,11 @@ function generateTransition(prevTrick, current) {
 }
 
 
-// DATA CONTROLLER
-function generateLastTrick(level, prevTrick) {
+export function generateLastTrick(level, prevTrick) {
   const possibleTricks = level.filter(trick => {
     const match = trick.setups.some(setup => prevTrick.landings.includes(setup));
     return (match && !trick.notFinisher)
-    || (trick.setups.includes(prevTrick.name) && !trick.notFinisher);
+      || (trick.setups.includes(prevTrick.name) && !trick.notFinisher);
   });
 
   // Pick random trick object from list
@@ -1250,14 +1135,3 @@ function generateLastTrick(level, prevTrick) {
   if (!trick) return { name: 'Finishing Trick' };
   return trick;
 }
-
-
-// document.getElementById('randomComboOption').addEventListener('click', () => {
-//   document.querySelector('.start-screen').style.display = 'none';
-//   document.querySelector('.randomComboBox').style.display = 'block';
-// });
-
-// document.getElementById('backToChoices').addEventListener('click', () => {
-//   document.querySelector('.randomComboBox').style.display = 'none';
-//   document.querySelector('.start-screen').style.display = 'block';
-// });
