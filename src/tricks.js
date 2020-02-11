@@ -1035,9 +1035,10 @@ document.getElementById('generateRandomCombo').onclick = generateCombo;
 
 // APP CONTROLLER
 function generateCombo() {
-  console.clear();
   let transition;
   let takeoff;
+
+  console.clear();
 
   // Clear container
   const comboContainer = document.getElementById('combo');
@@ -1111,11 +1112,11 @@ function randomMove(list) {
 
 // UI CONTROLLER
 function createTrickElement(trick, container, transition, takeoff) {
-  const trickEl = document.createElement('div');
-  trickEl.className = 'trick';
-
   let fixedTrans;
   let fixedTakeoff;
+
+  const trickEl = document.createElement('div');
+  trickEl.className = 'trick';
 
   if (transition) {
     if (/cheat|pop|punch$/.test(transition)) {
@@ -1169,8 +1170,8 @@ function generateMod(setups) {
 // DATA CONTROLLER
 function formatMod(mod, trickName) {
   if (mod) {
-    if (/^(vanish|missleg|reverse pop|cheat|hook|wrap)$/.test(mod)) return mod;
     if (/reverse pop$/.test(mod)) return 'reverse pop';
+    if (/^(vanish|missleg|reverse pop|cheat|hook|wrap)$/.test(mod)) return mod;
     if (mod.startsWith('skip')) return trickName === '900 Kick' ? 'skip wrap' : 'skip';
 
     const isTrans = /(pop|punch|hyper|vanish|reversal|redirect|carry-through)$/.test(mod);

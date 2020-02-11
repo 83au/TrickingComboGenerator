@@ -11,7 +11,7 @@ html {
 body {
   width: 100%;
   min-height: 100vh;
-  background-image: linear-gradient(to bottom, rgba(85,85,255,1) 0.1%, rgba(255,85,85,1) 100% );
+  background-image: linear-gradient(to bottom, rgba(85,85,255,1) 0.1%, rgba(255,85,85,1) 100%);
   font-family: 'Bangers', Impact, sans-serif;
   color: white;
 }
