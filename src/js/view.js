@@ -1,6 +1,11 @@
 // **************************** UI CONTROLLER *******************************
 import { formatMod } from './model';
 
+export const DOMStrings = {
+  comboContainer: 'combo',
+  generateComboBtn: 'generateRandomCombo',
+
+};
 
 // ============================ FUNCTIONS =================================
 

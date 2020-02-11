@@ -587,7 +587,7 @@ export const tricks = {
       starter: false,
       notFinisher: true,
       setups: ['vanish', 'reverse pop', 'inside leg hyper', 'Butterfly Kick'],
-      landings: ['cheat', 'reverse pop', 'hook'],
+      landings: ['cheat', 'hook'],
     },
 
     {

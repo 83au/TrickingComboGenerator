@@ -7,7 +7,8 @@ import * as view from './view';
 */
 
 // =========== EVENT LISTENERS ============
-document.getElementById('generateRandomCombo').onclick = generateCombo;
+const DOM = view.DOMStrings;
+document.getElementById(DOM.generateComboBtn).onclick = generateCombo;
 
 
 // =============== FUNCTIONS ==================
@@ -16,7 +17,8 @@ document.getElementById('generateRandomCombo').onclick = generateCombo;
 // APP CONTROLLER
 function generateCombo() {
   console.clear();
-  const comboContainer = document.getElementById('combo');
+
+  const comboContainer = document.getElementById(DOM.comboContainer);
   let transition;
   let takeoff;
 
