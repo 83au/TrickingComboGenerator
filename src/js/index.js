@@ -1,5 +1,7 @@
-import * as model from './model';
-import * as view from './view';
+import * as Model from './models/model';
+import * as Data from './models/tricks';
+import * as View from './view';
+
 // NEXT TODO: ADD LANDING MODIFIERS
 // make landing modifiers like transitions?
 /*
@@ -7,7 +9,7 @@ import * as view from './view';
 */
 
 // =========== EVENT LISTENERS ============
-const DOM = view.DOMStrings;
+const DOM = View.DOMStrings;
 document.getElementById(DOM.generateComboBtn).onclick = generateCombo;
 
 
@@ -22,41 +24,41 @@ function generateCombo() {
   let transition;
   let takeoff;
 
-  view.clearContainer(comboContainer);
+  View.clearContainer(comboContainer);
 
-  let randomLevel = model.generateLevel(2);
-  const trick1 = model.generateFirstTrick(model.tricks[randomLevel]);
-  view.createTrickElement(trick1, comboContainer, model.generateMod(trick1.setups));
-  view.createConnector(comboContainer);
+  let randomLevel = Model.generateLevel(2);
+  const trick1 = Model.generateFirstTrick(Data.tricks[randomLevel]);
+  View.createTrickElement(trick1, comboContainer, Model.generateMod(trick1.setups));
+  View.createConnector(comboContainer);
 
   console.log(trick1.name);
 
-  randomLevel = model.generateLevel(2);
-  const trick2 = model.generateTrick(model.tricks[randomLevel], trick1);
-  transition = model.generateTransition(trick1, trick2);
-  takeoff = model.handleHook(transition, trick2);
-  takeoff = model.handleTakeoff(transition, takeoff, trick2);
-  view.createTrickElement(trick2, comboContainer, transition, takeoff);
-  view.createConnector(comboContainer);
+  randomLevel = Model.generateLevel(2);
+  const trick2 = Model.generateTrick(Data.tricks[randomLevel], trick1);
+  transition = Model.generateTransition(trick1, trick2);
+  takeoff = Model.handleHook(transition, trick2);
+  takeoff = Model.handleTakeoff(transition, takeoff, trick2);
+  View.createTrickElement(trick2, comboContainer, transition, takeoff);
+  View.createConnector(comboContainer);
 
   console.log(trick2.name);
 
-  randomLevel = model.generateLevel(2);
-  const trick3 = model.generateTrick(model.tricks[randomLevel], trick2);
-  transition = model.generateTransition(trick2, trick3);
-  takeoff = model.handleHook(transition, trick3);
-  takeoff = model.handleTakeoff(transition, takeoff, trick3);
-  view.createTrickElement(trick3, comboContainer, transition, takeoff);
-  view.createConnector(comboContainer);
+  randomLevel = Model.generateLevel(2);
+  const trick3 = Model.generateTrick(Data.tricks[randomLevel], trick2);
+  transition = Model.generateTransition(trick2, trick3);
+  takeoff = Model.handleHook(transition, trick3);
+  takeoff = Model.handleTakeoff(transition, takeoff, trick3);
+  View.createTrickElement(trick3, comboContainer, transition, takeoff);
+  View.createConnector(comboContainer);
 
   console.log(trick3.name);
 
-  randomLevel = model.generateLevel(2);
-  const trick4 = model.generateLastTrick(model.tricks[randomLevel], trick3);
-  transition = model.generateTransition(trick3, trick4);
-  takeoff = model.handleHook(transition, trick4);
-  takeoff = model.handleTakeoff(transition, takeoff, trick4);
-  view.createTrickElement(trick4, comboContainer, transition, takeoff);
+  randomLevel = Model.generateLevel(2);
+  const trick4 = Model.generateLastTrick(Data.tricks[randomLevel], trick3);
+  transition = Model.generateTransition(trick3, trick4);
+  takeoff = Model.handleHook(transition, trick4);
+  takeoff = Model.handleTakeoff(transition, takeoff, trick4);
+  View.createTrickElement(trick4, comboContainer, transition, takeoff);
 
   console.log(trick4.name);
 }

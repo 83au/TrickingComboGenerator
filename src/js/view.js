@@ -1,5 +1,5 @@
 // **************************** UI CONTROLLER *******************************
-import { formatMod } from './model';
+import { formatMod } from './models/model';
 
 export const DOMStrings = {
   comboContainer: 'combo',
