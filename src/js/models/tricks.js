@@ -286,7 +286,7 @@ export const tricks = {
         'back swing',
         'round carry-through',
         'inside leg reversal',
-        'irregular swing reverse pop',
+        'reverse pop',
       ],
       landings: landingPositions.hook,
     },

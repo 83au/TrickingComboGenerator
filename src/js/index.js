@@ -9,8 +9,7 @@ import * as View from './view';
 */
 
 // =========== EVENT LISTENERS ============
-const DOM = View.DOMStrings;
-document.getElementById(DOM.generateComboBtn).onclick = generateCombo;
+View.elements.generateComboBtn.onclick = generateCombo;
 
 
 // =============== FUNCTIONS ==================
@@ -20,16 +19,15 @@ document.getElementById(DOM.generateComboBtn).onclick = generateCombo;
 function generateCombo() {
   console.clear();
 
-  const comboContainer = document.getElementById(DOM.comboContainer);
   let transition;
   let takeoff;
 
-  View.clearContainer(comboContainer);
+  View.clearContainer(View.elements.comboContainer);
 
   let randomLevel = Model.generateLevel(2);
   const trick1 = Model.generateFirstTrick(Data.tricks[randomLevel]);
-  View.createTrickElement(trick1, comboContainer, Model.generateMod(trick1.setups));
-  View.createConnector(comboContainer);
+  View.createTrickElement(trick1, Model.generateMod(trick1.setups));
+  View.createConnector();
 
   console.log(trick1.name);
 
@@ -38,8 +36,8 @@ function generateCombo() {
   transition = Model.generateTransition(trick1, trick2);
   takeoff = Model.handleHook(transition, trick2);
   takeoff = Model.handleTakeoff(transition, takeoff, trick2);
-  View.createTrickElement(trick2, comboContainer, transition, takeoff);
-  View.createConnector(comboContainer);
+  View.createTrickElement(trick2, transition, takeoff);
+  View.createConnector();
 
   console.log(trick2.name);
 
@@ -48,8 +46,8 @@ function generateCombo() {
   transition = Model.generateTransition(trick2, trick3);
   takeoff = Model.handleHook(transition, trick3);
   takeoff = Model.handleTakeoff(transition, takeoff, trick3);
-  View.createTrickElement(trick3, comboContainer, transition, takeoff);
-  View.createConnector(comboContainer);
+  View.createTrickElement(trick3, transition, takeoff);
+  View.createConnector();
 
   console.log(trick3.name);
 
@@ -58,7 +56,7 @@ function generateCombo() {
   transition = Model.generateTransition(trick3, trick4);
   takeoff = Model.handleHook(transition, trick4);
   takeoff = Model.handleTakeoff(transition, takeoff, trick4);
-  View.createTrickElement(trick4, comboContainer, transition, takeoff);
+  View.createTrickElement(trick4, transition, takeoff);
 
   console.log(trick4.name);
 }

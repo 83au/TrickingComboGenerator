@@ -1,4 +1,17 @@
 // ****************** DATA CONTROLLER ********************
+/* TODO: MAKE TRICK OBJECT
+class trick {
+  constructor(transition, takeoffModifier, trickName, landingModifier) {
+    this.transition = transition;
+    this.takeoff= takeoffModifier;
+    this.name = trickName;
+    this.landing = landingModifier;
+  }
+  display() {
+    * Display trick element in the UI
+  }
+}
+*/
 
 import {
   landingPositions,
@@ -39,6 +52,7 @@ export function generateMod(setups) {
 }
 
 
+// Perhaps make this part of View controller?
 export function formatMod(mod, trickName) {
   if (mod) {
     if (/^(vanish|missleg|reverse pop|cheat|hook|wrap)$/.test(mod)) return mod;

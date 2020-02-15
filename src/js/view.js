@@ -1,21 +1,21 @@
 // **************************** UI CONTROLLER *******************************
 import { formatMod } from './models/model';
 
-export const DOMStrings = {
-  comboContainer: 'combo',
-  generateComboBtn: 'generateRandomCombo',
-
+export const elements = {
+  comboContainer: document.getElementById('combo'),
+  generateComboBtn: document.getElementById('generateRandomCombo'),
 };
 
 // ============================ FUNCTIONS =================================
 
-export function createTrickElement(trick, container, transition, takeoff) {
+export function createTrickElement(trick, transition, takeoff) {
   const trickEl = document.createElement('div');
   trickEl.className = 'trick';
 
   let fixedTrans;
   let fixedTakeoff;
 
+  // Prepare transition and takeoff elements
   if (transition) {
     if (/cheat|pop|punch$/.test(transition)) {
       fixedTakeoff = formatMod(transition, trick.name);
@@ -32,33 +32,31 @@ export function createTrickElement(trick, container, transition, takeoff) {
     const transEl = document.createElement('div');
     transEl.className = 'transition';
     transEl.textContent = `- ${fixedTrans} -`;
-    container.append(transEl);
+    elements.comboContainer.append(transEl);
     trickEl.textContent = trick.name;
-    container.append(trickEl);
+    elements.comboContainer.append(trickEl);
   }
 
   if (fixedTakeoff) {
     trickEl.textContent = `${fixedTakeoff} ${trick.name}`;
-    container.append(trickEl);
+    elements.comboContainer.append(trickEl);
   } else {
     trickEl.textContent = trick.name;
-    container.append(trickEl);
+    elements.comboContainer.append(trickEl);
   }
 }
 
 
-export function createConnector(container) {
+export function createConnector() {
   const connector = document.createElement('div');
   connector.className = 'connector';
   connector.innerHTML = '&darr;';
-  container.append(connector);
+  elements.comboContainer.append(connector);
 }
 
 
-export function clearContainer(container) {
-  while (container.firstChild) {
-    container.firstChild.remove();
-  }
+export function clearContainer() {
+  elements.comboContainer.innerHTML = '';
 }
 
 
