@@ -540,14 +540,6 @@ export const tricks = {
     //   setups: ['vanish', 'hook carry-through', 'right left redirect'], // cheat is implied
     //   landings: landingPositions.round,
     // },
-
-    // {
-    //   name: 'Tornado Side Kick',
-    //   starter: true,
-    //   setups: ['vanish', 'hook carry-through', 'right left redirect', 'reverse pop'], // cheat is implied
-    //   landings: landingPositions.round,
-    // },
-
     {
       name: 'Triple Kick',
       starter: true,
