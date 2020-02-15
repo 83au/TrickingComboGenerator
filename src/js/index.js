@@ -25,7 +25,7 @@ function generateCombo() {
   View.clearContainer(View.elements.comboContainer);
 
   let randomLevel = Model.generateLevel(2);
-  const trick1 = Model.generateFirstTrick(Data.tricks[randomLevel]);
+  const trick1 = Model.generateTrick(Data.tricks[randomLevel]);
   View.createTrickElement(trick1, Model.generateMod(trick1.setups));
   View.createConnector();
 

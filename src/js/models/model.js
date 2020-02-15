@@ -26,13 +26,6 @@ export function generateLevel(max) {
 }
 
 
-export function generateFirstTrick(level) {
-  const starters = level.filter(trick => trick.starter === true);
-  const trick = randomMove(starters);
-  return trick;
-}
-
-
 export function randomMove(list) {
   if (list.length) {
     const random = Math.floor(Math.random() * list.length);
@@ -86,16 +79,22 @@ export function handleTakeoff(transition, takeoff, trick) {
 
 // *** CORE ALGORITHM ***
 export function generateTrick(level, prevTrick) {
-  // Filter list for tricks that have a setup that matches at least one landing of prevTrick
-  const possibleTricks = level.filter(trick => {
-    const match = trick.setups.some(setup => prevTrick.landings.includes(setup));
-    // Or if prevTrick itself is a setup for new trick
-    return match || trick.setups.includes(prevTrick.name);
-  });
+  let selectedTrick;
 
-  // Pick random trick object from list
-  const trick = randomMove(possibleTricks);
-  return trick;
+  if (prevTrick) {
+    // Filter list for tricks that have a setup that matches at least one landing of prevTrick
+    const possibleTricks = level.filter(trick => {
+      const match = trick.setups.some(setup => prevTrick.landings.includes(setup));
+      // Or if prevTrick itself is a setup for new trick
+      return match || trick.setups.includes(prevTrick.name);
+    });
+    // Pick random trick object from list
+    selectedTrick = randomMove(possibleTricks);
+  } else {
+    selectedTrick = randomMove(level);
+  }
+
+  return selectedTrick;
 }
 
 

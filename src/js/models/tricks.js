@@ -134,7 +134,6 @@ export const tricks = {
     // KICKS
     {
       name: '360 Wheel Kick',
-      starter: true,
       setups: [
         'inside pop',
         'frontside pop',
@@ -149,14 +148,12 @@ export const tricks = {
 
     // {
     //   name: '360 Wheel Kick Hyper',
-    //   starter: true,
     //   setups: ['inside pop', 'frontside pop', 'frontside punch', 'inside punch'],
     //   landings: ['vanish', 'frontside', 'frontside pop', 'inside leg reversal'],
     // },
 
     {
       name: '540 Kick',
-      starter: true,
       setups: ['cheat', 'vanish', 'right left redirect', 'frontside pop'],
       landings: [
         'inside leg hyper',
@@ -169,7 +166,6 @@ export const tricks = {
 
     {
       name: 'Auto-Bahn',
-      starter: true,
       setups: [
         'reverse pop',
         'hook carry-through',
@@ -182,14 +178,12 @@ export const tricks = {
 
     {
       name: 'Backside 720 Kick',
-      starter: true,
       setups: ['backside punch', 'backside'],
       landings: landingPositions.hook,
     },
 
     {
       name: 'Back Sweep',
-      starter: true,
       notFinisher: true,
       setups: ['frontside', 'hook'],
       landings: ['frontside', 'frontside pop'],
@@ -197,14 +191,12 @@ export const tricks = {
 
     {
       name: 'Butterfly Kick',
-      starter: true,
       setups: ['turn step', 'hook', 'reverse vanish'],
       landings: ['reverse vanish', 'outside leg reversal', 'inside pop'],
     },
 
     {
       name: 'Compasso (td hook)',
-      starter: true,
       notFinisher: true,
       setups: ['inside', 'frontside', 'Tornado Kick'],
       landings: landingPositions.hook,
@@ -212,7 +204,6 @@ export const tricks = {
 
     {
       name: 'Feilong',
-      starter: true,
       setups: [
         'inside pop',
         'frontside pop',
@@ -226,7 +217,6 @@ export const tricks = {
 
     {
       name: 'Front Sweep',
-      starter: true,
       notFinisher: true,
       setups: ['backside', 'inside leg reversal'],
       landings: ['backside', 'backside pop'],
@@ -234,7 +224,6 @@ export const tricks = {
 
     // {
     //   name: 'hook',
-    //   starter: true,
     //   notFinisher: true,
     //   setups: ['inside', 'frontside', 'right left redirect', 'vanish'],
     //   landings: landingPositions.hook,
@@ -242,7 +231,6 @@ export const tricks = {
 
     // {
     //   name: 'Jump Round',
-    //   starter: true,
     //   notFinisher: true,
     //   setups: ['backside'], // pop is implied
     //   landings: landingPositions.round,
@@ -250,14 +238,12 @@ export const tricks = {
 
     {
       name: 'Narabong',
-      starter: true,
       setups: ['hook carry-through', 'outside leg reversal', 'right left redirect', 'reverse pop'],
       landings: landingPositions.hook,
     },
 
     {
       name: 'Palm Kick',
-      starter: true,
       notFinisher: true,
       setups: ['reverse vanish', 'missleg', 'hook'],
       landings: ['inside', 'inside pop', 'reverse vanish', 'outside leg reversal', 'right left redirect'],
@@ -265,7 +251,6 @@ export const tricks = {
 
     {
       name: 'Round Kick',
-      starter: true,
       notFinisher: true,
       setups: ['backside', 'inside leg reversal'],
       landings: landingPositions.round,
@@ -273,7 +258,6 @@ export const tricks = {
 
     {
       name: 'Tornado',
-      starter: true,
       notFinisher: true,
       setups: ['vanish', 'hook carry-through', 'right left redirect', 'reverse pop', 'frontside pop', 'hook'], // cheat is implied
       landings: landingPositions.round,
@@ -281,7 +265,6 @@ export const tricks = {
 
     {
       name: 'Tsunami Kick',
-      starter: true,
       setups: [
         'back swing',
         'round carry-through',
@@ -296,7 +279,6 @@ export const tricks = {
     // TRANSITION TRICKS
     {
       name: 'Blaster Scoot',
-      starter: true,
       notFinisher: true,
       setups: ['reverse vanish', 'inside'],
       landings: ['back swing', 'backside', 'backside pop', 'invert backside pop', 'vanish'],
@@ -304,7 +286,6 @@ export const tricks = {
 
     {
       name: 'Cartwheel',
-      starter: true,
       notFinisher: true,
       setups: takeoffs.cartwheel,
       landings: [
@@ -314,7 +295,6 @@ export const tricks = {
 
     {
       name: 'Macaco',
-      starter: true,
       notFinisher: true,
       setups: ['backside'], // Pop is implied
       landings: landingPositions.eagle.concat(['reverse vanish', 'right left redirect']),
@@ -322,7 +302,6 @@ export const tricks = {
 
     {
       name: 'Round Off',
-      starter: true,
       notFinisher: true,
       setups: takeoffs.cartwheel,
       landings: ['invert backside punch'],
@@ -330,7 +309,6 @@ export const tricks = {
 
     {
       name: 'Scoot',
-      starter: true,
       notFinisher: true,
       setups: ['skip round', 'semi'],
       landings: landingPositions.eagle,
@@ -338,7 +316,6 @@ export const tricks = {
 
     {
       name: 'Scoot Hyper',
-      starter: true,
       notFinisher: true,
       setups: ['skip round', 'inside leg hyper', 'semi'],
       landings: ['inside leg hyper', 'reverse vanish', 'right left redirect', 'skip hook'],
@@ -346,7 +323,6 @@ export const tricks = {
 
     {
       name: 'Spyder',
-      starter: true,
       notFinisher: true,
       setups: [
         'backside',
@@ -361,7 +337,6 @@ export const tricks = {
 
     {
       name: 'Transformer/Machine',
-      starter: true,
       notFinisher: true,
       setups: [
         'backside',
@@ -391,7 +366,6 @@ export const tricks = {
 
     // {
     //   name: 'Front Flip',
-    //   starter: true,
     //   setups: ['invert frontside punch', 'invert backside punch'],
     //   landings: ['invert frontside punch', 'reverse vanish'],
     // },
@@ -403,7 +377,6 @@ export const tricks = {
 
     // {
     //   name: '360 Wheel Kick Gyro',
-    //   starter: true,
     //   setups: ['frontside pop', 'inside pop', 'inside punch', 'frontside punch'],
     //   landings: ['backside', 'backside punch'],
     // },
@@ -417,7 +390,6 @@ export const tricks = {
 
     {
       name: '720 Kick',
-      starter: true,
       setups: [
         'cheat',
         'right left redirect',
@@ -431,42 +403,36 @@ export const tricks = {
 
     {
       name: '720 Kick', // Pop variation
-      starter: true,
       setups: ['frontside pop', 'hook'],
       landings: landingPositions.hook,
     },
 
     {
       name: '720 Double',
-      starter: true,
       setups: ['cheat', 'right left redirect', 'vanish', 'hook', 'frontside pop'],
       landings: landingPositions.hook,
     },
 
     {
       name: '900 Kick',
-      starter: true,
       setups: ['cheat', 'vanish', 'right left redirect', 'skip round', 'hook', 'wrap'],
       landings: landingPositions.round,
     },
 
     {
       name: 'Backside 900',
-      starter: true,
       setups: ['backside', 'backside punch'], // pop is implied
       landings: landingPositions.round,
     },
 
     {
       name: 'Crowd Awakener',
-      starter: true,
       setups: ['right left redirect', 'cheat', 'vanish', 'hook'],
       landings: ['backside punch', 'hook'],
     },
 
     {
       name: 'E-kick',
-      starter: true,
       notFinisher: true,
       setups: [
         'frontside',
@@ -480,21 +446,18 @@ export const tricks = {
 
     {
       name: 'Hyper Feilong',
-      starter: true,
       setups: ['frontside pop', 'frontside punch', 'cheat', 'right left redirect', 'hook'],
       landings: ['inside leg hyper', 'reverse vanish', 'right left redirect', 'skip hook'],
     },
 
     {
       name: 'Parafuso',
-      starter: true,
       setups: ['vanish', 'hook'], // cheat is implied
       landings: ['backside', 'backside punch'],
     },
 
     {
       name: 'Swing 360 Wheel Kick', // hyper and turbo variations are implied
-      starter: true,
       setups: [
         'back swing',
         'round carry-through',
@@ -515,7 +478,6 @@ export const tricks = {
 
     {
       name: 'Swing 900 Kick',
-      starter: true,
       setups: [
         'back swing',
         'round carry-through',
@@ -529,20 +491,17 @@ export const tricks = {
 
     {
       name: 'Tai-fighter',
-      starter: true,
       setups: ['frontside pop', 'inside pop', 'frontside punch', 'inside punch'],
       landings: landingPositions.round,
     },
 
     // {
     //   name: 'Tornado Double',
-    //   starter: true,
     //   setups: ['vanish', 'hook carry-through', 'right left redirect'], // cheat is implied
     //   landings: landingPositions.round,
     // },
     {
       name: 'Triple Kick',
-      starter: true,
       setups: [
         'j step',
         'back swing',
@@ -557,7 +516,6 @@ export const tricks = {
 
     {
       name: 'Wackknife',
-      starter: true,
       setups: ['cheat', 'frontside pop', 'frontside punch'],
       landings: landingPositions.hook.concat(['frontside punch']), // turbo variation is implied
     },
@@ -567,7 +525,6 @@ export const tricks = {
     // Master Swipe
     {
       name: 'Cartwheel Twist',
-      starter: true,
       setups: takeoffs.cartwheel,
       landings: ['backside punch', 'invert backside punch', 'reverse pop'],
     },
@@ -588,7 +545,6 @@ export const tricks = {
 
     {
       name: 'Gumbi',
-      starter: true,
       notFinisher: true,
       setups: takeoffs.raiz,
       landings: landingPositions.eagle,
@@ -596,7 +552,6 @@ export const tricks = {
 
     {
       name: 'Master Scoot',
-      starter: true,
       notFinisher: true,
       setups: ['hook', 'skip round', 'inside leg hyper', 'vanish'],
       landings: landingPositions.eagle,
@@ -604,7 +559,6 @@ export const tricks = {
 
     {
       name: 'Raiz',
-      starter: true,
       notFinisher: true,
       setups: takeoffs.raiz,
       landings: landingPositions.eagle,
@@ -612,7 +566,6 @@ export const tricks = {
 
     {
       name: 'Raiz Scissor',
-      starter: true,
       notFinisher: true,
       setups: takeoffs.raiz,
       landings: ['mega', 'backside pop', 'inside leg reversal'],
@@ -620,7 +573,6 @@ export const tricks = {
 
     {
       name: 'Sailor Moon',
-      starter: true,
       notFinisher: true,
       setups: takeoffs.raiz,
       landings: landingPositions.eagle,
@@ -628,7 +580,6 @@ export const tricks = {
 
     {
       name: 'Sailor Moon Scissor',
-      starter: true,
       notFinisher: true,
       setups: takeoffs.raiz,
       landings: ['mega', 'backside pop', 'inside leg reversal'],
@@ -636,21 +587,18 @@ export const tricks = {
 
     {
       name: 'Sideswipe',
-      starter: true,
       setups: takeoffs.raiz,
       landings: ['inside leg hyper', 'reverse vanish', 'right left redirect', 'skip hook'],
     },
 
     {
       name: 'Suicide Kip Up',
-      starter: true,
       setups: ['backside', 'inside'],
       landings: ['backside punch', 'inside punch', 'hook'],
     },
 
     {
       name: 'Touch Down Raiz',
-      starter: true,
       notFinisher: true,
       setups: takeoffs.raiz,
       landings: landingPositions.eagle,
@@ -667,7 +615,6 @@ export const tricks = {
     // FLIPS & TWISTS
     {
       name: 'Aerial',
-      starter: true,
       setups: ['inside', 'reverse vanish', 'inside leg reversal', 'hook'],
       landings: [
         'inside',
@@ -688,63 +635,54 @@ export const tricks = {
 
     {
       name: 'Back Full Hyper',
-      starter: true,
       setups: takeoffs.backFullTwist,
       landings: ['inside leg hyper', 'reverse vanish', 'right left redirect', 'inside pop'],
     },
 
     {
       name: 'Back Full Round',
-      starter: true,
       setups: takeoffs.backFullTwist,
       landings: landingPositions.round,
     },
 
     {
       name: 'Back Full Swipe',
-      starter: true,
       setups: takeoffs.backFullTwist,
       landings: ['inside leg hyper', 'reverse vanish', 'right left redirect'],
     },
 
     {
       name: 'Back Full Twist',
-      starter: true,
       setups: takeoffs.backFullTwist,
       landings: landingPositions.eagle,
     },
 
     // {
     //   name: 'Barani',
-    //   starter: true,
     //   setups: ['invert frontside punch'],
     //   landings: ['invert backside punch'],
     // },
 
     {
       name: 'Butterfly Twist',
-      starter: true,
       setups: ['hook', 'reverse vanish', 'missleg', 'turn step'],
       landings: landingPositions.eagle,
     },
 
     {
       name: 'Butterfly Twist Round',
-      starter: true,
       setups: ['hook', 'reverse vanish', 'hyper', 'turn step'],
       landings: landingPositions.round,
     },
 
     {
       name: 'Butterfly Switch',
-      starter: true,
       setups: ['hook', 'reverse vanish', 'hyper', 'missleg', 'turn step'],
       landings: landingPositions.eagle,
     },
 
     {
       name: 'Butter Knife',
-      starter: true,
       setups: ['hook', 'reverse vanish', 'hyper', 'missleg', 'turn step'],
       landings: landingPositions.hook,
     },
@@ -758,42 +696,36 @@ export const tricks = {
 
     // {
     //   name: 'Cart Full Hyper',
-    //   starter: true,
     //   setups: takeoffs.cartwheel,
     //   landings: ['inside leg hyper', 'reverse vanish', 'right left redirect', 'inside pop'],
     // },
 
     // {
     //   name: 'Cart Full Round',
-    //   starter: true,
     //   setups: takeoffs.cartwheel,
     //   landings: landingPositions.round,
     // },
 
     // {
     //   name: 'Cart Full Twist',
-    //   starter: true,
     //   setups: takeoffs.cartwheel,
     //   landings: landingPositions.eagle,
     // },
 
     // {
     //   name: 'Cart Full Swipe',
-    //   starter: true,
     //   setups: takeoffs.cartwheel,
     //   landings: ['inside leg hyper', 'reverse vanish', 'right left redirect'],
     // },
 
     {
       name: 'Corkscrew',
-      starter: true,
       setups: takeoffs.swing,
       landings: landingPositions.eagle,
     },
 
     {
       name: 'Corkscrew Round',
-      starter: true,
       setups: takeoffs.swing,
       landings: landingPositions.round,
     },
@@ -807,7 +739,6 @@ export const tricks = {
 
     {
       name: 'Double Leg',
-      starter: true,
       setups: ['Tornado', '900 Kick', '360 Wheel Kick'],
       landings: ['backside', 'backside punch'],
     },
@@ -849,42 +780,36 @@ export const tricks = {
 
     {
       name: 'Gainer Arabian',
-      starter: true,
       setups: takeoffs.swing,
       landings: ['invert frontside punch', 'reverse pop', 'frontside', 'hook'],
     },
 
     {
       name: 'Gainer Flash Kick',
-      starter: true,
       setups: takeoffs.swing,
       landings: ['inside pop', 'inside leg hyper', 'reverse vanish', 'right left redirect'],
     },
 
     // {
     //   name: 'Illusion Kick',
-    //   starter: true,
     //   setups: ['inside', 'reverse vanish', 'reverse pop'],
     //   landings: ['frontside pop', 'front swing', 'outside leg reversal', 'mega'],
     // },
 
     {
       name: 'Illusion Twist',
-      starter: true,
       setups: ['hook', 'reverse vanish', 'hyper'],
       landings: ['frontside', 'frontside punch', 'hook'],
     },
 
     {
       name: 'Loser',
-      starter: true,
       setups: ['Webster', 'backside', 'frontside'],
       landings: ['inside', 'inside pop', 'backside', 'backside pop', 'hook'],
     },
 
     {
       name: 'Moon Kick',
-      starter: true,
       setups: takeoffs.swing,
       landings: landingPositions.hook.concat(['front swing']),
     },
@@ -898,14 +823,12 @@ export const tricks = {
 
     {
       name: 'Shuriken Twist',
-      starter: true,
       setups: ['hook', 'reverse vanish', 'hyper'],
       landings: ['frontside', 'outside', 'vanish', 'hook'],
     },
 
     {
       name: 'Slant Gainer',
-      starter: true,
       setups: takeoffs.swing,
       landings: ['inside leg hyper', 'reverse vanish', 'right left redirect'],
     },
@@ -919,7 +842,6 @@ export const tricks = {
 
     {
       name: 'X-Out',
-      starter: true,
       setups: ['invert backside pop'],
       landings: ['backside punch', 'inside punch', 'invert backside punch', 'invert inside punch', 'hook'],
     },
@@ -947,7 +869,6 @@ export const tricks = {
     // Tak 9
     {
       name: 'Gainer Switch',
-      starter: true,
       setups: takeoffs.swing,
       landings: landingPositions.eagle,
     },
@@ -1003,7 +924,6 @@ export const tricks = {
     // FLIPS & TWISTS
     {
       name: 'Cork In Back Out (Snatch Cannon)',
-      starter: true,
       finisherOnly: true,
       setups: ['back swing'],
       landings: ['backside'],
