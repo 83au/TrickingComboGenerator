@@ -1,7 +1,5 @@
-// *********************************************** DATA CONTROLLER **********************************************
-
 // To reduce repetition
-const takeoffs = {
+export const takeoffs = {
   swing: ['back swing', 'skip hook', 'left right redirect'],
   raiz: [
     'right left redirect',
@@ -34,7 +32,7 @@ const takeoffs = {
   ],
 };
 
-const landingPositions = {
+export const landingPositions = {
   eagle: [
     'invert backside pop',
     'back swing',
@@ -66,7 +64,7 @@ const landingPositions = {
 
 
 // *** TRANSITIONS AND MODIFIERS ***
-const takeoffModifiers = [ // if transition is a takeoff mod, prepend new trick with it
+export const takeoffModifiers = [ // if transition is a takeoff mod, prepend new trick with it
   'turn step',
   'step behind',
   'cheat',
@@ -88,7 +86,7 @@ const takeoffModifiers = [ // if transition is a takeoff mod, prepend new trick 
 //   'rapid hook',
 // ];
 
-const transitions = [
+export const transitions = [
   'hook', // *
   'hook carry-through',
   'round carry-through',
@@ -129,7 +127,7 @@ const transitions = [
 ];
 
 
-const tricks = {
+export const tricks = {
 
   // *** NOVICE ***
   level1: [
@@ -288,7 +286,7 @@ const tricks = {
         'back swing',
         'round carry-through',
         'inside leg reversal',
-        'irregular swing reverse pop',
+        'reverse pop',
       ],
       landings: landingPositions.hook,
     },
@@ -586,8 +584,14 @@ const tricks = {
       name: 'Coin Drop',
       starter: false,
       notFinisher: true,
-      setups: ['vanish', 'reverse pop', 'inside leg hyper', 'Butterfly Kick'],
-      landings: ['cheat', 'reverse pop', 'hook'],
+      setups: [
+        'vanish',
+        'reverse pop',
+        'inside leg hyper',
+        'Butterfly Kick',
+        'skip round',
+      ],
+      landings: ['cheat', 'hook'],
     },
 
     {
@@ -1018,6 +1022,7 @@ const tricks = {
     // Double Gainer
   ],
 };
+<<<<<<< HEAD:src/tricks.js
 
 
 // NEXT TODO: ADD LANDING MODIFIERS
@@ -1262,3 +1267,5 @@ function generateLastTrick(level, prevTrick) {
 //   document.querySelector('.randomComboBox').style.display = 'none';
 //   document.querySelector('.start-screen').style.display = 'block';
 // });
+=======
+>>>>>>> modularize:src/js/models/tricks.js
