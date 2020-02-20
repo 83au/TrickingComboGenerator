@@ -8,8 +8,19 @@ import * as View from './view';
   If transition is a landing modifier, append previous trick with it
 */
 
+
 // =========== EVENT LISTENERS ============
 View.elements.generateComboBtn.onclick = generateCombo;
+
+// document.getElementById('randomComboOption').addEventListener('click', () => {
+//   document.querySelector('.start-screen').style.display = 'none';
+//   document.querySelector('.randomComboBox').style.display = 'block';
+// });
+
+// document.getElementById('backToChoices').addEventListener('click', () => {
+//   document.querySelector('.randomComboBox').style.display = 'none';
+//   document.querySelector('.start-screen').style.display = 'block';
+// });
 
 
 // =============== FUNCTIONS ==================

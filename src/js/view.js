@@ -58,14 +58,3 @@ export function createConnector() {
 export function clearContainer() {
   elements.comboContainer.innerHTML = '';
 }
-
-
-// document.getElementById('randomComboOption').addEventListener('click', () => {
-//   document.querySelector('.start-screen').style.display = 'none';
-//   document.querySelector('.randomComboBox').style.display = 'block';
-// });
-
-// document.getElementById('backToChoices').addEventListener('click', () => {
-//   document.querySelector('.randomComboBox').style.display = 'none';
-//   document.querySelector('.start-screen').style.display = 'block';
-// });

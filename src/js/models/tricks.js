@@ -92,7 +92,7 @@ export const transitions = [
   'round carry-through',
 
   'reverse pop',
-  'irregular swing reverse pop',
+  'right first reverse pop',
   'frontside pop',
   'inside pop',
   'backside pop',
@@ -143,7 +143,13 @@ export const tricks = {
         'right left redirect',
         'hook',
       ],
-      landings: ['frontside', 'frontside punch', 'hook', 'irregular swing reverse pop'],
+      landings: [
+        'frontside',
+        'frontside punch',
+        'hook',
+        'right first reverse pop',
+        'turbo',
+      ],
     },
 
     // {
@@ -191,7 +197,7 @@ export const tricks = {
 
     {
       name: 'Butterfly Kick',
-      setups: ['turn step', 'hook', 'reverse vanish'],
+      setups: ['turn step', 'hook', 'reverse vanish', 'right first reverse pop'],
       landings: ['reverse vanish', 'outside leg reversal', 'inside pop'],
     },
 
@@ -211,6 +217,7 @@ export const tricks = {
         'inside punch',
         'cheat',
         'right left redirect',
+        'reverse pop',
       ],
       landings: landingPositions.round,
     },
@@ -465,7 +472,7 @@ export const tricks = {
         'left right redirect',
         'skip hook',
         'outside leg hyper',
-        'irregular swing reverse pop',
+        'right first reverse pop',
       ],
       landings: [
         'outside leg hyper',
@@ -473,7 +480,7 @@ export const tricks = {
         'frontside pop',
         'frontside punch',
         'hook',
-        'irregular swing reverse pop'],
+        'right first reverse pop'],
     },
 
     {
@@ -484,7 +491,7 @@ export const tricks = {
         'inside leg reversal',
         'left right redirect',
         'outside leg hyper',
-        'irregular swing reverse pop',
+        'right first reverse pop',
       ],
       landings: landingPositions.round,
     },
@@ -509,7 +516,7 @@ export const tricks = {
         'inside leg reversal',
         'left right redirect',
         'outside leg hyper',
-        'irregular swing reverse pop',
+        'right first reverse pop',
       ],
       landings: landingPositions.round,
     },
