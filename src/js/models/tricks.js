@@ -1,8 +1,9 @@
 // To reduce repetition
 export const takeoffs = {
-  swing: ['back swing', 'skip hook', 'left right redirect'],
+  swing: ['back swing', 'skip hook', 'left right redirect', 'round carry-through'],
   raiz: [
     'right left redirect',
+    'hook carry-through',
     'front swing',
     'semi',
     'hook',
@@ -13,7 +14,7 @@ export const takeoffs = {
     'vanish',
   ],
   backFullTwist: [
-    'invert backside pop', // pop is implied so need to fix this somehow
+    'backside',
     'invert backside punch',
   ],
   insideFullTwist: [
@@ -39,6 +40,7 @@ export const landingPositions = {
     'missleg',
     'skip invert', // skip from eagle into mega for a front swing
     'vanish',
+    'backside',
   ],
 
   round: [
@@ -55,6 +57,7 @@ export const landingPositions = {
     'cheat',
     'reverse vanish',
     'frontside pop',
+    'frontside',
     'hook carry-through',
     'inside leg hyper',
     'outside leg reversal',
@@ -70,6 +73,8 @@ export const takeoffModifiers = [ // if transition is a takeoff mod, prepend new
   'cheat',
   'frontside pop',
   'inside pop',
+  'backside pop',
+  'invert backside pop',
   'swing',
   // "back swing",
   // "front swing",
@@ -77,11 +82,12 @@ export const takeoffModifiers = [ // if transition is a takeoff mod, prepend new
 
 // const landingModifiers = [ // if the transition is a landing, append previous trick with it?
 //   'complete', // backside
-//   'hyper', // inside (mainstream: land on kicking leg)
+//   'hyper', // inside (mainstream: land on inside kicking leg)
 //   'mega', // frontside land left foot first - transitions into Aerial
 //   'turbo', // outside kick landing frontside both feet at same time
 //   'semi', // frontside land right foot first, transitions into Raiz
-//   'gyro', // A vert twist, usually 180 degrees
+//   'frontside gyro', // A vert twist in air after trick, landing frontside
+//   'backside gyro', // landing backside
 //   'rapid round',
 //   'rapid hook',
 // ];
@@ -161,8 +167,7 @@ export const tricks = {
     {
       name: '540 Kick',
       setups: ['cheat', 'vanish', 'right left redirect', 'frontside pop'],
-      landings: [
-        'inside leg hyper',
+      landings: [ // hyper landing is implied
         'reverse vanish',
         'right left redirect',
         'skip hook',
@@ -360,7 +365,7 @@ export const tricks = {
     {
       name: 'Arabian',
       starter: false,
-      setups: ['Aerial', 'Cartwheel', 'invert backside pop', 'invert backside punch'],
+      setups: ['Aerial', 'Cartwheel', 'backside', 'invert backside punch'], // Pop is implied
       landings: ['invert frontside punch', 'hook'],
     },
 
@@ -629,6 +634,7 @@ export const tricks = {
         'reverse vanish',
         'right left redirect',
         'outside leg reversal',
+        'hook carry-through',
         'semi',
       ],
     },
@@ -834,11 +840,11 @@ export const tricks = {
       landings: ['frontside', 'outside', 'vanish', 'hook'],
     },
 
-    {
-      name: 'Slant Gainer',
-      setups: takeoffs.swing,
-      landings: ['inside leg hyper', 'reverse vanish', 'right left redirect'],
-    },
+    // {
+    //   name: 'Slant Gainer',
+    //   setups: takeoffs.swing,
+    //   landings: ['inside leg hyper', 'reverse vanish', 'right left redirect'],
+    // },
 
     {
       name: 'Terada Grab',

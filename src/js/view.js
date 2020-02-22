@@ -1,6 +1,4 @@
 // **************************** UI CONTROLLER *******************************
-import { formatMod } from './models/model';
-
 export const elements = {
   comboContainer: document.getElementById('combo'),
   generateComboBtn: document.getElementById('generateRandomCombo'),
@@ -8,40 +6,26 @@ export const elements = {
 
 // ============================ FUNCTIONS =================================
 
-export function createTrickElement(trick, transition, takeoff) {
+export function createTrickElement(trickObj, transition, takeoff) {
   const trickEl = document.createElement('div');
   trickEl.className = 'trick';
 
-  let fixedTrans;
-  let fixedTakeoff;
-
-  // Prepare transition and takeoff elements
-  if (transition) {
-    if (/cheat|pop|punch$/.test(transition)) {
-      fixedTakeoff = formatMod(transition, trick.name);
-    } else {
-      fixedTrans = formatMod(transition, trick.name);
-    }
-  }
-
-  if (takeoff) {
-    fixedTakeoff = takeoff;
-  }
-
-  if (fixedTrans) {
+  // Make this a helper function - displayTransition()
+  if (transition && transition !== takeoff) {
     const transEl = document.createElement('div');
     transEl.className = 'transition';
-    transEl.textContent = `- ${fixedTrans} -`;
+    transEl.textContent = `- ${transition} -`;
     elements.comboContainer.append(transEl);
-    trickEl.textContent = trick.name;
+    trickEl.textContent = trickObj.name;
     elements.comboContainer.append(trickEl);
   }
 
-  if (fixedTakeoff) {
-    trickEl.textContent = `${fixedTakeoff} ${trick.name}`;
+  // Make this a helper function - displayTakeoff()
+  if (takeoff) {
+    trickEl.innerHTML = `<span class="takeoff">${takeoff}</span> ${trickObj.name}`;
     elements.comboContainer.append(trickEl);
   } else {
-    trickEl.textContent = trick.name;
+    trickEl.textContent = trickObj.name;
     elements.comboContainer.append(trickEl);
   }
 }

@@ -1,17 +1,4 @@
 // ****************** DATA CONTROLLER ********************
-/* TODO: MAKE TRICK OBJECT
-class trick {
-  constructor(transition, takeoffModifier, trickName, landingModifier) {
-    this.transition = transition;
-    this.takeoff= takeoffModifier;
-    this.name = trickName;
-    this.landing = landingModifier;
-  }
-  display() {
-    * Display trick element in the UI
-  }
-}
-*/
 
 import {
   landingPositions,
@@ -36,7 +23,7 @@ export function randomMove(list) {
 }
 
 
-export function generateMod(setups) {
+export function generateTakeoff(setups) {
   if (setups.length) {
     const setupMods = setups.filter(setup => takeoffModifiers.includes(setup));
     return randomMove(setupMods);
@@ -45,7 +32,6 @@ export function generateMod(setups) {
 }
 
 
-// Perhaps make this part of View controller?
 export function formatMod(mod, trickName) {
   if (mod) {
     if (/^(vanish|missleg|reverse pop|cheat|hook|wrap)$/.test(mod)) return mod;
@@ -59,10 +45,10 @@ export function formatMod(mod, trickName) {
 }
 
 
-export function handleHook(transition, trick) {
+export function handleHook(transition, curTrick) {
   if (transition === 'hook') {
-    const possibleTakeoffs = trick.setups.filter(setup => landingPositions.hook.includes(setup));
-    return generateMod(possibleTakeoffs);
+    const possibleTakeoffs = curTrick.setups.filter(setup => landingPositions.hook.includes(setup));
+    return generateTakeoff(possibleTakeoffs);
   }
   return undefined;
 }
@@ -98,10 +84,10 @@ export function generateTrick(level, prevTrick) {
 }
 
 
-export function generateTransition(prevTrick, current) {
-  if (current.setups) {
+export function generateTransition(prevTrickLandings, currentTrickSetups) {
+  if (currentTrickSetups) {
     // Filter current trick's setups for ones that match previous trick's landings
-    const matches = current.setups.filter(setup => prevTrick.landings.includes(setup));
+    const matches = currentTrickSetups.filter(setup => prevTrickLandings.includes(setup));
 
     if (matches.length > 0) {
       // Cross check matches with transitions list
