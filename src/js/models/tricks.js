@@ -376,19 +376,6 @@ export const tricks = {
       setups: ['Aerial', 'Cartwheel', 'backside', 'invert backside punch'], // Pop is implied
       landings: ['invert frontside punch', 'hook'],
     },
-
-    // {
-    //   name: 'Cart Arabian',
-    //   starter: false,
-    //   setups: takeoffs.cartwheel,
-    //   landings: ['invert frontside punch', 'hook'],
-    // },
-
-    // {
-    //   name: 'Front Flip',
-    //   setups: ['invert frontside punch', 'invert backside punch'],
-    //   landings: ['invert frontside punch', 'reverse vanish'],
-    // },
   ],
 
   // *** BEGINNER ***
@@ -544,6 +531,7 @@ export const tricks = {
     //   setups: ['vanish', 'hook carry-through', 'right left redirect'], // cheat is implied
     //   landings: landingPositions.round,
     // },
+
     {
       name: 'Triple Kick',
       setups: [

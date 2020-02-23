@@ -1,16 +1,8 @@
 // ****************** DATA CONTROLLER ********************
 
 import {
-  landingPositions,
   takeoffModifiers,
-  transitions,
 } from './tricks';
-
-
-export function generateLevel(max) {
-  const random = Math.floor(Math.random() * max + 1);
-  return `level${random}`;
-}
 
 
 export function randomMove(list) {
@@ -42,79 +34,4 @@ export function formatMod(mod, trickName) {
     if (isTrans) return mod.split(' ').pop();
   }
   return undefined;
-}
-
-
-export function handleHook(transition, curTrick) {
-  if (transition === 'hook') {
-    const possibleTakeoffs = curTrick.setups.filter(setup => landingPositions.hook.includes(setup));
-    return generateTakeoff(possibleTakeoffs);
-  }
-  return undefined;
-}
-
-
-export function handleTakeoff(transition, takeoff, trick) {
-  if (!takeoff) {
-    if (takeoffModifiers.includes(transition)) return formatMod(transition, trick.name);
-  }
-  if (takeoffModifiers.includes(takeoff)) return formatMod(takeoff, trick.name);
-  return undefined;
-}
-
-
-// *** CORE ALGORITHM ***
-export function generateTrick(level, prevTrick) {
-  let selectedTrick;
-
-  if (prevTrick) {
-    // Filter list for tricks that have a setup that matches at least one landing of prevTrick
-    const possibleTricks = level.filter(trick => {
-      const match = trick.setups.some(setup => prevTrick.landings.includes(setup));
-      // Or if prevTrick itself is a setup for new trick
-      return match || trick.setups.includes(prevTrick.name);
-    });
-    // Pick random trick object from list
-    selectedTrick = randomMove(possibleTricks);
-  } else {
-    selectedTrick = randomMove(level);
-  }
-
-  return selectedTrick;
-}
-
-
-export function generateTransition(prevTrickLandings, currentTrickSetups) {
-  if (currentTrickSetups) {
-    // Filter current trick's setups for ones that match previous trick's landings
-    const matches = currentTrickSetups.filter(setup => prevTrickLandings.includes(setup));
-
-    if (matches.length > 0) {
-      // Cross check matches with transitions list
-      const possibleTransitions = transitions.filter(trans => matches.includes(trans));
-      if (possibleTransitions.length > 1) {
-        // Pick random transition from possible transition list
-        return possibleTransitions[Math.floor(Math.random() * possibleTransitions.length)];
-      }
-      if (possibleTransitions.length === 0) {
-        return undefined;
-      }
-      return possibleTransitions[0];
-    }
-  }
-  return undefined;
-}
-
-
-export function generateLastTrick(level, prevTrick) {
-  const possibleTricks = level.filter(trick => {
-    const match = trick.setups.some(setup => prevTrick.landings.includes(setup));
-    return (match && !trick.notFinisher)
-      || (trick.setups.includes(prevTrick.name) && !trick.notFinisher);
-  });
-
-  // Pick random trick object from list
-  const trick = randomMove(possibleTricks);
-  if (!trick) return { name: 'Finishing Trick' };
-  return trick;
 }
