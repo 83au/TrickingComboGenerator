@@ -4,9 +4,6 @@ import * as Model from './models/model';
 import Trick from './models/Trick';
 import * as View from './view';
 
-// TESTING
-import * as Data from './models/tricks';
-
 
 // =========== EVENT LISTENERS ============
 View.elements.generateComboBtn.onclick = generateCombo;
