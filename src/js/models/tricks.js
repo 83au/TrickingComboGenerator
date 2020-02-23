@@ -373,7 +373,13 @@ export const tricks = {
     {
       name: 'Arabian',
       starter: false,
-      setups: ['Aerial', 'Cartwheel', 'backside', 'invert backside punch'], // Pop is implied
+      setups: [
+        'Aerial',
+        'Cartwheel',
+        'backside',
+        'invert backside punch',
+        'invert backside pop',
+      ],
       landings: ['invert frontside punch', 'hook'],
     },
   ],
@@ -673,7 +679,7 @@ export const tricks = {
     {
       name: 'Arabian Scissor Swipe',
       starter: false,
-      setups: ['invert backside pop', 'Aerial', 'Cartwheel'],
+      setups: ['invert backside pop', 'invert backside punch', 'Aerial', 'Cartwheel'],
       landings: ['frontside pop', 'hook'],
     },
 

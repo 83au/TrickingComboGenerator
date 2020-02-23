@@ -9,6 +9,9 @@ export default class Trick {
   }
 
 
+  // TODO: GENERATE FIRST TRICK
+
+
   generateTrick(prevTrick) {
     if (prevTrick) {
       // Filter list for tricks that have a setup that matches at least one landing of prevTrick
