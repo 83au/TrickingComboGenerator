@@ -24,7 +24,6 @@ View.elements.generateComboBtn.onclick = generateCombo;
 
 function generateCombo() {
   console.clear();
-
   View.clearContainer(View.elements.comboContainer);
 
   const trick1 = new Trick();

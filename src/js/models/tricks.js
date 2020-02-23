@@ -26,7 +26,6 @@ export const takeoffs = {
     'reverse vanish',
     'inside leg reversal',
     'Arabian',
-    'Cart Arabian',
     'hook',
     'turn step',
     'step behind',
@@ -235,20 +234,6 @@ export const tricks = {
       landings: ['backside', 'backside pop'],
     },
 
-    // {
-    //   name: 'hook',
-    //   notFinisher: true,
-    //   setups: ['inside', 'frontside', 'right left redirect', 'vanish'],
-    //   landings: landingPositions.hook,
-    // },
-
-    // {
-    //   name: 'Jump Round',
-    //   notFinisher: true,
-    //   setups: ['backside'], // pop is implied
-    //   landings: landingPositions.round,
-    // },
-
     {
       name: 'Narabong',
       setups: ['hook carry-through', 'outside leg reversal', 'right left redirect', 'reverse pop'],
@@ -280,7 +265,7 @@ export const tricks = {
         'frontside pop',
         'hook',
         'cheat',
-      ], // cheat is implied
+      ],
       landings: landingPositions.round,
     },
 
@@ -295,8 +280,6 @@ export const tricks = {
       landings: landingPositions.hook,
     },
 
-    // Flare Kick ?
-
     // TRANSITION TRICKS
     {
       name: 'Blaster Scoot',
@@ -309,9 +292,7 @@ export const tricks = {
       name: 'Cartwheel',
       notFinisher: true,
       setups: takeoffs.cartwheel,
-      landings: [
-        'inside pop',
-      ],
+      landings: ['inside'],
     },
 
     {
@@ -373,7 +354,7 @@ export const tricks = {
     // Flips & Twists
     {
       name: 'Arabian',
-      starter: false,
+      notStarter: true,
       setups: [
         'Aerial',
         'Cartwheel',
@@ -397,7 +378,7 @@ export const tricks = {
 
     // {
     //   name: '540 Gyro',
-    //   starter: false,
+    //   notStarter: true,
     //   setups: ['cheat', 'vanish', 'right left redirect'],
     //   landings: ['outside', 'backside punch'],
     // },
@@ -574,7 +555,7 @@ export const tricks = {
 
     {
       name: 'Coin Drop',
-      starter: false,
+      notStarter: true,
       notFinisher: true,
       setups: [
         'vanish',
@@ -655,7 +636,7 @@ export const tricks = {
 
     {
       name: 'Valdez',
-      starter: false,
+      notStarter: true,
       notFinisher: true,
       setups: ['invert backside pop', 'invert backside punch', 'back swing'],
       landings: ['invert backside pop', 'invert backside punch', 'back swing'],
@@ -679,7 +660,7 @@ export const tricks = {
 
     {
       name: 'Arabian Scissor Swipe',
-      starter: false,
+      notStarter: true,
       setups: ['invert backside pop', 'invert backside punch', 'Aerial', 'Cartwheel'],
       landings: ['frontside pop', 'hook'],
     },
@@ -763,7 +744,7 @@ export const tricks = {
 
     {
       name: 'Donut Boy',
-      starter: false,
+      notStarter: true,
       setups: ['back swing', 'skip hook', 'j step', 'pivot step'],
       landings: ['frontside', 'frontside punch', 'hook'],
     },
@@ -776,7 +757,6 @@ export const tricks = {
 
     {
       name: 'Flash Kick',
-      starter: false,
       setups: ['backside', 'invert backside punch'], // Pop is implied
       landings: [
         'inside pop',
@@ -789,7 +769,6 @@ export const tricks = {
 
     {
       name: 'Full Hyper',
-      starter: false,
       setups: takeoffs.insideFullTwist,
       landings: [
         'inside leg hyper',
@@ -802,14 +781,12 @@ export const tricks = {
 
     {
       name: 'Full Round',
-      starter: false,
       setups: takeoffs.insideFullTwist,
       landings: landingPositions.round,
     },
 
     {
       name: 'Full Swipe',
-      starter: false,
       setups: takeoffs.insideFullTwist,
       landings: [
         'inside leg hyper',
@@ -821,7 +798,6 @@ export const tricks = {
 
     {
       name: 'Full Twist',
-      starter: false,
       setups: takeoffs.insideFullTwist,
       landings: landingPositions.eagle,
     },
@@ -870,7 +846,7 @@ export const tricks = {
 
     {
       name: 'Rocketboii',
-      starter: false,
+      notStarter: true,
       setups: ['Round Off'],
       landings: ['backside', 'invert backside punch'],
     },
@@ -889,6 +865,7 @@ export const tricks = {
 
     {
       name: 'Terada Grab',
+      notStarter: true,
       starter: false,
       setups: ['invert backside pop', 'invert backside punch'],
       landings: ['reverse vanish', 'right left redirect', 'hook', 'cheat'],

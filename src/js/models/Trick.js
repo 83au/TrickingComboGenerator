@@ -8,14 +8,11 @@ export default class Trick {
     this.level = `level${random}`;
   }
 
-
-  // TODO: GENERATE FIRST TRICK
-
-
   generateTrick(prevTrick) {
+    let possibleTricks;
     if (prevTrick) {
       // Filter list for tricks that have a setup that matches at least one landing of prevTrick
-      const possibleTricks = Data.tricks[this.level].filter(trick => {
+      possibleTricks = Data.tricks[this.level].filter(trick => {
         const match = trick.setups.some(setup => prevTrick.landings.includes(setup));
         // Or if prevTrick itself is a setup for new trick
         return match || trick.setups.includes(prevTrick.name);
@@ -23,7 +20,8 @@ export default class Trick {
       // Pick random trick object from list
       this.trickObj = Model.randomMove(possibleTricks);
     } else {
-      this.trickObj = Model.randomMove(Data.tricks[this.level]);
+      possibleTricks = Data.tricks[this.level].filter(trick => !trick.notStarter);
+      this.trickObj = Model.randomMove(possibleTricks);
     }
   }
 
