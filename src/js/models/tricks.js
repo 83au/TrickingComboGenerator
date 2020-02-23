@@ -279,6 +279,7 @@ export const tricks = {
         'reverse pop',
         'frontside pop',
         'hook',
+        'cheat',
       ], // cheat is implied
       landings: landingPositions.round,
     },
@@ -317,7 +318,7 @@ export const tricks = {
       name: 'Macaco',
       notFinisher: true,
       setups: ['backside'], // Pop is implied
-      landings: landingPositions.eagle.concat(['reverse vanish', 'right left redirect']),
+      landings: ['frontside', 'right left redirect', 'outside leg reversal', 'reverse vanish'],
     },
 
     {

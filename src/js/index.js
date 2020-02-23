@@ -4,6 +4,9 @@ import * as Model from './models/model';
 import Trick from './models/Trick';
 import * as View from './view';
 
+// TESTING
+import * as Data from './models/tricks';
+
 
 // =========== EVENT LISTENERS ============
 View.elements.generateComboBtn.onclick = generateCombo;
@@ -32,7 +35,7 @@ function generateCombo() {
   trick1.generateTrick();
   trick1.setName();
   trick1.takeoff = Model.generateTakeoff(trick1.trickObj.setups);
-  trick1.handleTakeoff(null, trick1.takeoff, trick1);
+  trick1.handleTakeoff();
   View.displayTrick(trick1);
   View.createConnector();
 
@@ -58,9 +61,7 @@ function generateCombo() {
   trick3.generateTransition(trick2.trickObj.landings);
   trick3.handleHook();
   trick3.handleTakeoff();
-  console.log(trick3.transition);
   trick3.transition = Model.formatMod(trick3.transition, trick3.name);
-  console.log(trick3.transition);
   View.displayTrick(trick3);
   View.createConnector();
 

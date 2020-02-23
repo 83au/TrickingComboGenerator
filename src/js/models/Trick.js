@@ -54,11 +54,11 @@ export default class Trick {
       if (matches.length > 0) {
         // Cross check matches with transitions list
         const possibleTransitions = Data.transitions.filter(trans => matches.includes(trans));
+
         if (possibleTransitions.length > 1) {
           // Pick random transition from possible transition list
           this.transition = Model.randomMove(possibleTransitions);
-        }
-        if (possibleTransitions.length === 0) {
+        } else if (possibleTransitions.length === 0) {
           this.transition = undefined;
         } else {
           [this.transition] = possibleTransitions;
