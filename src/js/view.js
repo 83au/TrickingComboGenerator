@@ -7,7 +7,10 @@ export const elements = {
 
 
 function displayTransition(trick, trickEl) {
-  if (trick.transition && trick.transition !== trick.takeoff) {
+  const notTakeoff = trick.transition !== trick.takeoff;
+  const notLanding = trick.transition !== trick.prevLanding;
+
+  if (trick.transition && notTakeoff && notLanding) {
     const transEl = document.createElement('div');
     transEl.className = 'transition';
     transEl.textContent = `- ${trick.transition} -`;
@@ -27,11 +30,33 @@ function displayTakeoff(trick, trickEl) {
   }
 }
 
+function displayLanding(landing, trickEl) {
+  console.log(landing);
+  if (landing) {
+    const landingEl = document.createElement('span');
+    landingEl.className = 'landing';
+    landingEl.innerHTML = `&nbsp;${landing}`;
+    trickEl.append(landingEl);
+  }
+}
+
+// function displayLanding(landing) {
+//   if (landing) {
+//     const landingEl = document.createElement('span');
+//     landingEl.className = 'landing';
+//     landingEl.innerHTML = `&nbsp;${landing}`;
+//     const trickList = document.querySelectorAll('.trick');
+//     const prevTrickEl = trickList[trickList.length - 1];
+//     prevTrickEl.append(landingEl);
+//   }
+// }
+
 export function displayTrick(trick) {
   const trickEl = document.createElement('div');
   trickEl.className = 'trick';
-  displayTransition(trick, trickEl);
   displayTakeoff(trick, trickEl);
+  displayLanding(trick.landing, trickEl);
+  displayTransition(trick, trickEl);
 }
 
 
