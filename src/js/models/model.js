@@ -24,11 +24,11 @@ export function generateTakeoff(setups) {
 }
 
 
-export function formatMod(mod, trickName) {
+export function formatMod(mod) {
   if (mod) {
     if (/^(vanish|missleg|reverse pop|cheat|hook|wrap)$/.test(mod)) return mod;
     if (/reverse pop$/.test(mod)) return 'reverse pop';
-    if (mod.startsWith('skip')) return trickName === '900 Kick' ? 'skip wrap' : 'skip';
+    if (mod.startsWith('skip')) return 'skip';
 
     const isTrans = /(pop|punch|hyper|vanish|reversal|redirect|carry-through)$/.test(mod);
     if (isTrans) return mod.split(' ').pop();

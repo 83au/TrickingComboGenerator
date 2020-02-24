@@ -81,6 +81,9 @@ export default class Trick {
       if (Data.takeoffModifiers.includes(this.transition)) {
         this.takeoff = Model.formatMod(this.transition, this.name);
       }
+      if (this.transition === 'skip round' && this.name === '900 Kick') {
+        this.takeoff = 'wrap';
+      }
     }
     if (Data.takeoffModifiers.includes(this.takeoff)) {
       this.takeoff = Model.formatMod(this.takeoff, this.name);

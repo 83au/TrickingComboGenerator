@@ -76,6 +76,7 @@ export const takeoffModifiers = [ // if transition is a takeoff mod, prepend new
   'backside pop',
   'invert backside pop',
   'swing',
+  'wrap',
   // "back swing",
   // "front swing",
 ];
@@ -358,7 +359,6 @@ export const tricks = {
       setups: [
         'Aerial',
         'Cartwheel',
-        'backside',
         'invert backside punch',
         'invert backside pop',
       ],
@@ -466,7 +466,12 @@ export const tricks = {
         // 'right left redirect', redirect is implied
         'hook',
       ],
-      landings: ['inside leg hyper', 'reverse vanish', 'right left redirect', 'skip hook'],
+      landings: [
+        'inside leg hyper',
+        'reverse vanish',
+        'right left redirect',
+        'skip hook',
+      ],
     },
 
     {
@@ -476,7 +481,7 @@ export const tricks = {
     },
 
     {
-      name: 'Swing 360 Wheel Kick', // hyper and turbo variations are implied
+      name: 'Swing 360 Wheel Kick',
       setups: [
         'back swing',
         'round carry-through',
@@ -492,7 +497,9 @@ export const tricks = {
         'frontside pop',
         'frontside punch',
         'hook',
-        'right first reverse pop'],
+        'right first reverse pop',
+        'turbo',
+      ],
     },
 
     {
