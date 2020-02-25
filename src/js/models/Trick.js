@@ -9,18 +9,18 @@ export default class Trick {
   }
 
   generateTrick(prevTrick) {
-    let landing;
     let possibleTricks;
 
     if (prevTrick) {
-      const isLandingMod = Data.landingModifiers.includes(prevTrick.landing);
-      // Adjust if landing modifier
-      if (isLandingMod && Data.landingPositions[prevTrick.landing]) {
-        landing = Model.randomMove(Data.landingPositions[prevTrick.landing]);
-        this.transition = landing;
-      } else {
-        landing = prevTrick.landing;
-      }
+      const landing = Model.adjustForLandingMod(prevTrick, this);
+      // const isLandingMod = Data.landingModifiers.includes(prevTrick.landing);
+      // // Adjust if landing modifier
+      // if (isLandingMod && Data.landingPositions[prevTrick.landing]) {
+      //   landing = Model.randomMove(Data.landingPositions[prevTrick.landing]);
+      //   this.transition = landing;
+      // } else {
+      //   landing = prevTrick.landing;
+      // }
 
       console.log(landing);
 
@@ -50,74 +50,93 @@ export default class Trick {
   }
 
 
-  generateLastTrick(prevTrick) {
-    let landing;
-    let possibleTricks;
+  // generateLastTrick(prevTrick) {
+  //   let possibleTricks;
 
-    const isLandingMod = Data.landingModifiers.includes(prevTrick.landing);
+  //   const landing = Model.adjustForLandingMod(prevTrick, this);
+  //   // const isLandingMod = Data.landingModifiers.includes(prevTrick.landing);
+  //   // // Adjust if landing modifier
+  //   // if (isLandingMod && Data.landingPositions[prevTrick.landing]) {
+  //   //   landing = Model.randomMove(Data.landingPositions[prevTrick.landing]);
+  //   //   this.transition = landing;
+  //   // } else {
+  //   //   landing = prevTrick.landing;
+  //   // }
 
-    // Adjust if landing modifier
-    if (isLandingMod && Data.landingPositions[prevTrick.landing]) {
-      landing = Model.randomMove(Data.landingPositions[prevTrick.landing]);
-      this.transition = landing;
-    } else {
-      landing = prevTrick.landing;
-    }
+  //   console.log(landing);
 
-    console.log(landing);
+  //   possibleTricks = Data.tricks[this.level].filter(trick => {
+  //     const match = trick.setups.some(setup => setup === landing);
+  //     // Does it match and can be a finisher?
+  //     if (match && !trick.notFinisher) {
+  //       return true;
+  //     } if ((trick.setups.includes(prevTrick.name) && !trick.notFinisher)) {
+  //       this.transition = null;
+  //       return true;
+  //     }
+  //     return undefined;
+  //   });
 
-    possibleTricks = Data.tricks[this.level].filter(trick => {
-      const match = trick.setups.some(setup => setup === landing);
-      // Does it match and can be a finisher?
-      if (match && !trick.notFinisher) {
-        return true;
-      } if ((trick.setups.includes(prevTrick.name) && !trick.notFinisher)) {
-        this.transition = null;
-        return true;
-      }
-      return undefined;
-    });
+  //   console.log(possibleTricks);
 
-    console.log(possibleTricks);
+  //   // Make adjustment if no tricks on that list match
+  //   if (!possibleTricks.length) {
+  //     this.level = this.level === 'level1' ? 'level2' : 'level1';
+  //     possibleTricks = Data.tricks[this.level].filter(trick => {
+  //       const match = trick.setups.some(setup => setup === landing);
+  //       // Does it match and can be a finisher?
+  //       if (match && !trick.notFinisher) {
+  //         return true;
+  //       } if ((trick.setups.includes(prevTrick.name) && !trick.notFinisher)) {
+  //         this.transition = null;
+  //         return true;
+  //       }
+  //       return false;
+  //     });
+  //   }
 
-    // Make adjustment if no tricks on that list match
-    if (!possibleTricks.length) {
-      this.level = 'level2';
-      possibleTricks = Data.tricks[this.level].filter(trick => {
-        const match = trick.setups.some(setup => setup === landing);
-        // Does it match and can be a finisher?
-        if (match && !trick.notFinisher) {
-          return true;
-        } if ((trick.setups.includes(prevTrick.name) && !trick.notFinisher)) {
-          this.transition = null;
-          return true;
-        }
-        return undefined;
-      });
-    }
-    // Choose random trick from this list
-    this.trickObj = Model.randomMove(possibleTricks);
-    if (!this.trickObj) this.trickObj = { name: 'Finishing Trick' };
-  }
+  //   // CAREFUL, THIS CAN CAUSE MAXIMUM CALL STACK EXCEEDING IF NO MATCHES IN ANY LEVEL
+  //   // if (!possibleTricks.length) {
+  //   //   possibleTricks = Model.reFilter(possibleTricks, this, landing, prevTrick);
+  //   //   console.log('REFILTERED POSSIBLE TRICKS');
+  //   // }
+
+
+  //   // Choose random trick from this list
+  //   this.trickObj = Model.randomMove(possibleTricks);
+  //   if (!this.trickObj) {
+  //     this.trickObj = {
+  //       name: 'No matching trick',
+  //       setups: ['backside', 'inside', 'frontside'],
+  //     };
+  //   }
+  // }
+
 
   setName() {
     this.name = this.trickObj.name;
   }
 
+
   generateTransition(prevTrickLanding) {
     const notLandingMod = !Data.landingModifiers.includes(prevTrickLanding);
-    // If current trick already as a transition property
+    console.log(notLandingMod);
+
+    // If current trick already has a transition property
     if (this.transition) {
       // If the current transition property is not on the transitions list
       if (!Data.transitions.includes(this.transition)) {
         // Then it is not a transition
         this.transition = null;
       }
+    } else if (!this.trickObj.setups.includes(prevTrickLanding)) {
+      this.transition = null;
     } else if (Data.transitions.includes(prevTrickLanding) && notLandingMod) {
       this.transition = prevTrickLanding;
     } else {
       this.transition = null;
     }
+    console.log(this.transition);
   }
 
 

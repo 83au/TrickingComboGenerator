@@ -14,7 +14,8 @@ export const takeoffs = {
     'vanish',
   ],
   backFullTwist: [
-    'backside',
+    'backside pop',
+    'invert backside pop',
     'invert backside punch',
   ],
   insideFullTwist: [
@@ -35,12 +36,12 @@ export const takeoffs = {
 export const landingPositions = {
   eagle: [
     'invert backside pop',
-    'back swing',
     'missleg',
     'skip invert', // skip from eagle into mega for a front swing
     'vanish',
     'backside',
     'hyper',
+    'back swing',
   ],
 
   round: [
@@ -66,7 +67,6 @@ export const landingPositions = {
 
   complete: [
     'invert backside pop',
-    'back swing',
     'missleg',
     'skip invert', // skip from eagle into mega for a front swing
     'vanish',
@@ -112,7 +112,7 @@ export const landingPositions = {
     'reverse vanish',
     'frontside pop',
     'frontside',
-    'hook carry-through', 'hyper',
+    'hook carry-through',
     'outside leg reversal',
     'skip hook', // skip from hook or round into jstep
   ],
@@ -159,6 +159,7 @@ export const transitions = [
   'invert backside pop',
   'frontside punch',
   'backside punch',
+  'inside punch',
   'invert frontside punch',
   'invert backside punch',
 
@@ -214,9 +215,7 @@ export const tricks = {
       ],
       landings: [
         'frontside',
-        'frontside punch',
         'hook',
-        'right first reverse pop',
         'turbo',
         'complete',
         'gyro backside', // Not sure if this should be backside or front
@@ -263,7 +262,12 @@ export const tricks = {
     {
       name: 'Compasso (td hook)',
       notFinisher: true,
-      setups: ['inside', 'frontside', 'Tornado Kick'],
+      setups: [
+        'inside',
+        'frontside',
+        'Tornado Kick',
+        'outside leg reversal',
+      ],
       landings: landingPositions.hook,
     },
 
@@ -419,7 +423,12 @@ export const tricks = {
         'invert backside punch',
         'invert backside pop',
       ],
-      landings: ['invert frontside punch', 'hook', 'semi', 'mega'],
+      landings: [
+        'invert frontside punch',
+        'hook',
+        'semi',
+        'mega',
+      ],
     },
 
     {
@@ -503,7 +512,7 @@ export const tricks = {
 
     {
       name: 'Backside 900',
-      setups: ['backside', 'backside punch', 'backside pop'],
+      setups: ['backside punch', 'backside pop'],
       landings: landingPositions.round.concat(['rapid hook']),
     },
 
@@ -528,7 +537,7 @@ export const tricks = {
         'hook carry-through',
         'hook',
       ],
-      landings: landingPositions.hook.concat(['semi', 'reverse vanish']),
+      landings: landingPositions.hook.concat(['reverse vanish']),
     },
 
     {
@@ -567,9 +576,7 @@ export const tricks = {
       landings: [
         'vanish',
         'frontside pop',
-        'frontside punch',
         'hook',
-        'right first reverse pop',
         'turbo',
         'gyro backside',
       ],
@@ -639,7 +646,6 @@ export const tricks = {
         'vanish',
         'reverse pop',
         'hook carry-through',
-        'Butterfly Kick',
         'skip round',
       ],
       landings: ['cheat', 'hook'],
@@ -690,19 +696,24 @@ export const tricks = {
     {
       name: 'Sideswipe',
       setups: takeoffs.raiz,
-      landings: [
-        'hyper',
+      landings: [ // hyper landing is implied
         'reverse vanish',
         'right left redirect',
         'cheat',
         'skip hook',
+        'semi',
+        'wrap',
       ],
     },
 
     {
       name: 'Suicide Kip Up',
-      setups: ['backside', 'inside'],
-      landings: ['backside punch', 'inside punch', 'hook'],
+      setups: ['backside'],
+      landings: [
+        // 'backside punch',
+        'inside punch',
+        // 'hook'
+      ],
     },
 
     {
@@ -794,7 +805,14 @@ export const tricks = {
     {
       name: 'Butterfly Switch',
       setups: ['hook', 'reverse vanish', 'missleg', 'turn step'],
-      landings: landingPositions.eagle,
+      landings: [
+        'invert backside pop',
+        'back swing',
+        'missleg',
+        'skip invert', // skip from eagle into mega for a front swing
+        'vanish',
+        'backside',
+      ],
     },
 
     {
@@ -824,16 +842,15 @@ export const tricks = {
 
     {
       name: 'Double Leg',
-      setups: ['Tornado', '900 Kick', '360 Wheel Kick'],
-      landings: ['backside', 'backside punch'],
+      setups: ['Tornado', '900 Kick', 'frontside punch', 'invert frontside punch'],
+      landings: ['backside', 'backside punch', 'invert backside punch'],
     },
 
     {
       name: 'Flash Kick',
       setups: ['backside', 'invert backside punch'], // Pop is implied
-      landings: [
+      landings: [ // Hyper is implied
         'inside pop',
-        'hyper',
         'reverse vanish',
         'right left redirect',
         'cheat',
@@ -902,7 +919,7 @@ export const tricks = {
 
     {
       name: 'Loser',
-      setups: ['Webster', 'backside', 'frontside', 'skip invert'],
+      setups: ['Webster', 'backside', 'skip invert'],
       landings: [
         'inside',
         'inside pop',
@@ -930,7 +947,7 @@ export const tricks = {
     {
       name: 'Shuriken Twist',
       setups: ['hook', 'reverse vanish', 'turn step', 'mega'],
-      landings: ['frontside', 'outside', 'vanish', 'hook'],
+      landings: ['frontside', 'vanish', 'hook'],
     },
 
     // {
@@ -950,94 +967,94 @@ export const tricks = {
     {
       name: 'X-Out',
       setups: ['invert backside pop'],
-      landings: ['backside punch', 'inside punch', 'invert backside punch', 'invert inside punch', 'hook'],
+      landings: ['backside punch', 'invert backside punch', 'hook'],
     },
   ],
 
   // INTERMEDIATE
-  level3: [
-    // KICKS
-    // Pop 720 Double
-    // Cheat 9 Double
-    // Cheat 1080
-    // Backside 1080
+  // level3: [
+  //   // KICKS
+  //   // Pop 720 Double
+  //   // Cheat 9 Double
+  //   // Cheat 1080
+  //   // Backside 1080
 
-    // TRANSITION TRICKS
-    // Envergado
-    // Td Raiz Swipe
-    // Td Raiz Whip
+  //   // TRANSITION TRICKS
+  //   // Envergado
+  //   // Td Raiz Swipe
+  //   // Td Raiz Whip
 
-    // FLIPS & TWISTS
-    // Grand Master Swipe
-    // Gainer Scissor Swipe
-    // Snapu Swipe
-    // Takuraba
-    // Tak Full
-    // Tak 9
-    {
-      name: 'Gainer Switch',
-      setups: takeoffs.swing,
-      landings: landingPositions.eagle,
-    },
-    // Shuriken Cork
-    // Hyper Cork
-    // Cork Swipe
-    // Boxcutter
-    // Wrap Full Twist
-    // Tak Full Twist
-    // Full Twist Double Leg
-    // Full Twist Swipe
-    // Full Twist Hyper Hook
-    // Double Full Twist
-    // Hyper Twist
-    // Butterfly Twist Hyper Hook
-    // Btwist dleg
-  ],
+  //   // FLIPS & TWISTS
+  //   // Grand Master Swipe
+  //   // Gainer Scissor Swipe
+  //   // Snapu Swipe
+  //   // Takuraba
+  //   // Tak Full
+  //   // Tak 9
+  //   {
+  //     name: 'Gainer Switch',
+  //     setups: takeoffs.swing,
+  //     landings: landingPositions.eagle,
+  //   },
+  //   // Shuriken Cork
+  //   // Hyper Cork
+  //   // Cork Swipe
+  //   // Boxcutter
+  //   // Wrap Full Twist
+  //   // Tak Full Twist
+  //   // Full Twist Double Leg
+  //   // Full Twist Swipe
+  //   // Full Twist Hyper Hook
+  //   // Double Full Twist
+  //   // Hyper Twist
+  //   // Butterfly Twist Hyper Hook
+  //   // Btwist dleg
+  // ],
 
-  // ADVANCED
-  level4: [
-    // KICKS
-    // Cheat 1260
-    // Hurricane (cheat 1080 triple)
+  // // ADVANCED
+  // level4: [
+  //   // KICKS
+  //   // Cheat 1260
+  //   // Hurricane (cheat 1080 triple)
 
-    // FLIPS & TWISTS
-    // Cheat 720 Twist (Barrel Roll)
-    // Dub Cork
-    // Shuriken Cutter
-    // Dub Btwist
-    // Full Snapu
-    // Double Back Flip
-  ],
+  //   // FLIPS & TWISTS
+  //   // Cheat 720 Twist (Barrel Roll)
+  //   // Dub Cork
+  //   // Shuriken Cutter
+  //   // Dub Btwist
+  //   // Full Snapu
+  //   // Double Back Flip
+  // ],
 
-  // ELITE
-  level5: [
-    // KICKS
-    // Cheat 1440
+  // // ELITE
+  // level5: [
+  //   // KICKS
+  //   // Cheat 1440
 
-    // FLIPS & TWISTS
-    // Cali Roll
-    // Triple Full Twist
-    // Cork Snapu
-    // Cork Dleg Twist
-    // Triple Cork
-    // Shurikane
-  ],
+  //   // FLIPS & TWISTS
+  //   // Cali Roll
+  //   // Triple Full Twist
+  //   // Cork Snapu
+  //   // Cork Dleg Twist
+  //   // Triple Cork
+  //   // Shurikane
+  // ],
 
-  // WORLD CLASS
-  level6: [
-    // KICKS
-    // Cheat 1620
+  // // WORLD CLASS
+  // level6: [
+  //   // KICKS
+  //   // Cheat 1620
 
-    // FLIPS & TWISTS
-    {
-      name: 'Cork In Back Out (Snatch Cannon)',
-      finisherOnly: true,
-      setups: ['back swing'],
-      landings: ['backside'],
-    },
-    // Quad Full
-    // Quad Cork
-    // Triple Btwist
-    // Double Gainer
-  ],
+  //   // FLIPS & TWISTS
+  //   {
+  //     name: 'Cork In Back Out (Snatch Cannon)',
+  //     finisherOnly: true,
+  //     setups: ['back swing'],
+  //     landings: ['backside'],
+  //   },
+  //   // Quad Full
+  //   // Quad Cork
+  //   // Triple Btwist
+  //   // Double Gainer
+  // ],
 };

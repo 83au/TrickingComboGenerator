@@ -31,9 +31,12 @@ function generateCombo() {
   const trick1 = new Trick();
   trick1.generateLevel(2);
   trick1.generateTrick();
-  // trick1.level = 'level2';
+
+  // TESTING
+  // trick1.level = 'level1';
   // trick1.trickObj = Data.tricks
-  //   .level2[Data.tricks.level2.findIndex(el => el.name === 'Wackknife')];
+  //   .level1[Data.tricks.level1.findIndex(el => el.name === '360 Wheel Kick')];
+
   trick1.generateLanding();
   console.log(trick1.landing);
 
@@ -84,7 +87,7 @@ function generateCombo() {
   trick4.generateLevel(2);
   console.log(trick4.level);
 
-  trick4.generateLastTrick(trick3);
+  trick4.generateTrick(trick3);
   trick4.setName();
   trick4.generateTransition(trick3.landing);
   // trick4.generateLanding();
