@@ -3,6 +3,7 @@
 import {
   takeoffModifiers,
   landingModifiers,
+  tricks,
 } from './tricks';
 
 
@@ -43,4 +44,19 @@ export function formatMod(mod) {
 export function chooseLanding(landings) {
   const possibleLandings = landings.filter(landing => landingModifiers.includes(landing));
   return randomMove(possibleLandings);
+}
+
+
+export function filterTrickList(obj, landing, prevTrick) {
+  return tricks[obj.level].filter(trick => {
+    const match = trick.setups.includes(landing);
+    if (match) {
+      return true;
+    }
+    if (trick.setups.includes(prevTrick.trickObj.name)) {
+      obj.transition = null;
+      return true;
+    }
+    return undefined;
+  });
 }
