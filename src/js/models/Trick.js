@@ -27,6 +27,12 @@ export default class Trick {
         possibleTricks = Model.filterTrickList(this, landing, prevTrick);
       }
 
+      //   CAREFUL, THIS CAN CAUSE MAXIMUM CALL STACK EXCEEDING IF NO MATCHES IN ANY LEVEL
+      // if (!possibleTricks.length) {
+      //   possibleTricks = Model.reFilter(possibleTricks, this, landing, prevTrick);
+      //   console.log('REFILTERED POSSIBLE TRICKS');
+      // }
+
       // Choose random trick from this list
       this.trickObj = Model.randomMove(possibleTricks);
 
@@ -45,69 +51,6 @@ export default class Trick {
   generateLanding() {
     this.landing = Model.randomMove(this.trickObj.landings);
   }
-
-
-  // generateLastTrick(prevTrick) {
-  //   let possibleTricks;
-
-  //   const landing = Model.adjustForLandingMod(prevTrick, this);
-  //   // const isLandingMod = Data.landingModifiers.includes(prevTrick.landing);
-  //   // // Adjust if landing modifier
-  //   // if (isLandingMod && Data.landingPositions[prevTrick.landing]) {
-  //   //   landing = Model.randomMove(Data.landingPositions[prevTrick.landing]);
-  //   //   this.transition = landing;
-  //   // } else {
-  //   //   landing = prevTrick.landing;
-  //   // }
-
-  //   console.log(landing);
-
-  //   possibleTricks = Data.tricks[this.level].filter(trick => {
-  //     const match = trick.setups.some(setup => setup === landing);
-  //     // Does it match and can be a finisher?
-  //     if (match && !trick.notFinisher) {
-  //       return true;
-  //     } if ((trick.setups.includes(prevTrick.name) && !trick.notFinisher)) {
-  //       this.transition = null;
-  //       return true;
-  //     }
-  //     return undefined;
-  //   });
-
-  //   console.log(possibleTricks);
-
-  //   // Make adjustment if no tricks on that list match
-  //   if (!possibleTricks.length) {
-  //     this.level = this.level === 'level1' ? 'level2' : 'level1';
-  //     possibleTricks = Data.tricks[this.level].filter(trick => {
-  //       const match = trick.setups.some(setup => setup === landing);
-  //       // Does it match and can be a finisher?
-  //       if (match && !trick.notFinisher) {
-  //         return true;
-  //       } if ((trick.setups.includes(prevTrick.name) && !trick.notFinisher)) {
-  //         this.transition = null;
-  //         return true;
-  //       }
-  //       return false;
-  //     });
-  //   }
-
-  //   // CAREFUL, THIS CAN CAUSE MAXIMUM CALL STACK EXCEEDING IF NO MATCHES IN ANY LEVEL
-  //   // if (!possibleTricks.length) {
-  //   //   possibleTricks = Model.reFilter(possibleTricks, this, landing, prevTrick);
-  //   //   console.log('REFILTERED POSSIBLE TRICKS');
-  //   // }
-
-
-  //   // Choose random trick from this list
-  //   this.trickObj = Model.randomMove(possibleTricks);
-  //   if (!this.trickObj) {
-  //     this.trickObj = {
-  //       name: 'No matching trick',
-  //       setups: ['backside', 'inside', 'frontside'],
-  //     };
-  //   }
-  // }
 
 
   setName() {

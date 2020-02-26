@@ -1,3 +1,5 @@
+// ******************************************* DATA *****************************************
+
 // To reduce repetition
 export const takeoffs = {
   swing: ['back swing', 'skip hook', 'left right redirect', 'round carry-through'],
@@ -420,7 +422,15 @@ export const tricks = {
         'semi',
         'skip invert',
       ],
-      landings: ['backside', 'frontside', 'backside pop', 'frontside pop', 'vanish'],
+      landings: [
+        'backside',
+        'frontside',
+        'backside pop',
+        'frontside pop',
+        'vanish',
+        'skip round',
+        'skip invert',
+      ],
     },
 
     {
@@ -435,7 +445,15 @@ export const tricks = {
         'semi',
         'skip invert',
       ],
-      landings: ['backside', 'frontside', 'backside pop', 'frontside pop', 'vanish'],
+      landings: [
+        'backside',
+        'frontside',
+        'backside pop',
+        'frontside pop',
+        'vanish',
+        'skip round',
+        'skip invert',
+      ],
     },
 
     // Flips & Twists
@@ -906,10 +924,9 @@ export const tricks = {
     {
       name: 'Gainer Flash Kick',
       setups: takeoffs.swing,
-      landings: [
+      landings: [ // Hyper is implied
         'inside pop',
         'invert inside pop',
-        'hyper',
         'reverse vanish',
         'right left redirect',
         'cheat',
