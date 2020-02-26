@@ -5,7 +5,7 @@ import {
   landingModifiers,
   landingPositions,
   tricks,
-} from './tricks';
+} from './data';
 
 
 export function randomMove(list) {
@@ -36,8 +36,12 @@ export function formatMod(mod) {
     const isTrans = /(pop|punch|vanish|reversal|redirect|carry-through)$/.test(mod);
     if (isTrans) return mod.split(' ').pop();
 
-    const isLanding = /^(hyper|mega|turbo|semi|gyro frontside|gyro backside|rapid round|rapid hook)$/.test(mod);
-    if (isLanding) return mod.startsWith('gyro') ? 'gyro' : mod;
+    const isLanding = /^(hyper|mega|turbo|semi|gyro frontside|gyro backside|half gyro frontside|half gyro backside|rapid round|rapid hook)$/.test(mod);
+    if (isLanding) {
+      if (mod.startsWith('gyro')) return 'gyro';
+      if (mod.startsWith('half')) return 'half gyro';
+      return mod;
+    }
   }
   return undefined;
 }
@@ -59,7 +63,7 @@ export function filterTrickList(obj, landing, prevTrick) {
 export function adjustForLandingMod(prevTrick, obj) {
   let landing;
   const isLandingMod = landingModifiers.includes(prevTrick.landing);
-  // Adjust if landing modifier
+
   if (isLandingMod && landingPositions[prevTrick.landing]) {
     landing = randomMove(landingPositions[prevTrick.landing]);
     obj.transition = landing;

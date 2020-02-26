@@ -1,5 +1,5 @@
 import * as Model from './model';
-import * as Data from './tricks';
+import * as Data from './data';
 
 
 export default class Trick {
@@ -13,25 +13,16 @@ export default class Trick {
 
     if (prevTrick) {
       const landing = Model.adjustForLandingMod(prevTrick, this);
-      // const isLandingMod = Data.landingModifiers.includes(prevTrick.landing);
-      // // Adjust if landing modifier
-      // if (isLandingMod && Data.landingPositions[prevTrick.landing]) {
-      //   landing = Model.randomMove(Data.landingPositions[prevTrick.landing]);
-      //   this.transition = landing;
-      // } else {
-      //   landing = prevTrick.landing;
-      // }
-
       console.log(landing);
 
       // Filter list for tricks that have at least one setup that matches prevTrick's landing
       possibleTricks = Model.filterTrickList(this, landing, prevTrick);
-
       console.log(possibleTricks);
 
       // Make adjustment if no tricks on that list match
       if (!possibleTricks.length) {
         this.level = 'level2';
+        console.log('SWITCHED LEVEL');
         possibleTricks = Model.filterTrickList(this, landing, prevTrick);
       }
 
@@ -160,9 +151,12 @@ export default class Trick {
         this.takeoff = 'wrap';
         this.transition = 'skip';
       }
-    }
-    if (Data.takeoffModifiers.includes(this.takeoff)) {
-      this.takeoff = Model.formatMod(this.takeoff, this.name);
+    } else if (Data.takeoffModifiers.includes(this.takeoff)) {
+      if (this.takeoff === 'wrap' && !this.transition) {
+        this.takeoff = null;
+      } else {
+        this.takeoff = Model.formatMod(this.takeoff, this.name);
+      }
     }
   }
 
