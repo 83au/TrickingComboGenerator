@@ -16,6 +16,7 @@ export default class Trick {
       console.log(landing);
 
       // Filter list for tricks that have at least one setup that matches prevTrick's landing
+      // or prevTrick is a setup for this trick
       possibleTricks = Model.filterTrickList(this, landing, prevTrick);
       console.log(possibleTricks);
 
@@ -28,6 +29,11 @@ export default class Trick {
 
       // Choose random trick from this list
       this.trickObj = Model.randomMove(possibleTricks);
+
+      // If the prevTrick itself is setup for chosen trick, transition is not needed
+      // if (this.trickObj.setups.includes(prevTrick.trickObj.name)) {
+      //   this.transition = null;
+      // }
     } else {
       // Choose random trick from list
       possibleTricks = Data.tricks[this.level].filter(trick => !trick.notStarter);

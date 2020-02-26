@@ -19,9 +19,7 @@ export const takeoffs = {
     'invert backside punch',
   ],
   insideFullTwist: [
-    'Aerial',
-    'Slant Gainer',
-    'Cartwheel',
+    'invert inside pop',
   ],
   cartwheel: [
     'reverse vanish',
@@ -39,8 +37,8 @@ export const landingPositions = {
     'skip invert', // skip from eagle into mega for a front swing
     'vanish',
     'backside',
-    'hyper',
     'back swing',
+    'hyper',
   ],
 
   round: [
@@ -378,7 +376,7 @@ export const tricks = {
       name: 'Cartwheel',
       notFinisher: true,
       setups: takeoffs.cartwheel,
-      landings: ['inside'],
+      landings: ['inside', 'invert inside pop'],
     },
 
     {
@@ -687,7 +685,7 @@ export const tricks = {
       name: 'Raiz',
       notFinisher: true,
       setups: takeoffs.raiz,
-      landings: landingPositions.eagle,
+      landings: landingPositions.eagle.slice(0, landingPositions.eagle.length - 1),
     },
 
     {
@@ -762,6 +760,7 @@ export const tricks = {
       landings: [
         'inside',
         'inside pop',
+        'invert inside pop',
         'reverse vanish',
         'right left redirect',
         'cheat',
@@ -800,12 +799,6 @@ export const tricks = {
       setups: takeoffs.backFullTwist,
       landings: landingPositions.eagle,
     },
-
-    // {
-    //   name: 'Barani',
-    //   setups: ['invert frontside punch'],
-    //   landings: ['invert backside punch'],
-    // },
 
     {
       name: 'Butterfly Twist',
@@ -915,6 +908,7 @@ export const tricks = {
       setups: takeoffs.swing,
       landings: [
         'inside pop',
+        'invert inside pop',
         'hyper',
         'reverse vanish',
         'right left redirect',
