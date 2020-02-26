@@ -66,7 +66,12 @@ export function adjustForLandingMod(prevTrick, obj) {
 
   if (isLandingMod && landingPositions[prevTrick.landing]) {
     landing = randomMove(landingPositions[prevTrick.landing]);
-    obj.transition = landing;
+    // If chosen landing is not semi or mega
+    if (!(/(semi|mega)/.test(landing))) {
+      obj.transition = landing;
+    } else {
+      obj.transition = null;
+    }
     return landing;
   }
   return prevTrick.landing;

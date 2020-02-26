@@ -26,7 +26,6 @@ export const takeoffs = {
   cartwheel: [
     'reverse vanish',
     'inside leg reversal',
-    'Arabian',
     'hook',
     'turn step',
     'step behind',
@@ -79,6 +78,18 @@ export const landingPositions = {
     'skip hook',
     'wrap',
     'cheat',
+  ],
+
+  mega: [
+    'vanish',
+    'skip round',
+    'mega',
+  ],
+
+  semi: [
+    'reverse vanish',
+    'skip hook',
+    'semi',
   ],
 
   turbo: [
@@ -458,7 +469,6 @@ export const tricks = {
       landings: [
         'frontside',
         'frontside punch',
-        'reverse vanish',
         'semi',
         'mega',
       ],
@@ -583,7 +593,6 @@ export const tricks = {
         'right first reverse pop',
       ],
       landings: [
-        'vanish',
         'frontside pop',
         'hook',
         'turbo',

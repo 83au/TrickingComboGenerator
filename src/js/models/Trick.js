@@ -120,11 +120,18 @@ export default class Trick {
         // Then it is not a transition
         this.transition = null;
       }
+
+      // Otherwise if current trick's setups doesn't contain prevTrickLanding
     } else if (!this.trickObj.setups.includes(prevTrickLanding)) {
+      // Not a transition
       this.transition = null;
+
+      // Otherwise if on transitions list and not a landing Modifier
     } else if (Data.transitions.includes(prevTrickLanding) && notLandingMod) {
+      // It is a transition
       this.transition = prevTrickLanding;
     } else {
+      // Otherwise not a transition
       this.transition = null;
     }
     console.log(this.transition);
@@ -153,7 +160,7 @@ export default class Trick {
       }
     } else if (Data.takeoffModifiers.includes(this.takeoff)) {
       if (this.takeoff === 'wrap' && !this.transition) {
-        this.takeoff = null;
+        this.takeoff = 'cheat';
       } else {
         this.takeoff = Model.formatMod(this.takeoff, this.name);
       }

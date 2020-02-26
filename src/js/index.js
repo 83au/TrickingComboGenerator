@@ -36,7 +36,7 @@ function generateCombo() {
   // TESTING
   // trick1.level = 'level2';
   // trick1.trickObj = Data.tricks
-  //   .level2[Data.tricks.level2.findIndex(el => el.name === '720 Kick')];
+  //   .level2[Data.tricks.level2.findIndex(el => el.name === '900 Kick')];
 
   trick1.generateLanding();
   console.log(trick1.landing);
