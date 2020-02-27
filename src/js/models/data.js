@@ -962,7 +962,7 @@ export const tricks = {
     {
       name: 'Moon Kick',
       setups: takeoffs.swing,
-      landings: landingPositions.hook.concat(['turbo', 'Scoot', 'Master Scoot']),
+      landings: landingPositions.hook.concat(['turbo']),
     },
 
     {
