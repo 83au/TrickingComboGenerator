@@ -51,6 +51,7 @@ export const landingPositions = {
     'skip round', // skip from round kick into wrap or scoot
     'vanish',
     'hook',
+    'outside pop', // for double leg
   ],
 
   hook: [
@@ -62,6 +63,7 @@ export const landingPositions = {
     'hook carry-through',
     'outside leg reversal',
     'skip hook', // skip from hook or round into jstep
+    'hook to scoot',
   ],
 
   complete: [
@@ -136,6 +138,7 @@ export const landingPositions = {
     'hook carry-through',
     'outside leg reversal',
     'skip hook', // skip from hook or round into jstep
+    'hook to scoot',
   ],
 };
 
@@ -147,6 +150,7 @@ export const takeoffModifiers = [ // if transition is a takeoff mod, prepend new
   'cheat',
   'frontside pop',
   'inside pop',
+  'outside pop',
   'backside pop',
   'invert backside pop',
   'swing',
@@ -176,11 +180,13 @@ export const transitions = [
   'right first reverse pop',
   'frontside pop',
   'inside pop',
+  'outside pop',
   'backside pop',
   'invert frontside pop', // for flips
   'invert inside pop',
   'invert backside pop',
   'frontside punch',
+  'outside punch',
   'backside punch',
   'inside punch',
   'invert frontside punch',
@@ -398,7 +404,7 @@ export const tricks = {
     {
       name: 'Scoot',
       notFinisher: true,
-      setups: ['skip round', 'semi'],
+      setups: ['skip round', 'semi', 'hook', 'hook to scoot'],
       landings: landingPositions.eagle,
     },
 
@@ -566,7 +572,7 @@ export const tricks = {
         'hook carry-through',
         'hook',
       ],
-      landings: landingPositions.hook.concat(['reverse vanish']),
+      landings: landingPositions.hook,
     },
 
     {
@@ -695,7 +701,7 @@ export const tricks = {
     {
       name: 'Master Scoot',
       notFinisher: true,
-      setups: ['hook', 'skip round', 'vanish'],
+      setups: ['hook', 'hook to scoot', 'skip round', 'vanish'],
       landings: landingPositions.eagle,
     },
 
@@ -870,13 +876,13 @@ export const tricks = {
 
     {
       name: 'Double Leg',
-      setups: ['Tornado', '900 Kick', 'frontside punch', 'invert frontside punch'],
+      setups: ['outside pop', 'outside punch', 'frontside punch', 'invert frontside punch'],
       landings: ['backside', 'backside punch', 'invert backside punch'],
     },
 
     {
       name: 'Flash Kick',
-      setups: ['backside', 'invert backside punch'], // Pop is implied
+      setups: ['backside pop', 'invert backside pop', 'invert backside punch'], // Pop is implied
       landings: [ // Hyper is implied
         'inside pop',
         'reverse vanish',
@@ -933,12 +939,6 @@ export const tricks = {
       ],
     },
 
-    // {
-    //   name: 'Illusion Kick',
-    //   setups: ['inside', 'reverse vanish', 'reverse pop'],
-    //   landings: ['frontside pop', 'front swing', 'outside leg reversal', 'mega'],
-    // },
-
     {
       name: 'Illusion Twist',
       setups: ['hook', 'reverse vanish', 'hyper'],
@@ -962,7 +962,7 @@ export const tricks = {
     {
       name: 'Moon Kick',
       setups: takeoffs.swing,
-      landings: landingPositions.hook,
+      landings: landingPositions.hook.concat(['turbo', 'Scoot', 'Master Scoot']),
     },
 
     {

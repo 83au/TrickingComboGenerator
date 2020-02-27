@@ -22,7 +22,7 @@ export default class Trick {
 
       // Make adjustment if no tricks on that list match
       if (!possibleTricks.length) {
-        this.level = 'level2';
+        this.level = this.level === 'level1' ? 'level2' : 'level1';
         console.log('SWITCHED LEVEL');
         possibleTricks = Model.filterTrickList(this, landing, prevTrick);
       }
@@ -99,6 +99,13 @@ export default class Trick {
 
   handleTakeoff() {
     if (!this.takeoff) {
+      // * IN CASE THIS TRICK'S SETUPS INCLUDE PREVTRICK NAME (BEST AVOID THIS AS IT CREATES MORE PROBLEMS)
+      // If this trick's setups does not include previous trick's landing
+      // if (prevTrick && this.trickObj.setups.includes(prevTrick.trickObj.name)) {
+      //   this.takeoff = null;
+      //   this.transition = null;
+      // }
+
       if (Data.takeoffModifiers.includes(this.transition)) {
         this.takeoff = Model.formatMod(this.transition, this.name);
         this.transition = null;

@@ -1,11 +1,6 @@
 // ****************** DATA CONTROLLER ********************
 
-import {
-  takeoffModifiers,
-  landingModifiers,
-  landingPositions,
-  tricks,
-} from './data';
+import * as Data from './data';
 
 
 export function randomMove(list) {
@@ -20,7 +15,7 @@ export function randomMove(list) {
 
 export function generateTakeoff(setups) {
   if (setups.length) {
-    const setupMods = setups.filter(setup => takeoffModifiers.includes(setup));
+    const setupMods = setups.filter(setup => Data.takeoffModifiers.includes(setup));
     return randomMove(setupMods);
   }
   return undefined;
@@ -47,13 +42,13 @@ export function formatMod(mod) {
 }
 
 export function chooseLanding(landings) {
-  const possibleLandings = landings.filter(landing => landingModifiers.includes(landing));
+  const possibleLandings = landings.filter(landing => Data.landingModifiers.includes(landing));
   return randomMove(possibleLandings);
 }
 
 
 export function filterTrickList(obj, landing, prevTrick) {
-  return tricks[obj.level].filter(trick => {
+  return Data.tricks[obj.level].filter(trick => {
     const match = trick.setups.includes(landing);
     return match || trick.setups.includes(prevTrick.trickObj.name);
   });
@@ -62,10 +57,10 @@ export function filterTrickList(obj, landing, prevTrick) {
 
 export function adjustForLandingMod(prevTrick, obj) {
   let landing;
-  const isLandingMod = landingModifiers.includes(prevTrick.landing);
+  const isLandingMod = Data.landingModifiers.includes(prevTrick.landing);
 
-  if (isLandingMod && landingPositions[prevTrick.landing]) {
-    landing = randomMove(landingPositions[prevTrick.landing]);
+  if (isLandingMod && Data.landingPositions[prevTrick.landing]) {
+    landing = randomMove(Data.landingPositions[prevTrick.landing]);
     // If chosen landing is not semi or mega
     if (!(/(semi|mega)/.test(landing))) {
       obj.transition = landing;
@@ -91,7 +86,7 @@ export function adjustForLandingMod(prevTrick, obj) {
 
 // export function reFilter(possibleTricks, obj, landing, prevTrick) {
 //   obj.level = chooseNewLevel(tricks);
-//   const newPossibleTricks = tricks[obj.level].filter(trick => {
+//   const newPossibleTricks = Data.tricks[obj.level].filter(trick => {
 //     const match = trick.setups.some(setup => setup === landing);
 //     // Does it match and can be a finisher?
 //     if (match && !trick.notFinisher) {

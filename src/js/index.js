@@ -5,7 +5,7 @@ import Trick from './models/Trick';
 import * as View from './view';
 
 // TESTING
-// import * as Data from './models/data';
+import * as Data from './models/data';
 
 
 // =========== EVENT LISTENERS ============
@@ -36,7 +36,7 @@ function generateCombo() {
   // TESTING
   // trick1.level = 'level2';
   // trick1.trickObj = Data.tricks
-  //   .level2[Data.tricks.level2.findIndex(el => el.name === 'Raiz')];
+  //   .level2[Data.tricks.level2.findIndex(el => el.name === '900 Kick')];
 
   trick1.generateLanding();
   console.log(trick1.landing);
@@ -59,7 +59,7 @@ function generateCombo() {
   trick2.generateTransition(trick1.landing);
   trick2.generateLanding();
   trick2.handleHook();
-  trick2.handleTakeoff();
+  trick2.handleTakeoff(trick1);
   trick2.handleLandingMod();
   trick2.transition = Model.formatMod(trick2.transition);
   View.displayTrick(trick1, trick2);
@@ -76,7 +76,7 @@ function generateCombo() {
   trick3.generateTransition(trick2.landing);
   trick3.generateLanding();
   trick3.handleHook();
-  trick3.handleTakeoff();
+  trick3.handleTakeoff(trick2);
   trick3.handleLandingMod();
   trick3.transition = Model.formatMod(trick3.transition);
   View.displayTrick(trick2, trick3);
@@ -93,7 +93,7 @@ function generateCombo() {
   trick4.generateTransition(trick3.landing);
   // trick4.generateLanding();
   trick4.handleHook();
-  trick4.handleTakeoff();
+  trick4.handleTakeoff(trick3);
   // trick4.handleLandingMod();
   trick4.transition = Model.formatMod(trick4.transition);
   View.displayTrick(trick3, trick4);
