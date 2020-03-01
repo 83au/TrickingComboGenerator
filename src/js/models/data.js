@@ -388,7 +388,7 @@ export const tricks = {
     },
 
     {
-      name: 'Kayden',
+      name: 'Kaydem',
       setups: ['reverse vanish', 'inside'],
       landings: ['back swing', 'backside', 'backside pop', 'invert backside pop', 'vanish'],
     },
