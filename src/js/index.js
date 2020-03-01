@@ -5,21 +5,7 @@ import Trick from './models/Trick';
 import * as View from './view';
 
 // TESTING
-import * as Data from './models/data';
-
-
-// =========== EVENT LISTENERS ============
-View.elements.generateComboBtn.onclick = generateCombo;
-
-// document.getElementById('randomComboOption').addEventListener('click', () => {
-//   document.querySelector('.start-screen').style.display = 'none';
-//   document.querySelector('.randomComboBox').style.display = 'block';
-// });
-
-// document.getElementById('backToChoices').addEventListener('click', () => {
-//   document.querySelector('.randomComboBox').style.display = 'none';
-//   document.querySelector('.start-screen').style.display = 'block';
-// });
+// import * as Data from './models/data';
 
 
 // =============== FUNCTIONS ==================
@@ -36,13 +22,13 @@ function generateCombo() {
   // TESTING
   // trick1.level = 'level2';
   // trick1.trickObj = Data.tricks
-  //   .level2[Data.tricks.level2.findIndex(el => el.name === '900 Kick')];
+  //   .level2[Data.tricks.level2.findIndex(el => el.name === 'Master Scoot')];
 
   trick1.generateLanding();
   console.log(trick1.landing);
 
   trick1.setName();
-  trick1.takeoff = Model.generateTakeoff(trick1.trickObj.setups);
+  trick1.takeoff = Model.chooseFromList(trick1.trickObj.setups, 'takeoffModifiers');
   trick1.handleTakeoff();
   trick1.handleLandingMod();
   View.displayTrick(null, trick1);
@@ -100,3 +86,17 @@ function generateCombo() {
 
   console.log(trick4.name);
 }
+
+
+// =========== EVENT LISTENERS ============
+View.elements.generateComboBtn.onclick = generateCombo;
+
+// document.getElementById('randomComboOption').addEventListener('click', () => {
+//   document.querySelector('.start-screen').style.display = 'none';
+//   document.querySelector('.randomComboBox').style.display = 'block';
+// });
+
+// document.getElementById('backToChoices').addEventListener('click', () => {
+//   document.querySelector('.randomComboBox').style.display = 'none';
+//   document.querySelector('.start-screen').style.display = 'block';
+// });

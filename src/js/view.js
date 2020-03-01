@@ -6,16 +6,16 @@ export const elements = {
 };
 
 
+export function clearContainer() {
+  elements.comboContainer.innerHTML = '';
+}
+
+
 function createConnector() {
   const connector = document.createElement('div');
   connector.className = 'connector';
   connector.innerHTML = '&darr;';
   elements.comboContainer.append(connector);
-}
-
-
-export function clearContainer() {
-  elements.comboContainer.innerHTML = '';
 }
 
 

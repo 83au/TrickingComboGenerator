@@ -13,10 +13,10 @@ export function randomMove(list) {
 }
 
 
-export function generateTakeoff(setups) {
-  if (setups.length) {
-    const setupMods = setups.filter(setup => Data.takeoffModifiers.includes(setup));
-    return randomMove(setupMods);
+export function chooseFromList(list, modifiers) {
+  if (list.length) {
+    const filteredList = list.filter(item => Data[modifiers].includes(item));
+    return randomMove(filteredList);
   }
   return undefined;
 }
@@ -41,17 +41,9 @@ export function formatMod(mod) {
   return undefined;
 }
 
-export function chooseLanding(landings) {
-  const possibleLandings = landings.filter(landing => Data.landingModifiers.includes(landing));
-  return randomMove(possibleLandings);
-}
 
-
-export function filterTrickList(obj, landing, prevTrick) {
-  return Data.tricks[obj.level].filter(trick => {
-    const match = trick.setups.includes(landing);
-    return match || trick.setups.includes(prevTrick.trickObj.name);
-  });
+export function filterTrickList(level, landing) {
+  return Data.tricks[level].filter(trick => trick.setups.includes(landing));
 }
 
 
@@ -69,37 +61,23 @@ export function adjustForLandingMod(prevTrick, obj) {
     }
     return landing;
   }
+
   return prevTrick.landing;
 }
 
+// Recursively search all levels from first to last
+export function searchLevels(level, landing) {
+  // Stopping condition
+  if (level === 'level3') return undefined;
 
-// *** CAREFUL, THESE COULD RESULT IN MAXIMUM CALL STACK EXCEEDING
-// function chooseNewLevel(obj) {
-//   const newLevel = randomMove(Object.keys(obj));
-//   console.log(newLevel);
-//   if (newLevel !== obj.level) {
-//     return newLevel;
-//   }
-//   return chooseNewLevel(obj);
-//   // obj.level = obj.level === 'level1' ? 'level2' : 'level1';
-// }
+  // Get level number
+  const levelArr = level.split('');
+  const levelNum = Number(levelArr.pop());
+  // console.log(`Current level number is: ${levelNum}`);
 
-// export function reFilter(possibleTricks, obj, landing, prevTrick) {
-//   obj.level = chooseNewLevel(tricks);
-//   const newPossibleTricks = Data.tricks[obj.level].filter(trick => {
-//     const match = trick.setups.some(setup => setup === landing);
-//     // Does it match and can be a finisher?
-//     if (match && !trick.notFinisher) {
-//       return true;
-//     } if ((trick.setups.includes(prevTrick.name) && !trick.notFinisher)) {
-//       this.transition = null;
-//       return true;
-//     }
-//     return false;
-//   });
+  // Try filtering the level
+  const filteredList = filterTrickList(level, landing);
 
-//   if (newPossibleTricks.length) {
-//     return newPossibleTricks;
-//   }
-//   return reFilter(possibleTricks, obj, landing, prevTrick);
-// }
+  // If couldn't filter, then search the next level, otherwise return the filtered list
+  return filteredList.length ? filteredList : searchLevels(`level${levelNum + 1}`, landing);
+}

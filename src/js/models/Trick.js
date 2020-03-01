@@ -16,30 +16,17 @@ export default class Trick {
       console.log(landing);
 
       // Filter list for tricks that have at least one setup that matches prevTrick's landing
-      // or prevTrick is a setup for this trick
-      possibleTricks = Model.filterTrickList(this, landing, prevTrick);
+      possibleTricks = Model.filterTrickList(this.level, landing);
       console.log(possibleTricks);
 
       // Make adjustment if no tricks on that list match
       if (!possibleTricks.length) {
-        this.level = this.level === 'level1' ? 'level2' : 'level1';
-        console.log('SWITCHED LEVEL');
-        possibleTricks = Model.filterTrickList(this, landing, prevTrick);
+        console.log('REFILTERING');
+        possibleTricks = Model.searchLevels('level1', landing);
       }
-
-      //   CAREFUL, THIS CAN CAUSE MAXIMUM CALL STACK EXCEEDING IF NO MATCHES IN ANY LEVEL
-      // if (!possibleTricks.length) {
-      //   possibleTricks = Model.reFilter(possibleTricks, this, landing, prevTrick);
-      //   console.log('REFILTERED POSSIBLE TRICKS');
-      // }
 
       // Choose random trick from this list
       this.trickObj = Model.randomMove(possibleTricks);
-
-      // If the prevTrick itself is setup for chosen trick, transition is not needed
-      // if (this.trickObj.setups.includes(prevTrick.trickObj.name)) {
-      //   this.transition = null;
-      // }
     } else {
       // Choose random trick from list
       possibleTricks = Data.tricks[this.level].filter(trick => !trick.notStarter);
@@ -92,20 +79,13 @@ export default class Trick {
       const takeoffs = this.trickObj
         .setups
         .filter(setup => Data.landingPositions.hook.includes(setup));
-      this.takeoff = Model.generateTakeoff(takeoffs);
+      this.takeoff = Model.chooseFromList(takeoffs, 'takeoffModifiers');
     }
   }
 
 
   handleTakeoff() {
     if (!this.takeoff) {
-      // * IN CASE THIS TRICK'S SETUPS INCLUDE PREVTRICK NAME (BEST AVOID THIS AS IT CREATES MORE PROBLEMS)
-      // If this trick's setups does not include previous trick's landing
-      // if (prevTrick && this.trickObj.setups.includes(prevTrick.trickObj.name)) {
-      //   this.takeoff = null;
-      //   this.transition = null;
-      // }
-
       if (Data.takeoffModifiers.includes(this.transition)) {
         this.takeoff = Model.formatMod(this.transition, this.name);
         this.transition = null;

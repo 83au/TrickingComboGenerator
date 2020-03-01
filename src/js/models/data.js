@@ -149,7 +149,9 @@ export const takeoffModifiers = [ // if transition is a takeoff mod, prepend new
   'step behind',
   'cheat',
   'frontside pop',
+  'invert frontside pop',
   'inside pop',
+  'invert inside pop',
   'outside pop',
   'backside pop',
   'invert backside pop',
@@ -234,7 +236,7 @@ export const tricks = {
   level1: [
     // KICKS
     {
-      name: '360 Wheel Kick',
+      name: '360 Crescent Kick',
       setups: [
         'inside pop',
         'frontside pop',
@@ -375,50 +377,42 @@ export const tricks = {
     // TRANSITION TRICKS
     {
       name: 'Blaster Scoot',
-      notFinisher: true,
       setups: ['reverse vanish', 'inside'],
       landings: ['back swing', 'backside', 'backside pop', 'invert backside pop', 'vanish'],
     },
 
     {
       name: 'Cartwheel',
-      notFinisher: true,
       setups: takeoffs.cartwheel,
-      landings: ['inside', 'invert inside pop'],
+      landings: ['inside', 'invert inside pop', 'mega', 'semi'],
+    },
+
+    {
+      name: 'Kayden',
+      setups: ['reverse vanish', 'inside'],
+      landings: ['back swing', 'backside', 'backside pop', 'invert backside pop', 'vanish'],
     },
 
     {
       name: 'Macaco',
-      notFinisher: true,
       setups: ['backside'], // Pop is implied
       landings: ['frontside', 'right left redirect', 'outside leg reversal', 'reverse vanish'],
     },
 
     {
       name: 'Round Off',
-      notFinisher: true,
       setups: takeoffs.cartwheel,
       landings: ['invert backside punch'],
     },
 
     {
       name: 'Scoot',
-      notFinisher: true,
       setups: ['skip round', 'semi', 'hook', 'hook to scoot'],
       landings: landingPositions.eagle,
     },
 
-    // NOW A LANDING MOD
-    // {
-    //   name: 'Scoot Hyper',
-    //   notFinisher: true,
-    //   setups: ['skip round 'hyper', 'semi'],
-    //   landings: ['reverse vanish', 'right left redirect', 'skip hook'],
-    // },
-
     {
       name: 'Spyder',
-      notFinisher: true,
       setups: [
         'backside',
         'frontside',
@@ -441,7 +435,6 @@ export const tricks = {
 
     {
       name: 'Transformer/Machine',
-      notFinisher: true,
       setups: [
         'backside',
         'frontside',
@@ -467,14 +460,24 @@ export const tricks = {
       name: 'Arabian',
       notStarter: true,
       setups: [
-        'Aerial',
-        'Cartwheel',
+        'invert inside pop',
         'invert backside punch',
         'invert backside pop',
       ],
       landings: [
         'invert frontside punch',
         'hook',
+        'semi',
+        'mega',
+      ],
+    },
+
+    {
+      name: 'Front Flip',
+      setups: ['invert frontside pop', 'invert frontside punch'],
+      landings: [
+        'frontside',
+        'invert frontside punch',
         'semi',
         'mega',
       ],
@@ -605,7 +608,7 @@ export const tricks = {
     },
 
     {
-      name: 'Swing 360 Wheel Kick',
+      name: 'Swing 360 Crescent Kick',
       setups: [
         'back swing',
         'round carry-through',
@@ -640,11 +643,19 @@ export const tricks = {
       landings: landingPositions.round.concat(['hyper']),
     },
 
-    // {
-    //   name: 'Tornado Double',
-    //   setups: ['vanish', 'hook carry-through', 'right left redirect'], // cheat is implied
-    //   landings: landingPositions.round,
-    // },
+    {
+      name: 'Tornado Double',
+      setups: [
+        'vanish',
+        'hook carry-through',
+        'right left redirect',
+        'reverse pop',
+        'frontside pop',
+        'hook',
+        'cheat',
+      ],
+      landings: landingPositions.round,
+    },
 
     {
       name: 'Triple Kick',
@@ -893,12 +904,14 @@ export const tricks = {
 
     {
       name: 'Full Round',
+      notStarter: true,
       setups: takeoffs.insideFullTwist,
       landings: landingPositions.round,
     },
 
     {
       name: 'Full Swipe',
+      notStarter: true,
       setups: takeoffs.insideFullTwist,
       landings: [
         'hyper',
@@ -910,6 +923,7 @@ export const tricks = {
 
     {
       name: 'Full Twist',
+      notStarter: true,
       setups: takeoffs.insideFullTwist,
       landings: landingPositions.eagle,
     },
@@ -937,6 +951,12 @@ export const tricks = {
         'right left redirect',
         'cheat',
       ],
+    },
+
+    {
+      name: 'Gainer Switch',
+      setups: takeoffs.swing,
+      landings: landingPositions.eagle,
     },
 
     {
@@ -978,12 +998,6 @@ export const tricks = {
       landings: ['frontside', 'vanish', 'hook'],
     },
 
-    // {
-    //   name: 'Slant Gainer',
-    //   setups: takeoffs.swing,
-    //   landings 'hyper', 'reverse vanish', 'right left redirect'],
-    // },
-
     {
       name: 'Terada Grab',
       notStarter: true,
@@ -1019,11 +1033,6 @@ export const tricks = {
   //   // Takuraba
   //   // Tak Full
   //   // Tak 9
-  //   {
-  //     name: 'Gainer Switch',
-  //     setups: takeoffs.swing,
-  //     landings: landingPositions.eagle,
-  //   },
   //   // Shuriken Cork
   //   // Hyper Cork
   //   // Cork Swipe
