@@ -366,7 +366,7 @@ export const tricks = {
     },
 
     {
-      name: 'Tsunami Kick',
+      name: 'Tsunami Kick (Skip Hook)',
       setups: [
         'back swing',
         'round carry-through',
