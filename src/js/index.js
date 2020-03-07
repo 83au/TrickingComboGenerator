@@ -23,36 +23,36 @@ function buildTrick(maxDiff, prevTrick) {
   // 3) Generate trick using prevTrick
   trick.generateTrick(prevTrick);
 
-  // 4) Add trick to state's current trick property
-  state.currTrick = trick.trickObj;
-
-  // 5) Set name
+  // 4) Set name
   trick.setName();
 
-  // 6) Generate transition
+  // 5) Generate transition
   if (prevTrick) trick.generateTransition(prevTrick.landing);
 
-  // 7) Generate landing
+  // 6) Generate landing
   if (prevTrick) {
     trick.generateLanding();
   } else {
     trick.landing = Model.chooseFromList(trick.trickObj.setups, 'takeoffModifiers');
   }
 
-  // 8) Handle hook
+  // 7) Handle hook
   trick.handleHook();
 
-  // 9) Handle takeoff
+  // 8) Handle takeoff
   trick.handleTakeoff();
 
-  // 10 Handle landing modifier
+  // 9 Handle landing modifier
   trick.handleLandingMod();
 
-  // 11) Format transition
+  // 10) Format transition
   if (trick.transition) trick.transition = Model.formatMod(trick.transition);
 
-  // 12) Display trick in UI
+  // 11) Display trick in UI
   View.displayTrick(prevTrick, trick);
+
+  // 12) Add trick to state's current trick property
+  state.currTrick = trick;
 
   console.log(trick.name);
 }
