@@ -33,7 +33,11 @@ function buildTrick(maxDiff, prevTrick) {
   if (prevTrick) trick.generateTransition(prevTrick.landing);
 
   // 7) Generate landing
-  trick.generateLanding();
+  if (prevTrick) {
+    trick.generateLanding();
+  } else {
+    trick.landing = Model.chooseFromList(trick.trickObj.setups, 'takeoffModifiers');
+  }
 
   // 8) Handle hook
   trick.handleHook();
