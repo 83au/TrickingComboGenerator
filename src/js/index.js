@@ -7,89 +7,58 @@ import * as View from './view';
 // TESTING
 // import * as Data from './models/data';
 
+const state = {};
 
 // =============== FUNCTIONS ==================
 // ============================================
 
-function generateCombo() {
+function buildTrick(maxDiff, preTrick) {
+  // 1) Initiate new Trick object
+
+  // 2) Generate level using maxDiff
+
+  // 3) Generate trick using prevTrick
+
+  // 4) Add trick to state's current trick property
+
+  // 5) Set name
+
+  // 6) Generate transition
+
+  // 7) Generate landing
+
+  // 8) Handle hook
+
+  // 9) Handle takeoff
+
+  // 10 Handle landing modifier
+
+  // 11) Format transition
+
+  // 12) Display trick in UI
+}
+
+
+function generateCombo(maxDiff, numTricks) {
   console.clear();
+
+  // 1) Clear combo container and state object's trick properties
   View.clearContainer(View.elements.comboContainer);
+  state.combo = [];
+  state.prevTrick = undefined;
+  state.currentTrick = undefined;
 
-  const trick1 = new Trick();
-  trick1.generateLevel(2);
-  trick1.generateTrick();
-
-  // TESTING
-  // trick1.level = 'level2';
-  // trick1.trickObj = Data.tricks
-  //   .level2[Data.tricks.level2.findIndex(el => el.name === 'Master Scoot')];
-
-  trick1.generateLanding();
-  console.log(trick1.landing);
-
-  trick1.setName();
-  trick1.takeoff = Model.chooseFromList(trick1.trickObj.setups, 'takeoffModifiers');
-  trick1.handleTakeoff();
-  trick1.handleLandingMod();
-  View.displayTrick(null, trick1);
-
-  console.log(trick1.name);
-
-
-  const trick2 = new Trick();
-  trick2.generateLevel(2);
-  console.log(trick2.level);
-
-  trick2.generateTrick(trick1);
-  trick2.setName();
-  trick2.generateTransition(trick1.landing);
-  trick2.generateLanding();
-  trick2.handleHook();
-  trick2.handleTakeoff(trick1);
-  trick2.handleLandingMod();
-  trick2.transition = Model.formatMod(trick2.transition);
-  View.displayTrick(trick1, trick2);
-
-  console.log(trick2.name);
-
-
-  const trick3 = new Trick();
-  trick3.generateLevel(2);
-  console.log(trick3.level);
-
-  trick3.generateTrick(trick2);
-  trick3.setName();
-  trick3.generateTransition(trick2.landing);
-  trick3.generateLanding();
-  trick3.handleHook();
-  trick3.handleTakeoff(trick2);
-  trick3.handleLandingMod();
-  trick3.transition = Model.formatMod(trick3.transition);
-  View.displayTrick(trick2, trick3);
-
-  console.log(trick3.name);
-
-
-  const trick4 = new Trick();
-  trick4.generateLevel(2);
-  console.log(trick4.level);
-
-  trick4.generateTrick(trick3);
-  trick4.setName();
-  trick4.generateTransition(trick3.landing);
-  // trick4.generateLanding();
-  trick4.handleHook();
-  trick4.handleTakeoff(trick3);
-  // trick4.handleLandingMod();
-  trick4.transition = Model.formatMod(trick4.transition);
-  View.displayTrick(trick3, trick4);
-
-  console.log(trick4.name);
+  // 2) Create loop that builds tricks until combo has numTricks in it
+  do {
+    buildTrick(maxDiff, state.prevTrick);
+  } while (state.combo.length < numTricks);
 }
 
 
 // =========== EVENT LISTENERS ============
-View.elements.generateComboBtn.onclick = generateCombo;
+View.elements.generateComboBtn.addEventListener('click', () => {
+  generateCombo(2, 4);
+});
 
 // document.getElementById('randomComboOption').addEventListener('click', () => {
 //   document.querySelector('.start-screen').style.display = 'none';
