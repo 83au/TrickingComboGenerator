@@ -26,15 +26,15 @@ function buildTrick(maxDiff, prevTrick) {
   // 4) Set name
   trick.setName();
 
-  // 5) Generate transition
-  if (prevTrick) trick.generateTransition(prevTrick.landing);
+  // 5) Generate transition or takeoff
+  if (prevTrick) {
+    trick.generateTransition(prevTrick.landing);
+  } else {
+    trick.takeoff = Model.chooseFromList(trick.trickObj.setups, 'takeoffModifiers');
+  }
 
   // 6) Generate landing
-  if (prevTrick) {
-    trick.generateLanding();
-  } else {
-    trick.landing = Model.chooseFromList(trick.trickObj.setups, 'takeoffModifiers');
-  }
+  trick.generateLanding();
 
   // 7) Handle hook
   trick.handleHook();
