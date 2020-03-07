@@ -9,65 +9,46 @@ import * as View from './view';
 
 const state = {};
 
+
 // =============== FUNCTIONS ==================
 // ============================================
 
 function buildTrick(maxDiff, prevTrick) {
-  // 1) Initiate new Trick object
   const trick = new Trick();
 
-  // 2) Generate level using maxDiff
   trick.generateLevel(maxDiff);
   console.log(trick.level);
 
-  // 3) Generate trick using prevTrick
   trick.generateTrick(prevTrick);
-
-  // 4) Set name
   trick.setName();
 
-  // 5) Generate transition or takeoff
   if (prevTrick) {
     trick.generateTransition(prevTrick.landing);
   } else {
     trick.takeoff = Model.chooseFromList(trick.trickObj.setups, 'takeoffModifiers');
   }
 
-  // 6) Generate landing
   trick.generateLanding();
-
-  // 7) Handle hook
   trick.handleHook();
-
-  // 8) Handle takeoff
   trick.handleTakeoff();
-
-  // 9 Handle landing modifier
   trick.handleLandingMod();
 
-  // 10) Format transition
   if (trick.transition) trick.transition = Model.formatMod(trick.transition);
 
-  // 11) Display trick in UI
   View.displayTrick(prevTrick, trick);
 
-  // 12) Add trick to state's current trick property
   state.currTrick = trick;
-
   console.log(trick.name);
 }
 
 
 function generateCombo(maxDiff, numTricks) {
   console.clear();
-
-  // 1) Clear combo container and state object's trick properties
   View.clearContainer(View.elements.comboContainer);
   state.trickCount = 0;
   state.prevTrick = undefined;
   state.currTrick = undefined;
 
-  // 2) Create loop that builds tricks until combo has numTricks in it
   do {
     if (state.currTrick) {
       state.prevTrick = state.currTrick;
