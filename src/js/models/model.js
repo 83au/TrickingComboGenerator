@@ -65,6 +65,7 @@ export function adjustForLandingMod(prevTrick, obj) {
   return prevTrick.landing;
 }
 
+
 // Recursively search all levels from first to last
 export function searchLevels(level, landing) {
   // Stopping condition

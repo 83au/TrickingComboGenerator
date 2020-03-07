@@ -258,6 +258,10 @@ export const tricks = {
         'frontside',
         'hook',
         'turbo',
+        'outside leg reversal',
+        'right left redirect',
+        'hook carry-through',
+        'cheat',
       ],
     },
 
@@ -651,6 +655,9 @@ export const tricks = {
         'frontside pop',
         'hook',
         'turbo',
+        'right left redirect',
+        'outside leg reversal',
+        'cheat',
       ],
     },
 
