@@ -802,6 +802,12 @@ export const tricks = {
     },
 
     {
+      name: 'Super Monkey Scoot',
+      setups: takeoffs.cartwheel,
+      landings: landingPositions.eagle,
+    },
+
+    {
       name: 'Touch Down Raiz',
       notFinisher: true,
       setups: takeoffs.raiz,

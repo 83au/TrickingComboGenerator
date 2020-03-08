@@ -4,7 +4,7 @@ import * as Data from './data';
 
 export default class Trick {
   generateLevel(max) {
-    const random = Math.floor(Math.random() * max + 1);
+    const random = Model.random(max) + 1;
     this.level = `level${random}`;
   }
 
@@ -14,11 +14,9 @@ export default class Trick {
 
     if (prevTrick) {
       const landing = Model.adjustForLandingMod(prevTrick, this);
-      console.log(landing);
 
       // Filter list for tricks that have at least one setup that matches prevTrick's landing
       possibleTricks = Model.filterTrickList(this.level, landing);
-      console.log(possibleTricks);
 
       // Make adjustment if no tricks on that list match
       if (!possibleTricks.length) {
@@ -48,7 +46,6 @@ export default class Trick {
 
   generateTransition(prevTrickLanding) {
     const notLandingMod = !Data.landingModifiers.includes(prevTrickLanding);
-    console.log(notLandingMod);
 
     // If current trick already has a transition property
     if (this.transition) {
@@ -71,7 +68,6 @@ export default class Trick {
       // Otherwise not a transition
       this.transition = null;
     }
-    console.log(this.transition);
   }
 
 

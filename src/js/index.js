@@ -17,8 +17,6 @@ function buildTrick(maxDiff, prevTrick) {
   const trick = new Trick();
 
   trick.generateLevel(maxDiff);
-  console.log(trick.level);
-
   trick.generateTrick(prevTrick);
   trick.setName();
 
@@ -36,29 +34,32 @@ function buildTrick(maxDiff, prevTrick) {
   if (trick.transition) trick.transition = Model.formatMod(trick.transition);
 
   View.displayTrick(prevTrick, trick);
-
   state.currTrick = trick;
-  console.log(trick.name);
 }
 
 
-function generateCombo(maxDiff, numTricks) {
+function clear() {
   console.clear();
   View.clearContainer(View.elements.comboContainer);
   state.trickCount = 0;
   state.prevTrick = undefined;
   state.currTrick = undefined;
+}
+
+
+function generateCombo(maxDiff, numTricks) {
+  clear();
 
   let officialNumTricks;
   if (numTricks === 'random') {
-    officialNumTricks = Math.floor((Math.random() * 10) + 1);
+    officialNumTricks = Model.random(10) + 1;
   } else {
     officialNumTricks = numTricks;
   }
 
   let officialMaxDiff;
   if (maxDiff === 'random') {
-    officialMaxDiff = Math.floor((Math.random() * 2) + 1);
+    officialMaxDiff = Model.random(2) + 1;
   } else {
     officialMaxDiff = maxDiff;
   }

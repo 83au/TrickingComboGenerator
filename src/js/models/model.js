@@ -3,10 +3,15 @@
 import * as Data from './data';
 
 
+export function random(num) {
+  return Math.floor(Math.random() * num);
+}
+
+
 export function randomMove(list) {
   if (list.length) {
-    const random = Math.floor(Math.random() * list.length);
-    const move = list[random];
+    const randomIndex = random(list.length);
+    const move = list[randomIndex];
     return move;
   }
   return undefined;
@@ -49,9 +54,9 @@ export function filterTrickList(level, landing) {
 
 export function adjustForLandingMod(prevTrick, obj) {
   let landing;
-  const isLandingMod = Data.landingModifiers.includes(prevTrick.landing);
+  const prevLandingMod = Data.landingModifiers.includes(prevTrick.landing);
 
-  if (isLandingMod && Data.landingPositions[prevTrick.landing]) {
+  if (prevLandingMod && Data.landingPositions[prevTrick.landing]) {
     landing = randomMove(Data.landingPositions[prevTrick.landing]);
 
     if (!(/(semi|mega)/.test(landing))) {
