@@ -77,7 +77,6 @@ export const landingPositions = {
     'reverse vanish',
     'right left redirect',
     'skip hook',
-    'wrap',
     'cheat',
   ],
 
@@ -524,7 +523,7 @@ export const tricks = {
     { // 540 variations
       name: '540 Kick',
       setups: ['cheat', 'vanish', 'frontside pop'], // redirect is implied
-      landings: ['gyro backside'],
+      landings: ['wrap'],
     },
 
     {

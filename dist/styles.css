@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --blue: rgba(85,85,255,1);
+  --red: rgba(255,85,85,1);
+}
+
 html {
   font-size: 62.5%;
 }
@@ -11,7 +16,7 @@ html {
 body {
   width: 100%;
   min-height: 100vh;
-  background-image: linear-gradient(to bottom, rgba(85,85,255,1) 0.1%, rgba(255,85,85,1) 100%);
+  background-image: linear-gradient(to bottom, var(--blue) 0.1%, var(--red) 100%);
   font-family: 'Bangers', Impact, sans-serif;
   color: white;
 }
@@ -24,6 +29,13 @@ h1 {
 
 label {
   display: block;
+  font-size: 2.5rem;
+}
+
+select {
+  margin: .5rem;
+  background: #fff;
+  color: hsl(230, 0%, 20%);
   font-size: 2rem;
 }
 
@@ -49,6 +61,10 @@ label {
   text-align: center;
 }
 
+.choices__selection-box {
+  margin: 2rem;
+}
+
 .randomComboBox .btn {
   margin: 1rem 0;
 }
@@ -59,7 +75,7 @@ label {
   background: white;
   border: none;
   border-radius: 10rem;
-  color: rgba(85,85,255,1);
+  color: var(--blue);
   cursor: pointer;
   outline: none;
   width: 25rem;

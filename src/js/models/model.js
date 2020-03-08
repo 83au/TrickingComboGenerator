@@ -69,8 +69,8 @@ export function adjustForLandingMod(prevTrick, obj) {
 
 // Recursively search all levels from first to last
 // Perhaps try this without recursion?
-export function searchLevels(level, landing) {
-  // Stopping condition
+export function searchLevels(level, landing) { // TODO: need a max level
+  // Stopping condition, TODO: needs to check against a max level
   if (level === 'level3') return undefined;
 
   // Get level number

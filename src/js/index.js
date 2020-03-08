@@ -49,15 +49,29 @@ function generateCombo(maxDiff, numTricks) {
   state.prevTrick = undefined;
   state.currTrick = undefined;
 
+  let officialNumTricks;
+  if (numTricks === 'random') {
+    officialNumTricks = Math.floor((Math.random() * 10) + 1);
+  } else {
+    officialNumTricks = numTricks;
+  }
+
+  let officialMaxDiff;
+  if (maxDiff === 'random') {
+    officialMaxDiff = Math.floor((Math.random() * 2) + 1);
+  } else {
+    officialMaxDiff = maxDiff;
+  }
+
   do {
     if (state.currTrick) {
       state.prevTrick = state.currTrick;
       state.currTrick = undefined;
     }
 
-    buildTrick(maxDiff, state.prevTrick);
+    buildTrick(officialMaxDiff, state.prevTrick);
     state.trickCount += 1;
-  } while (state.trickCount < numTricks);
+  } while (state.trickCount < officialNumTricks);
 }
 
 
