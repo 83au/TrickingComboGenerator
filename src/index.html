@@ -23,6 +23,30 @@
     
     <div class="randomComboBox">
       <!-- <button id="backToChoices" class="btn">Back to choices</button> -->
+      <div class="choices">
+        <div class="choices__selection-container--difficulty">
+          <label for="difficulty">Max Difficulty</label>
+          <select name="difficulty" id="difficulty">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+          </select>
+        </div>
+        <div class="choices__selection-container--numTricks">
+          <label for="numTricks">Number of Tricks</label>
+          <select name="Number of tricks" id="numTricks">
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+        </div>
+      </div>
       <button id="generateRandomCombo" class="btn">Generate Combo</button>
       <div id="combo"></div>
     </div>

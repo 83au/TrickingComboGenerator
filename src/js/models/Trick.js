@@ -8,6 +8,7 @@ export default class Trick {
     this.level = `level${random}`;
   }
 
+
   generateTrick(prevTrick) {
     let possibleTricks;
 

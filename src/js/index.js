@@ -54,6 +54,7 @@ function generateCombo(maxDiff, numTricks) {
       state.prevTrick = state.currTrick;
       state.currTrick = undefined;
     }
+
     buildTrick(maxDiff, state.prevTrick);
     state.trickCount += 1;
   } while (state.trickCount < numTricks);
@@ -62,7 +63,8 @@ function generateCombo(maxDiff, numTricks) {
 
 // =========== EVENT LISTENERS ============
 View.elements.generateComboBtn.addEventListener('click', () => {
-  generateCombo(2, 4);
+  const choices = View.getChoices();
+  generateCombo(choices.difficulty, choices.numTricks);
 });
 
 // document.getElementById('randomComboOption').addEventListener('click', () => {

@@ -2,8 +2,20 @@
 
 export const elements = {
   comboContainer: document.getElementById('combo'),
+  diffSelection: document.getElementById('difficulty'),
+  numTricksSelection: document.getElementById('numTricks'),
   generateComboBtn: document.getElementById('generateRandomCombo'),
 };
+
+
+export function getChoices() {
+  const difficulty = elements.diffSelection.value;
+  const numTricks = elements.numTricksSelection.value;
+  return {
+    difficulty,
+    numTricks,
+  };
+}
 
 
 export function clearContainer() {

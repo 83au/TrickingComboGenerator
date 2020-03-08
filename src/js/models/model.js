@@ -53,12 +53,13 @@ export function adjustForLandingMod(prevTrick, obj) {
 
   if (isLandingMod && Data.landingPositions[prevTrick.landing]) {
     landing = randomMove(Data.landingPositions[prevTrick.landing]);
-    // If chosen landing is not semi or mega
+
     if (!(/(semi|mega)/.test(landing))) {
       obj.transition = landing;
     } else {
       obj.transition = null;
     }
+
     return landing;
   }
 
@@ -67,6 +68,7 @@ export function adjustForLandingMod(prevTrick, obj) {
 
 
 // Recursively search all levels from first to last
+// Perhaps try this without recursion?
 export function searchLevels(level, landing) {
   // Stopping condition
   if (level === 'level3') return undefined;
@@ -74,7 +76,6 @@ export function searchLevels(level, landing) {
   // Get level number
   const levelArr = level.split('');
   const levelNum = Number(levelArr.pop());
-  // console.log(`Current level number is: ${levelNum}`);
 
   // Try filtering the level
   const filteredList = filterTrickList(level, landing);
