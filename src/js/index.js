@@ -10,42 +10,25 @@ import * as View from './view';
 const state = {};
 
 
+// =========== EVENT LISTENERS ============
+View.elements.generateComboBtn.addEventListener('click', () => {
+  const choices = View.getChoices();
+  generateCombo(choices.difficulty, choices.numTricks);
+});
+
+// document.getElementById('randomComboOption').addEventListener('click', () => {
+//   document.querySelector('.start-screen').style.display = 'none';
+//   document.querySelector('.randomComboBox').style.display = 'block';
+// });
+
+// document.getElementById('backToChoices').addEventListener('click', () => {
+//   document.querySelector('.randomComboBox').style.display = 'none';
+//   document.querySelector('.start-screen').style.display = 'block';
+// });
+
+
 // =============== FUNCTIONS ==================
 // ============================================
-
-function buildTrick(maxDiff, prevTrick) {
-  const trick = new Trick();
-
-  trick.generateLevel(maxDiff);
-  trick.generateTrick(prevTrick);
-  trick.setName();
-
-  if (prevTrick) {
-    trick.generateTransition(prevTrick.landing);
-  } else {
-    trick.takeoff = Model.chooseFromList(trick.trickObj.setups, 'takeoffModifiers');
-  }
-
-  trick.generateLanding();
-  trick.handleHook();
-  trick.handleTakeoff();
-  trick.handleLandingMod();
-
-  if (trick.transition) trick.transition = Model.formatMod(trick.transition);
-
-  View.displayTrick(prevTrick, trick);
-  state.currTrick = trick;
-}
-
-
-function clear() {
-  console.clear();
-  View.clearContainer(View.elements.comboContainer);
-  state.trickCount = 0;
-  state.prevTrick = undefined;
-  state.currTrick = undefined;
-}
-
 
 function generateCombo(maxDiff, numTricks) {
   clear();
@@ -76,18 +59,35 @@ function generateCombo(maxDiff, numTricks) {
 }
 
 
-// =========== EVENT LISTENERS ============
-View.elements.generateComboBtn.addEventListener('click', () => {
-  const choices = View.getChoices();
-  generateCombo(choices.difficulty, choices.numTricks);
-});
+function clear() {
+  console.clear();
+  View.clearContainer(View.elements.comboContainer);
+  state.trickCount = 0;
+  state.prevTrick = undefined;
+  state.currTrick = undefined;
+}
 
-// document.getElementById('randomComboOption').addEventListener('click', () => {
-//   document.querySelector('.start-screen').style.display = 'none';
-//   document.querySelector('.randomComboBox').style.display = 'block';
-// });
 
-// document.getElementById('backToChoices').addEventListener('click', () => {
-//   document.querySelector('.randomComboBox').style.display = 'none';
-//   document.querySelector('.start-screen').style.display = 'block';
-// });
+function buildTrick(maxDiff, prevTrick) {
+  const trick = new Trick();
+
+  trick.generateLevel(maxDiff);
+  trick.generateTrick(prevTrick);
+  trick.setName();
+
+  if (prevTrick) {
+    trick.generateTransition(prevTrick.landing);
+  } else {
+    trick.takeoff = Model.chooseFromList(trick.trickObj.setups, 'takeoffModifiers');
+  }
+
+  trick.generateLanding();
+  trick.handleHook();
+  trick.handleTakeoff();
+  trick.handleLandingMod();
+
+  if (trick.transition) trick.transition = Model.formatMod(trick.transition);
+
+  View.displayTrick(prevTrick, trick);
+  state.currTrick = trick;
+}
