@@ -489,7 +489,7 @@ export const tricks = {
       name: 'Webster',
       setups: [
         'reverse vanish',
-        'semi',
+        'mega',
       ],
       landings: [
         'frontside',
@@ -955,10 +955,9 @@ export const tricks = {
 
     { // Front Flip variations
       name: 'Front Flip',
-      setups: ['invert frontside pop', 'invert frontside punch'],
+      setups: ['invert frontside pop', 'invert frontside punch', 'invert backside punch'],
       landings: [
         'mega',
-        'semi',
       ],
     },
 
@@ -1065,11 +1064,10 @@ export const tricks = {
       name: 'Webster',
       setups: [
         'reverse vanish',
-        'semi',
+        'mega',
       ],
       landings: [
         'mega',
-        'semi',
       ],
     },
 
