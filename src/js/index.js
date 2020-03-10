@@ -9,22 +9,25 @@ import * as View from './view';
 
 const state = {};
 
+setEventListeners();
 
 // =========== EVENT LISTENERS ============
-View.elements.generateComboBtn.addEventListener('click', () => {
-  const choices = View.getChoices();
-  generateCombo(choices.difficulty, choices.numTricks);
-});
+function setEventListeners() {
+  View.elements.generateComboBtn.addEventListener('click', () => {
+    const choices = View.getChoices();
+    generateCombo(choices.difficulty, choices.numTricks);
+  });
 
-// document.getElementById('randomComboOption').addEventListener('click', () => {
-//   document.querySelector('.start-screen').style.display = 'none';
-//   document.querySelector('.randomComboBox').style.display = 'block';
-// });
+  // document.getElementById('randomComboOption').addEventListener('click', () => {
+  //   document.querySelector('.start-screen').style.display = 'none';
+  //   document.querySelector('.randomComboBox').style.display = 'block';
+  // });
 
-// document.getElementById('backToChoices').addEventListener('click', () => {
-//   document.querySelector('.randomComboBox').style.display = 'none';
-//   document.querySelector('.start-screen').style.display = 'block';
-// });
+  // document.getElementById('backToChoices').addEventListener('click', () => {
+  //   document.querySelector('.randomComboBox').style.display = 'none';
+  //   document.querySelector('.start-screen').style.display = 'block';
+  // });
+}
 
 
 // =============== FUNCTIONS ==================
