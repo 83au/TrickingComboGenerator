@@ -8,6 +8,18 @@ export const elements = {
 };
 
 
+export function displayTrick(prevTrick, curTrick) {
+  const trickEl = document.createElement('div');
+  trickEl.className = 'trick';
+
+  if (prevTrick) createConnector();
+
+  displayTransition(curTrick, trickEl);
+  displayTakeoffAndName(curTrick, trickEl);
+  displayLanding(curTrick.landingMod, trickEl);
+}
+
+
 export function getChoices() {
   const difficulty = elements.diffSelection.value;
   const numTricks = elements.numTricksSelection.value;
@@ -22,6 +34,8 @@ export function clearContainer() {
   elements.comboContainer.innerHTML = '';
 }
 
+
+// * * * * PRIVATE FUNCTIONS * * * *
 
 function createConnector() {
   const connector = document.createElement('div');
@@ -63,16 +77,4 @@ function displayLanding(landingMod, trickEl) {
     landingEl.innerHTML = `&nbsp;${landingMod}`;
     trickEl.append(landingEl);
   }
-}
-
-
-export function displayTrick(prevTrick, curTrick) {
-  const trickEl = document.createElement('div');
-  trickEl.className = 'trick';
-
-  if (prevTrick) createConnector();
-
-  displayTransition(curTrick, trickEl);
-  displayTakeoffAndName(curTrick, trickEl);
-  displayLanding(curTrick.landingMod, trickEl);
 }

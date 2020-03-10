@@ -27,6 +27,26 @@ export function chooseFromList(list, modifiers) {
 }
 
 
+export function adjustForLandingMod(prevTrick, obj) {
+  let landing;
+  const prevLandingMod = Data.landingModifiers.includes(prevTrick.landing);
+
+  if (prevLandingMod && Data.landingPositions[prevTrick.landing]) {
+    landing = randomMove(Data.landingPositions[prevTrick.landing]);
+
+    if (!(/(semi|mega)/.test(landing))) {
+      obj.transition = landing;
+    } else {
+      obj.transition = null;
+    }
+
+    return landing;
+  }
+
+  return prevTrick.landing;
+}
+
+
 export function formatMod(mod) {
   if (mod) {
     if (/^(vanish|missleg|reverse pop|cheat|hook|wrap|complete)$/.test(mod)) return mod;
@@ -49,26 +69,6 @@ export function formatMod(mod) {
 
 export function filterTrickList(level, landing) {
   return Data.tricks[level].filter(trick => trick.setups.includes(landing));
-}
-
-
-export function adjustForLandingMod(prevTrick, obj) {
-  let landing;
-  const prevLandingMod = Data.landingModifiers.includes(prevTrick.landing);
-
-  if (prevLandingMod && Data.landingPositions[prevTrick.landing]) {
-    landing = randomMove(Data.landingPositions[prevTrick.landing]);
-
-    if (!(/(semi|mega)/.test(landing))) {
-      obj.transition = landing;
-    } else {
-      obj.transition = null;
-    }
-
-    return landing;
-  }
-
-  return prevTrick.landing;
 }
 
 

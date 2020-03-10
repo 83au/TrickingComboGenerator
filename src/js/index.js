@@ -1,20 +1,16 @@
 // = = = = = = = = = = = = = = = = = = = APP CONTROLLER = = = = = = = = = = = = = = = = = = =
+// TESTING
+// import * as Data from './models/data';
 
 import * as Model from './models/model';
 import Trick from './models/Trick';
 import * as View from './view';
 
-// TESTING
-// import * as Data from './models/data';
 
 const app = {
   state: {},
 
   init() {
-    this.setEventListeners();
-  },
-
-  setEventListeners() {
     View.elements.generateComboBtn.addEventListener('click', () => {
       const choices = View.getChoices();
       this.generateCombo(choices.difficulty, choices.numTricks);
