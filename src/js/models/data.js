@@ -349,7 +349,7 @@ export const tricks = {
     {
       name: 'Round Kick',
       notFinisher: true,
-      setups: ['backside', 'inside leg reversal'],
+      setups: ['inside leg reversal'],
       landings: landingPositions.round,
     },
 
@@ -493,6 +493,7 @@ export const tricks = {
       ],
       landings: [
         'frontside',
+        'reverse vanish',
         'invert frontside punch',
       ],
     },
