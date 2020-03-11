@@ -14,6 +14,10 @@ html {
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   width: 100%;
   min-height: 100vh;
   background-image: linear-gradient(to bottom, var(--blue) 0.1%, var(--red) 100%);
@@ -39,17 +43,18 @@ select {
   font-size: 2rem;
 }
 
-.start-screen {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  
+.start-screen { 
   display: flex;
   flex-direction: column;
   align-items: center;
 
+  margin-top: 4rem;
+
   max-width: 100%;
+}
+
+.start-screen.hide {
+  display: none;
 }
 
 .start-screen__btn {
@@ -80,6 +85,8 @@ select {
 .btn {
   padding: 1rem 2rem;
 
+  margin: 1rem;
+
   background: white;
   border: none;
   border-radius: 10rem;
@@ -93,15 +100,14 @@ select {
   letter-spacing: .8px;
 }
 
-#generateBtn {
-  display: block;
-  margin: 4rem auto 0 auto;
+#backToChoices.hide {
+  display: none;
 }
 
 #randomCombo {
   margin: 2rem auto;
   width: 100%;
-  line-height: 1.8;
+  line-height: 1.7;
   text-align: center;
 }
 

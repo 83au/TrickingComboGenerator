@@ -6,34 +6,44 @@ import * as Model from './models/model';
 import Trick from './models/Trick';
 import * as View from './view';
 
+const DOM = View.elements;
 
 const app = {
   state: {},
 
 
   init() {
-    View.elements.randomCmbBox.classList.add('hide');
+    this.reset();
 
-    View.elements.randomCmbBtn.addEventListener('click', () => {
-      View.elements.startScreen.style.display = 'none';
-      View.elements.randomCmbBox.classList.remove('hide');
+    DOM.randomCmbBtn.addEventListener('click', () => {
+      this.state.mode = 'randomCombo';
+      DOM.startScreen.classList.add('hide');
+      DOM.randomCmbBox.classList.remove('hide');
+      DOM.backBtn.classList.remove('hide');
     });
 
-    View.elements.generateComboBtn.addEventListener('click', () => {
+    DOM.generateComboBtn.addEventListener('click', () => {
       const choices = View.getChoices();
       this.generateCombo(choices.difficulty, choices.numTricks);
     });
 
-    document.getElementById('backToChoices').addEventListener('click', () => {
-      this.clear();
-      View.elements.randomCmbBox.classList.add('hide');
-      View.elements.startScreen.style.display = 'flex';
+    DOM.backBtn.addEventListener('click', () => {
+      if (this.state.mode === 'randomCombo') this.clear(DOM.randomCmbContainer);
+      this.reset();
     });
   },
 
 
+  reset() {
+    DOM.startScreen.classList.remove('hide');
+    DOM.randomCmbBox.classList.add('hide');
+    DOM.buildCmbBox.classList.add('hide');
+    DOM.backBtn.classList.add('hide');
+  },
+
+
   generateCombo(maxDiff, numTricks) {
-    this.clear();
+    this.clear(DOM.randomCmbContainer);
 
     let officialNumTricks;
     if (numTricks === 'random') {
@@ -61,9 +71,9 @@ const app = {
   },
 
 
-  clear() {
+  clear(container) {
     console.clear();
-    View.clearContainer();
+    View.clearContainer(container);
     this.state.trickCount = 0;
     this.state.prevTrick = undefined;
     this.state.currTrick = undefined;

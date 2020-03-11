@@ -4,10 +4,13 @@ export const elements = {
   startScreen: document.querySelector('.start-screen'),
   randomCmbBtn: document.getElementById('randomComboOption'),
   randomCmbBox: document.querySelector('.randomComboBox'),
+  buildCmbBtn: document.getElementById('buildComboOption'),
+  buildCmbBox: document.querySelector('.buildComboBox'),
   randomCmbContainer: document.getElementById('randomCombo'),
   randomDiffSelection: document.getElementById('randomCmbDifficulty'),
   numTricksSelection: document.getElementById('numTricks'),
   generateComboBtn: document.getElementById('generateRandomCombo'),
+  backBtn: document.getElementById('backToChoices'),
 };
 
 
@@ -33,8 +36,8 @@ export function getChoices() {
 }
 
 
-export function clearContainer() {
-  elements.randomCmbContainer.innerHTML = '';
+export function clearContainer(container) {
+  container.innerHTML = '';
 }
 
 
