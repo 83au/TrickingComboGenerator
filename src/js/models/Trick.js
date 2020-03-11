@@ -51,21 +51,15 @@ export default class Trick {
     if (this.transition) {
       // If the current transition property is not on the transitions list
       if (!Data.transitions.includes(this.transition)) {
-        // Then it is not a transition
         this.transition = null;
       }
 
       // Otherwise if current trick's setups doesn't contain prevTrickLanding
     } else if (!this.trickObj.setups.includes(prevTrickLanding)) {
-      // Not a transition
       this.transition = null;
-
-      // Otherwise if on transitions list and not a landing Modifier
     } else if (Data.transitions.includes(prevTrickLanding) && notLandingMod) {
-      // It is a transition
       this.transition = prevTrickLanding;
     } else {
-      // Otherwise not a transition
       this.transition = null;
     }
   }

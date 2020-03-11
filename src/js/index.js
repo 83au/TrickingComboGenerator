@@ -10,6 +10,7 @@ import * as View from './view';
 const app = {
   state: {},
 
+
   init() {
     View.elements.generateComboBtn.addEventListener('click', () => {
       const choices = View.getChoices();
@@ -26,6 +27,7 @@ const app = {
     //   document.querySelector('.start-screen').style.display = 'block';
     // });
   },
+
 
   generateCombo(maxDiff, numTricks) {
     this.clear();
@@ -55,6 +57,7 @@ const app = {
     } while (this.state.trickCount < officialNumTricks);
   },
 
+
   clear() {
     console.clear();
     View.clearContainer(View.elements.comboContainer);
@@ -62,6 +65,7 @@ const app = {
     this.state.prevTrick = undefined;
     this.state.currTrick = undefined;
   },
+
 
   buildTrick(maxDiff, prevTrick) {
     const trick = new Trick();
