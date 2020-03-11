@@ -20,12 +20,24 @@
     </div>
 
     <div class="buildComboBox">
-      
+      <div id="builtCombo"></div>
+      <div class="buildComboBox__choices">
+        <div class="buildCmbChoices__difficulty">
+          <label for="randomCmbDifficulty">Difficulty Level</label>
+          <select name="difficulty" id="buildCmbDifficulty">
+            <option value="random" selected>random</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+          </select>
+        </div>
+        <button id="generateTrickBtn" class="btn">Generate Trick</button>
+        <button id="next" class="btn">Next trick</button>
+      </div>
     </div>
     
     <div class="randomComboBox">
-      <div class="randomCmbChoices">
-        <div class="randomCmbChoices__selection-box randomCmbChoices__selection-box--difficulty">
+      <div class="randomComboBox__choices">
+        <div class="randomComboBox__choices__selection-box randomComboBox__choices__selection-box--difficulty">
           <label for="randomCmbDifficulty">Max Difficulty</label>
           <select name="difficulty" id="randomCmbDifficulty">
             <option value="random" selected>random</option>

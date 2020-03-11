@@ -26,7 +26,7 @@ body {
 }
 
 h1 {
-  margin-top: 4rem;
+  margin: 2rem 0;
   font-size: 5.5rem;
   text-align: center;
 }
@@ -61,6 +61,21 @@ select {
   margin: 2rem 0;
 }
 
+.buildComboBox {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.buildComboBox__choices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buildComboBox.hide {
+  display: none;
+}
+
 .randomComboBox.hide {
   display: none;
 }
@@ -70,7 +85,7 @@ select {
   flex-direction: column;
   align-items: center;
 
-  margin-top: 4rem;
+  margin-top: 2rem;
   text-align: center;
 }
 

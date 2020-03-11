@@ -15,6 +15,12 @@ const app = {
   init() {
     this.reset();
 
+    DOM.buildCmbBtn.addEventListener('click', () => {
+      DOM.startScreen.classList.add('hide');
+      DOM.buildCmbBox.classList.remove('hide');
+      DOM.backBtn.classList.remove('hide');
+    });
+
     DOM.randomCmbBtn.addEventListener('click', () => {
       this.state.mode = 'randomCombo';
       DOM.startScreen.classList.add('hide');
