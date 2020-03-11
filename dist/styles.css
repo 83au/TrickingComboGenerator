@@ -56,9 +56,16 @@ select {
   margin: 2rem 0;
 }
 
+.randomComboBox.hide {
+  display: none;
+}
+
 .randomComboBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   margin-top: 4rem;
-  display: block;
   text-align: center;
 }
 
@@ -91,7 +98,7 @@ select {
   margin: 4rem auto 0 auto;
 }
 
-#combo {
+#randomCombo {
   margin: 2rem auto;
   width: 100%;
   line-height: 1.8;

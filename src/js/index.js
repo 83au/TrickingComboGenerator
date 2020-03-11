@@ -12,20 +12,23 @@ const app = {
 
 
   init() {
+    View.elements.randomCmbBox.classList.add('hide');
+
+    View.elements.randomCmbBtn.addEventListener('click', () => {
+      View.elements.startScreen.style.display = 'none';
+      View.elements.randomCmbBox.classList.remove('hide');
+    });
+
     View.elements.generateComboBtn.addEventListener('click', () => {
       const choices = View.getChoices();
       this.generateCombo(choices.difficulty, choices.numTricks);
     });
 
-    // document.getElementById('randomComboOption').addEventListener('click', () => {
-    //   document.querySelector('.start-screen').style.display = 'none';
-    //   document.querySelector('.randomComboBox').style.display = 'block';
-    // });
-
-    // document.getElementById('backToChoices').addEventListener('click', () => {
-    //   document.querySelector('.randomComboBox').style.display = 'none';
-    //   document.querySelector('.start-screen').style.display = 'block';
-    // });
+    document.getElementById('backToChoices').addEventListener('click', () => {
+      this.clear();
+      View.elements.randomCmbBox.classList.add('hide');
+      View.elements.startScreen.style.display = 'flex';
+    });
   },
 
 
@@ -60,7 +63,7 @@ const app = {
 
   clear() {
     console.clear();
-    View.clearContainer(View.elements.comboContainer);
+    View.clearContainer();
     this.state.trickCount = 0;
     this.state.prevTrick = undefined;
     this.state.currTrick = undefined;

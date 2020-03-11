@@ -14,19 +14,20 @@
 
     <h1>Tricking Combo Generator</h1>
 
-    <!-- <div class="start-screen">
+    <div class="start-screen">
       <button id="buildComboOption" class="start-screen__btn btn">Build Combo?</button>
       <button id="randomComboOption" class="start-screen__btn btn">Random Combo?</button>
     </div>
 
-    <div class="buildComboBox"></div> -->
+    <div id="buildComboBox" class="buildCombo">
+    
+    </div>
     
     <div class="randomComboBox">
-      <!-- <button id="backToChoices" class="btn">Back to choices</button> -->
-      <div class="choices">
-        <div class="choices__selection-box choices__selection-box--difficulty">
-          <label for="difficulty">Max Difficulty</label>
-          <select name="difficulty" id="difficulty">
+      <div class="randomCmbChoices">
+        <div class="randomCmbChoices__selection-box randomCmbChoices__selection-box--difficulty">
+          <label for="randomCmbDifficulty">Max Difficulty</label>
+          <select name="difficulty" id="randomCmbDifficulty">
             <option value="random" selected>random</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -50,7 +51,8 @@
         </div>
       </div>
       <button id="generateRandomCombo" class="btn">Generate Combo</button>
-      <div id="combo"></div>
+      <div id="randomCombo"></div>
+      <button id="backToChoices" class="btn">Back</button>
     </div>
     
   </body>
