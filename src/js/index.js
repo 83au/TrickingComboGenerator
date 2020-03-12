@@ -6,50 +6,102 @@ import * as Model from './models/model';
 import Trick from './models/Trick';
 import * as View from './view';
 
-const DOM = View.elements;
 
 const app = {
+  DOM: View.elements,
+
   state: {},
 
 
   init() {
     this.reset();
+    this.setEventListeners();
+  },
 
-    DOM.buildCmbBtn.addEventListener('click', () => {
-      DOM.startScreen.classList.add('hide');
-      DOM.buildCmbBox.classList.remove('hide');
-      DOM.backBtn.classList.remove('hide');
+
+  reset() {
+    this.state.mode = 'start';
+
+    this.DOM.buildDiffSelection.value = 'random';
+    this.DOM.randomDiffSelection.value = 'random';
+    this.DOM.numTricksSelection.value = 'random';
+
+    this.DOM.startScreen.classList.remove('hide');
+    this.DOM.randomCmbBox.classList.add('hide');
+    this.DOM.buildCmbBox.classList.add('hide');
+    this.DOM.backBtn.classList.add('hide');
+  },
+
+
+  setEventListeners() {
+    this.DOM.buildCmbBtn.addEventListener('click', () => {
+      this.state.mode = 'build';
+      this.DOM.startScreen.classList.add('hide');
+      this.DOM.buildCmbBox.classList.remove('hide');
+      this.DOM.backBtn.classList.remove('hide');
+      this.DOM.generateTrickBtn.classList.remove('hide');
+      this.DOM.buildDiffContainer.classList.remove('hide');
+
+      this.DOM.redoBtn.classList.add('hide');
+      this.DOM.nextTrickBtn.classList.add('hide');
+      this.DOM.newCmbBtn.classList.add('hide');
     });
 
-    DOM.randomCmbBtn.addEventListener('click', () => {
-      this.state.mode = 'randomCombo';
-      DOM.startScreen.classList.add('hide');
-      DOM.randomCmbBox.classList.remove('hide');
-      DOM.backBtn.classList.remove('hide');
+    this.DOM.generateTrickBtn.addEventListener('click', () => {
+      this.setCurrAndPrevTrick();
+
+      const difficulty = View.getChoices(this.state.mode);
+      this.buildTrick(difficulty, this.state.prevTrick);
+
+      this.DOM.redoBtn.classList.remove('hide');
+      this.DOM.nextTrickBtn.classList.remove('hide');
+      this.DOM.newCmbBtn.classList.remove('hide');
+
+      this.DOM.generateTrickBtn.classList.add('hide');
+      this.DOM.buildDiffContainer.classList.add('hide');
     });
 
-    DOM.generateComboBtn.addEventListener('click', () => {
-      const choices = View.getChoices();
+    this.DOM.randomCmbBtn.addEventListener('click', () => {
+      this.state.mode = 'random';
+      this.DOM.startScreen.classList.add('hide');
+      this.DOM.randomCmbBox.classList.remove('hide');
+      this.DOM.backBtn.classList.remove('hide');
+    });
+
+    this.DOM.generateCmbBtn.addEventListener('click', () => {
+      const choices = View.getChoices(this.state.mode);
       this.generateCombo(choices.difficulty, choices.numTricks);
     });
 
-    DOM.backBtn.addEventListener('click', () => {
-      if (this.state.mode === 'randomCombo') this.clear(DOM.randomCmbContainer);
+    this.DOM.backBtn.addEventListener('click', () => {
+      if (this.state.mode === 'random') {
+        this.clear(this.DOM.randomCmbContainer);
+      } else {
+        this.clear(this.DOM.builtCmbContainer);
+      }
       this.reset();
     });
   },
 
 
-  reset() {
-    DOM.startScreen.classList.remove('hide');
-    DOM.randomCmbBox.classList.add('hide');
-    DOM.buildCmbBox.classList.add('hide');
-    DOM.backBtn.classList.add('hide');
+  setCurrAndPrevTrick() {
+    if (this.state.currTrick) {
+      this.state.prevTrick = this.state.currTrick;
+      this.state.currTrick = undefined;
+    }
+  },
+
+
+  handleDifficulty(difficulty) {
+    if (difficulty === 'random') {
+      return Model.random(2) + 1;
+    }
+    return difficulty;
   },
 
 
   generateCombo(maxDiff, numTricks) {
-    this.clear(DOM.randomCmbContainer);
+    this.clear(this.DOM.randomCmbContainer);
 
     let officialNumTricks;
     if (numTricks === 'random') {
@@ -58,18 +110,10 @@ const app = {
       officialNumTricks = numTricks;
     }
 
-    let officialMaxDiff;
-    if (maxDiff === 'random') {
-      officialMaxDiff = Model.random(2) + 1;
-    } else {
-      officialMaxDiff = maxDiff;
-    }
+    const officialMaxDiff = this.handleDifficulty(maxDiff);
 
     do {
-      if (this.state.currTrick) {
-        this.state.prevTrick = this.state.currTrick;
-        this.state.currTrick = undefined;
-      }
+      this.setCurrAndPrevTrick();
 
       this.buildTrick(officialMaxDiff, this.state.prevTrick);
       this.state.trickCount += 1;
@@ -87,9 +131,15 @@ const app = {
 
 
   buildTrick(maxDiff, prevTrick) {
+    const officialMaxDiff = this.handleDifficulty(maxDiff);
+
     const trick = new Trick();
 
-    trick.generateLevel(maxDiff);
+    if (this.state.mode === 'random') {
+      trick.generateLevel(officialMaxDiff);
+    } else {
+      trick.setLevel(officialMaxDiff);
+    }
     trick.generateTrick(prevTrick);
     trick.setName();
 
@@ -106,7 +156,11 @@ const app = {
 
     if (trick.transition) trick.transition = Model.formatMod(trick.transition);
 
-    View.displayTrick(prevTrick, trick);
+    if (this.state.mode === 'random') {
+      View.displayTrick(prevTrick, trick, this.DOM.randomCmbContainer);
+    } else {
+      View.displayTrick(prevTrick, trick, this.DOM.builtCmbContainer);
+    }
     this.state.currTrick = trick;
   },
 };

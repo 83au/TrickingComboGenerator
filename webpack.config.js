@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/js/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/index.js',
+    filename: 'js/index.[contentHash].js',
   },
   module: {
     rules: [

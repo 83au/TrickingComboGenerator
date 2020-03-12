@@ -9,6 +9,11 @@ export default class Trick {
   }
 
 
+  setLevel(num) {
+    this.level = `level${num}`;
+  }
+
+
   generateTrick(prevTrick) {
     let possibleTricks;
 
