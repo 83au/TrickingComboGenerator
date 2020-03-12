@@ -9,7 +9,6 @@ import * as View from './view';
 
 const app = {
   DOM: View.elements,
-
   state: {},
 
 
@@ -35,16 +34,7 @@ const app = {
 
   setEventListeners() {
     this.DOM.buildCmbBtn.addEventListener('click', () => {
-      this.state.mode = 'build';
-      this.DOM.startScreen.classList.add('hide');
-      this.DOM.buildCmbBox.classList.remove('hide');
-      this.DOM.backBtn.classList.remove('hide');
-      this.DOM.generateTrickBtn.classList.remove('hide');
-      this.DOM.buildDiffContainer.classList.remove('hide');
-
-      this.DOM.redoBtn.classList.add('hide');
-      this.DOM.nextTrickBtn.classList.add('hide');
-      this.DOM.newCmbBtn.classList.add('hide');
+      this.setBuildMode();
     });
 
     this.DOM.generateTrickBtn.addEventListener('click', () => {
@@ -62,10 +52,7 @@ const app = {
     });
 
     this.DOM.randomCmbBtn.addEventListener('click', () => {
-      this.state.mode = 'random';
-      this.DOM.startScreen.classList.add('hide');
-      this.DOM.randomCmbBox.classList.remove('hide');
-      this.DOM.backBtn.classList.remove('hide');
+      this.setRandomMode();
     });
 
     this.DOM.generateCmbBtn.addEventListener('click', () => {
@@ -81,6 +68,28 @@ const app = {
       }
       this.reset();
     });
+  },
+
+
+  setBuildMode() {
+    this.state.mode = 'build';
+    this.DOM.startScreen.classList.add('hide');
+    this.DOM.buildCmbBox.classList.remove('hide');
+    this.DOM.backBtn.classList.remove('hide');
+    this.DOM.generateTrickBtn.classList.remove('hide');
+    this.DOM.buildDiffContainer.classList.remove('hide');
+
+    this.DOM.redoBtn.classList.add('hide');
+    this.DOM.nextTrickBtn.classList.add('hide');
+    this.DOM.newCmbBtn.classList.add('hide');
+  },
+
+
+  setRandomMode() {
+    this.state.mode = 'random';
+    this.DOM.startScreen.classList.add('hide');
+    this.DOM.randomCmbBox.classList.remove('hide');
+    this.DOM.backBtn.classList.remove('hide');
   },
 
 
