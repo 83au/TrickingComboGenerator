@@ -2,6 +2,7 @@
 
 export const elements = {
   startScreen: document.querySelector('.start-screen'),
+
   // Build Combo elements
   buildCmbBtn: document.getElementById('buildComboOption'),
   buildCmbBox: document.querySelector('.buildComboBox'),
@@ -12,6 +13,7 @@ export const elements = {
   redoBtn: document.getElementById('redo'),
   nextTrickBtn: document.getElementById('next'),
   newCmbBtn: document.getElementById('new'),
+
   // Random combo elements
   randomCmbBtn: document.getElementById('randomComboOption'),
   randomCmbBox: document.querySelector('.randomComboBox'),
@@ -19,6 +21,7 @@ export const elements = {
   randomDiffSelection: document.getElementById('randomCmbDifficulty'),
   numTricksSelection: document.getElementById('numTricks'),
   generateCmbBtn: document.getElementById('generateRandomCombo'),
+
   // Back button
   backBtn: document.getElementById('backToChoices'),
 };
