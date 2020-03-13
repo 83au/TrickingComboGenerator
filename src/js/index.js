@@ -119,10 +119,33 @@ const app = {
   redoTrick() {
     this.state.currTrick = undefined;
 
-    // Remove last trick element
+    // Remove current trick from UI
     this.DOM.builtCmbContainer.lastElementChild.remove();
+    this.removeLastTransition();
+    this.removeLastConnector();
 
-    // Remove last transition element
+    // If there's a previous trick, remove it and put it back with new landing
+    if (this.state.prevTrick) {
+      const { prevTrick } = this.state;
+      prevTrick.generateLanding();
+
+      if (prevTrick.transition) {
+        prevTrick.transition = Model.formatMod(prevTrick.transition);
+      }
+
+      this.DOM.builtCmbContainer.lastElementChild.remove();
+      this.removeLastTransition();
+      this.removeLastConnector();
+
+      const hasMoreTricks = this.DOM.builtCmbContainer.children.length > 0;
+      View.displayTrick(hasMoreTricks, prevTrick, this.DOM.builtCmbContainer);
+    }
+
+    this.nextTrick();
+  },
+
+
+  removeLastTransition() {
     const transElements = this.DOM.builtCmbContainer.querySelectorAll('.transition');
     if (transElements.length) {
       const lastTransEl = transElements[transElements.length - 1];
@@ -130,21 +153,12 @@ const app = {
         lastTransEl.remove();
       }
     }
+  },
 
-    // Remove last connector
+
+  removeLastConnector() {
     const connElements = this.DOM.builtCmbContainer.querySelectorAll('.connector');
-    if (connElements.length) {
-      connElements[connElements.length - 1].remove();
-      // connElements[connElements.length - 1].remove();
-    }
-
-    // TODO: Redo last trick's landing so that new trick can have different transition
-    // May need to keep track of all tricks by adding a combo array to state
-    // 1. Reset previous trick's landing
-    // 2. If previous trick has transition, format it
-    // 3. Display previous trick
-
-    this.nextTrick();
+    if (connElements.length) connElements[connElements.length - 1].remove();
   },
 
 

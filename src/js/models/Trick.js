@@ -39,11 +39,6 @@ export default class Trick {
   }
 
 
-  generateLanding() {
-    this.landing = Model.randomMove(this.trickObj.landings);
-  }
-
-
   setName() {
     this.name = this.trickObj.name;
   }
@@ -98,6 +93,12 @@ export default class Trick {
       }
     }
   }
+
+
+  generateLanding() {
+    this.landing = Model.randomMove(this.trickObj.landings);
+  }
+
 
   handleLandingMod() {
     if (Data.landingModifiers.includes(this.landing)) {
