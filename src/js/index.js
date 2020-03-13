@@ -20,6 +20,9 @@ const app = {
 
   reset() {
     this.state.mode = 'start';
+    this.state.currTrick = undefined;
+    this.state.prevTrick = undefined;
+    this.state.trickCount = 0;
 
     this.DOM.buildDiffSelection.value = 'random';
     this.DOM.randomDiffSelection.value = 'random';
@@ -38,17 +41,19 @@ const app = {
     });
 
     this.DOM.generateTrickBtn.addEventListener('click', () => {
-      this.setCurrAndPrevTrick();
+      this.createAndDisplayTrick();
+    });
 
-      const difficulty = View.getChoices(this.state.mode);
-      this.buildTrick(difficulty, this.state.prevTrick);
+    this.DOM.redoBtn.addEventListener('click', () => {
+      this.redoTrick();
+    });
 
-      this.DOM.redoBtn.classList.remove('hide');
-      this.DOM.nextTrickBtn.classList.remove('hide');
-      this.DOM.newCmbBtn.classList.remove('hide');
+    this.DOM.nextTrickBtn.addEventListener('click', () => {
+      this.nextTrick();
+    });
 
-      this.DOM.generateTrickBtn.classList.add('hide');
-      this.DOM.buildDiffContainer.classList.add('hide');
+    this.DOM.newCmbBtn.addEventListener('click', () => {
+      this.newBuildCombo();
     });
 
     this.DOM.randomCmbBtn.addEventListener('click', () => {
@@ -61,12 +66,7 @@ const app = {
     });
 
     this.DOM.backBtn.addEventListener('click', () => {
-      if (this.state.mode === 'random') {
-        this.clear(this.DOM.randomCmbContainer);
-      } else {
-        this.clear(this.DOM.builtCmbContainer);
-      }
-      this.reset();
+      this.backToStart();
     });
   },
 
@@ -93,11 +93,79 @@ const app = {
   },
 
 
+  createAndDisplayTrick() {
+    this.setCurrAndPrevTrick();
+
+    const difficulty = View.getChoices(this.state.mode);
+    this.buildTrick(difficulty, this.state.prevTrick);
+
+    this.DOM.redoBtn.classList.remove('hide');
+    this.DOM.nextTrickBtn.classList.remove('hide');
+    this.DOM.newCmbBtn.classList.remove('hide');
+
+    this.DOM.generateTrickBtn.classList.add('hide');
+    this.DOM.buildDiffContainer.classList.add('hide');
+  },
+
+
   setCurrAndPrevTrick() {
     if (this.state.currTrick) {
       this.state.prevTrick = this.state.currTrick;
       this.state.currTrick = undefined;
     }
+  },
+
+
+  redoTrick() {
+    // Remove last trick element
+    this.DOM.builtCmbContainer.lastElementChild.remove();
+
+    // Remove last transition element
+    const transElements = this.DOM.builtCmbContainer.querySelectorAll('.transition');
+    if (transElements.length) {
+      const lastTransEl = transElements[transElements.length - 1];
+      if (this.DOM.builtCmbContainer.lastElementChild === lastTransEl) {
+        lastTransEl.remove();
+      }
+    }
+
+    // Remove last connector
+    const connElements = this.DOM.builtCmbContainer.querySelectorAll('.connector');
+    if (connElements.length) connElements[connElements.length - 1].remove();
+
+    this.state.currTrick = undefined;
+    this.nextTrick();
+  },
+
+
+  nextTrick() {
+    this.DOM.generateTrickBtn.classList.remove('hide');
+    this.DOM.buildDiffContainer.classList.remove('hide');
+    this.DOM.buildDiffSelection.value = 'random';
+
+    this.DOM.redoBtn.classList.add('hide');
+    this.DOM.nextTrickBtn.classList.add('hide');
+    this.DOM.newCmbBtn.classList.add('hide');
+  },
+
+
+  newBuildCombo() {
+    this.state.currTrick = undefined;
+    this.state.prevTrick = undefined;
+    this.clear(this.DOM.builtCmbContainer);
+
+    this.setBuildMode();
+    this.DOM.buildDiffSelection.value = 'random';
+  },
+
+
+  backToStart() {
+    if (this.state.mode === 'random') {
+      this.clear(this.DOM.randomCmbContainer);
+    } else {
+      this.clear(this.DOM.builtCmbContainer);
+    }
+    this.reset();
   },
 
 

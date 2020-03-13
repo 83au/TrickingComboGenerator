@@ -72,6 +72,11 @@ select {
   align-items: center;
 }
 
+.buildCmbChoices__difficulty {
+  padding-top: 1rem;
+  border-top: 1px solid white;
+}
+
 .buildCmbChoices__difficulty.hide {
   display: none;
 }
@@ -93,8 +98,10 @@ select {
   text-align: center;
 }
 
-.choices__selection-box {
+.randomComboBox__choices__selection-box {
   margin: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid white;
 }
 
 .randomComboBox .btn {
