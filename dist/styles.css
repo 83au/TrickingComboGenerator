@@ -34,13 +34,13 @@ body {
 
 h1 {
   margin: 2rem 0;
-  font-size: 5.5rem;
+  font-size: 5rem;
   text-align: center;
 }
 
 label {
   display: block;
-  font-size: 2.5rem;
+  font-size: 2.2rem;
 }
 
 select {
@@ -51,7 +51,7 @@ select {
 }
 
 .btn {
-  padding: 1rem 2rem;
+  padding: 1rem;
 
   margin: 1rem;
 
@@ -61,7 +61,7 @@ select {
   color: var(--blue);
   cursor: pointer;
   outline: none;
-  width: 25rem;
+  width: 22rem;
   
   font-family: 'Bangers', Impact, sans-serif;
   font-size: 2.8rem;
@@ -88,7 +88,7 @@ select {
 }
 
 .trick {
-  font-size: 4rem;
+  font-size: 3.8rem;
   font-style: italic; 
 }
 
