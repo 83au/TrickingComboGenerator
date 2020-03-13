@@ -1,3 +1,10 @@
+/* ===== KEYFRAMES ===== */
+/* @keyframes slideIn {
+
+} */
+
+/* ====== UNIVERSAL ===== */
+
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -43,71 +50,6 @@ select {
   font-size: 2rem;
 }
 
-.start-screen { 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  margin-top: 4rem;
-
-  max-width: 100%;
-}
-
-.start-screen.hide {
-  display: none;
-}
-
-.start-screen__btn {
-  margin: 2rem 0;
-}
-
-.buildComboBox {
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.buildComboBox__choices {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.buildCmbChoices__difficulty {
-  padding-top: 1rem;
-  border-top: 1px solid white;
-}
-
-.buildCmbChoices__difficulty.hide {
-  display: none;
-}
-
-.buildComboBox.hide {
-  display: none;
-}
-
-.randomComboBox.hide {
-  display: none;
-}
-
-.randomComboBox {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.randomComboBox__choices__selection-box {
-  margin: 2rem;
-  padding-top: 1rem;
-  border-top: 1px solid white;
-}
-
-.randomComboBox .btn {
-  margin: 1rem 0;
-}
-
 .btn {
   padding: 1rem 2rem;
 
@@ -126,23 +68,9 @@ select {
   letter-spacing: .8px;
 }
 
-.btn.hide {
-  display: none;
-}
-
-#builtCombo {
-  margin-bottom: 2rem;
-}
-
-#builtCombo,
-#randomCombo {
+.buildComboBox__combo,
+.randomComboBox__combo {
   line-height: 1.7;
-}
-
-#randomCombo {
-  margin: 2rem auto;
-  width: 100%;
-  text-align: center;
 }
 
 .connector {
@@ -154,10 +82,10 @@ select {
   font-size: 2rem;
 }
 
-.takeoff, .landing {
+.takeoff, 
+.landing {
   font-size: 2.5rem;
 }
-
 
 .trick {
   font-size: 4rem;
@@ -165,7 +93,73 @@ select {
 }
 
 
-/* ===== Tablet ===== */
+/* ===== START SCREEN ===== */
+
+.start-screen { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 4rem;
+
+  max-width: 100%;
+}
+
+.start-screen__btn {
+  margin: 2rem 0;
+}
+
+
+/* ===== BUILD COMBO SCREEN ===== */
+
+.buildComboBox {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.buildComboBox__choices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buildCmbChoices__difficulty {
+  padding-top: 1rem;
+  border-top: 1px solid white;
+}
+
+.buildComboBox__combo {
+  margin-bottom: 2rem;
+}
+
+
+/* ===== RANDOM COMBO SCREEN ===== */
+
+.randomComboBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.randomComboBox__choices__selection-box {
+  margin: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid white;
+}
+
+.randomComboBox__combo {
+  margin: 2rem auto;
+  width: 100%;
+  text-align: center;
+}
+
+
+/* ===== MEDIA QUERIES ===== */
+
+/* = =  Tablet = = = */
 @media only screen and (min-width: 700px) and (orientation: portrait) { /* 700px */
   html {
     font-size: 70%;
@@ -179,11 +173,13 @@ select {
     margin-top: 6rem;
   }
 
-  .randomComboBox .btn {
+  .randomComboBox__btn {
     margin: 3rem 0;
   }
 }
 
+
+/* = = = Desktop = = = */
 @media only screen and (min-width: 700px) and (orientation: landscape) {
   html {
     font-size: 70%;
@@ -193,7 +189,12 @@ select {
     font-size: 6rem;
   }
 
-  .randomComboBox .btn:hover {
+  .randomComboBox__btn:hover {
     opacity: .9;
   }
+}
+
+/* ===== HIDE CLASS ===== */
+.hide {
+  display: none;
 }

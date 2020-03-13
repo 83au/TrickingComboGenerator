@@ -117,6 +117,8 @@ const app = {
 
 
   redoTrick() {
+    this.state.currTrick = undefined;
+
     // Remove last trick element
     this.DOM.builtCmbContainer.lastElementChild.remove();
 
@@ -131,9 +133,17 @@ const app = {
 
     // Remove last connector
     const connElements = this.DOM.builtCmbContainer.querySelectorAll('.connector');
-    if (connElements.length) connElements[connElements.length - 1].remove();
+    if (connElements.length) {
+      connElements[connElements.length - 1].remove();
+      // connElements[connElements.length - 1].remove();
+    }
 
-    this.state.currTrick = undefined;
+    // TODO: Redo last trick's landing so that new trick can have different transition
+    // May need to keep track of all tricks by adding a combo array to state
+    // 1. Reset previous trick's landing
+    // 2. If previous trick has transition, format it
+    // 3. Display previous trick
+
     this.nextTrick();
   },
 
@@ -212,6 +222,7 @@ const app = {
 
     const trick = new Trick();
 
+    // Set trick level
     if (this.state.mode === 'random') {
       trick.generateLevel(officialMaxDiff);
     } else {
@@ -226,9 +237,9 @@ const app = {
       trick.takeoff = Model.chooseFromList(trick.trickObj.setups, 'takeoffModifiers');
     }
 
-    trick.generateLanding();
     trick.handleHook();
     trick.handleTakeoff();
+    trick.generateLanding();
     trick.handleLandingMod();
 
     if (trick.transition) trick.transition = Model.formatMod(trick.transition);
@@ -239,6 +250,8 @@ const app = {
       View.displayTrick(prevTrick, trick, this.DOM.builtCmbContainer);
     }
     this.state.currTrick = trick;
+    console.log(trick.name);
+    console.log(trick.landing);
   },
 };
 
