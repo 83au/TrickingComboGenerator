@@ -103,6 +103,8 @@ export default class Trick {
   handleLandingMod() {
     if (Data.landingModifiers.includes(this.landing)) {
       this.landingMod = Model.formatMod(this.landing);
+    } else {
+      this.landingMod = null;
     }
   }
 }

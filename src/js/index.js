@@ -128,6 +128,8 @@ const app = {
     if (this.state.prevTrick) {
       const { prevTrick } = this.state;
       prevTrick.generateLanding();
+      console.log(prevTrick.landing);
+      prevTrick.handleLandingMod();
 
       if (prevTrick.transition) {
         prevTrick.transition = Model.formatMod(prevTrick.transition);
@@ -264,6 +266,7 @@ const app = {
       View.displayTrick(prevTrick, trick, this.DOM.builtCmbContainer);
     }
     this.state.currTrick = trick;
+    console.clear();
     console.log(trick.name);
     console.log(trick.landing);
   },
