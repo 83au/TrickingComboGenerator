@@ -4,7 +4,7 @@
     transform: translateX(-100rem);
   }
   90% {
-    transform: translateX(3rem) skew(-10deg);
+    transform: translateX(3rem) skew(-20deg);
   }
   100% {
     transform: translateX(0);
@@ -67,7 +67,7 @@ h1 {
 
 label {
   display: block;
-  font-size: 2.2rem;
+  font-size: 2.5rem;
 }
 
 select {
@@ -120,7 +120,7 @@ select {
 
 .takeoff, 
 .landing {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
 }
 
 .trick {
