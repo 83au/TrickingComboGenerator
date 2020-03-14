@@ -723,6 +723,20 @@ export const tricks = {
     },
 
     {
+      name: 'Tornado Sidekick',
+      setups: [
+        'vanish',
+        'hook carry-through',
+        'right left redirect',
+        'reverse pop',
+        'frontside pop',
+        'hook',
+        'cheat',
+      ],
+      landings: landingPositions.round,
+    },
+
+    {
       name: 'Triple Kick',
       setups: [
         'j step',
