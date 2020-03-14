@@ -5,9 +5,9 @@
   "main": "tricks.js",
   "scripts": {
     "lint": "npx eslint tricks.js",
-    "dev": "webpack --mode development",
-    "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development --open"
+    "dev": "webpack --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "start": "webpack-dev-server --config webpack.dev.js --open"
   },
   "author": "Beau Sherman",
   "license": "ISC",
@@ -24,7 +24,8 @@
     "regenerator-runtime": "^0.13.3",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.10.3"
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
   },
   "dependencies": {}
 }

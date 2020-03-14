@@ -3,11 +3,11 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/js/index.js',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'js/index.[contentHash].js', // Use this for production
-    // filename: 'js/index.js', // Use this for development
-  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/template.html',
+    }),
+  ],
   module: {
     rules: [
       {
@@ -17,11 +17,6 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-    }),
-  ],
   devServer: {
     contentBase: './dist',
   },

@@ -18,6 +18,7 @@ module.exports = {
     "no-console": "off",
     "arrow-parens": ["error", "as-needed"],
     "no-use-before-define": ["error", { "functions": false, "classes": true }],
-    "no-param-reassign": ["error", { "props": false }]
+    "no-param-reassign": ["error", { "props": false }],
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true}]
   },
 };

@@ -1078,7 +1078,7 @@ export const tricks = {
     },
 
     {
-      name: 'Moon Kick',
+      name: 'Moonkick',
       setups: takeoffs.swing,
       landings: landingPositions.hook.concat(['turbo']),
     },
