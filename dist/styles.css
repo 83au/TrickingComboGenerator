@@ -1,4 +1,5 @@
 /* ===== KEYFRAMES ===== */
+
 @keyframes slideIn {
   0%, 20% {
     transform: translateX(-100rem);
@@ -29,6 +30,7 @@
     height: 1em;
   }
 }
+
 
 /* ====== UNIVERSAL ===== */
 
@@ -124,7 +126,7 @@ select {
 }
 
 .trick {
-  font-size: 3.8rem;
+  font-size: 3.5rem;
   font-style: italic; 
 }
 
