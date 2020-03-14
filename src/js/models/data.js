@@ -39,7 +39,15 @@ export const landingPositions = {
     'skip invert', // skip from eagle into mega for a front swing
     'vanish',
     'backside',
+    // * Swings are more common and a staple of the sport, so they get higher precedence
     'back swing',
+    'back swing',
+    'back swing',
+    'back swing',
+    'back swing',
+    'back swing',
+    'back swing',
+
   ],
 
   round: [
@@ -386,7 +394,17 @@ export const tricks = {
     {
       name: 'Blaster Scoot',
       setups: ['reverse vanish', 'inside'],
-      landings: ['back swing', 'backside', 'backside pop', 'invert backside pop', 'vanish'],
+      landings: [
+        // Swing get higher precedence
+        'back swing',
+        'back swing',
+        'backside',
+        'backside pop',
+        // Invert pops are more common
+        'invert backside pop',
+        'invert backside pop',
+        'vanish',
+      ],
     },
 
     {
@@ -398,7 +416,17 @@ export const tricks = {
     {
       name: 'Kaydem',
       setups: ['reverse vanish', 'inside'],
-      landings: ['back swing', 'backside', 'backside pop', 'invert backside pop', 'vanish'],
+      landings: [
+        // Swing get higher precedence
+        'back swing',
+        'back swing',
+        'backside',
+        'backside pop',
+        // Invert pops are more common
+        'invert backside pop',
+        'invert backside pop',
+        'vanish',
+      ],
     },
 
     {

@@ -166,7 +166,6 @@ const app = {
   nextTrick() {
     this.DOM.generateTrickBtn.classList.remove('hide');
     this.DOM.buildDiffContainer.classList.remove('hide');
-    this.DOM.buildDiffSelection.value = 'random';
 
     this.DOM.redoBtn.classList.add('hide');
     this.DOM.nextTrickBtn.classList.add('hide');
