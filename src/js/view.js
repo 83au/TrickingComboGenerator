@@ -27,14 +27,20 @@ export const elements = {
 };
 
 
-export function displayTrick(prevTrick, curTrick, container) {
+export function displayTrick(prevTrick, curTrick, container, mode) {
   const trickEl = document.createElement('div');
-  trickEl.className = 'trick';
 
-  if (prevTrick) createConnector(container);
+  if (mode === 'random') {
+    trickEl.className = 'trick';
 
-  displayTransition(curTrick, container);
-  displayTakeoffAndName(curTrick, trickEl, container);
+    if (prevTrick) createConnector(container, mode);
+
+    displayTransition(curTrick, container, mode);
+    displayTakeoffAndName(curTrick, trickEl, container);
+  } else {
+    animateTrick(prevTrick, curTrick, container, mode, trickEl);
+  }
+
   displayLanding(curTrick.landingMod, trickEl);
 }
 
@@ -64,25 +70,66 @@ export function clearContainer(container) {
 
 // * * * * PRIVATE FUNCTIONS * * * *
 
-function createConnector(container) {
+function animateTrick(prevTrick, curTrick, container, mode, trickEl) {
+  trickEl.classList.add('trick', 'hidden');
+
+  if (prevTrick) createConnector(container, mode);
+
+  const transition = displayTransition(curTrick, container, mode);
+
+  if (transition) {
+    setTimeout(() => {
+      trickEl.classList.remove('hidden');
+      trickEl.classList.add('build');
+    }, 600);
+    displayTakeoffAndName(curTrick, trickEl, container);
+  } else if (prevTrick) {
+    setTimeout(() => {
+      trickEl.classList.remove('hidden');
+      trickEl.classList.add('build');
+    }, 200);
+    displayTakeoffAndName(curTrick, trickEl, container);
+  } else {
+    trickEl.classList.remove('hidden');
+    trickEl.classList.add('build');
+    displayTakeoffAndName(curTrick, trickEl, container);
+  }
+}
+
+
+function createConnector(container, mode) {
   const connector = document.createElement('div');
-  connector.className = 'connector';
+  if (mode === 'random') {
+    connector.className = 'connector';
+  } else {
+    connector.classList.add('connector', 'build');
+  }
   connector.innerHTML = '&darr;';
   container.append(connector);
 }
 
 
-function displayTransition(trick, container) {
+function displayTransition(trick, container, mode) {
   if (trick.transition) {
     const notTakeoff = trick.transition !== trick.takeoff;
 
     if (notTakeoff) {
       const transEl = document.createElement('div');
-      transEl.className = 'transition';
+      if (mode === 'random') {
+        transEl.className = 'transition';
+      } else {
+        transEl.classList.add('transition', 'hidden');
+        setTimeout(() => {
+          transEl.classList.remove('hidden');
+          transEl.classList.add('build');
+        }, 500);
+      }
       transEl.textContent = `- ${trick.transition} -`;
       container.append(transEl);
     }
+    return true;
   }
+  return false;
 }
 
 

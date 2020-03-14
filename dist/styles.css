@@ -1,7 +1,34 @@
 /* ===== KEYFRAMES ===== */
-/* @keyframes slideIn {
+@keyframes slideIn {
+  0%, 20% {
+    transform: translateX(-100rem);
+  }
+  90% {
+    transform: translateX(3rem) skew(-10deg);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 
-} */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+    text-shadow: 0 0 7px rgba(255, 255, 255, .8);
+  }
+}
+
+@keyframes shootDown {
+  from {
+    height: 0;
+  }
+  to {
+    height: 1em;
+  }
+}
 
 /* ====== UNIVERSAL ===== */
 
@@ -75,11 +102,20 @@ select {
 
 .connector {
   margin-top: -1rem;
+  overflow: hidden;
   font-size: 3rem;
+}
+
+.connector.build {
+  animation: shootDown .4s linear;
 }
 
 .transition {
   font-size: 2rem;
+}
+
+.transition.build {
+  animation: pulse .4s;
 }
 
 .takeoff, 
@@ -90,6 +126,10 @@ select {
 .trick {
   font-size: 3.8rem;
   font-style: italic; 
+}
+
+.trick.build {
+  animation: slideIn .8s;
 }
 
 
@@ -144,7 +184,7 @@ select {
   text-align: center;
 }
 
-.randomComboBox__choices__selection-box {
+.randomComboBox__selection {
   margin: 2rem;
   padding-top: 1rem;
   border-top: 1px solid white;
@@ -189,12 +229,17 @@ select {
     font-size: 6rem;
   }
 
-  .randomComboBox__btn:hover {
+  .btn:hover {
     opacity: .9;
   }
 }
 
-/* ===== HIDE CLASS ===== */
+
+/* ===== HIDE CLASSES===== */
 .hide {
   display: none;
+}
+
+.hidden {
+  visibility: hidden;
 }

@@ -128,7 +128,6 @@ const app = {
     if (this.state.prevTrick) {
       const { prevTrick } = this.state;
       prevTrick.generateLanding();
-      console.log(prevTrick.landing);
       prevTrick.handleLandingMod();
 
       if (prevTrick.transition) {
@@ -261,14 +260,11 @@ const app = {
     if (trick.transition) trick.transition = Model.formatMod(trick.transition);
 
     if (this.state.mode === 'random') {
-      View.displayTrick(prevTrick, trick, this.DOM.randomCmbContainer);
+      View.displayTrick(prevTrick, trick, this.DOM.randomCmbContainer, 'random');
     } else {
-      View.displayTrick(prevTrick, trick, this.DOM.builtCmbContainer);
+      View.displayTrick(prevTrick, trick, this.DOM.builtCmbContainer, 'build');
     }
     this.state.currTrick = trick;
-    console.clear();
-    console.log(trick.name);
-    console.log(trick.landing);
   },
 };
 
