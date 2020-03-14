@@ -5,6 +5,7 @@
 import * as Model from './models/model';
 import Trick from './models/Trick';
 import * as View from './view';
+import '../styles.css';
 
 
 const app = {
