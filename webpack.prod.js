@@ -1,20 +1,13 @@
 const path = require('path');
 const merge = require('webpack-merge');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const common = require('./webpack.common');
 
 module.exports = merge(common, {
   mode: 'production',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/main.[contentHash].js', // Use this for production
+    filename: 'js/main.[contentHash].bundle.js', // Use this for production
   },
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'babel-loader',
-      },
-    ],
-  },
+  plugins: [new CleanWebpackPlugin()],
 });

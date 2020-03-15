@@ -21,6 +21,19 @@ module.exports = {
           'css-loader',
         ],
       },
+      // {
+      //   test: /\.html$/,
+      //   use: ['html-loader'],
+      // },
+      // {
+      //   test: /\.css$/,
+      //   use: {
+      //     loader: 'file-loader',
+      //     options: {
+      //       name: '[name].[hash].[ext]',
+      //     },
+      //   },
+      // },
     ],
   },
 };
