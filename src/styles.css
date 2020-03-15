@@ -69,7 +69,7 @@ h1 {
 
 label {
   display: block;
-  font-size: 2.3rem;
+  font-size: 2.5rem;
 }
 
 select {
@@ -100,6 +100,7 @@ select {
 .buildComboBox__combo,
 .randomComboBox__combo {
   line-height: 1.7;
+  width: 100%;
 }
 
 .connector {
@@ -113,7 +114,7 @@ select {
 }
 
 .transition {
-  font-size: 2rem;
+  font-size: 2.3rem;
 }
 
 .transition.build {
@@ -126,7 +127,7 @@ select {
 }
 
 .trick {
-  font-size: 3.2rem;
+  font-size: 3.3rem;
   font-style: italic; 
 }
 
