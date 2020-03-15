@@ -149,6 +149,7 @@ const app = {
 
   removeLastTransition() {
     const transElements = this.DOM.builtCmbContainer.querySelectorAll('.transition');
+
     if (transElements.length) {
       const lastTransEl = transElements[transElements.length - 1];
       if (this.DOM.builtCmbContainer.lastElementChild === lastTransEl) {

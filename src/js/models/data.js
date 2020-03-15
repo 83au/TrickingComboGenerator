@@ -251,7 +251,7 @@ export const tricks = {
   level1: [
     // KICKS
     {
-      name: '360 Crescent Kick',
+      name: '360 Crescent',
       setups: [
         'inside pop',
         'frontside pop',
@@ -533,7 +533,7 @@ export const tricks = {
     // KICKS
     {
       // 360 Crescent variations
-      name: '360 Crescent Kick',
+      name: '360 Crescent',
       setups: [
         'inside pop',
         'frontside pop',
@@ -671,7 +671,7 @@ export const tricks = {
     },
 
     {
-      name: 'Swing 360 Crescent Kick',
+      name: 'Swing 360 Crescent',
       setups: [
         'back swing',
         'round carry-through',
