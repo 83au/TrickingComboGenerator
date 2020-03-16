@@ -27,24 +27,6 @@ export const elements = {
 };
 
 
-export function displayTrick(prevTrick, curTrick, container, mode) {
-  const trickEl = document.createElement('div');
-
-  if (mode === 'random') {
-    trickEl.className = 'trick';
-
-    if (prevTrick) createConnector(container, mode);
-
-    displayTransition(curTrick, container, mode);
-    displayTakeoffAndName(curTrick, trickEl, container);
-  } else {
-    animateTrick(prevTrick, curTrick, container, mode, trickEl);
-  }
-
-  displayLanding(curTrick.landingMod, trickEl);
-}
-
-
 export function getChoices(mode) {
   let difficulty;
   let numTricks;
@@ -60,6 +42,24 @@ export function getChoices(mode) {
 
   difficulty = elements.buildDiffSelection.value;
   return difficulty;
+}
+
+
+export function displayTrick(prevTrick, curTrick, container, mode) {
+  const trickEl = document.createElement('div');
+
+  if (mode === 'random') {
+    trickEl.className = 'trick';
+
+    if (prevTrick) createConnector(container, mode);
+
+    displayTransition(curTrick, container, mode);
+    displayTakeoffAndName(curTrick, trickEl, container);
+  } else {
+    animateTrick(prevTrick, curTrick, container, mode, trickEl);
+  }
+
+  displayLanding(curTrick.landingMod, trickEl);
 }
 
 

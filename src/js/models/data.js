@@ -839,7 +839,8 @@ export const tricks = {
       name: 'Suicide Kip Up',
       setups: ['backside'],
       landings: [
-        // 'backside punch',
+        'backside',
+        'backside punch',
         'inside punch',
         // 'hook'
       ],
