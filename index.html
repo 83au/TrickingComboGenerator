@@ -1,1 +1,58 @@
-<!DOCTYPE html><html lang=en><head><meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel=stylesheet><title>Tricking Combo Generator</title><link href=dist/main.c8bbd140b64a227d5aeb.css rel=stylesheet></head><body><h1>Tricking Combo Generator</h1><div class=start-screen><button id=buildComboOption class="start-screen__btn btn">Build Combo?</button> <button id=randomComboOption class="start-screen__btn btn">Random Combo?</button></div><div class=buildComboBox><div id=builtCombo class=buildComboBox__combo></div><div class=buildComboBox__choices><div class=buildCmbChoices__difficulty><label for=randomCmbDifficulty>Difficulty Level</label> <select name=difficulty id=buildCmbDifficulty><option value=random selected=selected>random</option><option value=1>1</option><option value=2>2</option></select></div><button id=generateTrickBtn class=btn>Generate Trick</button> <button id=redo class=btn>Redo</button> <button id=next class=btn>Next trick</button> <button id=new class=btn>New Combo</button></div></div><div class=randomComboBox><div class=randomComboBox__choices><div class="randomComboBox__selection randomComboBox__selection--difficulty"><label for=randomCmbDifficulty>Max Difficulty</label> <select name=difficulty id=randomCmbDifficulty><option value=random selected=selected>random</option><option value=1>1</option><option value=2>2</option></select></div><div class="randomComboBox__selection randomComboBox__selection--numTricks"><label for=numTricks>Number of Tricks</label> <select name="Number of tricks" id=numTricks><option value=random selected=selected>random</option><option value=1>1</option><option value=2>2</option><option value=3>3</option><option value=4>4</option><option value=5>5</option><option value=6>6</option><option value=7>7</option><option value=8>8</option><option value=9>9</option><option value=10>10</option></select></div></div><button id=generateRandomCombo class="randomComboBox__btn btn">Generate Combo</button><div id=randomCombo class=randomComboBox__combo></div></div><button id=backToChoices class=btn>Back</button><script type=text/javascript src=dist/js/main.78621179f29c09fb2e02.bundle.js></script></body></html>
+<!DOCTYPE html>
+<html lang=en>
+
+<head>
+  <meta charset=UTF-8>
+  <meta name=viewport content="width=device-width,initial-scale=1">
+  <meta http-equiv=X-UA-Compatible content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel=stylesheet>
+  <title>Tricking Combo Generator</title>
+  <link href=dist/main.ade434a7c0cf27ebf7b1.css rel=stylesheet>
+</head>
+
+<body>
+  <h1>Tricking Combo Generator</h1>
+  <div class=start-screen><button id=buildComboOption class="start-screen__btn btn">Build Combo?</button> <button
+      id=randomComboOption class="start-screen__btn btn">Random Combo?</button></div>
+  <div class=buildComboBox>
+    <div id=builtCombo class=buildComboBox__combo></div>
+    <div class=buildComboBox__choices>
+      <div class=buildCmbChoices__difficulty>
+        <hr><label for=randomCmbDifficulty>Difficulty Level</label> <select name=difficulty id=buildCmbDifficulty>
+          <option value=random selected=selected>random</option>
+          <option value=1>1</option>
+          <option value=2>2</option>
+        </select></div><button id=generateTrickBtn class=btn>Generate Trick</button> <button id=redo
+        class=btn>Redo</button> <button id=next class=btn>Next trick</button> <button id=new class=btn>New
+        Combo</button>
+    </div>
+  </div>
+  <div class=randomComboBox>
+    <div class=randomComboBox__choices>
+      <div class="randomComboBox__selection randomComboBox__selection--difficulty">
+        <hr><label for=randomCmbDifficulty>Max Difficulty</label> <select name=difficulty id=randomCmbDifficulty>
+          <option value=random selected=selected>random</option>
+          <option value=1>1</option>
+          <option value=2>2</option>
+        </select></div>
+      <div class="randomComboBox__selection randomComboBox__selection--numTricks">
+        <hr><label for=numTricks>Number of Tricks</label> <select name="Number of tricks" id=numTricks>
+          <option value=random selected=selected>random</option>
+          <option value=1>1</option>
+          <option value=2>2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+          <option value=5>5</option>
+          <option value=6>6</option>
+          <option value=7>7</option>
+          <option value=8>8</option>
+          <option value=9>9</option>
+          <option value=10>10</option>
+        </select></div>
+    </div><button id=generateRandomCombo class="randomComboBox__btn btn">Generate Combo</button>
+    <div id=randomCombo class=randomComboBox__combo></div>
+  </div><button id=backToChoices class=btn>Back</button>
+  <script type=text/javascript src=dist/js/main.78621179f29c09fb2e02.bundle.js></script>
+</body>
+
+</html>
