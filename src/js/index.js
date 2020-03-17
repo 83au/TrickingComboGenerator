@@ -147,13 +147,19 @@ function buildTrick(maxDiff, prevTrick) {
 }
 
 
+function handleDifficulty(difficulty) {
+  if (difficulty === 'random') {
+    return Model.random(2) + 1;
+  }
+  return difficulty;
+}
+
+
 function redoTrick() {
   state.currTrick = undefined;
 
   // Remove current trick from UI
-  DOM.builtCmbContainer.lastElementChild.remove();
-  removeLastTransition();
-  removeLastConnector();
+  View.removeCurrentTrick();
 
   // If there's a previous trick, remove it and put it back with new landing
   if (state.prevTrick) {
@@ -165,33 +171,13 @@ function redoTrick() {
       prevTrick.transition = Model.formatMod(prevTrick.transition);
     }
 
-    DOM.builtCmbContainer.lastElementChild.remove();
-    removeLastTransition();
-    removeLastConnector();
+    View.removeCurrentTrick();
 
     const hasMoreTricks = DOM.builtCmbContainer.children.length > 0;
     View.displayTrick(hasMoreTricks, prevTrick, DOM.builtCmbContainer);
   }
 
   nextTrick();
-}
-
-
-function removeLastTransition() {
-  const transElements = DOM.builtCmbContainer.querySelectorAll('.transition');
-
-  if (transElements.length) {
-    const lastTransEl = transElements[transElements.length - 1];
-    if (DOM.builtCmbContainer.lastElementChild === lastTransEl) {
-      lastTransEl.remove();
-    }
-  }
-}
-
-
-function removeLastConnector() {
-  const connElements = DOM.builtCmbContainer.querySelectorAll('.connector');
-  if (connElements.length) connElements[connElements.length - 1].remove();
 }
 
 
@@ -250,14 +236,6 @@ function clear(container) {
   state.trickCount = 0;
   state.prevTrick = undefined;
   state.currTrick = undefined;
-}
-
-
-function handleDifficulty(difficulty) {
-  if (difficulty === 'random') {
-    return Model.random(2) + 1;
-  }
-  return difficulty;
 }
 
 

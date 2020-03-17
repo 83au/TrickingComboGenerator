@@ -68,6 +68,30 @@ export function clearContainer(container) {
 }
 
 
+export function removeLastTransition() {
+  const transElements = elements.builtCmbContainer.querySelectorAll('.transition');
+
+  if (transElements.length) {
+    const lastTransEl = transElements[transElements.length - 1];
+    if (elements.builtCmbContainer.lastElementChild === lastTransEl) {
+      lastTransEl.remove();
+    }
+  }
+}
+
+
+export function removeLastConnector() {
+  const connElements = elements.builtCmbContainer.querySelectorAll('.connector');
+  if (connElements.length) connElements[connElements.length - 1].remove();
+}
+
+
+export function removeCurrentTrick() {
+  elements.builtCmbContainer.lastElementChild.remove();
+  removeLastTransition();
+  removeLastConnector();
+}
+
 // * * * * PRIVATE FUNCTIONS * * * *
 
 function animateTrick(prevTrick, curTrick, container, mode, trickEl) {
