@@ -602,7 +602,7 @@ export const tricks = {
 
     {
       name: 'Backside 900',
-      setups: ['backside punch', 'backside pop'],
+      setups: ['backside punch', 'backside pop', 'inside pop'],
       landings: landingPositions.round.concat(['rapid hook']),
     },
 
