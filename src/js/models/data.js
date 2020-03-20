@@ -244,7 +244,7 @@ export const transitions = [
   'rapid hook',
 ];
 
-
+// TODO: Add properties for whether trick is a kick or a flip?
 export const tricks = {
 
   // *** NOVICE ***
