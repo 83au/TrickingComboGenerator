@@ -75,6 +75,7 @@ export const landingPositions = {
     'outside leg reversal',
     'skip backswing', // skip from hook or round into jstep
     'hook to scoot',
+    'master swing',
   ],
 
   complete: [
@@ -90,6 +91,7 @@ export const landingPositions = {
     'right left redirect',
     'skip backswing',
     'cheat',
+    'master swing',
   ],
 
   mega: [
@@ -183,6 +185,7 @@ export const landingModifiers = [ // if the transition is a landing, append prev
 export const transitions = [
   'back swing',
   'front swing',
+  'master swing',
   'hook', // *
   'hook carry-through',
   'round carry-through',
@@ -222,6 +225,7 @@ export const transitions = [
   'skip round', // for wraps and scoot setups
   'skip backswing', // for back swing
   'skip frontswing', // for front swing
+  'skip masterswing',
 
   // Reversals
   'outside leg reversal',
@@ -784,7 +788,7 @@ export const tricks = {
         'vanish',
         'reverse pop',
         'hook carry-through',
-        'skip round',
+        'skip frontswing',
       ],
       landings: ['cheat', 'hook'],
     },
@@ -799,7 +803,7 @@ export const tricks = {
     {
       name: 'Master Scoot',
       notFinisher: true,
-      setups: ['hook', 'hook to scoot', 'skip round', 'vanish'],
+      setups: ['master swing', 'skip masterswing', 'vanish'],
       landings: landingPositions.eagle,
     },
 
