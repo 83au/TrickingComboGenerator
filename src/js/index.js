@@ -1,8 +1,7 @@
 // = = = = = = = = = = = = = = = = = = = APP CONTROLLER = = = = = = = = = = = = = = = = = = =
-// TESTING
-// import * as Data from './models/data';
 
 import * as Model from './models/model';
+import * as Data from './models/data';
 import Trick from './models/Trick';
 import * as View from './view';
 import '../styles.css';
@@ -65,6 +64,7 @@ function setEventListeners() {
 
   DOM.generateCmbBtn.addEventListener('click', () => {
     const choices = View.getChoices(state.mode);
+    console.log(choices.numTricks);
     generateCombo(choices.difficulty, choices.numTricks);
   });
 
@@ -118,10 +118,17 @@ function buildTrick(maxDiff, prevTrick) {
 
   // Set trick level
   if (state.mode === 'random') {
-    trick.generateLevel(officialMaxDiff);
-  } else {
+    if (typeof officialMaxDiff === 'number') {
+      trick.generateLevel(officialMaxDiff);
+    } else {
+      trick.generateLevel(Data.difficultyLevels[officialMaxDiff]);
+    }
+  } else if (typeof officialMaxDiff === 'number') {
     trick.setLevel(officialMaxDiff);
+  } else {
+    trick.setLevel(Data.difficultyLevels[officialMaxDiff]);
   }
+
   trick.generateTrick(prevTrick);
   trick.setName();
 

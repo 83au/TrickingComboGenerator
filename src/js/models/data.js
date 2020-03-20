@@ -2,7 +2,12 @@
 
 // To reduce repetition
 export const takeoffs = {
-  swing: ['back swing', 'skip hook', 'left right redirect', 'round carry-through'],
+  swing: [
+    'back swing',
+    'skip backswing',
+    'skip backswing',
+    'left right redirect',
+    'round carry-through'],
   raiz: [
     'right left redirect',
     'hook carry-through',
@@ -12,7 +17,7 @@ export const takeoffs = {
     'turn step',
     'step behind',
     'outside leg reversal',
-    'skip invert',
+    'skip frontswing',
     'vanish',
   ],
   backFullTwist: [
@@ -36,7 +41,7 @@ export const landingPositions = {
   eagle: [
     'invert backside pop',
     'missleg',
-    'skip invert', // skip from eagle into mega for a front swing
+    'skip frontswing', // skip from eagle into mega for a front swing
     'vanish',
     'backside',
     // * Swings are more common and a staple of the sport, so they get higher precedence
@@ -66,17 +71,16 @@ export const landingPositions = {
     'right left redirect',
     'reverse vanish',
     'frontside pop',
-    'frontside',
     'hook carry-through',
     'outside leg reversal',
-    'skip hook', // skip from hook or round into jstep
+    'skip backswing', // skip from hook or round into jstep
     'hook to scoot',
   ],
 
   complete: [
     'invert backside pop',
     'missleg',
-    'skip invert', // skip from eagle into mega for a front swing
+    'skip frontswing', // skip from eagle into mega for a front swing
     'vanish',
     'backside',
   ],
@@ -84,7 +88,7 @@ export const landingPositions = {
   hyper: [
     'reverse vanish',
     'right left redirect',
-    'skip hook',
+    'skip backswing',
     'cheat',
   ],
 
@@ -96,7 +100,7 @@ export const landingPositions = {
 
   semi: [
     'reverse vanish',
-    'skip hook',
+    'skip backswing',
     'semi',
   ],
 
@@ -106,7 +110,6 @@ export const landingPositions = {
   ],
 
   'gyro frontside': [
-    'frontside',
     'frontside punch',
   ],
 
@@ -116,7 +119,6 @@ export const landingPositions = {
   ],
 
   'half gyro frontside': [
-    'frontside',
     'frontside punch',
   ],
 
@@ -140,10 +142,9 @@ export const landingPositions = {
     'right left redirect',
     'reverse vanish',
     'frontside pop',
-    'frontside',
     'hook carry-through',
     'outside leg reversal',
-    'skip hook', // skip from hook or round into jstep
+    'skip backswing', // skip from hook or round into jstep
     'hook to scoot',
   ],
 };
@@ -180,6 +181,8 @@ export const landingModifiers = [ // if the transition is a landing, append prev
 ];
 
 export const transitions = [
+  'back swing',
+  'front swing',
   'hook', // *
   'hook carry-through',
   'round carry-through',
@@ -217,8 +220,8 @@ export const transitions = [
 
   // Skips
   'skip round', // for wraps and scoot setups
-  'skip hook', // for back swing
-  'skip invert', // for front swing
+  'skip backswing', // for back swing
+  'skip frontswing', // for front swing
 
   // Reversals
   'outside leg reversal',
@@ -244,7 +247,17 @@ export const transitions = [
   'rapid hook',
 ];
 
+export const difficultyLevels = {
+  novice: 1,
+  easy: 2,
+  intermediate: 3,
+  advanced: 4,
+  pro: 5,
+  'world class': 6,
+};
+
 // TODO: Add properties for whether trick is a kick or a flip?
+// TODO: Every trick has some form of transition between it
 export const tricks = {
 
   // *** NOVICE ***
@@ -262,7 +275,6 @@ export const tricks = {
         // 'right left redirect', redirect is implied
       ],
       landings: [
-        'frontside',
         'hook',
         'turbo',
         'mega',
@@ -293,15 +305,15 @@ export const tricks = {
 
     {
       name: 'Backside 720 Kick',
-      setups: ['backside punch', 'backside', 'backside pop'],
+      setups: ['backside punch', 'backside pop'],
       landings: landingPositions.hook,
     },
 
     {
       name: 'Back Sweep',
       notFinisher: true,
-      setups: ['frontside', 'hook'],
-      landings: ['frontside', 'frontside pop'],
+      setups: ['outside leg reversal', 'hook', 'reverse pop'],
+      landings: ['frontside pop', 'outside leg reversal'],
     },
 
     {
@@ -314,8 +326,7 @@ export const tricks = {
       name: 'Compasso (td hook)',
       notFinisher: true,
       setups: [
-        'inside',
-        'frontside',
+        'vanish',
         'Tornado Kick',
         'outside leg reversal',
       ],
@@ -338,8 +349,8 @@ export const tricks = {
     {
       name: 'Front Sweep',
       notFinisher: true,
-      setups: ['backside', 'inside leg reversal'],
-      landings: ['backside', 'backside pop'],
+      setups: ['inside leg reversal', 'right first reverse pop'],
+      landings: ['backside pop'],
     },
 
     {
@@ -352,7 +363,7 @@ export const tricks = {
       name: 'Palm Kick',
       notFinisher: true,
       setups: ['reverse vanish', 'missleg', 'hook', 'mega'],
-      landings: ['inside', 'inside pop', 'reverse vanish', 'outside leg reversal', 'right left redirect'],
+      landings: ['inside pop', 'reverse vanish', 'outside leg reversal', 'right left redirect'],
     },
 
     {
@@ -385,7 +396,7 @@ export const tricks = {
         'inside leg reversal',
         'left right redirect',
         'reverse pop',
-        'skip hook',
+        'skip backswing',
       ],
       landings: landingPositions.hook,
     },
@@ -393,12 +404,11 @@ export const tricks = {
     // TRANSITION TRICKS
     {
       name: 'Blaster Scoot',
-      setups: ['reverse vanish', 'inside'],
+      setups: takeoffs.cartwheel,
       landings: [
         // Swing get higher precedence
         'back swing',
         'back swing',
-        'backside',
         'backside pop',
         // Invert pops are more common
         'invert backside pop',
@@ -410,7 +420,7 @@ export const tricks = {
     {
       name: 'Cartwheel',
       setups: takeoffs.cartwheel,
-      landings: ['inside', 'invert inside pop'],
+      landings: ['invert inside pop', 'reverse vanish'],
     },
 
     {
@@ -432,7 +442,7 @@ export const tricks = {
     {
       name: 'Macaco',
       setups: ['backside'], // Pop is implied
-      landings: ['frontside', 'right left redirect', 'outside leg reversal', 'reverse vanish'],
+      landings: ['right left redirect', 'outside leg reversal', 'reverse vanish'],
     },
 
     {
@@ -450,44 +460,38 @@ export const tricks = {
     {
       name: 'Spyder',
       setups: [
-        'backside',
-        'frontside',
         'vanish',
         'outside leg reversal',
         'hook carry-through',
         'semi',
-        'skip invert',
+        'skip frontswing',
       ],
       landings: [
         'backside',
-        'frontside',
         'backside pop',
         'frontside pop',
         'vanish',
         'skip round',
-        'skip invert',
+        'skip frontswing',
       ],
     },
 
     {
       name: 'Transformer/Machine',
       setups: [
-        'backside',
-        'frontside',
         'vanish',
         'outside leg reversal',
         'hook carry-through',
         'semi',
-        'skip invert',
+        'skip frontswing',
       ],
       landings: [
         'backside',
-        'frontside',
         'backside pop',
         'frontside pop',
         'vanish',
         'skip round',
-        'skip invert',
+        'skip frontswing',
       ],
     },
 
@@ -509,7 +513,6 @@ export const tricks = {
       name: 'Front Flip',
       setups: ['invert frontside pop', 'invert frontside punch'],
       landings: [
-        'frontside',
         'invert frontside punch',
       ],
     },
@@ -521,7 +524,6 @@ export const tricks = {
         'mega',
       ],
       landings: [
-        'frontside',
         'reverse vanish',
         'invert frontside punch',
       ],
@@ -621,7 +623,8 @@ export const tricks = {
       name: 'E-kick',
       notFinisher: true,
       setups: [
-        'frontside',
+        'front swing',
+        'reverse pop',
         'outside leg reversal',
         'semi',
         'hook carry-through',
@@ -648,14 +651,13 @@ export const tricks = {
       setups: [
         'frontside pop',
         'frontside punch',
-        'cheat',
-        // 'right left redirect', redirect is implied
+        'cheat', // because cheat, redirect is implied * easier for novices to understand
         'hook',
       ],
       landings: [
         'reverse vanish',
         'right left redirect',
-        'skip hook',
+        'skip backswing',
         'wrap',
         'cheat',
       ],
@@ -663,7 +665,12 @@ export const tricks = {
 
     {
       name: 'Parafuso',
-      setups: ['vanish', 'hook', 'right left redirect'], // cheat is implied
+      setups: [
+        'vanish',
+        'hook',
+        'hook carry-through',
+        'right left redirect', // cheat is implied
+      ],
       landings: [
         'backside',
         'backside punch',
@@ -677,7 +684,7 @@ export const tricks = {
         'round carry-through',
         'inside leg reversal',
         'left right redirect',
-        'skip hook',
+        'skip backswing',
         'right first reverse pop',
       ],
       landings: [
@@ -755,6 +762,7 @@ export const tricks = {
         'cheat',
         'frontside pop',
         'frontside punch',
+        'hook carry-through',
       ],
       landings: landingPositions.hook.concat(['turbo']),
     },
@@ -830,7 +838,7 @@ export const tricks = {
         'reverse vanish',
         'right left redirect',
         'cheat',
-        'skip hook',
+        'skip backswing',
         'wrap',
       ],
     },
@@ -871,14 +879,12 @@ export const tricks = {
     {
       name: 'Aerial',
       setups: [
-        'inside',
         'reverse vanish',
         'inside leg reversal',
         'hook',
         'mega',
       ],
       landings: [
-        'inside',
         'inside pop',
         'invert inside pop',
         'reverse vanish',
@@ -950,7 +956,7 @@ export const tricks = {
         'invert backside pop',
         'back swing',
         'missleg',
-        'skip invert', // skip from eagle into mega for a front swing
+        'skip frontswing', // skip from eagle into mega for a front swing
         'vanish',
         'backside',
       ],
@@ -977,8 +983,8 @@ export const tricks = {
     {
       name: 'Donut Boy',
       notStarter: true,
-      setups: ['back swing', 'skip hook', 'j step', 'pivot step'],
-      landings: ['frontside', 'frontside punch', 'hook'],
+      setups: ['back swing', 'skip backswing', 'j step', 'pivot step'],
+      landings: ['frontside punch', 'hook'],
     },
 
     {
@@ -1037,7 +1043,6 @@ export const tricks = {
       landings: [
         'invert frontside punch',
         'reverse pop',
-        'frontside',
         'hook',
       ],
     },
@@ -1063,12 +1068,12 @@ export const tricks = {
     {
       name: 'Illusion Twist',
       setups: ['hook', 'reverse vanish', 'hyper'],
-      landings: ['frontside', 'frontside punch', 'hook'],
+      landings: ['reverse pop', 'right first reverse pop', 'frontside punch', 'hook'],
     },
 
     {
       name: 'Loser',
-      setups: ['Webster', 'backside', 'skip invert'],
+      setups: ['Webster', 'backside', 'skip frontswing'],
       landings: [
         'inside',
         'inside pop',
@@ -1094,7 +1099,7 @@ export const tricks = {
     {
       name: 'Shuriken Twist',
       setups: ['hook', 'reverse vanish', 'turn step', 'mega'],
-      landings: ['frontside', 'vanish', 'hook'],
+      landings: ['vanish', 'hook'],
     },
 
     {
