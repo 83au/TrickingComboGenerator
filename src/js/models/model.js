@@ -53,6 +53,7 @@ export function formatMod(mod) {
     if (/reverse pop$/.test(mod)) return 'reverse pop';
     if (mod === 'skip round') return 'skip';
     if (/skip backswing|skip frontswing/.test(mod)) return 'skip swing';
+    if (/left right redirect/.test(mod)) return 'redirect swing';
 
     const isTrans = /(pop|punch|vanish|reversal|redirect|carry-through|swing)$/.test(mod);
     if (isTrans) return mod.split(' ').pop();
