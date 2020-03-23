@@ -210,7 +210,8 @@ function newBuildCombo() {
   state.prevTrick = undefined;
   clear(DOM.builtCmbContainer);
 
-  setBuildMode();
+  DOM.backBtn.classList.add('hide');
+  setTimeout(() => setBuildMode(), 10);
   DOM.buildDiffSelection.value = 'random';
 }
 
