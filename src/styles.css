@@ -114,6 +114,7 @@ label {
 }
 
 select {
+  padding-left: .5rem;
   width: 12rem;
   height: 3rem;
   background: #fff;
