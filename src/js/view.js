@@ -94,6 +94,7 @@ export function removeCurrentTrick() {
   removeLastConnector();
 }
 
+
 // * * * * PRIVATE FUNCTIONS * * * *
 
 function animateTrick(prevTrick, curTrick, container, mode, trickEl, animate) {
@@ -140,11 +141,13 @@ function animateButtons() {
 
 function createConnector(container, mode) {
   const connector = document.createElement('div');
+
   if (mode === 'random') {
     connector.className = 'connector';
   } else {
     connector.classList.add('connector', 'build');
   }
+
   connector.innerHTML = '&darr;';
   container.append(connector);
 }
@@ -156,6 +159,7 @@ function displayTransition(trick, container, mode) {
 
     if (notTakeoff) {
       const transEl = document.createElement('div');
+
       if (mode === 'random') {
         transEl.className = 'transition';
       } else {
@@ -165,11 +169,14 @@ function displayTransition(trick, container, mode) {
           transEl.classList.add('build');
         }, 500);
       }
+
       transEl.textContent = `- ${trick.transition} -`;
       container.append(transEl);
     }
+
     return true;
   }
+
   return false;
 }
 

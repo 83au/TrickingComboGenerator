@@ -225,7 +225,7 @@ export const transitions = [
   'skip round', // for wraps and scoot setups
   'skip backswing', // for back swing
   'skip frontswing', // for front swing
-  'skip masterswing',
+  'skip masterswing', // For master scoot and gms
 
   // Reversals
   'outside leg reversal',
@@ -431,10 +431,9 @@ export const tricks = {
       name: 'Kaydem',
       setups: ['reverse vanish', 'inside'],
       landings: [
-        // Swing get higher precedence
+        // Swing gets higher precedence
         'back swing',
         'back swing',
-        'backside',
         'backside pop',
         // Invert pops are more common
         'invert backside pop',
@@ -471,7 +470,6 @@ export const tricks = {
         'skip frontswing',
       ],
       landings: [
-        'backside',
         'backside pop',
         'frontside pop',
         'vanish',
@@ -490,7 +488,6 @@ export const tricks = {
         'skip frontswing',
       ],
       landings: [
-        'backside',
         'backside pop',
         'frontside pop',
         'vanish',
@@ -676,7 +673,6 @@ export const tricks = {
         'right left redirect', // cheat is implied
       ],
       landings: [
-        'backside',
         'backside punch',
       ],
     },
@@ -783,54 +779,47 @@ export const tricks = {
     {
       name: 'Coin Drop',
       notStarter: true,
-      notFinisher: true,
       setups: [
         'vanish',
         'reverse pop',
         'hook carry-through',
-        'skip frontswing',
+        'skip round',
       ],
       landings: ['cheat', 'hook'],
     },
 
     {
       name: 'Gumbi',
-      notFinisher: true,
       setups: takeoffs.raiz,
       landings: landingPositions.eagle,
     },
 
     {
       name: 'Master Scoot',
-      notFinisher: true,
       setups: ['master swing', 'skip masterswing', 'vanish'],
       landings: landingPositions.eagle,
     },
 
     {
       name: 'Raiz',
-      notFinisher: true,
       setups: takeoffs.raiz,
       landings: landingPositions.eagle,
     },
 
     {
       name: 'Raiz Scissor',
-      notFinisher: true,
       setups: takeoffs.raiz,
       landings: landingPositions.round,
     },
 
     {
       name: 'Sailor Moon',
-      notFinisher: true,
       setups: takeoffs.raiz,
       landings: landingPositions.eagle,
     },
 
     {
       name: 'Sailor Moon Scissor',
-      notFinisher: true,
       setups: takeoffs.raiz,
       landings: landingPositions.round,
     },
@@ -866,7 +855,6 @@ export const tricks = {
 
     {
       name: 'Touch Down Raiz',
-      notFinisher: true,
       setups: takeoffs.raiz,
       landings: landingPositions.eagle,
     },
@@ -874,7 +862,6 @@ export const tricks = {
     {
       name: 'Valdez',
       notStarter: true,
-      notFinisher: true,
       setups: ['invert backside pop', 'invert backside punch', 'back swing'],
       landings: ['invert backside pop', 'invert backside punch', 'back swing', 'hyper'],
     },

@@ -108,17 +108,11 @@ function createAndDisplayTrick() {
   // Buttons are animated and shown in this function call
   buildTrick(difficulty, state.prevTrick, true);
 
-
-  DOM.generateTrickBtn.classList.add('hide');
-  DOM.buildDiffContainer.classList.add('hide');
   DOM.backBtn.classList.add('hide');
+  DOM.generateTrickBtn.classList.add('hide');
 
-  // setTimeout(() => {
-  //   DOM.redoBtn.classList.remove('hide');
-  //   DOM.nextTrickBtn.classList.remove('hide');
-  //   DOM.newCmbBtn.classList.remove('hide');
-  //   DOM.backBtn.classList.remove('hide');
-  // }, 10);
+  // This element's event handler shows more buttons
+  DOM.buildDiffContainer.classList.add('hide');
 }
 
 
@@ -213,9 +207,8 @@ function nextTrick() {
   DOM.backBtn.classList.add('hide');
 
   setTimeout(() => {
+    // This element's event handler shows more buttons
     DOM.buildDiffContainer.classList.remove('hide');
-    // DOM.generateTrickBtn.classList.remove('hide');
-    // DOM.backBtn.classList.remove('hide');
   }, 10);
 }
 
