@@ -52,6 +52,15 @@
   }
 }
 
+@keyframes up {
+  from {
+    transform: translateY(1000%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
 
 /* ====== UNIVERSAL ===== */
 
@@ -170,7 +179,6 @@ select {
   outline: none;
   width: 22rem;
   transition: .3s;
-  animation: popIn .3s backwards;
   
   font-family: 'Bangers', Impact, sans-serif;
   font-size: 2.8rem;
@@ -184,6 +192,26 @@ select {
 
 .btn:active {
   transform: scale(1) translateY(0);
+}
+
+#generateTrickBtn {
+  animation: up .5s backwards;
+}
+
+#redo {
+  animation: up .5s backwards;
+}
+
+#next {
+  animation: up .5s .1s backwards;
+}
+
+#new {
+  animation: up .5s .2s backwards;
+}
+
+#backToChoices {
+  animation: up .5s .3s backwards;
 }
 
 .buildComboBox__combo,
@@ -305,12 +333,8 @@ select {
     font-size: 6rem;
   }
 
-  .randomComboBox {
-    margin-top: 6rem;
-  }
-
   .randomComboBox__btn {
-    margin: 3rem 0;
+    margin-top: 3rem;
   }
 
   .trick {

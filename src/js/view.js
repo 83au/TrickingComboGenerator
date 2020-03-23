@@ -121,6 +121,7 @@ function animateTrick(prevTrick, curTrick, container, mode, trickEl) {
     displayTakeoffAndName(curTrick, trickEl, container);
   }
 
+  // Animate buttons
   trickEl.addEventListener('animationend', e => {
     console.log(e);
     elements.redoBtn.classList.remove('hide');
