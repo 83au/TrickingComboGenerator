@@ -92,7 +92,6 @@ export default class Trick {
         this.takeoff = Model.formatMod(this.takeoff, this.name);
       }
     }
-    console.log(this.takeoff);
   }
 
 

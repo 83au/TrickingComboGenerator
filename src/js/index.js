@@ -30,6 +30,7 @@ function reset() {
   DOM.randomDiffSelection.value = 'random';
   DOM.numTricksSelection.value = 'random';
 
+  DOM.generateTrickBtn.classList.add('hide');
   DOM.startScreen.classList.remove('hide');
   DOM.randomCmbBox.classList.add('hide');
   DOM.buildCmbBox.classList.add('hide');
@@ -41,6 +42,14 @@ function setEventListeners() {
   DOM.buildCmbBtn.addEventListener('click', () => {
     setBuildMode();
   });
+
+  // DOM.buildDiffContainer.addEventListener('animationend', e => {
+  //   console.log(e.animationName);
+  //   if (e.animationName === 'popIn') {
+  //     DOM.generateTrickBtn.classList.remove('hide');
+  //     DOM.backBtn.classList.remove('hide');
+  //   }
+  // });
 
   DOM.generateTrickBtn.addEventListener('click', () => {
     createAndDisplayTrick();
@@ -63,6 +72,7 @@ function setEventListeners() {
   });
 
   DOM.generateCmbBtn.addEventListener('click', () => {
+    DOM.randomCmbContainer.classList.remove('hide');
     const choices = View.getChoices(state.mode);
     console.log(choices.numTricks);
     generateCombo(choices.difficulty, choices.numTricks);
@@ -77,16 +87,16 @@ function setEventListeners() {
 function setBuildMode() {
   state.mode = 'build';
   DOM.startScreen.classList.add('hide');
-  DOM.buildCmbBox.classList.remove('hide');
-  DOM.backBtn.classList.remove('hide');
-
-  // Reset these for new combo
-  DOM.generateTrickBtn.classList.remove('hide');
-  DOM.buildDiffContainer.classList.remove('hide');
-
   DOM.redoBtn.classList.add('hide');
   DOM.nextTrickBtn.classList.add('hide');
   DOM.newCmbBtn.classList.add('hide');
+
+  DOM.buildCmbBox.classList.remove('hide');
+
+  // Reset these for new combo
+  DOM.buildDiffContainer.classList.remove('hide');
+  DOM.generateTrickBtn.classList.remove('hide');
+  DOM.backBtn.classList.remove('hide');
 }
 
 
@@ -96,13 +106,19 @@ function createAndDisplayTrick() {
   const difficulty = View.getChoices(state.mode);
 
   // Buttons are animated and shown in this function call
-  buildTrick(difficulty, state.prevTrick);
+  buildTrick(difficulty, state.prevTrick, true);
 
 
   DOM.generateTrickBtn.classList.add('hide');
   DOM.buildDiffContainer.classList.add('hide');
-
   DOM.backBtn.classList.add('hide');
+
+  // setTimeout(() => {
+  //   DOM.redoBtn.classList.remove('hide');
+  //   DOM.nextTrickBtn.classList.remove('hide');
+  //   DOM.newCmbBtn.classList.remove('hide');
+  //   DOM.backBtn.classList.remove('hide');
+  // }, 10);
 }
 
 
@@ -114,7 +130,7 @@ function setCurrAndPrevTrick() {
 }
 
 
-function buildTrick(maxDiff, prevTrick) {
+function buildTrick(maxDiff, prevTrick, animate) {
   const officialMaxDiff = handleDifficulty(maxDiff);
 
   const trick = new Trick();
@@ -151,7 +167,7 @@ function buildTrick(maxDiff, prevTrick) {
   if (state.mode === 'random') {
     View.displayTrick(prevTrick, trick, DOM.randomCmbContainer, 'random');
   } else {
-    View.displayTrick(prevTrick, trick, DOM.builtCmbContainer, 'build');
+    View.displayTrick(prevTrick, trick, DOM.builtCmbContainer, 'build', animate);
   }
   state.currTrick = trick;
 }
@@ -190,7 +206,6 @@ function redoTrick() {
   nextTrick();
 }
 
-
 function nextTrick() {
   DOM.redoBtn.classList.add('hide');
   DOM.nextTrickBtn.classList.add('hide');
@@ -198,8 +213,8 @@ function nextTrick() {
   DOM.backBtn.classList.add('hide');
 
   setTimeout(() => {
-    DOM.generateTrickBtn.classList.remove('hide');
     DOM.buildDiffContainer.classList.remove('hide');
+    DOM.generateTrickBtn.classList.remove('hide');
     DOM.backBtn.classList.remove('hide');
   }, 10);
 }
@@ -221,6 +236,7 @@ function setRandomMode() {
   DOM.startScreen.classList.add('hide');
   DOM.randomCmbBox.classList.remove('hide');
   DOM.backBtn.classList.remove('hide');
+  DOM.randomCmbContainer.classList.add('hide');
 }
 
 

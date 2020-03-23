@@ -148,6 +148,10 @@ select {
   position: absolute;
 }
 
+.randomComboBox__selection .select-wrapper {
+  margin-top: 4rem;
+}
+
 .select-wrapper::before {
   content: '▼';
   font-size: 1rem;
@@ -192,6 +196,14 @@ select {
 
 .btn:active {
   transform: scale(1) translateY(0);
+}
+
+.start-screen__btn {
+  animation: popIn .3s;
+}
+
+.randomComboBox__btn {
+  animation: up .5s backwards;
 }
 
 #generateTrickBtn {

@@ -47,7 +47,7 @@ export function getChoices(mode) {
 }
 
 
-export function displayTrick(prevTrick, curTrick, container, mode) {
+export function displayTrick(prevTrick, curTrick, container, mode, animate) {
   const trickEl = document.createElement('div');
 
   if (mode === 'random') {
@@ -58,7 +58,7 @@ export function displayTrick(prevTrick, curTrick, container, mode) {
     displayTransition(curTrick, container, mode);
     displayTakeoffAndName(curTrick, trickEl, container);
   } else {
-    animateTrick(prevTrick, curTrick, container, mode, trickEl);
+    animateTrick(prevTrick, curTrick, container, mode, trickEl, animate);
   }
 
   displayLanding(curTrick.landingMod, trickEl);
@@ -96,7 +96,7 @@ export function removeCurrentTrick() {
 
 // * * * * PRIVATE FUNCTIONS * * * *
 
-function animateTrick(prevTrick, curTrick, container, mode, trickEl) {
+function animateTrick(prevTrick, curTrick, container, mode, trickEl, animate) {
   trickEl.classList.add('trick', 'hidden');
 
   if (prevTrick) createConnector(container, mode);
@@ -121,14 +121,20 @@ function animateTrick(prevTrick, curTrick, container, mode, trickEl) {
     displayTakeoffAndName(curTrick, trickEl, container);
   }
 
-  // Animate buttons
-  trickEl.addEventListener('animationend', e => {
-    console.log(e);
-    elements.redoBtn.classList.remove('hide');
-    elements.nextTrickBtn.classList.remove('hide');
-    elements.newCmbBtn.classList.remove('hide');
-    elements.backBtn.classList.remove('hide');
-  });
+  if (animate) {
+    trickEl.addEventListener('animationend', animateButtons);
+  }
+  setTimeout(() => {
+    trickEl.removeEventListener('animationend', animateButtons);
+  }, 5000);
+}
+
+
+function animateButtons() {
+  elements.redoBtn.classList.remove('hide');
+  elements.nextTrickBtn.classList.remove('hide');
+  elements.newCmbBtn.classList.remove('hide');
+  elements.backBtn.classList.remove('hide');
 }
 
 
