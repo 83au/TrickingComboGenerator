@@ -43,13 +43,13 @@ function setEventListeners() {
     setBuildMode();
   });
 
-  // DOM.buildDiffContainer.addEventListener('animationend', e => {
-  //   console.log(e.animationName);
-  //   if (e.animationName === 'popIn') {
-  //     DOM.generateTrickBtn.classList.remove('hide');
-  //     DOM.backBtn.classList.remove('hide');
-  //   }
-  // });
+  DOM.buildDiffContainer.addEventListener('animationend', e => {
+    console.log(e.animationName);
+    if (e.animationName === 'popIn') {
+      DOM.generateTrickBtn.classList.remove('hide');
+      DOM.backBtn.classList.remove('hide');
+    }
+  });
 
   DOM.generateTrickBtn.addEventListener('click', () => {
     createAndDisplayTrick();
@@ -95,8 +95,8 @@ function setBuildMode() {
 
   // Reset these for new combo
   DOM.buildDiffContainer.classList.remove('hide');
-  DOM.generateTrickBtn.classList.remove('hide');
-  DOM.backBtn.classList.remove('hide');
+  // DOM.generateTrickBtn.classList.remove('hide');
+  // DOM.backBtn.classList.remove('hide');
 }
 
 
@@ -214,8 +214,8 @@ function nextTrick() {
 
   setTimeout(() => {
     DOM.buildDiffContainer.classList.remove('hide');
-    DOM.generateTrickBtn.classList.remove('hide');
-    DOM.backBtn.classList.remove('hide');
+    // DOM.generateTrickBtn.classList.remove('hide');
+    // DOM.backBtn.classList.remove('hide');
   }, 10);
 }
 
