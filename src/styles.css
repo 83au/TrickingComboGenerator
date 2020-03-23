@@ -151,6 +151,7 @@ select {
   width: 2rem;
   height: 3rem;
   background: white;
+  border-radius: 6px;
   pointer-events: none;
 }
 
