@@ -31,6 +31,27 @@
   }
 }
 
+@keyframes grow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 
 /* ====== UNIVERSAL ===== */
 
@@ -46,6 +67,7 @@
 :root {
   --blue: rgba(85,85,255,1);
   --red: rgba(255,85,85,1);
+  --shadow: 0 5px 5px rgba(0, 0, 0, .3);
 }
 
 html {
@@ -71,23 +93,66 @@ h1 {
 }
 
 hr {
-  height: 1px;
+  width: 100%;
+  height: 2px;
   background-color: white;
   border: none;
   margin: 1rem 0;
+  animation: grow .5s;
+}
+
+label,
+select,
+.select-wrapper {
+  animation: popIn .3s .3s backwards;
 }
 
 label {
   display: block;
+  width: 20rem;
   font-size: 2.5rem;
 }
 
 select {
-  margin: .5rem;
+  width: 12rem;
+  height: 3rem;
   background: #fff;
   color: hsl(230, 0%, 20%);
   font-size: 2rem;
+  border: none;
+  box-shadow: var(--shadow);
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  outline: none;
 }
+
+.selection-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 10rem;
+}
+
+.select-wrapper {
+  margin-top: 6rem;
+  position: absolute;
+}
+
+.select-wrapper::before {
+  content: '▼';
+  font-size: 1rem;
+  color: #222;
+  text-align: center;
+  line-height: 3rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2rem;
+  height: 3rem;
+  background: white;
+  pointer-events: none;
+}
+
 
 .btn {
   padding: 1rem;
@@ -97,14 +162,26 @@ select {
   background: white;
   border: none;
   border-radius: 10rem;
+  box-shadow: var(--shadow);
   color: var(--blue);
   cursor: pointer;
   outline: none;
   width: 22rem;
+  transition: .3s;
+  animation: popIn .3s backwards;
   
   font-family: 'Bangers', Impact, sans-serif;
   font-size: 2.8rem;
   letter-spacing: .8px;
+}
+
+.btn:hover {
+  transform: scale(1.03) translateY(-3px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .5);
+}
+
+.btn:active {
+  transform: scale(1) translateY(0);
 }
 
 .buildComboBox__combo,
@@ -120,7 +197,7 @@ select {
 }
 
 .connector.build {
-  animation: shootDown .4s linear;
+  animation: shootDown .3s linear;
 }
 
 .transition {
@@ -128,7 +205,7 @@ select {
 }
 
 .transition.build {
-  animation: pulse .4s;
+  animation: pulse .3s;
 }
 
 .takeoff, 
@@ -142,7 +219,7 @@ select {
 }
 
 .trick.build {
-  animation: slideIn .8s;
+  animation: slideIn .6s;
 }
 
 
@@ -172,10 +249,16 @@ select {
   text-align: center;
 }
 
-.buildComboBox__choices {
+.buildComboBox__choices,
+.randomComboBox__choices {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.buildCmbChoices__difficulty,
+.randomComboBox__selection--difficulty {
+  position: relative;
 }
 
 .buildComboBox__combo {
@@ -189,13 +272,15 @@ select {
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  margin-top: 2rem;
   text-align: center;
 }
 
-.randomComboBox__selection {
-  margin: 2rem;
+.randomComboBox__choices {
+  margin: 4rem 0;
+}
+
+.randomComboBox__selection--difficulty {
+  margin-bottom: 3rem;
 }
 
 .randomComboBox__combo {

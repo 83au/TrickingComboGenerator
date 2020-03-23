@@ -79,6 +79,8 @@ function setBuildMode() {
   DOM.startScreen.classList.add('hide');
   DOM.buildCmbBox.classList.remove('hide');
   DOM.backBtn.classList.remove('hide');
+
+  // Reset these for new combo
   DOM.generateTrickBtn.classList.remove('hide');
   DOM.buildDiffContainer.classList.remove('hide');
 
@@ -92,14 +94,15 @@ function createAndDisplayTrick() {
   setCurrAndPrevTrick();
 
   const difficulty = View.getChoices(state.mode);
+
+  // Buttons are animated and shown in this function call
   buildTrick(difficulty, state.prevTrick);
 
-  DOM.redoBtn.classList.remove('hide');
-  DOM.nextTrickBtn.classList.remove('hide');
-  DOM.newCmbBtn.classList.remove('hide');
 
   DOM.generateTrickBtn.classList.add('hide');
   DOM.buildDiffContainer.classList.add('hide');
+
+  DOM.backBtn.classList.add('hide');
 }
 
 
@@ -189,12 +192,16 @@ function redoTrick() {
 
 
 function nextTrick() {
-  DOM.generateTrickBtn.classList.remove('hide');
-  DOM.buildDiffContainer.classList.remove('hide');
-
   DOM.redoBtn.classList.add('hide');
   DOM.nextTrickBtn.classList.add('hide');
   DOM.newCmbBtn.classList.add('hide');
+  DOM.backBtn.classList.add('hide');
+
+  setTimeout(() => {
+    DOM.generateTrickBtn.classList.remove('hide');
+    DOM.buildDiffContainer.classList.remove('hide');
+    DOM.backBtn.classList.remove('hide');
+  }, 10);
 }
 
 

@@ -27,14 +27,16 @@
     <div class="buildComboBox">
       <div id="builtCombo" class="buildComboBox__combo"></div>
       <div class="buildComboBox__choices">
-        <div class="buildCmbChoices__difficulty">
+        <div class="buildCmbChoices__difficulty selection-box">
           <hr>
           <label for="randomCmbDifficulty">Difficulty Level</label>
-          <select name="difficulty" id="buildCmbDifficulty">
-            <option value="random" selected>random</option>
-            <option value="novice">Novice</option>
-            <option value="easy">Easy</option>
-          </select>
+          <div class="select-wrapper">
+            <select name="difficulty" id="buildCmbDifficulty">
+              <option value="random" selected>random</option>
+              <option value="novice">Novice</option>
+              <option value="easy">Easy</option>
+            </select>
+          </div>
         </div>
         <button id="generateTrickBtn" class="btn">Generate Trick</button>
         <button id="redo" class="btn">Redo</button>
@@ -47,31 +49,35 @@
     <!-- RANDOM COMBO SCREEN -->
     <div class="randomComboBox">
       <div class="randomComboBox__choices">
-        <div class="randomComboBox__selection randomComboBox__selection--difficulty">
-          <hr>
+        <hr>
+        <div class="selection-box randomComboBox__selection randomComboBox__selection--difficulty">
           <label for="randomCmbDifficulty">Max Difficulty</label>
-          <select name="difficulty" id="randomCmbDifficulty">
-            <option value="random" selected>random</option>
-            <option value="novice">Novice</option>
-            <option value="easy">Easy</option>
-          </select>
+          <div class="select-wrapper">
+            <select name="difficulty" id="randomCmbDifficulty">
+              <option value="random" selected>random</option>
+              <option value="novice">Novice</option>
+              <option value="easy">Easy</option>
+            </select>
+          </div>
         </div>
-        <div class="randomComboBox__selection randomComboBox__selection--numTricks">
-          <hr>
+        <hr>
+        <div class="selection-box randomComboBox__selection randomComboBox__selection--numTricks">
           <label for="numTricks">Number of Tricks</label>
-          <select name="Number of tricks" id="numTricks">
-            <option value="random" selected>random</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-          </select>
+          <div class="select-wrapper">
+            <select name="Number of tricks" id="numTricks">
+              <option value="random" selected>random</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+            </select>
+          </div>
         </div>
       </div>
       <button id="generateRandomCombo" class="randomComboBox__btn btn">Generate Combo</button>

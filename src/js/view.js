@@ -2,6 +2,8 @@
 
 export const elements = {
   startScreen: document.querySelector('.start-screen'),
+  buildComboLine: document.querySelector('buildComboBox hr'),
+  trickElement: document.querySelector('.trick'),
 
   // Build Combo elements
   buildCmbBtn: document.getElementById('buildComboOption'),
@@ -118,6 +120,14 @@ function animateTrick(prevTrick, curTrick, container, mode, trickEl) {
     trickEl.classList.add('build');
     displayTakeoffAndName(curTrick, trickEl, container);
   }
+
+  trickEl.addEventListener('animationend', e => {
+    console.log(e);
+    elements.redoBtn.classList.remove('hide');
+    elements.nextTrickBtn.classList.remove('hide');
+    elements.newCmbBtn.classList.remove('hide');
+    elements.backBtn.classList.remove('hide');
+  });
 }
 
 
