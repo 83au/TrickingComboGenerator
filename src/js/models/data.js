@@ -515,6 +515,7 @@ export const tricks = {
       setups: ['invert frontside pop', 'invert frontside punch'],
       landings: [
         'invert frontside punch',
+        'semi',
       ],
     },
 
