@@ -26,6 +26,7 @@ export default class Trick {
       // Make adjustment if no tricks on that list match
       if (!possibleTricks.length) {
         console.log('REFILTERING');
+        console.log(landing);
         possibleTricks = Model.searchLevels('level1', landing);
       }
 

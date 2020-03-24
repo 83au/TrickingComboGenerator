@@ -43,7 +43,6 @@ export const landingPositions = {
     'missleg',
     'skip frontswing', // skip from eagle into mega for a front swing
     'vanish',
-    'backside',
     // * Swings are more common and a staple of the sport, so they get higher precedence
     'back swing',
     'back swing',
@@ -56,7 +55,6 @@ export const landingPositions = {
   ],
 
   round: [
-    'backside',
     'inside leg reversal',
     'left right redirect',
     'round carry-through',
@@ -83,7 +81,6 @@ export const landingPositions = {
     'missleg',
     'skip frontswing', // skip from eagle into mega for a front swing
     'vanish',
-    'backside',
   ],
 
   hyper: [
@@ -116,7 +113,6 @@ export const landingPositions = {
   ],
 
   'gyro backside': [
-    'backside',
     'backside punch',
   ],
 
@@ -125,12 +121,10 @@ export const landingPositions = {
   ],
 
   'half gyro backside': [
-    'backside',
     'backside punch',
   ],
 
   'rapid round': [
-    'backside',
     'inside leg reversal',
     'left right redirect',
     'round carry-through',
@@ -444,7 +438,7 @@ export const tricks = {
 
     {
       name: 'Macaco',
-      setups: ['backside'], // Pop is implied
+      setups: ['backside pop', 'invert backside pop'],
       landings: ['right left redirect', 'outside leg reversal', 'reverse vanish'],
     },
 
@@ -839,12 +833,10 @@ export const tricks = {
 
     {
       name: 'Suicide Kip Up',
-      setups: ['backside'],
+      setups: ['backside pop'],
       landings: [
-        'backside',
         'backside punch',
         'inside punch',
-        // 'hook'
       ],
     },
 
@@ -903,7 +895,7 @@ export const tricks = {
     {
       name: 'Arabian Scissor Swipe',
       notStarter: true,
-      setups: ['invert backside pop', 'invert backside punch', 'Aerial', 'Cartwheel'],
+      setups: ['invert backside pop', 'invert backside punch'],
       landings: ['frontside pop', 'hook'],
     },
 
@@ -950,7 +942,6 @@ export const tricks = {
         'missleg',
         'skip frontswing', // skip from eagle into mega for a front swing
         'vanish',
-        'backside',
       ],
     },
 
@@ -982,7 +973,7 @@ export const tricks = {
     {
       name: 'Double Leg',
       setups: ['outside pop', 'outside punch', 'frontside punch', 'invert frontside punch'],
-      landings: ['backside', 'backside punch', 'invert backside punch'],
+      landings: ['backside punch', 'invert backside punch'],
     },
 
     {
@@ -998,7 +989,11 @@ export const tricks = {
 
     { // Front Flip variations
       name: 'Front Flip',
-      setups: ['invert frontside pop', 'invert frontside punch', 'invert backside punch'],
+      setups: [
+        'invert frontside pop',
+        'invert frontside punch',
+        'invert backside punch',
+      ],
       landings: [
         'mega',
       ],
@@ -1065,11 +1060,10 @@ export const tricks = {
 
     {
       name: 'Loser',
-      setups: ['Webster', 'backside', 'skip frontswing'],
+      setups: ['Webster', 'skip frontswing'],
       landings: [
         'inside',
         'inside pop',
-        'backside',
         'backside pop',
         'hook',
       ],
@@ -1085,7 +1079,7 @@ export const tricks = {
       name: 'Rocketboii',
       notStarter: true,
       setups: ['Round Off'],
-      landings: ['backside', 'invert backside punch'],
+      landings: ['invert backside punch'],
     },
 
     {
