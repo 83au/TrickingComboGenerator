@@ -1,6 +1,6 @@
 // ****************** DATA CONTROLLER ********************
 
-import * as Data from './data';
+import * as Data from './data/data';
 
 
 export function random(num) {

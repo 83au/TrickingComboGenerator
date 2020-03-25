@@ -1,0 +1,109 @@
+const landingPositions = {
+  eagle: [
+    'invert backside pop',
+    'missleg',
+    'skip frontswing', // skip from eagle into mega for a front swing
+    'vanish',
+    // * Swings are more common and a staple of the sport, so they get higher precedence
+    'back swing',
+    'back swing',
+    'back swing',
+    'back swing',
+    'back swing',
+    'back swing',
+    'back swing',
+
+  ],
+
+  round: [
+    'inside leg reversal',
+    'left right redirect',
+    'round carry-through',
+    'skip round', // skip from round kick into wrap or scoot
+    'vanish',
+    'hook',
+    'outside pop', // for double leg
+  ],
+
+  hook: [
+    'cheat',
+    'right left redirect',
+    'reverse vanish',
+    'frontside pop',
+    'hook carry-through',
+    'outside leg reversal',
+    'skip backswing', // skip from hook or round into jstep
+    'hook to scoot',
+    'master swing',
+  ],
+
+  complete: [
+    'invert backside pop',
+    'missleg',
+    'skip frontswing', // skip from eagle into mega for a front swing
+    'vanish',
+  ],
+
+  hyper: [
+    'reverse vanish',
+    'right left redirect',
+    'skip backswing',
+    'cheat',
+    'master swing',
+  ],
+
+  mega: [
+    'vanish',
+    'skip round',
+    'mega',
+  ],
+
+  semi: [
+    'reverse vanish',
+    'skip backswing',
+    'semi',
+  ],
+
+  turbo: [
+    'frontside punch',
+    'right first reverse pop',
+  ],
+
+  'gyro frontside': [
+    'frontside punch',
+  ],
+
+  'gyro backside': [
+    'backside punch',
+  ],
+
+  'half gyro frontside': [
+    'frontside punch',
+  ],
+
+  'half gyro backside': [
+    'backside punch',
+  ],
+
+  'rapid round': [
+    'inside leg reversal',
+    'left right redirect',
+    'round carry-through',
+    'skip round', // skip from round kick into wrap or scoot
+    'vanish',
+    'hook',
+  ],
+
+  'rapid hook': [
+    'cheat',
+    'right left redirect',
+    'reverse vanish',
+    'frontside pop',
+    'hook carry-through',
+    'outside leg reversal',
+    'skip backswing', // skip from hook or round into jstep
+    'hook to scoot',
+  ],
+};
+
+export default landingPositions;

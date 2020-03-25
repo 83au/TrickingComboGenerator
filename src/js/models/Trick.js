@@ -1,5 +1,5 @@
 import * as Model from './model';
-import * as Data from './data';
+import * as Data from './data/data';
 
 
 export default class Trick {

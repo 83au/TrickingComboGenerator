@@ -1,7 +1,7 @@
 // = = = = = = = = = = = = = = = = = = = APP CONTROLLER = = = = = = = = = = = = = = = = = = =
 
 import * as Model from './models/model';
-import * as Data from './models/data';
+import * as Data from './models/data/data';
 import Trick from './models/Trick';
 import * as View from './view';
 import '../styles.css';
@@ -44,7 +44,6 @@ function setEventListeners() {
   });
 
   DOM.buildDiffContainer.addEventListener('animationend', e => {
-    console.log(e.animationName);
     if (e.animationName === 'popIn') {
       DOM.generateTrickBtn.classList.remove('hide');
       DOM.backBtn.classList.remove('hide');
@@ -95,8 +94,6 @@ function setBuildMode() {
 
   // Reset these for new combo
   DOM.buildDiffContainer.classList.remove('hide');
-  // DOM.generateTrickBtn.classList.remove('hide');
-  // DOM.backBtn.classList.remove('hide');
 }
 
 
@@ -219,7 +216,7 @@ function newBuildCombo() {
   clear(DOM.builtCmbContainer);
 
   DOM.backBtn.classList.add('hide');
-  setTimeout(() => setBuildMode(), 10);
+  setTimeout(setBuildMode, 10);
   DOM.buildDiffSelection.value = 'random';
 }
 
@@ -247,7 +244,6 @@ function generateCombo(maxDiff, numTricks) {
 
   do {
     setCurrAndPrevTrick();
-
     buildTrick(officialMaxDiff, state.prevTrick);
     state.trickCount += 1;
   } while (state.trickCount < officialNumTricks);
