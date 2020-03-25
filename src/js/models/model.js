@@ -1,6 +1,7 @@
 // ****************** DATA CONTROLLER ********************
 
 import * as Data from './data/data';
+import landingPositions from './data/landings';
 
 
 export function random(num) {
@@ -31,8 +32,8 @@ export function adjustForLandingMod(prevTrick, obj) {
   let landing;
   const prevLandingMod = Data.landingModifiers.includes(prevTrick.landing);
 
-  if (prevLandingMod && Data.landingPositions[prevTrick.landing]) {
-    landing = randomMove(Data.landingPositions[prevTrick.landing]);
+  if (prevLandingMod && landingPositions[prevTrick.landing]) {
+    landing = randomMove(landingPositions[prevTrick.landing]);
 
     if (!(/(semi|mega)/.test(landing))) {
       obj.transition = landing;

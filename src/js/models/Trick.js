@@ -1,5 +1,6 @@
 import * as Model from './model';
 import * as Data from './data/data';
+import landingPositions from './data/landings';
 
 
 export default class Trick {
@@ -70,7 +71,7 @@ export default class Trick {
     if (this.transition === 'hook') {
       const takeoffs = this.trickObj
         .setups
-        .filter(setup => Data.landingPositions.hook.includes(setup));
+        .filter(setup => landingPositions.hook.includes(setup));
       this.takeoff = Model.chooseFromList(takeoffs, 'takeoffModifiers');
     }
   }
