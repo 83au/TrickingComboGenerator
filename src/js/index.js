@@ -97,21 +97,21 @@ function setCurrAndPrevTrick() {
 
 
 function buildTrick(maxDiff, prevTrick, animate) {
-  const officialMaxDiff = handleDifficulty(maxDiff);
+  const diff = handleDifficulty(maxDiff);
 
   const trick = new Trick();
 
   // Set trick level
   if (state.mode === 'random') {
-    if (typeof officialMaxDiff === 'number') {
-      trick.generateLevel(officialMaxDiff);
+    if (typeof diff === 'number') {
+      trick.generateLevel(diff);
     } else {
-      trick.generateLevel(Data.difficultyLevels[officialMaxDiff]);
+      trick.generateLevel(Data.difficultyLevels[diff]);
     }
-  } else if (typeof officialMaxDiff === 'number') {
-    trick.setLevel(officialMaxDiff);
+  } else if (typeof diff === 'number') {
+    trick.setLevel(diff);
   } else {
-    trick.setLevel(Data.difficultyLevels[officialMaxDiff]);
+    trick.setLevel(Data.difficultyLevels[diff]);
   }
 
   trick.generateTrick(prevTrick);
