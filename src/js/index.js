@@ -237,23 +237,23 @@ function setRandomMode() {
 }
 
 
-function generateCombo(maxDiff, numTricks) {
+function generateCombo() {
+  DOM.randomCmbContainer.classList.remove('hide');
+  let { difficulty, numTricks } = View.getChoices(state.mode);
+
   clear(DOM.randomCmbContainer);
 
-  let officialNumTricks;
-  if (numTricks === 'random') {
-    officialNumTricks = Model.random(10) + 1;
-  } else {
-    officialNumTricks = numTricks;
-  }
+  difficulty = handleDifficulty(difficulty);
 
-  const officialMaxDiff = handleDifficulty(maxDiff);
+  if (numTricks === 'random') {
+    numTricks = Model.random(10) + 1;
+  }
 
   do {
     setCurrAndPrevTrick();
-    buildTrick(officialMaxDiff, state.prevTrick);
+    buildTrick(difficulty, state.prevTrick);
     state.trickCount += 1;
-  } while (state.trickCount < officialNumTricks);
+  } while (state.trickCount < numTricks);
 }
 
 
