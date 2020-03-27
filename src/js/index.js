@@ -96,6 +96,13 @@ function setBuildMode() {
   DOM.buildDiffContainer.classList.remove('hide');
 }
 
+function animateButtons(e) {
+  if (e.animationName === 'popIn') {
+    DOM.generateTrickBtn.classList.remove('hide');
+    DOM.backBtn.classList.remove('hide');
+  }
+}
+
 
 function createAndDisplayTrick() {
   setCurrAndPrevTrick();
