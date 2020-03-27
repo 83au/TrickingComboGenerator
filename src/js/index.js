@@ -39,47 +39,15 @@ function reset() {
 
 
 function setEventListeners() {
-  DOM.buildCmbBtn.addEventListener('click', () => {
-    setBuildMode();
-  });
-
-  DOM.buildDiffContainer.addEventListener('animationend', e => {
-    if (e.animationName === 'popIn') {
-      DOM.generateTrickBtn.classList.remove('hide');
-      DOM.backBtn.classList.remove('hide');
-    }
-  });
-
-  DOM.generateTrickBtn.addEventListener('click', () => {
-    createAndDisplayTrick();
-  });
-
-  DOM.redoBtn.addEventListener('click', () => {
-    redoTrick();
-  });
-
-  DOM.nextTrickBtn.addEventListener('click', () => {
-    nextTrick();
-  });
-
-  DOM.newCmbBtn.addEventListener('click', () => {
-    newBuildCombo();
-  });
-
-  DOM.randomCmbBtn.addEventListener('click', () => {
-    setRandomMode();
-  });
-
-  DOM.generateCmbBtn.addEventListener('click', () => {
-    DOM.randomCmbContainer.classList.remove('hide');
-    const choices = View.getChoices(state.mode);
-    console.log(choices.numTricks);
-    generateCombo(choices.difficulty, choices.numTricks);
-  });
-
-  DOM.backBtn.addEventListener('click', () => {
-    backToStart();
-  });
+  DOM.buildCmbBtn.addEventListener('click', setBuildMode);
+  DOM.buildDiffContainer.addEventListener('animationend', event => animateButtons(event));
+  DOM.generateTrickBtn.addEventListener('click', createAndDisplayTrick);
+  DOM.redoBtn.addEventListener('click', redoTrick);
+  DOM.nextTrickBtn.addEventListener('click', nextTrick);
+  DOM.newCmbBtn.addEventListener('click', newBuildCombo);
+  DOM.randomCmbBtn.addEventListener('click', setRandomMode);
+  DOM.generateCmbBtn.addEventListener('click', generateCombo);
+  DOM.backBtn.addEventListener('click', backToStart);
 }
 
 
