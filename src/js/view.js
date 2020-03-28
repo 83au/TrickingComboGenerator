@@ -7,9 +7,9 @@ export const elements = {
 
   // Build Combo elements
   buildCmbBtn: document.getElementById('buildComboOption'),
-  buildScreen: document.querySelector('.buildScreen'),
+  buildScreen: document.querySelector('.build-screen'),
   builtCmbContainer: document.getElementById('builtCombo'),
-  buildDiffContainer: document.querySelector('.buildScreen__choices-difficulty'),
+  buildDiffContainer: document.querySelector('.build-screen__choices-difficulty'),
   buildDiffSelection: document.getElementById('buildCmbDifficulty'),
   generateTrickBtn: document.getElementById('generateTrickBtn'),
   redoBtn: document.getElementById('redo'),
@@ -18,7 +18,7 @@ export const elements = {
 
   // Random combo elements
   randomCmbBtn: document.getElementById('randomComboOption'),
-  randomScreen: document.querySelector('.randomScreen'),
+  randomScreen: document.querySelector('.random-screen'),
   randomCmbContainer: document.getElementById('randomCombo'),
   randomDiffSelection: document.getElementById('randomCmbDifficulty'),
   numTricksSelection: document.getElementById('numTricks'),

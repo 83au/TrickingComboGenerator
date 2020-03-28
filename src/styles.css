@@ -202,7 +202,7 @@ select {
   animation: popIn .3s;
 }
 
-.randomScreen__btn {
+.random-screen__btn {
   animation: up .5s backwards;
 }
 
@@ -226,8 +226,8 @@ select {
   animation: up .5s .3s backwards;
 }
 
-.buildScreen__combo,
-.randomScreen__combo {
+.build-screen__combo,
+.random-screen__combo {
   line-height: 1.7;
   width: 100%;
 }
@@ -286,32 +286,32 @@ select {
 
 /* ===== BUILD COMBO SCREEN ===== */
 
-.buildScreen {
+.build-screen {
   width: 100%;
   margin-top: 2rem;
   text-align: center;
 }
 
-.buildScreen__choices,
+.build-screen__choices,
 .randomScreen__choices {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.buildScreen__choices-difficulty,
+.build-screen__choices-difficulty,
 .randomScreen__selection--difficulty {
   position: relative;
 }
 
-.buildScreen__combo {
+.build-screen__combo {
   margin-bottom: 2rem;
 }
 
 
 /* ===== RANDOM COMBO SCREEN ===== */
 
-.randomScreen {
+.random-screen {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -320,15 +320,15 @@ select {
 
 }
 
-.randomScreen__choices {
+.random-screen__choices {
   margin: 4rem 0;
 }
 
-.randomScreen__selection--difficulty {
+.random-screen__selection--difficulty {
   margin-bottom: 3rem;
 }
 
-.randomScreen__combo {
+.random-screen__combo {
   margin: 2rem auto;
   width: 100%;
   text-align: center;
@@ -348,7 +348,7 @@ select {
     font-size: 6rem;
   }
 
-  .randomComboBox__btn {
+  .random-screen__btn {
     margin-top: 3rem;
   }
 
