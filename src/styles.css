@@ -202,7 +202,7 @@ select {
   animation: popIn .3s;
 }
 
-.randomComboBox__btn {
+.randomScreen__btn {
   animation: up .5s backwards;
 }
 
@@ -226,8 +226,8 @@ select {
   animation: up .5s .3s backwards;
 }
 
-.buildComboBox__combo,
-.randomComboBox__combo {
+.buildScreen__combo,
+.randomScreen__combo {
   line-height: 1.7;
   width: 100%;
 }
@@ -286,32 +286,32 @@ select {
 
 /* ===== BUILD COMBO SCREEN ===== */
 
-.buildComboBox {
+.buildScreen {
   width: 100%;
   margin-top: 2rem;
   text-align: center;
 }
 
-.buildComboBox__choices,
-.randomComboBox__choices {
+.buildScreen__choices,
+.randomScreen__choices {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.buildCmbChoices__difficulty,
-.randomComboBox__selection--difficulty {
+.buildScreen__choices-difficulty,
+.randomScreen__selection--difficulty {
   position: relative;
 }
 
-.buildComboBox__combo {
+.buildScreen__combo {
   margin-bottom: 2rem;
 }
 
 
 /* ===== RANDOM COMBO SCREEN ===== */
 
-.randomComboBox {
+.randomScreen {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -320,15 +320,15 @@ select {
 
 }
 
-.randomComboBox__choices {
+.randomScreen__choices {
   margin: 4rem 0;
 }
 
-.randomComboBox__selection--difficulty {
+.randomScreen__selection--difficulty {
   margin-bottom: 3rem;
 }
 
-.randomComboBox__combo {
+.randomScreen__combo {
   margin: 2rem auto;
   width: 100%;
   text-align: center;

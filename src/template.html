@@ -24,10 +24,10 @@
 
 
     <!-- BUILD COMBO SCREEN -->
-    <div class="buildComboBox">
-      <div id="builtCombo" class="buildComboBox__combo"></div>
-      <div class="buildComboBox__choices">
-        <div class="buildCmbChoices__difficulty selection-box">
+    <div class="buildScreen">
+      <div id="builtCombo" class="buildScreen__combo"></div>
+      <div class="buildScreen__choices">
+        <div class="buildScreen__choices-difficulty selection-box">
           <hr>
           <label for="randomCmbDifficulty">Difficulty Level</label>
           <div class="select-wrapper">
@@ -47,10 +47,10 @@
     
 
     <!-- RANDOM COMBO SCREEN -->
-    <div class="randomComboBox">
-      <div class="randomComboBox__choices">
+    <div class="randomScreen">
+      <div class="randomScreen__choices">
         <hr>
-        <div class="selection-box randomComboBox__selection randomComboBox__selection--difficulty">
+        <div class="selection-box randomScreen__selection randomScreen__selection--difficulty">
           <label for="randomCmbDifficulty">Max Difficulty</label>
           <div class="select-wrapper">
             <select name="difficulty" id="randomCmbDifficulty">
@@ -61,7 +61,7 @@
           </div>
         </div>
         <hr>
-        <div class="selection-box randomComboBox__selection randomComboBox__selection--numTricks">
+        <div class="selection-box randomScreen__selection randomScreen__selection--numTricks">
           <label for="numTricks">Number of Tricks</label>
           <div class="select-wrapper">
             <select name="Number of tricks" id="numTricks">
@@ -80,8 +80,8 @@
           </div>
         </div>
       </div>
-      <button id="generateRandomCombo" class="randomComboBox__btn btn">Generate Combo</button>
-      <div id="randomCombo" class="randomComboBox__combo"></div>
+      <button id="generateRandomCombo" class="randomScreen__btn btn">Generate Combo</button>
+      <div id="randomCombo" class="randomScreen__combo"></div>
     </div>
 
     <!-- BACK BUTTON -->

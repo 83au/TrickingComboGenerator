@@ -32,8 +32,8 @@ function reset() {
 
   DOM.generateTrickBtn.classList.add('hide');
   DOM.startScreen.classList.remove('hide');
-  DOM.randomCmbBox.classList.add('hide');
-  DOM.buildCmbBox.classList.add('hide');
+  DOM.randomScreen.classList.add('hide');
+  DOM.buildScreen.classList.add('hide');
   DOM.backBtn.classList.add('hide');
 }
 
@@ -58,7 +58,7 @@ function setBuildMode() {
   DOM.nextTrickBtn.classList.add('hide');
   DOM.newCmbBtn.classList.add('hide');
 
-  DOM.buildCmbBox.classList.remove('hide');
+  DOM.buildScreen.classList.remove('hide');
 
   // Reset these for new combo
   DOM.buildDiffContainer.classList.remove('hide');
@@ -200,7 +200,7 @@ function newBuildCombo() {
 function setRandomMode() {
   state.mode = 'random';
   DOM.startScreen.classList.add('hide');
-  DOM.randomCmbBox.classList.remove('hide');
+  DOM.randomScreen.classList.remove('hide');
   DOM.backBtn.classList.remove('hide');
   DOM.randomCmbContainer.classList.add('hide');
 }
