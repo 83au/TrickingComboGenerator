@@ -31,9 +31,11 @@
       <button id="buildComboOption" class="start-screen__btn btn">Build Combo?</button>
       <button id="randomComboOption" class="start-screen__btn btn">Random Combo?</button>
 
-      <form name="contact" action="/" netlify>
+      <form name="contact" netlify method="POST" enctype="application/x-www-form-urlencoded">
         <label for="name">Name</label>
         <input id="name" type="text" name="name" placeholder="name">
+        <label for="email">Email</label>
+        <input id="email" type="email" placeholder="email" name="email">
         <label for="message">Send me a message</label>
         <input id="message" type="text" placeholder="message" name="message">
         <button type="submit">Submit</button>
