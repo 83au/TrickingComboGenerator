@@ -5,7 +5,9 @@ const takeoffs = {
     'skip backswing',
     'skip backswing',
     'left right redirect',
-    'round carry-through'],
+    'round carry-through',
+    'reverse vanish',
+  ],
   raiz: [
     'right left redirect',
     'hook carry-through',
