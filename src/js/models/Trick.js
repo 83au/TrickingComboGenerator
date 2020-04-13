@@ -1,6 +1,7 @@
 import * as Model from './model';
 import * as Data from './data/data';
 import landingPositions from './data/landings';
+import specialLandings from './data/specialLandings';
 
 
 export default class Trick {
@@ -25,8 +26,10 @@ export default class Trick {
       possibleTricks = Model.filterTrickList(this.level, landing);
 
       // Make adjustment if no tricks on that list match
+      // * SHOULDN'T NEED THIS ANYMORE, every trick should have a possible trick to match
       if (!possibleTricks.length) {
         console.log('REFILTERING');
+        console.log(prevTrick.name);
         console.log(landing);
         possibleTricks = Model.searchLevels('level1', landing);
       }
@@ -97,8 +100,16 @@ export default class Trick {
   }
 
 
-  generateLanding() {
-    this.landing = Model.randomMove(this.trickObj.landings);
+  generateLanding(diff) {
+    // If difficulty is greater than 1, no adjustments need to be made
+    if (diff > 1) {
+      this.landing = Model.randomMove(this.trickObj.landings);
+    } else {
+      // 1. Make new landings list excluding special landings
+      const filtered = this.trickObj.landings.filter(landing => !specialLandings.includes(landing));
+      // 2. Set landing to a random landing from this new list
+      this.landing = Model.randomMove(filtered);
+    }
   }
 
 

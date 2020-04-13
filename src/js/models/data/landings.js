@@ -34,7 +34,7 @@ const landingPositions = {
     'outside leg reversal',
     'skip backswing', // skip from hook or round into jstep
     'hook to scoot',
-    'master swing',
+    'master swing', // * Special landing
   ],
 
   complete: [
@@ -49,7 +49,8 @@ const landingPositions = {
     'right left redirect',
     'skip backswing',
     'cheat',
-    'master swing',
+    'master swing', // * Special landing
+    'wrap', // * Special landing
   ],
 
   mega: [

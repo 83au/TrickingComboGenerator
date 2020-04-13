@@ -1,6 +1,8 @@
 import takeoffs from './takeoffs';
 import landingPositions from './landings';
 
+// Tricks should not have transitions that only lead to tricks of a higher level
+
 const level1 = [
   // KICKS
   {
@@ -193,7 +195,13 @@ const level1 = [
   {
     name: 'Scoot',
     setups: ['skip round', 'semi', 'hook', 'hook to scoot'],
-    landings: landingPositions.eagle.concat(['hyper']),
+    landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Scoot Hyper',
+    setups: ['skip round', 'semi', 'hook', 'hook to scoot'],
+    landings: landingPositions.hyper,
   },
 
   {

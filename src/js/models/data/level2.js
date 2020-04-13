@@ -22,12 +22,6 @@ const level2 = [
     ],
   },
 
-  { // 540 variations
-    name: '540 Kick',
-    setups: ['cheat', 'vanish', 'frontside pop'], // redirect is implied
-    landings: ['wrap'],
-  },
-
   {
     name: '720 Kick',
     setups: [
