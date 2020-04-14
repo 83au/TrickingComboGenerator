@@ -74,11 +74,9 @@ export function filterTrickList(level, landing) {
   return Data.tricks[level].filter(trick => trick.setups.includes(landing));
 }
 
-
-// TODO: Use this only for random mode, use an error catcher otherwise
+// * THIS FUNCTION IS FOR TESTING PURPOSES ONLY, should never need to use it in production
 // Recursively search all levels from first to last
-// Perhaps try without recursion?
-export function searchLevels(level, landing) { // TODO: need a max level
+export function searchLevels(level, landing) {
   // Stopping condition, TODO: needs to check against a max level
   if (level === 'level3') return undefined;
 
