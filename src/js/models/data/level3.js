@@ -170,7 +170,7 @@ const level3 = [
 
   {
     name: 'Wrap Full Twist',
-    setups: takeoffs.insideFullTwist,
+    setups: ['turn step', 'wrap'],
     landings: landingPositions.eagle,
   },
 
