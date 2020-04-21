@@ -124,16 +124,17 @@ label {
 
 select {
   padding-left: .5rem;
-  width: 12rem;
+  width: 14rem;
   height: 3rem;
   background: #fff;
-  color: hsl(230, 0%, 20%);
-  font-size: 2rem;
   border: none;
   box-shadow: var(--shadow);
   -webkit-appearance: button;
   -moz-appearance: button;
   outline: none;
+  color: hsl(230, 0%, 20%);
+  cursor: pointer;
+  font-size: 2rem;
 }
 
 .selection-box {

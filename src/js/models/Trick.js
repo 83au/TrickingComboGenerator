@@ -26,8 +26,9 @@ export default class Trick {
       possibleTricks = Model.filterTrickList(this.level, landing);
 
       // Make adjustment if no tricks on that list match
-      // * SHOULDN'T NEED THIS ANYMORE, every trick should have a possible trick to match
+      // * Change this to alter last trick's landing?
       if (!possibleTricks.length) {
+        console.log('NO COMPATIBLE TRICK ON THIS LEVEL');
         console.log('REFILTERING');
         console.log(prevTrick.name);
         console.log(landing);

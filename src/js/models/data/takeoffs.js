@@ -2,11 +2,8 @@
 const takeoffs = {
   swing: [
     'back swing',
-    'skip backswing',
-    'skip backswing',
     'left right redirect',
     'round carry-through',
-    'reverse vanish',
   ],
   raiz: [
     'right left redirect',

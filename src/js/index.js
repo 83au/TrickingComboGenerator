@@ -40,7 +40,7 @@ function reset() {
 
 function setEventListeners() {
   DOM.buildCmbBtn.addEventListener('click', setBuildMode);
-  DOM.buildDiffContainer.addEventListener('animationend', event => animateButtons(event));
+  DOM.buildDiffContainer.addEventListener('animationend', e => animateButtons(e));
   DOM.generateTrickBtn.addEventListener('click', createAndDisplayTrick);
   DOM.redoBtn.addEventListener('click', redoTrick);
   DOM.nextTrickBtn.addEventListener('click', nextTrick);
@@ -117,6 +117,8 @@ function buildTrick(maxDiff, prevTrick, animate) {
 
   trick.generateTrick(prevTrick);
   trick.setName();
+
+  console.log(trick.name);
 
   if (prevTrick) {
     trick.generateTransition(prevTrick.landing);

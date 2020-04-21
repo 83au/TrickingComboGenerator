@@ -144,6 +144,7 @@ const level2 = [
     name: 'Swing 360 Crescent',
     setups: [
       'back swing',
+      'reverse vanish',
       'round carry-through',
       'inside leg reversal',
       'left right redirect',
@@ -164,6 +165,7 @@ const level2 = [
     name: 'Swing 900 Kick',
     setups: [
       'back swing',
+      'reverse vanish',
       'round carry-through',
       'inside leg reversal',
       'left right redirect',
@@ -231,8 +233,12 @@ const level2 = [
   },
 
   // TRANSITION TRICKS
+  {
+    name: 'Master Swipe',
+    setups: ['master swing', 'right left redirect', 'skip masterswing', 'vanish'],
+    landings: landingPositions.hyper,
+  },
 
-  // Master Swipe
   {
     name: 'Cartwheel Twist',
     setups: takeoffs.cartwheel,
@@ -285,18 +291,6 @@ const level2 = [
     name: 'Sailor Moon Scissor',
     setups: takeoffs.raiz,
     landings: landingPositions.round,
-  },
-
-  {
-    name: 'Sideswipe',
-    setups: takeoffs.raiz,
-    landings: [ // hyper landing is implied
-      'reverse vanish',
-      'right left redirect',
-      'cheat',
-      'skip backswing',
-      'wrap',
-    ],
   },
 
   {
@@ -364,7 +358,7 @@ const level2 = [
     name: 'Arabian Scissor Swipe',
     notStarter: true,
     setups: ['invert backside pop', 'invert backside punch'],
-    landings: ['frontside pop', 'hook'],
+    landings: ['vanish', 'skip round', 'frontside pop', 'hook'],
   },
 
   {
@@ -421,21 +415,52 @@ const level2 = [
 
   {
     name: 'Corkscrew',
-    setups: takeoffs.swing,
+    setups: takeoffs.swing.concat([
+      'reverse vanish',
+      'skip backswing',
+      'skip backswing',
+    ]),
     landings: landingPositions.eagle,
   },
 
   {
     name: 'Corkscrew Round',
-    setups: takeoffs.swing,
+    setups: takeoffs.swing.concat([
+      'reverse vanish',
+      'skip backswing',
+      'skip backswing',
+    ]),
     landings: landingPositions.round,
   },
 
   {
     name: 'Donut Boy',
     notStarter: true,
-    setups: ['back swing', 'skip backswing', 'j step', 'pivot step'],
+    setups: [
+      'back swing',
+      'skip backswing',
+      'j step',
+      'pivot step',
+      'reverse vanish',
+      'skip backswing',
+      'skip backswing',
+    ],
     landings: ['frontside punch', 'hook'],
+  },
+
+  {
+    name: 'Donut Boy Hook',
+    notStarter: true,
+    setups: [
+      'back swing',
+      'skip backswing',
+      'j step',
+      'pivot step',
+      'reverse vanish',
+      'skip backswing',
+      'skip backswing',
+    ],
+    landings: landingPositions.hyper,
   },
 
   {
@@ -494,7 +519,11 @@ const level2 = [
 
   {
     name: 'Gainer Arabian',
-    setups: takeoffs.swing,
+    setups: takeoffs.swing.concat([
+      'reverse vanish',
+      'skip backswing',
+      'skip backswing',
+    ]),
     landings: [
       'invert frontside punch',
       'reverse pop',
@@ -504,7 +533,11 @@ const level2 = [
 
   {
     name: 'Gainer Flash Kick',
-    setups: takeoffs.swing,
+    setups: takeoffs.swing.concat([
+      'reverse vanish',
+      'skip backswing',
+      'skip backswing',
+    ]),
     landings: [ // Hyper is implied
       'inside pop',
       'invert inside pop',
@@ -512,12 +545,6 @@ const level2 = [
       'right left redirect',
       'cheat',
     ],
-  },
-
-  {
-    name: 'Gainer Switch',
-    setups: takeoffs.swing,
-    landings: landingPositions.eagle,
   },
 
   {
@@ -539,7 +566,11 @@ const level2 = [
 
   {
     name: 'Moonkick',
-    setups: takeoffs.swing,
+    setups: takeoffs.swing.concat([
+      'reverse vanish',
+      'skip backswing',
+      'skip backswing',
+    ]),
     landings: landingPositions.hook.concat(['turbo']),
   },
 

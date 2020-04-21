@@ -1,6 +1,7 @@
 // ****************************************** DATA *****************************************
 import level1 from './level1';
 import level2 from './level2';
+import level3 from './level3';
 
 
 // *** TRANSITIONS AND MODIFIERS ***
@@ -51,11 +52,11 @@ export const transitions = [
   'invert frontside pop', // for flips
   'invert inside pop',
   'invert backside pop',
-  'frontside punch',
 
   // Punches
   'outside punch',
   'backside punch',
+  'frontside punch',
   'inside punch',
   'invert frontside punch',
   'invert backside punch',
@@ -121,48 +122,51 @@ export const tricks = {
   // *** BEGINNER ***
   level2,
 
-  // INTERMEDIATE
-  // level3: [
-  //   // KICKS
-  //   // Pop 720 Double
-  //   // Cheat 9 Double
-  //   // Cheat 1080
-  //   // Backside 1080
+  // *** INTERMEDIATE ***
+  level3,
 
-  //   // TRANSITION TRICKS
-  //   // Envergado
-  //   // Td Raiz Swipe
-  //   // Td Raiz Whip
-
-  //   // FLIPS & TWISTS
-  //   // Grand Master Swipe
-  //   // Gainer Scissor Swipe
-  //   // Snapu Swipe
-  //   // Takuraba
-  //   // Tak Full
-  //   // Tak 9
-  //   // Shuriken Cork
-  //   // Hyper Cork
-  //   // Cork Swipe
-  //   // Boxcutter
-  //   // Wrap Full Twist
-  //   // Tak Full Twist
-  //   // Full Twist Double Leg
-  //   // Full Twist Swipe
-  //   // Full Twist Hyper Hook
-  //   // Double Full Twist
-  //   // Hyper Twist
-  //   // Butterfly Twist Hyper Hook
-  //   // Btwist dleg
+  // FLIPS & TWISTS
+  // Shuriken Cork
+  // Hyper Cork
+  // Cork Swipe
+  // Boxcutter
+  // Wrap Full Twist
+  // Tak Full Twist
+  // Full Twist Double Leg
+  // Full Twist Swipe
+  // Full Twist Hyper Hook
+  // Double Full Twist
+  // Hyper Twist
+  // Butterfly Twist Hyper Hook
+  // Btwist dleg
   // ],
 
   // // ADVANCED
   // level4: [
   //   // KICKS
+  //     {
+  // name: '900 Double',
+  //   setups: [
+  //     'cheat',
+  //     'vanish',
+  //     'skip round',
+  //     'hook',
+  //     'wrap',
+  //   ],
+  //     landings: landingPositions.round.concat(['rapid hook']),
+  // },
   //   // Cheat 1260
   //   // Hurricane (cheat 1080 triple)
 
   //   // FLIPS & TWISTS
+  // {
+  // name: 'Snapu Swipe',
+  //   setups: takeoffs.raiz,
+  //     landings: [ // hyper landing is implied
+  //       'backside punch',
+  //       'invert backside punch',
+  //     ],
+  // },
   //   // Cheat 720 Twist (Barrel Roll)
   //   // Dub Cork
   //   // Shuriken Cutter
