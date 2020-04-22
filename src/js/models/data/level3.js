@@ -64,7 +64,12 @@ const level3 = [
   // FLIPS & TWISTS
   {
     name: 'Grand Master Swipe',
-    setups: ['master swing', 'hook', 'skip masterswing', 'vanish'],
+    setups: [
+      'master swing',
+      'hook',
+      'hook to scoot', // To account for no scoots on this level
+      'skip masterswing',
+      'vanish'],
     landings: landingPositions.hyper,
   },
 
