@@ -550,7 +550,12 @@ const level2 = [
   {
     name: 'Illusion Twist',
     setups: ['hook', 'reverse vanish', 'hyper'],
-    landings: ['reverse pop', 'right first reverse pop', 'frontside punch', 'hook'],
+    landings: [
+      'reverse pop',
+      'right first reverse pop',
+      'frontside punch',
+      'hook',
+    ],
   },
 
   {

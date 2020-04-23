@@ -74,6 +74,20 @@ const level3 = [
   },
 
   {
+    name: 'Boneless Gainer',
+    setups: takeoffs.swing.concat([
+      'reverse vanish',
+    ]),
+    landings: [ // Hyper is implied
+      'inside pop',
+      'invert inside pop',
+      'reverse vanish',
+      'right left redirect',
+      'cheat',
+    ],
+  },
+
+  {
     name: 'Gainer Rocketboii',
     notStarter: true,
     setups: takeoffs.swing,
