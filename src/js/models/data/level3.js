@@ -67,7 +67,6 @@ const level3 = [
     setups: [
       'master swing',
       'hook',
-      'hook to scoot', // To account for no scoots on this level
       'skip masterswing',
       'vanish'],
     landings: landingPositions.hyper,
