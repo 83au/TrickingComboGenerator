@@ -92,7 +92,7 @@ const level1 = [
     name: 'Front Sweep',
     notFinisher: true,
     setups: ['inside leg reversal', 'right first reverse pop'],
-    landings: ['backside pop'],
+    landings: ['backside pop', 'inside leg reversal'],
   },
 
   {
@@ -162,12 +162,12 @@ const level1 = [
   {
     name: 'Cartwheel',
     setups: takeoffs.cartwheel,
-    landings: ['invert inside pop', 'reverse vanish'],
+    landings: ['invert inside pop'],
   },
 
   {
     name: 'Kaydem',
-    setups: ['reverse vanish', 'inside'],
+    setups: ['reverse vanish'],
     landings: [
       // Swing gets higher precedence
       'back swing',

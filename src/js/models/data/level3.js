@@ -243,25 +243,25 @@ const level3 = [
 
   {
     name: 'Hyper Twist',
-    setups: ['hook', 'reverse vanish', 'missleg', 'turn step', 'mega'],
+    setups: ['hook', 'reverse vanish', 'missleg', 'turn step'],
     landings: landingPositions.hyper,
   },
 
   {
     name: 'Butterfly Twist Swipe',
-    setups: ['hook', 'reverse vanish', 'turn step', 'mega'],
+    setups: ['hook', 'reverse vanish', 'turn step'],
     landings: landingPositions.hyper,
   },
 
   {
     name: 'Butterfly Twist Hyper Hook',
-    setups: ['hook', 'reverse vanish', 'turn step', 'mega'],
+    setups: ['hook', 'reverse vanish', 'turn step'],
     landings: landingPositions.hyper,
   },
 
   {
     name: 'Butterfly Twist Double Leg',
-    setups: ['hook', 'reverse vanish', 'turn step', 'mega'],
+    setups: ['hook', 'reverse vanish', 'turn step'],
     landings: ['backside punch', 'invert backside punch'],
   },
 
