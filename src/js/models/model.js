@@ -35,7 +35,7 @@ export function adjustForLandingMod(prevTrick, obj) {
   if (prevLandingMod && landingPositions[prevTrick.landing]) {
     landing = randomMove(landingPositions[prevTrick.landing]);
 
-    if (!(/(semi|mega)/.test(landing))) {
+    if (!(/semi|mega/.test(landing))) {
       obj.transition = landing;
     } else {
       obj.transition = null;
@@ -48,6 +48,7 @@ export function adjustForLandingMod(prevTrick, obj) {
 }
 
 
+// * THIS FUNCTION IS FOR BUILD MODE ONLY
 export function redoPrevLanding(prevTrick) {
   prevTrick.generateLanding();
   prevTrick.handleLandingMod();
@@ -86,7 +87,7 @@ export function filterTrickList(level, landing) {
   return Data.tricks[level].filter(trick => trick.setups.includes(landing));
 }
 
-// * THIS FUNCTION IS FOR TESTING PURPOSES ONLY, should never need to use it in production
+// * THIS FUNCTION IS FOR RANDOM MODE ONLY
 // Recursively search all levels from first to last
 export function searchLevels(level, landing) {
   // Stopping condition, TODO: needs to check against a max level
