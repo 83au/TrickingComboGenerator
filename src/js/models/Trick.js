@@ -16,7 +16,7 @@ export default class Trick {
   }
 
 
-  generateTrick(prevTrick) {
+  generateTrick(prevTrick, mode) {
     let possibleTricks;
 
     if (prevTrick) {
@@ -28,11 +28,14 @@ export default class Trick {
       // Make adjustment if no tricks on that list match
       // * Change this to alter last trick's landing?
       if (!possibleTricks.length) {
-        console.log('NO COMPATIBLE TRICK ON THIS LEVEL');
-        console.log('REFILTERING');
-        console.log(prevTrick.name);
-        console.log(landing);
-        possibleTricks = Model.searchLevels('level1', landing);
+        if (mode === 'random') {
+          console.log('REFILTERING');
+          console.log(prevTrick.name);
+          console.log(landing);
+          possibleTricks = Model.searchLevels('level1', landing);
+        } else {
+          throw new Error('No matching trick');
+        }
       }
 
       // Choose random trick from this list

@@ -74,9 +74,7 @@ const level3 = [
 
   {
     name: 'Boneless Gainer',
-    setups: takeoffs.swing.concat([
-      'reverse vanish',
-    ]),
+    setups: ['reverse vanish'],
     landings: [ // Hyper is implied
       'inside pop',
       'invert inside pop',
@@ -142,12 +140,6 @@ const level3 = [
       'mega',
       'semi',
     ],
-  },
-
-  {
-    name: 'Tak Full',
-    setups: ['turn step', 'vanish'],
-    landings: landingPositions.eagle,
   },
 
   {

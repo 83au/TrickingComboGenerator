@@ -48,6 +48,18 @@ export function adjustForLandingMod(prevTrick, obj) {
 }
 
 
+export function redoPrevLanding(prevTrick) {
+  prevTrick.generateLanding();
+  prevTrick.handleLandingMod();
+
+  if (prevTrick.transition) {
+    prevTrick.transition = formatMod(prevTrick.transition);
+  }
+
+  return prevTrick;
+}
+
+
 export function formatMod(mod) {
   if (mod) {
     if (/^(vanish|missleg|reverse pop|cheat|hook|wrap|complete|skip)$/.test(mod)) return mod;

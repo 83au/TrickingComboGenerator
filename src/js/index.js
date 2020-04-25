@@ -79,7 +79,7 @@ function createAndDisplayTrick() {
   const difficulty = View.getChoices(state.mode);
 
   // Buttons are animated and shown in this function call
-  buildTrick(difficulty, state.prevTrick, true);
+  buildTrick(difficulty, true);
 
   DOM.backBtn.classList.add('hide');
   DOM.generateTrickBtn.classList.add('hide');
@@ -97,7 +97,7 @@ function setCurrAndPrevTrick() {
 }
 
 
-function buildTrick(maxDiff, prevTrick, animate) {
+function buildTrick(maxDiff, animate) {
   const diff = handleDifficulty(maxDiff);
 
   const trick = new Trick();
@@ -115,13 +115,12 @@ function buildTrick(maxDiff, prevTrick, animate) {
     trick.setLevel(Data.difficultyLevels[diff]);
   }
 
-  trick.generateTrick(prevTrick);
+  tryGenerateTrick(trick);
+
   trick.setName();
 
-  console.log(trick.name);
-
-  if (prevTrick) {
-    trick.generateTransition(prevTrick.landing);
+  if (state.prevTrick) {
+    trick.generateTransition(state.prevTrick.landing);
   } else {
     trick.takeoff = Model.chooseFromList(trick.trickObj.setups, 'takeoffModifiers');
   }
@@ -134,11 +133,22 @@ function buildTrick(maxDiff, prevTrick, animate) {
   if (trick.transition) trick.transition = Model.formatMod(trick.transition);
 
   if (state.mode === 'random') {
-    View.displayTrick(prevTrick, trick, DOM.randomCmbContainer, 'random');
+    View.displayTrick(state.prevTrick, trick, DOM.randomCmbContainer, 'random');
   } else {
-    View.displayTrick(prevTrick, trick, DOM.builtCmbContainer, 'build', animate);
+    View.displayTrick(state.prevTrick, trick, DOM.builtCmbContainer, 'build', animate);
   }
   state.currTrick = trick;
+}
+
+
+function tryGenerateTrick(trick) {
+  try {
+    trick.generateTrick(state.prevTrick, state.mode);
+  } catch (err) {
+    console.log(err);
+    state.prevTrick = Model.redoPrevLanding(state.prevTrick);
+    tryGenerateTrick(trick);
+  }
 }
 
 
@@ -152,24 +162,16 @@ function handleDifficulty(difficulty) {
 
 function redoTrick() {
   state.currTrick = undefined;
+  View.removeCurrentTrick(DOM.builtCmbContainer);
 
-  // Remove current trick from UI
-  View.removeCurrentTrick();
-
-  // If there's a previous trick, remove it and put it back with new landing
   if (state.prevTrick) {
-    const { prevTrick } = state;
-    prevTrick.generateLanding();
-    prevTrick.handleLandingMod();
+    // Remove previous trick and put it back with new landing
+    state.prevTrick = Model.redoPrevLanding(state.prevTrick);
 
-    if (prevTrick.transition) {
-      prevTrick.transition = Model.formatMod(prevTrick.transition);
-    }
-
+    // Redisplay last trick
     View.removeCurrentTrick();
-
     const hasMoreTricks = DOM.builtCmbContainer.children.length > 0;
-    View.displayTrick(hasMoreTricks, prevTrick, DOM.builtCmbContainer);
+    View.displayTrick(hasMoreTricks, state.prevTrick, DOM.builtCmbContainer);
   }
 
   nextTrick();
@@ -222,7 +224,7 @@ function generateCombo() {
 
   do {
     setCurrAndPrevTrick();
-    buildTrick(difficulty, state.prevTrick);
+    buildTrick(difficulty);
     state.trickCount += 1;
   } while (state.trickCount < numTricks);
 }
