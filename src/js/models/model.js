@@ -69,10 +69,10 @@ export function formatMod(mod) {
     if (/skip backswing|skip frontswing| skip masterswing/.test(mod)) return 'skip swing';
     if (/left right redirect/.test(mod)) return 'redirect swing';
 
-    const isTrans = /(pop|punch|vanish|reversal|redirect|carry-through|swing)$/.test(mod);
+    const isTrans = /(pop|punch|vanish|reversal|redirect|carry-through|swing|hyper)$/.test(mod);
     if (isTrans) return mod.split(' ').pop();
 
-    const isLanding = /^(hyper|mega|turbo|semi|gyro frontside|gyro backside|half gyro frontside|half gyro backside|rapid round|rapid hook)$/.test(mod);
+    const isLanding = /^(mega|turbo|semi|gyro frontside|gyro backside|half gyro frontside|half gyro backside|rapid round|rapid hook|broken)$/.test(mod);
     if (isLanding) {
       if (mod.startsWith('gyro')) return 'gyro';
       if (mod.startsWith('half')) return 'half gyro';

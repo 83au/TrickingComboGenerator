@@ -12,7 +12,6 @@ const landingPositions = {
     'back swing',
     'back swing',
     'back swing',
-
   ],
 
   round: [
@@ -45,6 +44,27 @@ const landingPositions = {
   ],
 
   hyper: [
+    'reverse vanish',
+    'right left redirect',
+    'skip backswing',
+    'cheat',
+    'master swing', // * Special landing
+    'wrap', // * Special landing
+  ],
+
+  invertedHyper: [
+    'reverse vanish',
+    'right left redirect',
+    'skip backswing',
+    'cheat',
+    'master swing', // * Special landing
+    'wrap', // * Special landing
+    'broken',
+    'broken',
+    'broken',
+  ],
+
+  broken: [
     'reverse vanish',
     'right left redirect',
     'skip backswing',

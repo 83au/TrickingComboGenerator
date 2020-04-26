@@ -34,6 +34,7 @@ export const landingModifiers = [
   'half gyro backside',
   'rapid round',
   'rapid hook',
+  'broken',
 ];
 
 export const transitions = [
@@ -97,6 +98,7 @@ export const transitions = [
   'mega',
   'turbo',
   'semi',
+  'broken',
   'gyro frontside',
   'gyro backside',
   'half gyro frontside',

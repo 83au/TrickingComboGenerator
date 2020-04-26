@@ -63,13 +63,13 @@ const level2 = [
       'hook',
       'wrap',
     ],
-    landings: landingPositions.round.concat(['rapid hook']),
+    landings: landingPositions.round.concat(['rapid hook', 'hyper']),
   },
 
   {
     name: 'Backside 900',
     setups: ['backside punch', 'backside pop', 'inside pop'],
-    landings: landingPositions.round.concat(['rapid hook']),
+    landings: landingPositions.round.concat(['rapid hook', 'hyper']),
   },
 
   {
@@ -272,7 +272,7 @@ const level2 = [
   {
     name: 'Raiz',
     setups: takeoffs.raiz,
-    landings: landingPositions.eagle,
+    landings: landingPositions.eagle.concat(['inverted hyper']),
   },
 
   {
@@ -365,16 +365,6 @@ const level2 = [
     name: 'Back Full Round',
     setups: takeoffs.backFullTwist,
     landings: landingPositions.round,
-  },
-
-  {
-    name: 'Back Full Swipe',
-    setups: takeoffs.backFullTwist,
-    landings: [ // Hyper is implied
-      'reverse vanish',
-      'right left redirect',
-      'cheat',
-    ],
   },
 
   {
@@ -497,17 +487,6 @@ const level2 = [
     notStarter: true,
     setups: takeoffs.insideFullTwist,
     landings: landingPositions.round,
-  },
-
-  {
-    name: 'Full Swipe',
-    notStarter: true,
-    setups: takeoffs.insideFullTwist,
-    landings: [
-      'reverse vanish',
-      'right left redirect',
-      'cheat',
-    ],
   },
 
   {

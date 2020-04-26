@@ -116,19 +116,14 @@ const level3 = [
       'cheat',
       'skip backswing',
       'wrap',
+      'broken',
     ],
   },
 
   {
     name: 'Sideswipe',
     setups: takeoffs.raiz,
-    landings: [ // hyper landing is implied
-      'reverse vanish',
-      'right left redirect',
-      'cheat',
-      'skip backswing',
-      'wrap',
-    ],
+    landings: landingPositions.invertedHyper,
   },
 
   {
@@ -143,7 +138,7 @@ const level3 = [
   },
 
   {
-    name: 'Tak 9',
+    name: 'Tak Full Round',
     setups: ['turn step', 'vanish'],
     landings: landingPositions.round,
   },
@@ -169,7 +164,7 @@ const level3 = [
   {
     name: 'Cork Swipe',
     setups: takeoffs.swing,
-    landings: landingPositions.hyper,
+    landings: landingPositions.invertedHyper,
   },
 
   {
@@ -185,7 +180,7 @@ const level3 = [
   },
 
   {
-    name: 'Back Full Twist Double Leg',
+    name: 'Back Full Double Leg',
     setups: takeoffs.backFullTwist,
     landings: [
       'backside punch',
@@ -195,19 +190,19 @@ const level3 = [
   },
 
   {
-    name: 'Back Full Twist Swipe',
+    name: 'Back Full Swipe',
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Back Full Hyper Hook',
     setups: takeoffs.backFullTwist,
     landings: landingPositions.hyper,
   },
 
   {
-    name: 'Back Full Twist Hyper Hook',
-    setups: takeoffs.backFullTwist,
-    landings: landingPositions.hyper,
-  },
-
-  {
-    name: 'Back Double Full Twist',
+    name: 'Back Double Full',
     setups: takeoffs.backFullTwist,
     landings: landingPositions.eagle,
   },
@@ -219,7 +214,7 @@ const level3 = [
   },
 
   {
-    name: 'Full Twist Double Leg',
+    name: 'Full Double Leg',
     setups: takeoffs.insideFullTwist,
     landings: [
       'backside punch',
@@ -229,19 +224,19 @@ const level3 = [
   },
 
   {
-    name: 'Full Twist Swipe',
+    name: 'Full Swipe',
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Full Hyper Hook',
     setups: takeoffs.insideFullTwist,
     landings: landingPositions.hyper,
   },
 
   {
-    name: 'Full Twist Hyper Hook',
-    setups: takeoffs.insideFullTwist,
-    landings: landingPositions.hyper,
-  },
-
-  {
-    name: 'Double Full Twist',
+    name: 'Double Full',
     setups: takeoffs.insideFullTwist,
     landings: landingPositions.eagle,
   },
@@ -249,23 +244,23 @@ const level3 = [
   {
     name: 'Hyper Twist',
     setups: ['hook', 'reverse vanish', 'missleg', 'turn step'],
-    landings: landingPositions.hyper,
+    landings: landingPositions.invertedHyper,
   },
 
   {
-    name: 'Butterfly Twist Swipe',
+    name: 'Btwist Swipe',
     setups: ['hook', 'reverse vanish', 'turn step'],
-    landings: landingPositions.hyper,
+    landings: landingPositions.invertedHyper,
   },
 
   {
-    name: 'Butterfly Twist Hyper Hook',
+    name: 'Btwist Hyper Hook',
     setups: ['hook', 'reverse vanish', 'turn step'],
-    landings: landingPositions.hyper,
+    landings: landingPositions.invertedHyper,
   },
 
   {
-    name: 'Butterfly Twist Double Leg',
+    name: 'Btwist Double Leg',
     setups: ['hook', 'reverse vanish', 'turn step'],
     landings: ['backside punch', 'invert backside punch'],
   },
