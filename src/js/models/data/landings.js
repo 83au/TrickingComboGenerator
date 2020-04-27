@@ -61,7 +61,6 @@ const landingPositions = {
     'wrap', // * Special landing
     'broken',
     'broken',
-    'broken',
   ],
 
   broken: [

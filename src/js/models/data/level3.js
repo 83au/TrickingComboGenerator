@@ -190,6 +190,26 @@ const level3 = [
   },
 
   {
+    name: 'Back Full Cobra',
+    setups: takeoffs.backFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Back Full Crowd Awakener',
+    setups: takeoffs.backFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
     name: 'Back Full Swipe',
     setups: takeoffs.backFullTwist,
     landings: landingPositions.invertedHyper,
@@ -215,6 +235,26 @@ const level3 = [
 
   {
     name: 'Full Double Leg',
+    setups: takeoffs.insideFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Full Cobra',
+    setups: takeoffs.insideFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Full Crowd Awakener',
     setups: takeoffs.insideFullTwist,
     landings: [
       'backside punch',
