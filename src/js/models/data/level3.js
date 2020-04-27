@@ -74,6 +74,7 @@ const level3 = [
 
   {
     name: 'Boneless Gainer',
+    notStarter: true,
     setups: ['reverse vanish'],
     landings: [ // Hyper is implied
       'inside pop',
@@ -150,6 +151,16 @@ const level3 = [
   },
 
   {
+    name: 'Dragonfly Cork',
+    setups: takeoffs.swing.concat([
+      'reverse vanish',
+      'skip backswing',
+      'skip backswing',
+    ]),
+    landings: landingPositions.eagle,
+  },
+
+  {
     name: 'Shuriken Cork',
     setups: takeoffs.swing,
     landings: landingPositions.mega.concat('complete'),
@@ -159,6 +170,18 @@ const level3 = [
     name: 'Rodeo Cork',
     setups: takeoffs.swing,
     landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Handcuff Cork',
+    setups: takeoffs.swing,
+    landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Cork D-leg',
+    setups: takeoffs.swing,
+    landings: ['backside punch', 'invert backside punch'],
   },
 
   {
@@ -180,13 +203,29 @@ const level3 = [
   },
 
   {
-    name: 'Back Full Double Leg',
+    name: 'Back Full D-leg',
     setups: takeoffs.backFullTwist,
     landings: [
       'backside punch',
       'invert backside punch',
       'complete',
     ],
+  },
+
+  {
+    name: 'Back Full Pike',
+    setups: takeoffs.backFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Back Full Terada Grab',
+    setups: takeoffs.backFullTwist,
+    landings: ['reverse vanish', 'right left redirect', 'hook', 'cheat'],
   },
 
   {
@@ -207,6 +246,44 @@ const level3 = [
       'invert backside punch',
       'complete',
     ],
+  },
+
+  {
+    name: 'Ironman Back Full',
+    setups: takeoffs.backFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Back Arabian Half',
+    setups: takeoffs.backFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Full Terada Grab',
+    setups: takeoffs.insideFullTwist,
+    landings: ['reverse vanish', 'right left redirect', 'hook', 'cheat'],
+  },
+
+  {
+    name: 'Rodeo Back Full',
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Rodeo Back Full Round',
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.round,
   },
 
   {
@@ -234,6 +311,37 @@ const level3 = [
   },
 
   {
+    name: 'Kick Full',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Lonestar Twist',
+    setups: takeoffs.backFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Back Arabian Half',
+    setups: takeoffs.insideFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
     name: 'Full Double Leg',
     setups: takeoffs.insideFullTwist,
     landings: [
@@ -242,6 +350,43 @@ const level3 = [
       'complete',
     ],
   },
+
+  {
+    name: 'Full Pike',
+    setups: takeoffs.insideFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Ironman Full',
+    setups: takeoffs.insideFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Full Feilong',
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Full Wackknife',
+    setups: takeoffs.insideFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
 
   {
     name: 'Full Cobra',
@@ -261,6 +406,18 @@ const level3 = [
       'invert backside punch',
       'complete',
     ],
+  },
+
+  {
+    name: 'Rodeo Full',
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Rodeo Full Round',
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.round,
   },
 
   {

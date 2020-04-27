@@ -341,19 +341,6 @@ const level2 = [
     ],
   },
 
-  { // Arabian variations
-    name: 'Arabian',
-    setups: [
-      'invert inside pop',
-      'invert backside punch',
-      'invert backside pop',
-    ],
-    landings: [
-      'mega',
-      'semi',
-    ],
-  },
-
   {
     name: 'Arabian Scissor Swipe',
     notStarter: true,
@@ -427,6 +414,10 @@ const level2 = [
     name: 'Donut Boy',
     notStarter: true,
     setups: [
+      'invert backside pop',
+      'backside pop',
+      'invert backside punch',
+      'backside punch',
       'back swing',
       'skip backswing',
       'j step',
@@ -442,6 +433,10 @@ const level2 = [
     name: 'Donut Boy Hook',
     notStarter: true,
     setups: [
+      'invert backside pop',
+      'backside pop',
+      'invert backside punch',
+      'backside punch',
       'back swing',
       'skip backswing',
       'j step',
@@ -467,18 +462,6 @@ const level2 = [
       'reverse vanish',
       'right left redirect',
       'cheat',
-    ],
-  },
-
-  { // Front Flip variations
-    name: 'Front Flip',
-    setups: [
-      'invert frontside pop',
-      'invert frontside punch',
-      'invert backside punch',
-    ],
-    landings: [
-      'mega',
     ],
   },
 
@@ -561,8 +544,18 @@ const level2 = [
   {
     name: 'Rocketboii',
     notStarter: true,
-    setups: ['Round Off'],
+    setups: ['invert backside punch'],
     landings: ['invert backside punch'],
+  },
+
+  {
+    name: 'Lonestar',
+    setups: ['invert backside punch'],
+    landings: [
+      'invert frontside punch',
+      'mega',
+      'semi',
+    ],
   },
 
   {
@@ -573,21 +566,8 @@ const level2 = [
 
   {
     name: 'Terada Grab',
-    notStarter: true,
-    starter: false,
     setups: ['invert backside pop', 'invert backside punch'],
     landings: ['reverse vanish', 'right left redirect', 'hook', 'cheat'],
-  },
-
-  { // Webster variations
-    name: 'Webster',
-    setups: [
-      'reverse vanish',
-      'mega',
-    ],
-    landings: [
-      'mega',
-    ],
   },
 
   {

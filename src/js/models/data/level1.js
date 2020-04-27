@@ -183,7 +183,12 @@ const level1 = [
   {
     name: 'Macaco',
     setups: ['backside pop', 'invert backside pop'],
-    landings: ['right left redirect', 'outside leg reversal', 'reverse vanish'],
+    landings: [
+      'right left redirect',
+      'outside leg reversal',
+      'reverse vanish',
+      'complete',
+    ],
   },
 
   {
@@ -251,6 +256,8 @@ const level1 = [
     landings: [
       'invert frontside punch',
       'hook',
+      'semi',
+      'mega',
     ],
   },
 
@@ -260,6 +267,7 @@ const level1 = [
     landings: [
       'invert frontside punch',
       'semi',
+      'mega',
     ],
   },
 
@@ -272,6 +280,8 @@ const level1 = [
     landings: [
       'reverse vanish',
       'invert frontside punch',
+      'mega',
+      'semi',
     ],
   },
 ];

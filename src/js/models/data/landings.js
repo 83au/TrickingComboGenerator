@@ -69,7 +69,6 @@ const landingPositions = {
     'skip backswing',
     'cheat',
     'master swing', // * Special landing
-    'wrap', // * Special landing
   ],
 
   mega: [
