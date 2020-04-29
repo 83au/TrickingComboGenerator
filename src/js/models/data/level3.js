@@ -174,6 +174,7 @@ const level3 = [
 
   {
     name: 'Handcuff Cork',
+    notStarter: true,
     setups: takeoffs.swing,
     landings: landingPositions.eagle,
   },
