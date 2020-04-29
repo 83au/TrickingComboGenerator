@@ -474,7 +474,6 @@ const level2 = [
 
   {
     name: 'Full Twist',
-    notStarter: true,
     setups: takeoffs.insideFullTwist,
     landings: landingPositions.eagle,
   },
@@ -550,6 +549,7 @@ const level2 = [
 
   {
     name: 'Lonestar',
+    notStarter: true,
     setups: ['invert backside punch'],
     landings: [
       'invert frontside punch',

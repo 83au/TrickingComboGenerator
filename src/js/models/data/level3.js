@@ -203,6 +203,12 @@ const level3 = [
   },
 
   {
+    name: 'Back TD Full',
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.eagle,
+  },
+
+  {
     name: 'Back Full D-leg',
     setups: takeoffs.backFullTwist,
     landings: [
@@ -269,6 +275,22 @@ const level3 = [
   },
 
   {
+    name: 'Arabian Half',
+    setups: takeoffs.insideFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'TD Full',
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.eagle,
+  },
+
+  {
     name: 'Full Terada Grab',
     setups: takeoffs.insideFullTwist,
     landings: ['reverse vanish', 'right left redirect', 'hook', 'cheat'],
@@ -323,6 +345,7 @@ const level3 = [
 
   {
     name: 'Lonestar Twist',
+    notStarter: true,
     setups: takeoffs.backFullTwist,
     landings: [
       'backside punch',
