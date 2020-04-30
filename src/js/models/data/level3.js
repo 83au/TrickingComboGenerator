@@ -18,6 +18,12 @@ const level3 = [
     landings: landingPositions.hook.concat(['rapid round']),
   },
 
+  {
+    name: 'Backside 9 Feilong',
+    setups: ['backside punch', 'backside pop', 'inside pop'],
+    landings: landingPositions.round,
+  },
+
   // TRANSITION TRICKS
   {
     name: 'Aerial',
