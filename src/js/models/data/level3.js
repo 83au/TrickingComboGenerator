@@ -39,6 +39,18 @@ const level3 = [
   },
 
   {
+    name: 'Atwist',
+    setups: takeoffs.btwist.concat(['inside leg reversal', 'mega']),
+    landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'TD Atwist',
+    setups: takeoffs.btwist.concat(['inside leg reversal', 'mega']),
+    landings: landingPositions.eagle,
+  },
+
+  {
     name: 'Back Handspring Twist',
     setups: ['invert backside pop', 'invert backside punch'],
     landings: landingPositions.eagle,
@@ -423,7 +435,6 @@ const level3 = [
     ],
   },
 
-
   {
     name: 'Full Cobra',
     setups: takeoffs.insideFullTwist,
@@ -475,26 +486,32 @@ const level3 = [
   },
 
   {
+    name: 'TD Btwist',
+    setups: takeoffs.btwist.concat(['inside leg reversal', 'mega']),
+    landings: landingPositions.eagle,
+  },
+
+  {
     name: 'Btwist Hyper',
-    setups: ['hook', 'reverse vanish', 'missleg', 'turn step'],
+    setups: takeoffs.btwist,
     landings: landingPositions.invertedHyper,
   },
 
   {
     name: 'Btwist Swipe',
-    setups: ['hook', 'reverse vanish', 'turn step'],
+    setups: takeoffs.btwist,
     landings: landingPositions.invertedHyper,
   },
 
   {
     name: 'Btwist Hyper Hook',
-    setups: ['hook', 'reverse vanish', 'turn step'],
+    setups: takeoffs.btwist,
     landings: landingPositions.invertedHyper,
   },
 
   {
     name: 'Btwist Double Leg',
-    setups: ['hook', 'reverse vanish', 'turn step'],
+    setups: takeoffs.btwist,
     landings: ['backside punch', 'invert backside punch'],
   },
 

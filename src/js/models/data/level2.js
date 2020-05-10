@@ -362,19 +362,19 @@ const level2 = [
 
   {
     name: 'Butterfly Twist',
-    setups: ['hook', 'reverse vanish', 'missleg', 'turn step', 'mega'],
+    setups: takeoffs.btwist.concat(['missleg', 'inside leg reversal']),
     landings: landingPositions.eagle,
   },
 
   {
     name: 'Butterfly Twist Round',
-    setups: ['hook', 'reverse vanish', 'turn step', 'mega'],
+    setups: takeoffs.btwist.concat(['missleg', 'inside leg reversal']),
     landings: landingPositions.round,
   },
 
   {
     name: 'Butterfly Switch',
-    setups: ['hook', 'reverse vanish', 'missleg', 'turn step'],
+    setups: takeoffs.btwist.concat(['missleg', 'inside leg reversal']),
     landings: [
       'invert backside pop',
       'back swing',
@@ -386,7 +386,7 @@ const level2 = [
 
   {
     name: 'Butter Knife',
-    setups: ['hook', 'reverse vanish', 'missleg', 'turn step'],
+    setups: takeoffs.btwist.concat(['missleg', 'inside leg reversal']),
     landings: landingPositions.hook,
   },
 

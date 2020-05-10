@@ -17,6 +17,11 @@ const takeoffs = {
     'skip frontswing',
     'vanish',
   ],
+  btwist: [
+    'hook',
+    'reverse vanish',
+    'turn step',
+  ],
   backFullTwist: [
     'backside pop',
     'invert backside pop',
