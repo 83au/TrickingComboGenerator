@@ -192,6 +192,12 @@ const level3 = [
   },
 
   {
+    name: 'Cork Hyper',
+    setups: takeoffs.swing,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
     name: 'Cork Swipe',
     setups: takeoffs.swing,
     landings: landingPositions.invertedHyper,
@@ -469,7 +475,7 @@ const level3 = [
   },
 
   {
-    name: 'Hyper Twist',
+    name: 'Btwist Hyper',
     setups: ['hook', 'reverse vanish', 'missleg', 'turn step'],
     landings: landingPositions.invertedHyper,
   },
