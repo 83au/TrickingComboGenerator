@@ -1,6 +1,6 @@
 # TrickingComboGenerator
-<>Creates random combinations of tricks from the sport called Tricking. 
-Tricking consists of combinations of "tricks" inspired by martial arts, gymnastics, and break dancing. 
+<p>Creates random combinations of tricks from the sport called Tricking. 
+Tricking consists of combinations of "tricks" inspired by martial arts, gymnastics, and break dancing. </p>
 
 <p>Users can choose from 2 modes: Build Combo or Random Combo. Build combo allows the user to build the combo one trick at a time, choosing the level of difficulty they want the trick to be. They can then move on to the next trick, or chose to redo the trick they are on, which randomly chooses another trick from the level of their choice. Random mode allows the user to choose a max difficulty and the number of tricks they want in the combo. Then the whole combo is generated at once.</p>
 
