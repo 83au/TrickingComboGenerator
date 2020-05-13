@@ -40,7 +40,8 @@ function reset() {
 
 function setEventListeners() {
   DOM.buildCmbBtn.addEventListener('click', setBuildMode);
-  DOM.buildDiffContainer.addEventListener('animationend', e => animateButtons(e));
+  // Safari does not support 'animationend'
+  // DOM.buildDiffContainer.addEventListener('animationend', e => animateButtons(e));
   DOM.generateTrickBtn.addEventListener('click', createAndDisplayTrick);
   DOM.redoBtn.addEventListener('click', redoTrick);
   DOM.nextTrickBtn.addEventListener('click', nextTrick);
@@ -62,14 +63,13 @@ function setBuildMode() {
 
   // Reset these for new combo
   DOM.buildDiffContainer.classList.remove('hide');
+  setTimeout(animateButtons, 500);
 }
 
 
-function animateButtons(e) {
-  if (e.animationName === 'popIn') {
-    DOM.generateTrickBtn.classList.remove('hide');
-    DOM.backBtn.classList.remove('hide');
-  }
+function animateButtons() {
+  DOM.generateTrickBtn.classList.remove('hide');
+  DOM.backBtn.classList.remove('hide');
 }
 
 
@@ -84,7 +84,6 @@ function createAndDisplayTrick() {
   DOM.backBtn.classList.add('hide');
   DOM.generateTrickBtn.classList.add('hide');
 
-  // This element's event handler shows more buttons
   DOM.buildDiffContainer.classList.add('hide');
 }
 
@@ -183,9 +182,10 @@ function nextTrick() {
   DOM.newCmbBtn.classList.add('hide');
   DOM.backBtn.classList.add('hide');
 
+  // Make asynchronous function ?
   setTimeout(() => {
-    // This element's event handler shows more buttons
     DOM.buildDiffContainer.classList.remove('hide');
+    setTimeout(animateButtons, 500);
   }, 10);
 }
 
