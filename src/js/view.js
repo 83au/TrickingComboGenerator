@@ -47,6 +47,7 @@ export function getChoices(mode) {
 }
 
 
+// Too many parameters?
 export function displayTrick(prevTrick, curTrick, container, mode, animate) {
   const trickEl = document.createElement('div');
 
@@ -97,6 +98,7 @@ export function removeCurrentTrick() {
 
 // * * * * PRIVATE FUNCTIONS * * * *
 
+// Too many parameters?
 function animateTrick(prevTrick, curTrick, container, mode, trickEl, animate) {
   trickEl.classList.add('trick', 'hidden');
 
@@ -123,11 +125,11 @@ function animateTrick(prevTrick, curTrick, container, mode, trickEl, animate) {
   }
 
   if (animate) {
-    trickEl.addEventListener('animationend', animateButtons);
+    trickEl.addEventListener('animationend', animateButtons, { once: true });
   }
-  setTimeout(() => {
-    trickEl.removeEventListener('animationend', animateButtons);
-  }, 5000);
+  // setTimeout(() => {
+  //   trickEl.removeEventListener('animationend', animateButtons);
+  // }, 5000);
 }
 
 

@@ -55,13 +55,16 @@ function setEventListeners() {
 function setBuildMode() {
   state.mode = 'build';
   DOM.startScreen.classList.add('hide');
+
+  // Hide build buttons
   DOM.redoBtn.classList.add('hide');
   DOM.nextTrickBtn.classList.add('hide');
   DOM.newCmbBtn.classList.add('hide');
 
+  // Show build screen
   DOM.buildScreen.classList.remove('hide');
 
-  // Reset these for new combo
+  // Show build options and initial buttons
   DOM.buildDiffContainer.classList.remove('hide');
   setTimeout(animateButtons, 500);
 }
@@ -140,6 +143,14 @@ function buildTrick(maxDiff, animate) {
 }
 
 
+function handleDifficulty(difficulty) {
+  if (difficulty === 'random') {
+    return Model.random(2) + 1;
+  }
+  return difficulty;
+}
+
+
 function tryGenerateTrick(trick) {
   try {
     trick.generateTrick(state.prevTrick, state.mode);
@@ -148,14 +159,6 @@ function tryGenerateTrick(trick) {
     state.prevTrick = Model.redoPrevLanding(state.prevTrick);
     tryGenerateTrick(trick);
   }
-}
-
-
-function handleDifficulty(difficulty) {
-  if (difficulty === 'random') {
-    return Model.random(2) + 1;
-  }
-  return difficulty;
 }
 
 

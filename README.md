@@ -8,3 +8,7 @@ Tricking consists of combinations of "tricks" inspired by martial arts, gymnasti
 
 <p>The app's algorithm chooses a trick at random from the list of possible tricks, then it randomly chooses a landing from that trick's list of landings. The next trick is randomly chosen from a list of tricks that have a setup that matches the previous trick's chosen landing.</p>
 
+<p>This app strives to include all the nuanced technicalities, while providing an efficient tool and/or game made for trickers and the sport they love.</p>
+
+
+
