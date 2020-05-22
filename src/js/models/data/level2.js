@@ -282,6 +282,17 @@ const level2 = [
   },
 
   {
+    name: 'Reversao',
+    setups: takeoffs.raiz,
+    landings: [
+      'inside leg reversal',
+      'left right redirect',
+      'skip round',
+      'hook',
+    ],
+  },
+
+  {
     name: 'Sailor Moon',
     setups: takeoffs.raiz,
     landings: landingPositions.eagle,
