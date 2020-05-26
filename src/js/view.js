@@ -53,9 +53,7 @@ export function displayTrick(prevTrick, curTrick, container, mode, animate) {
 
   if (mode === 'random') {
     trickEl.className = 'trick';
-
     if (prevTrick) createConnector(container, mode);
-
     displayTransition(curTrick, container, mode);
     displayTakeoffAndName(curTrick, trickEl, container);
   } else {
@@ -107,29 +105,30 @@ function animateTrick(prevTrick, curTrick, container, mode, trickEl, animate) {
   const transition = displayTransition(curTrick, container, mode);
 
   if (transition) {
+    // Delay so that connector & transition animations have time to finish
     setTimeout(() => {
       trickEl.classList.remove('hidden');
       trickEl.classList.add('build');
     }, 600);
     displayTakeoffAndName(curTrick, trickEl, container);
   } else if (prevTrick) {
+    // Delay so that connector animation has time to finish
     setTimeout(() => {
       trickEl.classList.remove('hidden');
       trickEl.classList.add('build');
     }, 200);
     displayTakeoffAndName(curTrick, trickEl, container);
   } else {
+    // Animate immediately
     trickEl.classList.remove('hidden');
     trickEl.classList.add('build');
     displayTakeoffAndName(curTrick, trickEl, container);
   }
 
   if (animate) {
+    // Using a terminating event listener, animate buttons after trick's animation
     trickEl.addEventListener('animationend', animateButtons, { once: true });
   }
-  // setTimeout(() => {
-  //   trickEl.removeEventListener('animationend', animateButtons);
-  // }, 5000);
 }
 
 
@@ -165,6 +164,7 @@ function displayTransition(trick, container, mode) {
       if (mode === 'random') {
         transEl.className = 'transition';
       } else {
+        // ANIMATE after delay so that connector animation has time to finish
         transEl.classList.add('transition', 'hidden');
         setTimeout(() => {
           transEl.classList.remove('hidden');

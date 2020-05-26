@@ -145,7 +145,7 @@ function buildTrick(maxDiff, animate) {
 
 function handleDifficulty(difficulty) {
   if (difficulty === 'random') {
-    return Model.random(2) + 1;
+    return Model.random(3) + 1;
   }
   return difficulty;
 }
@@ -189,7 +189,7 @@ function nextTrick() {
   setTimeout(() => {
     DOM.buildDiffContainer.classList.remove('hide');
     setTimeout(animateButtons, 500);
-  }, 10);
+  }, 100);
 }
 
 
