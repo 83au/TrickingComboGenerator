@@ -164,7 +164,7 @@ function tryGenerateTrick(trick) {
 
 function redoTrick() {
   state.currTrick = undefined;
-  View.removeCurrentTrick(DOM.builtCmbContainer);
+  View.removeCurrentTrick();
 
   if (state.prevTrick) {
     // Remove previous trick and put it back with new landing
@@ -176,20 +176,28 @@ function redoTrick() {
     View.displayTrick(hasMoreTricks, state.prevTrick, DOM.builtCmbContainer);
   }
 
-  nextTrick();
+  // Pass in empty object as stand-in for event & true value to set a delay
+  nextTrick({}, true);
 }
 
-function nextTrick() {
+function nextTrick(e, delay) {
   DOM.redoBtn.classList.add('hide');
   DOM.nextTrickBtn.classList.add('hide');
   DOM.newCmbBtn.classList.add('hide');
   DOM.backBtn.classList.add('hide');
 
-  // Make asynchronous function ?
-  setTimeout(() => {
+  // If there should be a delay to wait for animation to finish
+  if (delay) {
+    // delay animation
+    setTimeout(() => {
+      DOM.buildDiffContainer.classList.remove('hide');
+      setTimeout(animateButtons, 500);
+    }, 700);
+  } else {
     DOM.buildDiffContainer.classList.remove('hide');
+    // Delay button animation so that selection finishes animating first
     setTimeout(animateButtons, 500);
-  }, 100);
+  }
 }
 
 
