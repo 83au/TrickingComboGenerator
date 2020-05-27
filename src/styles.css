@@ -107,13 +107,13 @@ hr {
   background-color: white;
   border: none;
   margin: 1rem 0;
-  animation: grow .5s;
+  animation: grow .5s both;
 }
 
 label,
 select,
 .select-wrapper {
-  animation: popIn .3s .3s backwards;
+  animation: popIn .3s .3s both;
 }
 
 label {
