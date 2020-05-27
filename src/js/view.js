@@ -87,7 +87,7 @@ export function removeLastConnector() {
 }
 
 
-export function removeCurrentTrick(split) {
+export function removeCurrentTrick(split, prevTrick) {
   const tricks = elements.builtCmbContainer.querySelectorAll('.trick');
   const lastTrick = tricks[tricks.length - 1];
 
@@ -96,6 +96,7 @@ export function removeCurrentTrick(split) {
       lastTrick.remove();
       removeLastTransition();
       removeLastConnector();
+      if (!prevTrick) elements.buildDiffContainer.classList.remove('hide');
     }, { once: true });
     lastTrick.classList.add('remove');
   } else {

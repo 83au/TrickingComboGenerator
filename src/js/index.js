@@ -40,8 +40,7 @@ function reset() {
 
 function setEventListeners() {
   DOM.buildCmbBtn.addEventListener('click', setBuildMode);
-  // Safari does not support 'animationend'
-  // DOM.buildDiffContainer.addEventListener('animationend', e => animateButtons(e));
+  DOM.buildDiffContainer.addEventListener('animationend', e => animateButtons(e));
   DOM.generateTrickBtn.addEventListener('click', createAndDisplayTrick);
   DOM.redoBtn.addEventListener('click', redoTrick);
   DOM.nextTrickBtn.addEventListener('click', nextTrick);
@@ -64,9 +63,8 @@ function setBuildMode() {
   // Show build screen
   DOM.buildScreen.classList.remove('hide');
 
-  // Show build options and initial buttons
+  // Show build options * this initiates button animation on animationend
   DOM.buildDiffContainer.classList.remove('hide');
-  setTimeout(animateButtons, 500);
 }
 
 
@@ -166,7 +164,7 @@ function redoTrick() {
   hideButtons();
 
   state.currTrick = undefined;
-  View.removeCurrentTrick(true);
+  View.removeCurrentTrick(true, state.prevTrick);
 
   // Delay long enough for removal animation to finish
   setTimeout(() => {
@@ -178,10 +176,12 @@ function redoTrick() {
       View.removeCurrentTrick();
       const hasMoreTricks = DOM.builtCmbContainer.children.length > 0;
       View.displayTrick(hasMoreTricks, state.prevTrick, DOM.builtCmbContainer);
+
+      // Pass in true value to set a delay for other animations to finish
+      nextTrick(null, true);
     }
 
-    // Pass in empty object as stand-in for event & true value to set a delay
-    nextTrick({}, true);
+    nextTrick(null, false);
   }, 2500);
 }
 
@@ -192,20 +192,16 @@ function hideButtons() {
   DOM.backBtn.classList.add('hide');
 }
 
-function nextTrick(e, delay) {
+function nextTrick(event, delay) {
   hideButtons();
 
-  // If there should be a delay to wait for animation to finish
-  if (delay) {
-    // delay animation
-    setTimeout(() => {
-      DOM.buildDiffContainer.classList.remove('hide');
-      setTimeout(animateButtons, 500);
-    }, 400);
-  } else {
+  // If this function was called clicking the generate trick button
+  if (event) {
     DOM.buildDiffContainer.classList.remove('hide');
-    // Delay button animation so that selection finishes animating first
-    setTimeout(animateButtons, 500);
+  }
+
+  if (delay) {
+    setTimeout(() => DOM.buildDiffContainer.classList.remove('hide'), 700);
   }
 }
 

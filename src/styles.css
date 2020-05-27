@@ -194,6 +194,7 @@ select {
   background: white;
   border-radius: 6px;
   pointer-events: none;
+  z-index: 10;
 }
 
 
