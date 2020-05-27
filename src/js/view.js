@@ -87,10 +87,16 @@ export function removeLastConnector() {
 }
 
 
-export function removeCurrentTrick() {
-  elements.builtCmbContainer.lastElementChild.remove();
-  removeLastTransition();
-  removeLastConnector();
+export function removeCurrentTrick(split) {
+  const trick = elements.builtCmbContainer.lastElementChild;
+  if (split) {
+    trick.addEventListener('animationend', () => trick.remove(), { once: true });
+    trick.classList.add('remove');
+  } else {
+    trick.remove();
+    removeLastTransition();
+    removeLastConnector();
+  }
 }
 
 
@@ -98,7 +104,8 @@ export function removeCurrentTrick() {
 
 // Too many parameters?
 function animateTrick(prevTrick, curTrick, container, mode, trickEl, animate) {
-  trickEl.classList.add('trick', 'hidden');
+  trickEl.classList.add('trick', 'trick--build', 'hidden');
+  trickEl.setAttribute('data-name', curTrick.name);
 
   if (prevTrick) createConnector(container, mode);
 
