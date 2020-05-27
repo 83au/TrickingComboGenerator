@@ -174,22 +174,32 @@ function redoTrick() {
     View.removeCurrentTrick();
     const hasMoreTricks = DOM.builtCmbContainer.children.length > 0;
     View.displayTrick(hasMoreTricks, state.prevTrick, DOM.builtCmbContainer);
-  }
 
-  nextTrick();
+    // Pass in null to stand-in for event and true to initiate delay
+    nextTrick(null, true);
+  } else {
+    nextTrick(null, false);
+  }
 }
 
-function nextTrick() {
+function nextTrick(e, delay) {
   DOM.redoBtn.classList.add('hide');
   DOM.nextTrickBtn.classList.add('hide');
   DOM.newCmbBtn.classList.add('hide');
   DOM.backBtn.classList.add('hide');
 
-  // Make asynchronous function ?
-  setTimeout(() => {
+  console.log(e, delay);
+
+  if (delay) {
+    // Make asynchronous function ?
+    setTimeout(() => {
+      DOM.buildDiffContainer.classList.remove('hide');
+      setTimeout(animateButtons, 500);
+    }, 800);
+  } else {
     DOM.buildDiffContainer.classList.remove('hide');
     setTimeout(animateButtons, 500);
-  }, 100);
+  }
 }
 
 
