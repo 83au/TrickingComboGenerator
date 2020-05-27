@@ -89,9 +89,8 @@ export function removeLastConnector() {
 
 export function removeCurrentTrick(split) {
   const tricks = elements.builtCmbContainer.querySelectorAll('.trick');
-  console.log(tricks);
   const lastTrick = tricks[tricks.length - 1];
-  console.log(lastTrick);
+
   if (split) {
     lastTrick.addEventListener('animationend', () => {
       lastTrick.remove();
