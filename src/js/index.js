@@ -163,28 +163,37 @@ function tryGenerateTrick(trick) {
 
 
 function redoTrick() {
+  hideButtons();
+
   state.currTrick = undefined;
-  View.removeCurrentTrick();
+  View.removeCurrentTrick(true);
 
-  if (state.prevTrick) {
-    // Remove previous trick and put it back with new landing
-    state.prevTrick = Model.redoPrevLanding(state.prevTrick);
+  // Delay long enough for removal animation to finish
+  setTimeout(() => {
+    if (state.prevTrick) {
+      // Remove previous trick and put it back with new landing
+      state.prevTrick = Model.redoPrevLanding(state.prevTrick);
 
-    // Redisplay last trick
-    View.removeCurrentTrick();
-    const hasMoreTricks = DOM.builtCmbContainer.children.length > 0;
-    View.displayTrick(hasMoreTricks, state.prevTrick, DOM.builtCmbContainer);
-  }
+      // Redisplay last trick
+      View.removeCurrentTrick();
+      const hasMoreTricks = DOM.builtCmbContainer.children.length > 0;
+      View.displayTrick(hasMoreTricks, state.prevTrick, DOM.builtCmbContainer);
+    }
 
-  // Pass in empty object as stand-in for event & true value to set a delay
-  nextTrick({}, true);
+    // Pass in empty object as stand-in for event & true value to set a delay
+    nextTrick({}, true);
+  }, 2500);
 }
 
-function nextTrick(e, delay) {
+function hideButtons() {
   DOM.redoBtn.classList.add('hide');
   DOM.nextTrickBtn.classList.add('hide');
   DOM.newCmbBtn.classList.add('hide');
   DOM.backBtn.classList.add('hide');
+}
+
+function nextTrick(e, delay) {
+  hideButtons();
 
   // If there should be a delay to wait for animation to finish
   if (delay) {
@@ -192,7 +201,7 @@ function nextTrick(e, delay) {
     setTimeout(() => {
       DOM.buildDiffContainer.classList.remove('hide');
       setTimeout(animateButtons, 500);
-    }, 700);
+    }, 500);
   } else {
     DOM.buildDiffContainer.classList.remove('hide');
     // Delay button animation so that selection finishes animating first

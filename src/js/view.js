@@ -88,12 +88,19 @@ export function removeLastConnector() {
 
 
 export function removeCurrentTrick(split) {
-  const trick = elements.builtCmbContainer.lastElementChild;
+  const tricks = elements.builtCmbContainer.querySelectorAll('.trick');
+  console.log(tricks);
+  const lastTrick = tricks[tricks.length - 1];
+  console.log(lastTrick);
   if (split) {
-    trick.addEventListener('animationend', () => trick.remove(), { once: true });
-    trick.classList.add('remove');
+    lastTrick.addEventListener('animationend', () => {
+      lastTrick.remove();
+      removeLastTransition();
+      removeLastConnector();
+    }, { once: true });
+    lastTrick.classList.add('remove');
   } else {
-    trick.remove();
+    lastTrick.remove();
     removeLastTransition();
     removeLastConnector();
   }
