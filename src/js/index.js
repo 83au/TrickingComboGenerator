@@ -40,8 +40,7 @@ function reset() {
 
 function setEventListeners() {
   DOM.buildCmbBtn.addEventListener('click', setBuildMode);
-  // Safari does not support 'animationend'
-  // DOM.buildDiffContainer.addEventListener('animationend', e => animateButtons(e));
+  DOM.buildDiffContainer.addEventListener('animationend', e => animateButtons(e));
   DOM.generateTrickBtn.addEventListener('click', createAndDisplayTrick);
   DOM.redoBtn.addEventListener('click', redoTrick);
   DOM.nextTrickBtn.addEventListener('click', nextTrick);
@@ -193,12 +192,12 @@ function nextTrick(e, delay) {
   if (delay) {
     // Make asynchronous function ?
     setTimeout(() => {
+      // This calls animateButtons() on animtionend
       DOM.buildDiffContainer.classList.remove('hide');
-      setTimeout(animateButtons, 500);
     }, 800);
   } else {
+    // This calls animateButtons() on animtionend
     DOM.buildDiffContainer.classList.remove('hide');
-    setTimeout(animateButtons, 500);
   }
 }
 
