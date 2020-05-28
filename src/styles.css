@@ -63,7 +63,7 @@
 
 @keyframes splitLeft {
   0%, 10% {
-    transform: translate(-50%, 0);
+    transform: translate(-50%, 0) rotate(0);
   }
   10% {
     transform: translate(-50%, 0) rotate(0);
@@ -75,7 +75,7 @@
     transform: translate(-54%, 40px) rotate(-30deg);
   }
   100% {
-    transform: translate(-500%, 40px);
+    transform: translate(-500%, 40px) rotate(-30deg);
   }
 }
 
