@@ -92,13 +92,14 @@ export function removeCurrentTrick(split, prevTrick) {
   const lastTrick = tricks[tricks.length - 1];
 
   if (split) {
-    lastTrick.addEventListener('animationend', () => {
+    lastTrick.classList.add('remove');
+    // Animation doesn't always fire in Safari so using delay as trigger
+    setTimeout(() => {
       lastTrick.remove();
       removeLastTransition();
       removeLastConnector();
       if (!prevTrick) elements.buildDiffContainer.classList.remove('hide');
-    }, { once: true });
-    lastTrick.classList.add('remove');
+    }, 2500);
   } else {
     lastTrick.remove();
     removeLastTransition();

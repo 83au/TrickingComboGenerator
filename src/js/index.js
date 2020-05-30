@@ -165,6 +165,7 @@ function redoTrick() {
 
   state.currTrick = undefined;
   View.removeCurrentTrick(true, state.prevTrick);
+  console.log('HERE');
 
   // Delay long enough for removal animation to finish
   setTimeout(() => {
