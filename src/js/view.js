@@ -92,13 +92,23 @@ export function removeCurrentTrick(split, prevTrick) {
   const lastTrick = tricks[tricks.length - 1];
 
   if (split) {
-    lastTrick.addEventListener('animationend', () => {
+    // In safari the animation doesn't always fire for some reason
+    // lastTrick.addEventListener('animationend', () => {
+    //   lastTrick.remove();
+    //   removeLastTransition();
+    //   removeLastConnector();
+    //   if (!prevTrick) elements.buildDiffContainer.classList.remove('hide');
+    // }, { once: true });
+
+    lastTrick.classList.add('remove');
+
+    // Delay is to ensure the animation finishes before everything else happens
+    setTimeout(() => {
       lastTrick.remove();
       removeLastTransition();
       removeLastConnector();
       if (!prevTrick) elements.buildDiffContainer.classList.remove('hide');
-    }, { once: true });
-    lastTrick.classList.add('remove');
+    }, 2300);
   } else {
     lastTrick.remove();
     removeLastTransition();
@@ -111,7 +121,7 @@ export function removeCurrentTrick(split, prevTrick) {
 
 // Too many parameters?
 function animateTrick(prevTrick, curTrick, container, mode, trickEl, animate) {
-  trickEl.classList.add('trick', 'trick--build', 'hidden');
+  trickEl.classList.add('trick', 'hidden');
   trickEl.setAttribute('data-name', curTrick.name);
 
   if (prevTrick) createConnector(container, mode);

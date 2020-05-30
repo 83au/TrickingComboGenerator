@@ -63,10 +63,10 @@
 
 @keyframes splitLeft {
   0%, 10% {
-    transform: translate(-50%, 0) rotate(0);
+    transform: translate(-50%, 0px) rotate(0);
   }
   10% {
-    transform: translate(-50%, 0) rotate(0);
+    transform: translate(-50%, 0px) rotate(0);
   }
   30% {
     transform: translate(-54%, 20px) rotate(0);
@@ -81,10 +81,10 @@
 
 @keyframes splitRight {
   0%, 70% {
-    transform: translateX(-50%);
+    transform: translate(-50%, 0px) rotate(0);
   }
   100% {
-    transform: translateX(500%);
+    transform: translate(500%, 0px) rotate(0);
   }
 }
 
@@ -290,12 +290,9 @@ select {
 }
 
 .trick.build {
-  animation: slideIn .6s;
-}
-
-.trick--build {
   position: relative;
   color: transparent;
+  animation: slideIn .6s;
 }
 
 /* For delete animation */
@@ -304,7 +301,7 @@ select {
   position: absolute;
   top: 0;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, 0px) rotate(0);
   color: #fff;
   content: attr(data-name);
   width: 100%;
