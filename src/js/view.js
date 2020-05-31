@@ -108,7 +108,7 @@ export function removeCurrentTrick(split, prevTrick) {
       removeLastTransition();
       removeLastConnector();
       if (!prevTrick) elements.buildDiffContainer.classList.remove('hide');
-    }, 2300);
+    }, 1900);
   } else {
     lastTrick.remove();
     removeLastTransition();
