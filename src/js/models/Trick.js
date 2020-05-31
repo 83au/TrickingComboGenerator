@@ -98,7 +98,7 @@ export default class Trick {
       if (this.takeoff === 'wrap' && !this.transition) {
         this.takeoff = 'cheat';
       } else {
-        this.takeoff = Model.formatMod(this.takeoff, this.name);
+        this.takeoff = Model.formatMod(this.takeoff);
       }
     }
   }

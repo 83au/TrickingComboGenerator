@@ -122,7 +122,12 @@ export function removeCurrentTrick(split, prevTrick) {
 // Too many parameters?
 function animateTrick(prevTrick, curTrick, container, mode, trickEl, animate) {
   trickEl.classList.add('trick', 'hidden');
-  trickEl.setAttribute('data-name', curTrick.name);
+
+  if (curTrick.takeoff) {
+    trickEl.setAttribute('data-name', `${curTrick.takeoff} ${curTrick.name}`);
+  } else {
+    trickEl.setAttribute('data-name', curTrick.name);
+  }
 
   if (prevTrick) createConnector(container, mode);
 
@@ -209,6 +214,7 @@ function displayTransition(trick, container, mode) {
 
 function displayTakeoffAndName(trick, trickEl, container) {
   if (trick.takeoff) {
+    console.log(trick.takeoff);
     trickEl.innerHTML = `<span class="takeoff">${trick.takeoff}</span> ${trick.name}`;
     container.append(trickEl);
   } else {

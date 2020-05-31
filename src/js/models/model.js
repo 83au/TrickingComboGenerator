@@ -22,6 +22,7 @@ export function randomMove(list) {
 export function chooseFromList(list, modifiers) {
   if (list.length) {
     const filteredList = list.filter(item => Data[modifiers].includes(item));
+    console.log(`Filtered list: ${filteredList}`);
     return randomMove(filteredList);
   }
   return undefined;
@@ -91,7 +92,7 @@ export function filterTrickList(level, landing) {
 // Recursively search all levels from first to last
 export function searchLevels(level, landing) {
   // Stopping condition, TODO: needs to check against a max level
-  if (level === 'level3') return undefined;
+  if (level === 'level4') return undefined;
 
   // Get level number
   const levelNum = Number(level.match(/\d$/));
