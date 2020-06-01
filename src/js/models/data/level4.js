@@ -26,7 +26,7 @@ const level4 = [
   },
 
   {
-    name: 'Hurricane (1080 Triple)',
+    name: 'Hurricane',
     setups: [
       'cheat',
       'vanish',
@@ -46,6 +46,25 @@ const level4 = [
     landings: landingPositions.round.concat(['rapid hook']),
   },
 
+  // Setups/Transitions
+  {
+    name: 'Flare',
+    setups: [
+      'vanish',
+      'outside leg reversal',
+      'hook carry-through',
+      'semi',
+      'skip frontswing',
+    ],
+    landings: [
+      'backside pop',
+      'frontside pop',
+      'vanish',
+      'skip round',
+      'skip frontswing',
+    ],
+  },
+
 
   // FLIPS & TWISTS
   {
@@ -53,14 +72,13 @@ const level4 = [
     setups: takeoffs.raiz,
     landings: [ // hyper landing is implied
       'backside punch',
-      'invert backside punch',
     ],
   },
 
   {
     name: '720 Twist (Barrel Roll)',
     setups: ['cheat', 'vanish'],
-    landings: [landingPositions.eagle],
+    landings: landingPositions.eagle,
   },
 
   {
@@ -75,9 +93,54 @@ const level4 = [
     setups: takeoffs.swing,
     landings: landingPositions.hyper,
   },
-  // Dub Btwist
-  // Full Snapu
-  // Double Back Flip
+
+  {
+    name: 'Dub Btwist',
+    setups: takeoffs.btwist,
+    landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Back Full Snapu',
+    setups: takeoffs.backFullTwist,
+    landings: [
+      'backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Full Snapu',
+    setups: takeoffs.insideFullTwist,
+    landings: [
+      'backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Back Triple Full',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Triple Full',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Double Back Flip',
+    notStarter: true,
+    setups: ['invert backside punch'],
+    landings: [
+      'backside punch',
+      'invert backside punch',
+    ],
+  },
 ];
 
 export default level4;

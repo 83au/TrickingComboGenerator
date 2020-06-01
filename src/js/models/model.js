@@ -22,7 +22,6 @@ export function randomMove(list) {
 export function chooseFromList(list, modifiers) {
   if (list.length) {
     const filteredList = list.filter(item => Data[modifiers].includes(item));
-    console.log(`Filtered list: ${filteredList}`);
     return randomMove(filteredList);
   }
   return undefined;

@@ -296,8 +296,8 @@ select {
 }
 
 /* For delete animation */
-.trick::before,
-.trick::after {
+.build::before,
+.build::after {
   position: absolute;
   top: 0;
   left: 50%;
@@ -308,12 +308,12 @@ select {
   font-size: inherit;
 }
 
-.remove::before {
+.build.remove::before {
   clip-path: polygon(0 0, 55% 0, 35% 100%, 0% 100%);
   animation: splitLeft 1.9s forwards;
 }
 
-.remove::after {
+.build.remove::after {
   clip-path: polygon(60% 0, 100% 0, 190% 110%, 40% 100%);
   animation: splitRight 1.9s forwards;
 }

@@ -361,13 +361,13 @@ const level2 = [
 
   {
     name: 'Back Full Round',
-    setups: takeoffs.backFullTwist,
+    setups: takeoffs.backFullTwist.concat(['backside pop']),
     landings: landingPositions.round,
   },
 
   {
     name: 'Back Full Twist',
-    setups: takeoffs.backFullTwist,
+    setups: takeoffs.backFullTwist.concat(['backside pop']),
     landings: landingPositions.eagle,
   },
 
@@ -467,7 +467,12 @@ const level2 = [
 
   {
     name: 'Flash Kick',
-    setups: ['backside pop', 'invert backside pop', 'invert backside punch'], // Pop is implied
+    setups: [
+      'backside pop',
+      'invert backside pop',
+      'backside punch',
+      'invert backside punch',
+    ], // Pop is implied
     landings: [ // Hyper is implied
       'inside pop',
       'reverse vanish',

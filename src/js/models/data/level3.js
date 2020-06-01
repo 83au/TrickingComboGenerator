@@ -533,6 +533,17 @@ const level3 = [
     setups: ['invert backside punch'],
     landings: ['backside punch', 'invert backside punch'],
   },
+
+  {
+    name: 'Double Flash Kick',
+    setups: [
+      'backside pop',
+      'invert backside pop',
+      'backside punch',
+      'invert backside punch',
+    ], // Pop is implied
+    landings: landingPositions.hyper,
+  },
 ];
 
 export default level3;

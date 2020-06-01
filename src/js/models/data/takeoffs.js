@@ -23,8 +23,8 @@ const takeoffs = {
     'turn step',
   ],
   backFullTwist: [
-    'backside pop',
     'invert backside pop',
+    'backside punch',
     'invert backside punch',
   ],
   insideFullTwist: [

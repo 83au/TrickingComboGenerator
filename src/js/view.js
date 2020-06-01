@@ -119,12 +119,16 @@ export function removeCurrentTrick(split, prevTrick) {
 
 // * * * * PRIVATE FUNCTIONS * * * *
 
-// Too many parameters?
+// This only gets called in Build Mode
 function animateTrick(prevTrick, curTrick, container, mode, trickEl, animate) {
   trickEl.classList.add('trick', 'hidden');
 
-  if (curTrick.takeoff) {
+  if (curTrick.takeoff && curTrick.landingMod) {
+    trickEl.setAttribute('data-name', `${curTrick.takeoff} ${curTrick.name} ${curTrick.landingMod}`);
+  } else if (curTrick.takeoff) {
     trickEl.setAttribute('data-name', `${curTrick.takeoff} ${curTrick.name}`);
+  } else if (curTrick.landingMod) {
+    trickEl.setAttribute('data-name', `${curTrick.name} ${curTrick.landingMod}`);
   } else {
     trickEl.setAttribute('data-name', curTrick.name);
   }
@@ -214,7 +218,6 @@ function displayTransition(trick, container, mode) {
 
 function displayTakeoffAndName(trick, trickEl, container) {
   if (trick.takeoff) {
-    console.log(trick.takeoff);
     trickEl.innerHTML = `<span class="takeoff">${trick.takeoff}</span> ${trick.name}`;
     container.append(trickEl);
   } else {

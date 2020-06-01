@@ -115,7 +115,8 @@ function buildTrick(maxDiff, animate) {
     trick.setLevel(Data.difficultyLevels[diff]);
   }
 
-  tryGenerateTrick(trick);
+  const numTries = 1;
+  tryGenerateTrick(trick, numTries);
 
   trick.setName();
 
@@ -138,6 +139,7 @@ function buildTrick(maxDiff, animate) {
     View.displayTrick(state.prevTrick, trick, DOM.builtCmbContainer, 'build', animate);
   }
   state.currTrick = trick;
+  console.log(trick.takeoff, trick.name, trick.landing);
 }
 
 
@@ -149,14 +151,18 @@ function handleDifficulty(difficulty) {
 }
 
 
-function tryGenerateTrick(trick) {
+function tryGenerateTrick(trick, numTries) {
+  let num = numTries;
   try {
     trick.generateTrick(state.prevTrick, state.mode);
   } catch (err) {
+    if (num >= 20) return undefined;
     console.log(err);
     state.prevTrick = Model.redoPrevLanding(state.prevTrick);
-    tryGenerateTrick(trick);
+    num += 1;
+    tryGenerateTrick(trick, num);
   }
+  return undefined;
 }
 
 
