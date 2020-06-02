@@ -115,7 +115,19 @@ function buildTrick(maxDiff, animate) {
     trick.setLevel(Data.difficultyLevels[diff]);
   }
 
-  const numTries = 1;
+  let numTries = 0;
+  const tryGenerateTrick = () => {
+    try {
+      trick.generateTrick(state.prevTrick, state.mode);
+    } catch (err) {
+      if (numTries >= 20) return undefined;
+      console.log(err);
+      state.prevTrick = Model.redoPrevLanding(state.prevTrick);
+      numTries += 1;
+      tryGenerateTrick();
+    }
+    return undefined;
+  };
   tryGenerateTrick(trick, numTries);
 
   trick.setName();
@@ -148,21 +160,6 @@ function handleDifficulty(difficulty) {
     return Model.random(4) + 1;
   }
   return difficulty;
-}
-
-
-function tryGenerateTrick(trick, numTries) {
-  let num = numTries;
-  try {
-    trick.generateTrick(state.prevTrick, state.mode);
-  } catch (err) {
-    if (num >= 20) return undefined;
-    console.log(err);
-    state.prevTrick = Model.redoPrevLanding(state.prevTrick);
-    num += 1;
-    tryGenerateTrick(trick, num);
-  }
-  return undefined;
 }
 
 
