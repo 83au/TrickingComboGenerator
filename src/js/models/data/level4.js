@@ -4,6 +4,25 @@ import landingPositions from './landings';
 const level4 = [
   // KICKS
   {
+    // 360 Crescent variations
+    name: '360 Gyro Round',
+    setups: [
+      'inside pop',
+      'frontside pop',
+      'inside punch',
+      'frontside punch',
+    ],
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Backside 9 Gyro',
+    setups: ['backside punch', 'backside pop', 'inside pop'],
+    landings: ['backside punch'],
+  },
+
+
+  {
     name: '900 Double',
     setups: [
       'cheat',
@@ -36,14 +55,55 @@ const level4 = [
   },
 
   {
-    name: '1260',
+    name: 'Backside 1260',
     setups: [
       'backside pop',
       'inside pop',
-      'cheat',
-      'vanish',
+      'backside punch',
+      'inside punch',
     ],
     landings: landingPositions.round.concat(['rapid hook']),
+  },
+
+  {
+    name: '1260',
+    setups: [
+      'cheat',
+      'vanish',
+      'frontside pop',
+      'frontside punch',
+    ],
+    landings: landingPositions.round.concat(['rapid hook']),
+  },
+
+  {
+    name: 'Paraknife (Switchblade)',
+    setups: [
+      'vanish',
+      'hook',
+      'hook carry-through',
+      'right left redirect', // cheat is implied
+    ],
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Parafuso Gyro',
+    setups: [
+      'vanish',
+      'hook',
+      'hook carry-through',
+      'right left redirect',
+    ],
+    landings: [
+      'backside punch',
+    ],
+  },
+
+  {
+    name: 'Bkick Late Hook',
+    setups: takeoffs.btwist,
+    landings: landingPositions.hook,
   },
 
   // Setups/Transitions
@@ -105,7 +165,6 @@ const level4 = [
     setups: takeoffs.backFullTwist,
     landings: [
       'backside punch',
-      'complete',
     ],
   },
 
@@ -114,7 +173,6 @@ const level4 = [
     setups: takeoffs.insideFullTwist,
     landings: [
       'backside punch',
-      'complete',
     ],
   },
 

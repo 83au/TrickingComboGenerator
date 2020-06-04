@@ -2,8 +2,6 @@
 const takeoffs = {
   swing: [
     'back swing',
-    'left right redirect',
-    'round carry-through',
   ],
   raiz: [
     'right left redirect',

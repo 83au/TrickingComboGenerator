@@ -5,22 +5,83 @@ import landingPositions from './landings';
 const level3 = [
   // KICKS
   {
+    // 360 Crescent variations
+    name: '360 Crescent',
+    setups: [
+      'inside pop',
+      'frontside pop',
+      'inside punch',
+      'frontside punch',
+      'cheat',
+      'hook',
+      // 'right left redirect', redirect is implied
+    ],
+    landings: [
+      'gyro frontside',
+    ],
+  },
+  {
     name: '1080',
     setups: [
       'cheat',
-      // 'right left redirect', Redirect is implied
       'vanish',
-      // 'hook carry-through',
-      'backside pop',
-      'inside pop',
       'hook',
     ],
     landings: landingPositions.hook.concat(['rapid round']),
   },
 
   {
+    name: 'Swing 1080',
+    setups: takeoffs.swing,
+    landings: landingPositions.hook.concat(['rapid round']),
+  },
+
+  {
+    name: 'Backside 1080',
+    setups: [
+      'backside pop',
+      'inside pop',
+    ],
+    landings: landingPositions.hook.concat(['rapid round']),
+  },
+
+  {
+    name: 'Pop 900',
+    setups: ['frontside punch', 'frontside pop'],
+    landings: landingPositions.round,
+  },
+
+  {
     name: 'Backside 9 Feilong',
     setups: ['backside punch', 'backside pop', 'inside pop'],
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Backside 9 Knife',
+    setups: ['backside punch', 'backside pop', 'inside pop'],
+    landings: landingPositions.hyper,
+  },
+
+  {
+    name: 'Parafuso Twist Kick',
+    setups: [
+      'vanish',
+      'hook',
+      'hook carry-through',
+      'right left redirect', // cheat is implied
+    ],
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Wackknife Round',
+    setups: [
+      'cheat',
+      'frontside pop',
+      'frontside punch',
+      'hook carry-through',
+    ],
     landings: landingPositions.round,
   },
 
@@ -63,6 +124,12 @@ const level3 = [
       'backside punch',
       'invert backside punch',
     ],
+  },
+
+  {
+    name: 'Helicoptero',
+    setups: takeoffs.cartwheel,
+    landings: landingPositions.round,
   },
 
   {
@@ -187,13 +254,6 @@ const level3 = [
 
   {
     name: 'Rodeo Cork',
-    setups: takeoffs.swing,
-    landings: landingPositions.eagle,
-  },
-
-  {
-    name: 'Handcuff Cork',
-    notStarter: true,
     setups: takeoffs.swing,
     landings: landingPositions.eagle,
   },
@@ -499,6 +559,12 @@ const level3 = [
   },
 
   {
+    name: 'Illusion Twist Feilong',
+    setups: takeoffs.btwist,
+    landings: landingPositions.round,
+  },
+
+  {
     name: 'TD Btwist',
     setups: takeoffs.btwist.concat(['inside leg reversal', 'mega']),
     landings: landingPositions.eagle,
@@ -536,6 +602,17 @@ const level3 = [
 
   {
     name: 'Double Flash Kick',
+    setups: [
+      'backside pop',
+      'invert backside pop',
+      'backside punch',
+      'invert backside punch',
+    ], // Pop is implied
+    landings: landingPositions.hyper,
+  },
+
+  {
+    name: 'Triple Flash Kick',
     setups: [
       'backside pop',
       'invert backside pop',

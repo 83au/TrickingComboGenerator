@@ -73,6 +73,12 @@ const level2 = [
   },
 
   {
+    name: 'Double Hook',
+    setups: ['cheat'],
+    landings: landingPositions.hook,
+  },
+
+  {
     name: 'Crowd Awakener',
     setups: [
       // 'right left redirect', // redirect is implied
@@ -348,7 +354,6 @@ const level2 = [
       'right left redirect',
       'cheat',
       'outside leg reversal',
-      'hook carry-through',
     ],
   },
 
@@ -403,21 +408,27 @@ const level2 = [
 
   {
     name: 'Corkscrew',
-    setups: takeoffs.swing.concat([
+    setups: [
+      'back swing',
+      'left right redirect',
+      'round carry-through',
       'reverse vanish',
       'skip backswing',
       'skip backswing',
-    ]),
+    ],
     landings: landingPositions.eagle,
   },
 
   {
     name: 'Corkscrew Round',
-    setups: takeoffs.swing.concat([
+    setups: [
+      'back swing',
+      'left right redirect',
+      'round carry-through',
       'reverse vanish',
       'skip backswing',
       'skip backswing',
-    ]),
+    ],
     landings: landingPositions.round,
   },
 
@@ -496,11 +507,14 @@ const level2 = [
 
   {
     name: 'Gainer Arabian',
-    setups: takeoffs.swing.concat([
+    setups: [
+      'back swing',
+      'left right redirect',
+      'round carry-through',
       'reverse vanish',
       'skip backswing',
       'skip backswing',
-    ]),
+    ],
     landings: [
       'invert frontside punch',
       'reverse pop',
@@ -510,11 +524,14 @@ const level2 = [
 
   {
     name: 'Gainer Flash Kick',
-    setups: takeoffs.swing.concat([
+    setups: [
+      'back swing',
+      'left right redirect',
+      'round carry-through',
       'reverse vanish',
       'skip backswing',
       'skip backswing',
-    ]),
+    ],
     landings: [ // Hyper is implied
       'inside pop',
       'invert inside pop',
@@ -536,6 +553,12 @@ const level2 = [
   },
 
   {
+    name: 'Shuriken Twist',
+    setups: ['hook', 'reverse vanish', 'turn step', 'mega'],
+    landings: ['vanish', 'hook'],
+  },
+
+  {
     name: 'Loser',
     setups: ['Webster', 'skip frontswing'],
     landings: [
@@ -548,11 +571,14 @@ const level2 = [
 
   {
     name: 'Moonkick',
-    setups: takeoffs.swing.concat([
+    setups: [
+      'back swing',
+      'left right redirect',
+      'round carry-through',
       'reverse vanish',
       'skip backswing',
       'skip backswing',
-    ]),
+    ],
     landings: landingPositions.hook.concat(['turbo']),
   },
 
@@ -572,12 +598,6 @@ const level2 = [
       'mega',
       'semi',
     ],
-  },
-
-  {
-    name: 'Shuriken Twist',
-    setups: ['hook', 'reverse vanish', 'turn step', 'mega'],
-    landings: ['vanish', 'hook'],
   },
 
   {
