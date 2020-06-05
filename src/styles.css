@@ -310,12 +310,12 @@ select {
 
 .build.remove::before {
   clip-path: polygon(0 0, 55% 0, 35% 100%, 0% 100%);
-  animation: splitLeft 1.9s forwards;
+  animation: splitLeft 1.9s 10ms forwards;
 }
 
 .build.remove::after {
   clip-path: polygon(60% 0, 100% 0, 190% 110%, 40% 100%);
-  animation: splitRight 1.9s forwards;
+  animation: splitRight 1.9s 10ms forwards;
 }
 
 
