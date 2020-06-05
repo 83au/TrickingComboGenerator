@@ -22,7 +22,6 @@ const takeoffs = {
   ],
   backFullTwist: [
     'invert backside pop',
-    'backside punch',
     'invert backside punch',
   ],
   insideFullTwist: [

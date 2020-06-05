@@ -179,7 +179,7 @@ const level3 = [
   },
 
   {
-    name: 'Gainer Scissor Swipe',
+    name: 'Gainer Scissor',
     setups: takeoffs.swing,
     landings: ['vanish', 'skip round'],
   },
@@ -600,16 +600,16 @@ const level3 = [
     landings: ['backside punch', 'invert backside punch'],
   },
 
-  {
-    name: 'Double Flash Kick',
-    setups: [
-      'backside pop',
-      'invert backside pop',
-      'backside punch',
-      'invert backside punch',
-    ], // Pop is implied
-    landings: landingPositions.hyper,
-  },
+  // {
+  //   name: 'Double Flash Kick',
+  //   setups: [
+  //     'backside pop',
+  //     'invert backside pop',
+  //     'backside punch',
+  //     'invert backside punch',
+  //   ], // Pop is implied
+  //   landings: landingPositions.hyper,
+  // },
 
   {
     name: 'Triple Flash Kick',

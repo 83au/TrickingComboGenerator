@@ -106,6 +106,19 @@ const level4 = [
     landings: landingPositions.hook,
   },
 
+  {
+    name: 'Bkick Helicoptero',
+    setups: takeoffs.btwist,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Palm Kick Kyro',
+    notFinisher: true,
+    setups: ['reverse vanish', 'missleg', 'hook', 'mega'],
+    landings: ['backside punch'],
+  },
+
   // Setups/Transitions
   {
     name: 'Flare',
@@ -161,18 +174,42 @@ const level4 = [
   },
 
   {
+    name: 'Btwist Wackknife',
+    setups: takeoffs.btwist,
+    landings: [
+      'frontside punch',
+      'reverse pop',
+      'right first reverse pop',
+    ],
+  },
+
+  {
     name: 'Back Full Snapu',
     setups: takeoffs.backFullTwist,
     landings: [
       'backside punch',
+      'reverse pop',
+      'right first reverse pop',
     ],
   },
 
   {
     name: 'Full Snapu',
+    notStarter: true,
     setups: takeoffs.insideFullTwist,
     landings: [
       'backside punch',
+      'reverse pop',
+    ],
+  },
+
+  {
+    name: 'Full Kyro',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: [
+      'backside punch',
+      'reverse pop',
     ],
   },
 
@@ -197,7 +234,14 @@ const level4 = [
     landings: [
       'backside punch',
       'invert backside punch',
+      'reverse pop',
     ],
+  },
+
+  {
+    name: 'Sidewinder',
+    setups: takeoffs.btwist,
+    landings: ['backside pop'],
   },
 ];
 

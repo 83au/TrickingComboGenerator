@@ -105,7 +105,7 @@ const level1 = [
     name: 'Palm Kick',
     notFinisher: true,
     setups: ['reverse vanish', 'missleg', 'hook', 'mega'],
-    landings: ['inside pop', 'reverse vanish', 'outside leg reversal', 'right left redirect'],
+    landings: ['reverse vanish', 'outside leg reversal', 'right left redirect'],
   },
 
   {

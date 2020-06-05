@@ -358,7 +358,7 @@ const level2 = [
   },
 
   {
-    name: 'Arabian Scissor Swipe',
+    name: 'Arabian Scissor',
     notStarter: true,
     setups: ['invert backside pop', 'invert backside punch'],
     landings: ['vanish', 'skip round', 'frontside pop', 'hook'],
@@ -366,13 +366,13 @@ const level2 = [
 
   {
     name: 'Back Full Round',
-    setups: takeoffs.backFullTwist.concat(['backside pop']),
+    setups: takeoffs.backFullTwist.concat(['backside pop', 'backside punch']),
     landings: landingPositions.round,
   },
 
   {
     name: 'Back Full Twist',
-    setups: takeoffs.backFullTwist.concat(['backside pop']),
+    setups: takeoffs.backFullTwist.concat(['backside pop', 'backside punch']),
     landings: landingPositions.eagle,
   },
 
