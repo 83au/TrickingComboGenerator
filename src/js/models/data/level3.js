@@ -46,7 +46,7 @@ const level3 = [
   },
 
   {
-    name: 'Pop 900',
+    name: '900',
     setups: ['frontside punch', 'frontside pop'],
     landings: landingPositions.round,
   },
@@ -627,16 +627,16 @@ const level3 = [
   //   landings: landingPositions.hyper,
   // },
 
-  {
-    name: 'Triple Flash Kick',
-    setups: [
-      'backside pop',
-      'invert backside pop',
-      'backside punch',
-      'invert backside punch',
-    ], // Pop is implied
-    landings: landingPositions.hyper,
-  },
+  // {
+  //   name: 'Triple Flash Kick',
+  //   setups: [
+  //     'backside pop',
+  //     'invert backside pop',
+  //     'backside punch',
+  //     'invert backside punch',
+  //   ], // Pop is implied
+  //   landings: landingPositions.hyper,
+  // },
 ];
 
 export default level3;
