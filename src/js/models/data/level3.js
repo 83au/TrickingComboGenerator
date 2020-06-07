@@ -71,7 +71,12 @@ const level3 = [
       'hook carry-through',
       'right left redirect', // cheat is implied
     ],
-    landings: landingPositions.round,
+    landings: [
+      'inside leg reversal',
+      'left right redirect',
+      'skip round',
+      'hook',
+    ],
   },
 
   {
@@ -129,7 +134,12 @@ const level3 = [
   {
     name: 'Helicoptero',
     setups: takeoffs.cartwheel,
-    landings: landingPositions.round,
+    landings: [
+      'inside leg reversal',
+      'left right redirect',
+      'skip round',
+      'hook',
+    ],
   },
 
   {
@@ -237,9 +247,15 @@ const level3 = [
   },
 
   {
+    name: 'Boneless Cork',
+    notStarter: true,
+    setups: ['cartwheel'],
+    landings: landingPositions.eagle,
+  },
+
+  {
     name: 'Dragonfly Cork',
     setups: takeoffs.swing.concat([
-      'reverse vanish',
       'skip backswing',
       'skip backswing',
     ]),

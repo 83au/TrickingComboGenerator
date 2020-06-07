@@ -84,7 +84,7 @@ const level4 = [
       'hook carry-through',
       'right left redirect', // cheat is implied
     ],
-    landings: landingPositions.round,
+    landings: landingPositions.hook,
   },
 
   {

@@ -159,10 +159,21 @@ const level1 = [
     ],
   },
 
+  // Cartwheel has more instances to reflect how often it is used in combos
   {
     name: 'Cartwheel',
     setups: takeoffs.cartwheel,
-    landings: ['invert inside pop'],
+    landings: ['invert inside pop', 'wrap'],
+  },
+  {
+    name: 'Cartwheel',
+    setups: takeoffs.cartwheel,
+    landings: ['invert inside pop', 'wrap'],
+  },
+  {
+    name: 'Cartwheel',
+    setups: takeoffs.cartwheel,
+    landings: ['invert inside pop', 'wrap'],
   },
 
   {
