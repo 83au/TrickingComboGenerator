@@ -90,6 +90,13 @@ const level3 = [
     landings: landingPositions.round,
   },
 
+  {
+    name: 'Palm Kick Kyro',
+    notFinisher: true,
+    setups: ['reverse vanish', 'missleg', 'hook', 'mega'],
+    landings: ['backside punch'],
+  },
+
   // TRANSITION TRICKS
   {
     name: 'Aerial',
