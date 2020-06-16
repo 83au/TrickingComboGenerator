@@ -1,58 +1,8 @@
-@import "base/animations";
-@import "base/base";
+@import "utilities/mixins";
 
 @import "pages/start";
 @import "pages/build";
 @import "pages/random";
 
-/* ===== MEDIA QUERIES ===== */
-
-/* = =  Tablet = = = */
-@media only screen and (min-width: 600px) { /* 700px */
-  html {
-    font-size: 70%;
-  }
-
-  h1 {
-    margin-top: 4rem;
-    font-size: 6rem;
-  }
-
-  .random-screen__btn {
-    margin-top: 3rem;
-  }
-
-  .trick {
-    font-size: 3.5rem;
-  }
-}
-
-
-/* = = = Desktop = = = */
-@media only screen and (min-width: 700px) {
-  html {
-    font-size: 75%;
-  }
-
-  h1 {
-    font-size: 7rem;
-  }
-
-  .btn:hover {
-    opacity: .9;
-  }
-
-  .trick {
-    font-size: 3.8rem;
-  }
-}
-
-
-/* ===== HIDE CLASSES===== */
-.hide {
-  display: none;
-}
-
-.hidden {
-  visibility: hidden;
-}
+@import "base/animations";
+@import "base/base";

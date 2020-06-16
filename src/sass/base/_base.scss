@@ -17,6 +17,9 @@
 
 html {
   font-size: 62.5%;
+
+  @include respond(tablet) { font-size: 70% };
+  @include respond(desktop) { font-size: 75% };
 }
 
 body {
@@ -35,6 +38,13 @@ h1 {
   margin: 2rem 0;
   font-size: 5rem;
   text-align: center;
+
+  @include respond(tablet) {
+    margin-top: 4rem;
+    font-size: 6rem;
+  }
+
+  @include respond(desktop) { font-size: 7rem };
 }
 
 hr {
@@ -125,23 +135,17 @@ select {
   font-family: 'Bangers', Impact, sans-serif;
   font-size: 2.8rem;
   letter-spacing: .8px;
-}
 
-.btn:hover {
-  transform: scale(1.03) translateY(-3px);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, .5);
-}
+  &:hover {
+    transform: scale(1.03) translateY(-3px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .5);
 
-.btn:active {
-  transform: scale(1) translateY(0);
-}
+    @include respond(desktop) { opacity: .9 };
+  }
 
-.start-screen__btn {
-  animation: popIn .3s;
-}
-
-.random-screen__btn {
-  animation: up .5s backwards;
+  &:active {
+    transform: scale(1) translateY(0);
+  }
 }
 
 #generateTrickBtn {
@@ -170,22 +174,26 @@ select {
   width: 100%;
 }
 
+.build-screen__choices,
+.randomScreen__choices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.build-screen__choices-difficulty,
+.randomScreen__selection--difficulty {
+  position: relative;
+}
+
 .connector {
   margin-top: -1rem;
   overflow: hidden;
   font-size: 3rem;
 }
 
-.connector.build {
-  animation: shootDown .3s linear;
-}
-
 .transition {
   font-size: 2.3rem;
-}
-
-.transition.build {
-  animation: pulse .3s;
 }
 
 .takeoff, 
@@ -196,33 +204,17 @@ select {
 .trick {
   font-size: 3.3rem;
   font-style: italic; 
+
+  @include respond(tablet) { font-size: 3.5rem };
+  @include respond(desktop) { font-size: 3.8rem };
 }
 
-.trick.build {
-  position: relative;
-  color: transparent;
-  animation: slideIn .6s;
+
+/* ===== HIDE CLASSES===== */
+.hide {
+  display: none;
 }
 
-/* For delete animation */
-.build::before,
-.build::after {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 0px) rotate(0);
-  color: #fff;
-  content: attr(data-name);
-  width: 100%;
-  font-size: inherit;
-}
-
-.build.remove::before {
-  clip-path: polygon(0 0, 55% 0, 35% 100%, 0% 100%);
-  animation: splitLeft 1.9s 10ms forwards;
-}
-
-.build.remove::after {
-  clip-path: polygon(60% 0, 100% 0, 190% 110%, 40% 100%);
-  animation: splitRight 1.9s 10ms forwards;
+.hidden {
+  visibility: hidden;
 }

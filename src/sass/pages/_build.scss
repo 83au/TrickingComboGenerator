@@ -4,20 +4,45 @@
   width: 100%;
   margin-top: 2rem;
   text-align: center;
+
+  &__combo {
+    margin-bottom: 2rem;
+  }
 }
 
-.build-screen__choices,
-.randomScreen__choices {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.connector.build {
+  animation: shootDown .3s linear;
 }
 
-.build-screen__choices-difficulty,
-.randomScreen__selection--difficulty {
+.transition.build {
+  animation: pulse .3s;
+}
+
+.trick.build {
   position: relative;
+  color: transparent;
+  animation: slideIn .6s;
 }
 
-.build-screen__combo {
-  margin-bottom: 2rem;
+/* For delete animation */
+.build::before,
+.build::after {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0px) rotate(0);
+  color: #fff;
+  content: attr(data-name);
+  width: 100%;
+  font-size: inherit;
+}
+
+.build.remove::before {
+  clip-path: polygon(0 0, 55% 0, 35% 100%, 0% 100%);
+  animation: splitLeft 1.9s 10ms forwards;
+}
+
+.build.remove::after {
+  clip-path: polygon(60% 0, 100% 0, 190% 110%, 40% 100%);
+  animation: splitRight 1.9s 10ms forwards;
 }
