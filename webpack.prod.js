@@ -35,7 +35,7 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.css$/i,
+        test: /\.scss$/i,
         use: [
           MiniCssExtractPlugin.loader, // Extract css into files
           'css-loader',
@@ -45,6 +45,7 @@ module.exports = merge(common, {
               plugins: () => autoprefixer(),
             },
           },
+          'sass-loader'
         ],
       },
     ],

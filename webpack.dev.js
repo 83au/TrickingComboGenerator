@@ -17,10 +17,11 @@ module.exports = merge(common, {
   module: {
     rules: [
       {
-        test: /\.css$/i,
+        test: /\.scss$/i,
         use: [
           'style-loader', // Injects css into DOM
           'css-loader', // Turns css into commonjs
+          'sass-loader'
         ],
       },
     ],
