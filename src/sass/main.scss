@@ -1,76 +1,9 @@
 @import "base/animations";
 @import "base/base";
 
-
-/* ===== START SCREEN ===== */
-
-.start-screen { 
-  position: absolute;
-  top: 30%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  margin-top: 4rem;
-
-  max-width: 100%;
-}
-
-.start-screen__btn {
-  margin: 2rem 0;
-}
-
-
-/* ===== BUILD COMBO SCREEN ===== */
-
-.build-screen {
-  width: 100%;
-  margin-top: 2rem;
-  text-align: center;
-}
-
-.build-screen__choices,
-.randomScreen__choices {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.build-screen__choices-difficulty,
-.randomScreen__selection--difficulty {
-  position: relative;
-}
-
-.build-screen__combo {
-  margin-bottom: 2rem;
-}
-
-
-/* ===== RANDOM COMBO SCREEN ===== */
-
-.random-screen {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  text-align: center;
-
-}
-
-.random-screen__choices {
-  margin: 4rem 0;
-}
-
-.random-screen__selection--difficulty {
-  margin-bottom: 3rem;
-}
-
-.random-screen__combo {
-  margin: 2rem auto;
-  width: 100%;
-  text-align: center;
-}
-
+@import "pages/start";
+@import "pages/build";
+@import "pages/random";
 
 /* ===== MEDIA QUERIES ===== */
 

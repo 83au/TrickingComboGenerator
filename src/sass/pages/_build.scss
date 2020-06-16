@@ -1,0 +1,23 @@
+/* ===== BUILD COMBO SCREEN ===== */
+
+.build-screen {
+  width: 100%;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.build-screen__choices,
+.randomScreen__choices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.build-screen__choices-difficulty,
+.randomScreen__selection--difficulty {
+  position: relative;
+}
+
+.build-screen__combo {
+  margin-bottom: 2rem;
+}

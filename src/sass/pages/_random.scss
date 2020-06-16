@@ -1,0 +1,24 @@
+/* ===== RANDOM COMBO SCREEN ===== */
+
+.random-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+
+}
+
+.random-screen__choices {
+  margin: 4rem 0;
+}
+
+.random-screen__selection--difficulty {
+  margin-bottom: 3rem;
+}
+
+.random-screen__combo {
+  margin: 2rem auto;
+  width: 100%;
+  text-align: center;
+}
