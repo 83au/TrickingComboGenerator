@@ -24,45 +24,19 @@ const level2 = [
 
   {
     name: '720 Kick',
-    setups: [
-      'cheat',
-      // 'right left redirect', Redirect is implied
-      'vanish',
-      'hook carry-through',
-      'reverse pop',
-      'hook',
-    ],
-    landings: landingPositions.hook.concat(['rapid round']),
-  },
-
-  {
-    name: '720 Kick', // Pop variation
-    setups: ['frontside pop', 'hook'],
+    setups: takeoffs.tornado,
     landings: landingPositions.hook.concat(['rapid round']),
   },
 
   {
     name: '720 Double',
-    setups: [
-      'cheat',
-      // 'right left redirect', redirect is implied
-      'vanish',
-      'hook',
-      'frontside pop',
-    ],
+    setups: takeoffs.tornado,
     landings: landingPositions.hook.concat(['turbo']),
   },
 
   {
     name: '900 Kick',
-    setups: [
-      'cheat',
-      'vanish',
-      // 'right left redirect', redirect is implied
-      'skip round',
-      'hook',
-      'wrap',
-    ],
+    setups: takeoffs.tornado.concat(['wrap']),
     landings: landingPositions.round.concat(['rapid hook', 'hyper']),
   },
 
@@ -74,18 +48,13 @@ const level2 = [
 
   {
     name: 'Double Hook',
-    setups: ['cheat'],
+    setups: takeoffs.tornado,
     landings: landingPositions.hook,
   },
 
   {
     name: 'Crowd Awakener',
-    setups: [
-      // 'right left redirect', // redirect is implied
-      'cheat',
-      'vanish',
-      'hook',
-    ],
+    setups: takeoffs.tornado,
     landings: ['backside punch', 'hook'],
   },
 
@@ -117,30 +86,8 @@ const level2 = [
   },
 
   {
-    name: 'Hyper Feilong',
-    setups: [
-      'frontside pop',
-      'frontside punch',
-      'cheat', // because cheat, redirect is implied * easier for novices to understand
-      'hook',
-    ],
-    landings: [
-      'reverse vanish',
-      'right left redirect',
-      'skip backswing',
-      'wrap',
-      'cheat',
-    ],
-  },
-
-  {
     name: 'Parafuso',
-    setups: [
-      'vanish',
-      'hook',
-      'hook carry-through',
-      'right left redirect', // cheat is implied
-    ],
+    setups: takeoffs.tornado,
     landings: [
       'backside punch',
     ],

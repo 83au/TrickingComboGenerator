@@ -16,13 +16,6 @@ const level4 = [
   },
 
   {
-    name: 'Backside 9 Gyro',
-    setups: ['backside punch', 'backside pop', 'inside pop'],
-    landings: ['backside punch'],
-  },
-
-
-  {
     name: '900 Double',
     setups: [
       'cheat',
@@ -45,14 +38,34 @@ const level4 = [
   },
 
   {
-    name: 'Hurricane',
+    name: '1260',
     setups: [
       'cheat',
       'vanish',
-      'hook',
+      'frontside pop',
+      'frontside punch',
     ],
-    landings: landingPositions.hook.concat(['rapid round']),
+    landings: landingPositions.round.concat(['rapid hook']),
   },
+
+  {
+    name: 'Backside 9 Gyro',
+    setups: ['backside punch', 'backside pop', 'inside pop'],
+    landings: ['backside punch'],
+  },
+
+  {
+    name: 'Backside 9 Knife',
+    setups: ['backside punch', 'backside pop', 'inside pop'],
+    landings: landingPositions.hyper,
+  },
+
+  // EXPERT
+  // {
+  //   name: 'Backside 1080 Jackknife',
+  //   setups: ['backside pop', 'backside punch'],
+  //   landings: 
+  // },
 
   {
     name: 'Backside 1260',
@@ -66,14 +79,25 @@ const level4 = [
   },
 
   {
-    name: '1260',
+    name: 'Bkick Late Hook',
+    setups: takeoffs.btwist,
+    landings: landingPositions.hook,
+  },
+
+  {
+    name: 'Bkick Helicoptero',
+    setups: takeoffs.btwist,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Hurricane',
     setups: [
       'cheat',
       'vanish',
-      'frontside pop',
-      'frontside punch',
+      'hook',
     ],
-    landings: landingPositions.round.concat(['rapid hook']),
+    landings: landingPositions.hook.concat(['rapid round']),
   },
 
   {
@@ -98,18 +122,6 @@ const level4 = [
     landings: [
       'backside punch',
     ],
-  },
-
-  {
-    name: 'Bkick Late Hook',
-    setups: takeoffs.btwist,
-    landings: landingPositions.hook,
-  },
-
-  {
-    name: 'Bkick Helicoptero',
-    setups: takeoffs.btwist,
-    landings: landingPositions.round,
   },
 
   // Setups/Transitions

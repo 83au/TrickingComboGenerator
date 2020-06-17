@@ -1,5 +1,14 @@
 // To reduce repetition
 const takeoffs = {
+  tornado: [
+      'vanish',
+      'hook carry-through',
+      'right left redirect',
+      'reverse pop',
+      'frontside pop',
+      'hook',
+      'cheat',
+  ],
   swing: [
     'back swing',
   ],

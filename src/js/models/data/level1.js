@@ -29,19 +29,13 @@ const level1 = [
 
   {
     name: '540 Kick',
-    setups: ['cheat', 'vanish', 'frontside pop'], // redirect is implied
+    setups: takeoffs.tornado, // redirect is implied
     landings: landingPositions.hyper,
   },
 
   {
     name: 'Auto-Bahn',
-    setups: [
-      'reverse pop',
-      'hook carry-through',
-      'outside leg reversal',
-      'right left redirect',
-      'hook',
-    ],
+    setups: takeoffs.tornado,
     landings: landingPositions.hook,
   },
 
@@ -97,7 +91,7 @@ const level1 = [
 
   {
     name: 'Narabong',
-    setups: ['hook carry-through', 'outside leg reversal', 'right left redirect', 'reverse pop'],
+    setups: takeoffs.tornado,
     landings: landingPositions.hook,
   },
 
@@ -118,15 +112,7 @@ const level1 = [
   {
     name: 'Tornado',
     notFinisher: true,
-    setups: [
-      'vanish',
-      'hook carry-through',
-      'right left redirect',
-      'reverse pop',
-      'frontside pop',
-      'hook',
-      'cheat',
-    ],
+    setups: takeoffs.tornado,
     landings: landingPositions.round,
   },
 

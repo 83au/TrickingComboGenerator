@@ -20,6 +20,13 @@ const level3 = [
       'gyro frontside',
     ],
   },
+
+  {
+    name: '900',
+    setups: ['frontside punch', 'frontside pop'],
+    landings: landingPositions.round,
+  },
+
   {
     name: '1080',
     setups: [
@@ -31,9 +38,9 @@ const level3 = [
   },
 
   {
-    name: 'Swing 1080',
-    setups: takeoffs.swing,
-    landings: landingPositions.hook.concat(['rapid round']),
+    name: 'Backside 9 Feilong',
+    setups: ['backside punch', 'backside pop', 'inside pop'],
+    landings: landingPositions.round,
   },
 
   {
@@ -46,21 +53,33 @@ const level3 = [
   },
 
   {
-    name: '900',
-    setups: ['frontside punch', 'frontside pop'],
-    landings: landingPositions.round,
+    name: 'Hyper Feilong',
+    setups: [
+      'frontside pop',
+      'frontside punch',
+      'cheat', // because cheat, redirect is implied * easier for novices to understand
+      'hook',
+    ],
+    landings: [
+      'reverse vanish',
+      'right left redirect',
+      'skip backswing',
+      'wrap',
+      'cheat',
+    ],
   },
 
   {
-    name: 'Backside 9 Feilong',
-    setups: ['backside punch', 'backside pop', 'inside pop'],
-    landings: landingPositions.round,
+    name: 'Jackknife',
+    setups: takeoffs.tornado,
+    landings: landingPositions.hook,
   },
 
   {
-    name: 'Backside 9 Knife',
-    setups: ['backside punch', 'backside pop', 'inside pop'],
-    landings: landingPositions.hyper,
+    name: 'Palm Kick Kyro',
+    notFinisher: true,
+    setups: ['reverse vanish', 'missleg', 'hook', 'mega'],
+    landings: ['backside punch'],
   },
 
   {
@@ -80,6 +99,12 @@ const level3 = [
   },
 
   {
+    name: 'Swing 1080',
+    setups: takeoffs.swing,
+    landings: landingPositions.hook.concat(['rapid round']),
+  },
+
+  {
     name: 'Wackknife Round',
     setups: [
       'cheat',
@@ -88,13 +113,6 @@ const level3 = [
       'hook carry-through',
     ],
     landings: landingPositions.round,
-  },
-
-  {
-    name: 'Palm Kick Kyro',
-    notFinisher: true,
-    setups: ['reverse vanish', 'missleg', 'hook', 'mega'],
-    landings: ['backside punch'],
   },
 
   // TRANSITION TRICKS
