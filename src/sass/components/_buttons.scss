@@ -1,0 +1,29 @@
+.btn {
+  margin: 1rem;
+  padding: 1rem;
+
+  background: white;
+  border: none;
+  border-radius: 10rem;
+  box-shadow: var(--shadow);
+  color: var(--blue);
+  cursor: pointer;
+  outline: none;
+  width: 22rem;
+  transition: .3s;
+  
+  font-family: 'Bangers', Impact, sans-serif;
+  font-size: 2.8rem;
+  letter-spacing: .8px;
+
+  &:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .5);
+    transform: scale(1.03) translateY(-3px);
+
+    @include respond(desktop) { opacity: .9 };
+  }
+
+  &:active {
+    transform: scale(1) translateY(0);
+  }
+}

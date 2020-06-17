@@ -18,12 +18,6 @@
   animation: pulse .3s;
 }
 
-.trick.build {
-  position: relative;
-  color: transparent;
-  animation: slideIn .6s;
-}
-
 /* For delete animation */
 .build::before,
 .build::after {
@@ -45,4 +39,24 @@
 .build.remove::after {
   clip-path: polygon(60% 0, 100% 0, 190% 110%, 40% 100%);
   animation: splitRight 1.9s 10ms forwards;
+}
+
+#generateTrickBtn {
+  animation: up .5s backwards;
+}
+
+#redo {
+  animation: up .5s backwards;
+}
+
+#next {
+  animation: up .5s .1s backwards;
+}
+
+#new {
+  animation: up .5s .2s backwards;
+}
+
+#backToChoices {
+  animation: up .5s .3s backwards;
 }

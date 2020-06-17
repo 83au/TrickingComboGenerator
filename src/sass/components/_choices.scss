@@ -1,0 +1,59 @@
+label,
+select,
+.select-wrapper {
+  animation: popIn .3s .3s both;
+}
+
+label {
+  display: block;
+  width: 20rem;
+  font-size: 2.5rem;
+}
+
+select {
+  padding-left: .5rem;
+  width: 14rem;
+  height: 3rem;
+  background: #fff;
+  border: none;
+  box-shadow: var(--shadow);
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  outline: none;
+  color: hsl(230, 0%, 20%);
+  cursor: pointer;
+  font-size: 2rem;
+}
+
+.selection-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 10rem;
+}
+
+.select-wrapper {
+  margin-top: 6rem;
+  position: absolute;
+
+  &::before {
+    content: '▼';
+    font-size: 1rem;
+    color: #222;
+    text-align: center;
+    line-height: 3rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2rem;
+    height: 3rem;
+    background: white;
+    border-radius: 6px;
+    pointer-events: none;
+    z-index: 10;
+  }
+}
+
+.randomComboBox__selection .select-wrapper {
+  margin-top: 4rem;
+}
