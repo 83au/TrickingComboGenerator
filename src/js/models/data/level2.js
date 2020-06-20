@@ -229,12 +229,6 @@ const level2 = [
   },
 
   {
-    name: 'Raiz Scissor',
-    setups: takeoffs.raiz,
-    landings: landingPositions.round,
-  },
-
-  {
     name: 'Reversao',
     setups: takeoffs.raiz,
     landings: [
@@ -252,7 +246,7 @@ const level2 = [
   },
 
   {
-    name: 'Sailor Moon Scissor',
+    name: 'Sailor Moon Round',
     setups: takeoffs.raiz,
     landings: landingPositions.round,
   },

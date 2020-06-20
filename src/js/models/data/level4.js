@@ -124,6 +124,12 @@ const level4 = [
     ],
   },
 
+  {
+    name: 'Swipeknife',
+    setups: takeoffs.raiz,
+    landings: landingPositions.invertedHyper,
+  },
+
   // Setups/Transitions
   {
     name: 'Flare',
@@ -146,35 +152,32 @@ const level4 = [
 
   // FLIPS & TWISTS
   {
-    name: 'Snapu Swipe',
-    setups: takeoffs.raiz,
-    landings: [ // hyper landing is implied
-      'backside punch',
-    ],
-  },
-
-  {
     name: '720 Twist (Barrel Roll)',
     setups: ['cheat', 'vanish'],
     landings: landingPositions.eagle,
   },
 
   {
-    name: 'Dub Cork',
-    setups: takeoffs.swing,
+    name: 'Back Full Snapu',
+    setups: takeoffs.backFullTwist,
+    landings: [
+      'backside punch',
+      'reverse pop',
+      'right first reverse pop',
+    ],
+  },
+
+  {
+    name: 'Back Triple Full',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
     landings: landingPositions.eagle,
   },
 
   {
-    name: 'Shuriken Cutter',
+    name: 'Boneless Cork',
     notStarter: true,
-    setups: takeoffs.swing,
-    landings: landingPositions.hyper,
-  },
-
-  {
-    name: 'Dub Btwist',
-    setups: takeoffs.btwist,
+    setups: ['Cartwheel'],
     landings: landingPositions.eagle,
   },
 
@@ -189,13 +192,26 @@ const level4 = [
   },
 
   {
-    name: 'Back Full Snapu',
-    setups: takeoffs.backFullTwist,
+    name: 'Double Back Flip',
+    notStarter: true,
+    setups: ['invert backside punch'],
     landings: [
       'backside punch',
+      'invert backside punch',
       'reverse pop',
-      'right first reverse pop',
     ],
+  },
+
+  {
+    name: 'Dub Btwist',
+    setups: takeoffs.btwist,
+    landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Dub Cork',
+    setups: takeoffs.swing,
+    landings: landingPositions.eagle,
   },
 
   {
@@ -219,10 +235,34 @@ const level4 = [
   },
 
   {
-    name: 'Back Triple Full',
+    name: 'Popcorn',
     notStarter: true,
     setups: takeoffs.backFullTwist,
-    landings: landingPositions.eagle,
+    landings: [
+      'backside punch',
+      'reverse pop',
+    ],
+  },
+
+  {
+    name: 'Shuriken Cutter',
+    notStarter: true,
+    setups: takeoffs.swing,
+    landings: landingPositions.hyper,
+  },
+
+  {
+    name: 'Sidewinder',
+    setups: takeoffs.btwist,
+    landings: ['backside pop'],
+  },
+
+  {
+    name: 'Snapu Swipe',
+    setups: takeoffs.raiz,
+    landings: [ // hyper landing is implied
+      'backside punch',
+    ],
   },
 
   {
@@ -230,23 +270,6 @@ const level4 = [
     notStarter: true,
     setups: takeoffs.insideFullTwist,
     landings: landingPositions.eagle,
-  },
-
-  {
-    name: 'Double Back Flip',
-    notStarter: true,
-    setups: ['invert backside punch'],
-    landings: [
-      'backside punch',
-      'invert backside punch',
-      'reverse pop',
-    ],
-  },
-
-  {
-    name: 'Sidewinder',
-    setups: takeoffs.btwist,
-    landings: ['backside pop'],
   },
 ];
 

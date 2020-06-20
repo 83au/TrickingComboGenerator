@@ -136,24 +136,18 @@ const level3 = [
   },
 
   {
-    name: 'TD Atwist',
-    setups: takeoffs.btwist.concat(['inside leg reversal', 'mega']),
-    landings: landingPositions.eagle,
-  },
-
-  {
-    name: 'Full Gumbi',
-    setups: ['invert backside pop', 'invert backside punch'],
-    landings: landingPositions.eagle,
-  },
-
-  {
     name: 'Envergado',
     setups: takeoffs.raiz,
     landings: [
       'backside punch',
       'invert backside punch',
     ],
+  },
+
+  {
+    name: 'Full Gumbi',
+    setups: ['invert backside pop', 'invert backside punch'],
+    landings: landingPositions.eagle,
   },
 
   {
@@ -168,13 +162,31 @@ const level3 = [
   },
 
   {
+    name: 'Raiz Scissor',
+    setups: takeoffs.raiz,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Sailor Moon Scissor',
+    setups: takeoffs.raiz,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Td Atwist',
+    setups: takeoffs.btwist.concat(['inside leg reversal', 'mega']),
+    landings: landingPositions.eagle,
+  },
+
+  {
     name: 'Td Raiz Swipe',
     setups: takeoffs.raiz,
     landings: landingPositions.hyper,
   },
 
   {
-    name: 'Td Raiz Whip',
+    name: 'Td Envergado',
     setups: takeoffs.raiz,
     landings: [
       'invert backside punch',
@@ -182,6 +194,309 @@ const level3 = [
   },
 
   // FLIPS & TWISTS
+  {
+    name: 'Arabian Half',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Back Arabian Half',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Back TD Full',
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Back Full Cobra',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Back Full Crowd Awakener',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Back Full D-leg',
+    setups: takeoffs.backFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Back Full Pike',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Back Full Swipe',
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Back Full Hyper Hook',
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.hyper,
+  },
+
+  {
+    name: 'Back Double Full',
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Back Full Feilong',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Back Full Terada Grab',
+    setups: takeoffs.backFullTwist,
+    landings: ['reverse vanish', 'right left redirect', 'hook', 'cheat'],
+  },
+
+  {
+    name: 'Back Full Shuriken',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Boneless Gainer',
+    notStarter: true,
+    setups: ['Cartwheel'],
+    landings: [ // Hyper is implied
+      'inside pop',
+      'invert inside pop',
+      'reverse vanish',
+      'right left redirect',
+      'cheat',
+    ],
+  },
+
+  {
+    name: 'Btwist Hyper',
+    setups: takeoffs.btwist,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Btwist Swipe',
+    setups: takeoffs.btwist,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Btwist Hyper Hook',
+    setups: takeoffs.btwist,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Btwist Double Leg',
+    setups: takeoffs.btwist,
+    landings: ['backside punch', 'invert backside punch'],
+  },
+
+  {
+    name: 'Boxcutter',
+    setups: takeoffs.swing,
+    landings: landingPositions.hyper,
+  },
+
+  {
+    name: 'Cork D-leg',
+    setups: takeoffs.swing,
+    landings: ['backside punch', 'invert backside punch'],
+  },
+
+  {
+    name: 'Cork Hyper',
+    setups: takeoffs.swing,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Cork Shuriken',
+    setups: takeoffs.swing,
+    landings: landingPositions.mega.concat('complete'),
+  },
+
+  {
+    name: 'Cork Swipe',
+    setups: takeoffs.swing,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Dragonfly Cork',
+    setups: takeoffs.swing.concat([
+      'skip backswing',
+      'skip backswing',
+    ]),
+    landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Full Terada Grab',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: ['reverse vanish', 'right left redirect', 'hook', 'cheat'],
+  },
+
+  {
+    name: 'Double Full',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Flik Flak',
+    setups: takeoffs.swing,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Full Cobra',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Full Crowd Awakener',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Full Double Leg',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Full Feilong',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Full Hyper Hook',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.hyper,
+  },
+
+  {
+    name: 'Full Pike',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Full Shuriken',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Full Swipe',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Full Wackknife',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Gainer Figure-4',
+    setups: [
+      'back swing',
+      'left right redirect',
+      'skip backswing',
+    ],
+    landings: [ // Hyper is implied
+      'backside punch',
+      'invert backside punch',
+      'complete',
+      'hyper'
+    ],
+  },
+
   {
     name: 'Grand Master Swipe',
     notStarter: true,
@@ -191,19 +506,6 @@ const level3 = [
       'skip masterswing',
       'vanish'],
     landings: landingPositions.hyper,
-  },
-
-  {
-    name: 'Boneless Gainer',
-    notStarter: true,
-    setups: ['reverse vanish'],
-    landings: [ // Hyper is implied
-      'inside pop',
-      'invert inside pop',
-      'reverse vanish',
-      'right left redirect',
-      'cheat',
-    ],
   },
 
   {
@@ -226,6 +528,108 @@ const level3 = [
       'skip backswing',
       'skip backswing',
     ]),
+    landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Ironman Back Full',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Illusion Twist Feilong',
+    setups: takeoffs.btwist,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Ironman Full',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Janitor Flip',
+    notStarter: true,
+    setups: ['backside punch', 'backside pop'],
+    landings: [
+      'frontside pop', 
+      'vanish', 
+      'skip round',
+      'left right redirect',
+    ],
+  },
+
+  {
+    name: 'Kick Full',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Lonestar Twist',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Rodeo',
+    setups: ['invert backside punch'],
+    landings: ['backside punch', 'invert backside punch'],
+  },
+
+  {
+    name: 'Rodeo Full',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Rodeo Full Round',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Rodeo Back Full',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Rodeo Back Full Round',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Rodeo Cork',
+    setups: takeoffs.swing,
     landings: landingPositions.eagle,
   },
 
@@ -272,337 +676,9 @@ const level3 = [
   },
 
   {
-    name: 'Boneless Cork',
-    notStarter: true,
-    setups: ['cartwheel'],
-    landings: landingPositions.eagle,
-  },
-
-  {
-    name: 'Dragonfly Cork',
-    setups: takeoffs.swing.concat([
-      'skip backswing',
-      'skip backswing',
-    ]),
-    landings: landingPositions.eagle,
-  },
-
-  {
-    name: 'Shuriken Cork',
-    setups: takeoffs.swing,
-    landings: landingPositions.mega.concat('complete'),
-  },
-
-  {
-    name: 'Rodeo Cork',
-    setups: takeoffs.swing,
-    landings: landingPositions.eagle,
-  },
-
-  {
-    name: 'Cork D-leg',
-    setups: takeoffs.swing,
-    landings: ['backside punch', 'invert backside punch'],
-  },
-
-  {
-    name: 'Cork Hyper',
-    setups: takeoffs.swing,
-    landings: landingPositions.invertedHyper,
-  },
-
-  {
-    name: 'Cork Swipe',
-    setups: takeoffs.swing,
-    landings: landingPositions.invertedHyper,
-  },
-
-  {
-    name: 'Boxcutter',
-    setups: takeoffs.swing,
-    landings: landingPositions.hyper,
-  },
-
-  {
-    name: 'Wrap Full Twist',
-    notStarter: true,
-    setups: ['turn step', 'wrap'],
-    landings: landingPositions.eagle,
-  },
-
-  {
-    name: 'Back TD Full',
-    setups: takeoffs.backFullTwist,
-    landings: landingPositions.eagle,
-  },
-
-  {
-    name: 'Back Full D-leg',
-    setups: takeoffs.backFullTwist,
-    landings: [
-      'backside punch',
-      'invert backside punch',
-      'complete',
-    ],
-  },
-
-  {
-    name: 'Back Full Pike',
-    notStarter: true,
-    setups: takeoffs.backFullTwist,
-    landings: [
-      'backside punch',
-      'invert backside punch',
-      'complete',
-    ],
-  },
-
-  {
-    name: 'Back Full Terada Grab',
-    setups: takeoffs.backFullTwist,
-    landings: ['reverse vanish', 'right left redirect', 'hook', 'cheat'],
-  },
-
-  {
-    name: 'Back Full Cobra',
-    notStarter: true,
-    setups: takeoffs.backFullTwist,
-    landings: [
-      'backside punch',
-      'invert backside punch',
-      'complete',
-    ],
-  },
-
-  {
-    name: 'Back Full Crowd Awakener',
-    notStarter: true,
-    setups: takeoffs.backFullTwist,
-    landings: [
-      'backside punch',
-      'invert backside punch',
-      'complete',
-    ],
-  },
-
-  {
-    name: 'Ironman Back Full',
-    notStarter: true,
-    setups: takeoffs.backFullTwist,
-    landings: [
-      'backside punch',
-      'invert backside punch',
-      'complete',
-    ],
-  },
-
-  {
-    name: 'Back Arabian Half',
-    notStarter: true,
-    setups: takeoffs.backFullTwist,
-    landings: [
-      'backside punch',
-      'invert backside punch',
-      'complete',
-    ],
-  },
-
-  {
-    name: 'Arabian Half',
-    notStarter: true,
-    setups: takeoffs.insideFullTwist,
-    landings: [
-      'backside punch',
-      'invert backside punch',
-      'complete',
-    ],
-  },
-
-  {
     name: 'TD Full',
     setups: takeoffs.insideFullTwist,
     landings: landingPositions.eagle,
-  },
-
-  {
-    name: 'Full Terada Grab',
-    notStarter: true,
-    setups: takeoffs.insideFullTwist,
-    landings: ['reverse vanish', 'right left redirect', 'hook', 'cheat'],
-  },
-
-  {
-    name: 'Rodeo Back Full',
-    notStarter: true,
-    setups: takeoffs.backFullTwist,
-    landings: landingPositions.eagle,
-  },
-
-  {
-    name: 'Rodeo Back Full Round',
-    notStarter: true,
-    setups: takeoffs.backFullTwist,
-    landings: landingPositions.round,
-  },
-
-  {
-    name: 'Back Full Swipe',
-    setups: takeoffs.backFullTwist,
-    landings: landingPositions.invertedHyper,
-  },
-
-  {
-    name: 'Back Full Hyper Hook',
-    setups: takeoffs.backFullTwist,
-    landings: landingPositions.hyper,
-  },
-
-  {
-    name: 'Back Double Full',
-    setups: takeoffs.backFullTwist,
-    landings: landingPositions.eagle,
-  },
-
-  {
-    name: 'Flik Flak',
-    setups: takeoffs.swing,
-    landings: landingPositions.round,
-  },
-
-  {
-    name: 'Kick Full',
-    notStarter: true,
-    setups: takeoffs.backFullTwist,
-    landings: [
-      'backside punch',
-      'invert backside punch',
-      'complete',
-    ],
-  },
-
-  {
-    name: 'Lonestar Twist',
-    notStarter: true,
-    setups: takeoffs.backFullTwist,
-    landings: [
-      'backside punch',
-      'invert backside punch',
-      'complete',
-    ],
-  },
-
-  {
-    name: 'Full Double Leg',
-    notStarter: true,
-    setups: takeoffs.insideFullTwist,
-    landings: [
-      'backside punch',
-      'invert backside punch',
-      'complete',
-    ],
-  },
-
-  {
-    name: 'Full Pike',
-    notStarter: true,
-    setups: takeoffs.insideFullTwist,
-    landings: [
-      'backside punch',
-      'invert backside punch',
-      'complete',
-    ],
-  },
-
-  {
-    name: 'Ironman Full',
-    notStarter: true,
-    setups: takeoffs.insideFullTwist,
-    landings: [
-      'backside punch',
-      'invert backside punch',
-      'complete',
-    ],
-  },
-
-  {
-    name: 'Full Feilong',
-    notStarter: true,
-    setups: takeoffs.insideFullTwist,
-    landings: landingPositions.round,
-  },
-
-  {
-    name: 'Full Wackknife',
-    notStarter: true,
-    setups: takeoffs.insideFullTwist,
-    landings: [
-      'backside punch',
-      'invert backside punch',
-      'complete',
-    ],
-  },
-
-  {
-    name: 'Full Cobra',
-    notStarter: true,
-    setups: takeoffs.insideFullTwist,
-    landings: [
-      'backside punch',
-      'invert backside punch',
-      'complete',
-    ],
-  },
-
-  {
-    name: 'Full Crowd Awakener',
-    notStarter: true,
-    setups: takeoffs.insideFullTwist,
-    landings: [
-      'backside punch',
-      'invert backside punch',
-      'complete',
-    ],
-  },
-
-  {
-    name: 'Rodeo Full',
-    notStarter: true,
-    setups: takeoffs.insideFullTwist,
-    landings: landingPositions.eagle,
-  },
-
-  {
-    name: 'Rodeo Full Round',
-    notStarter: true,
-    setups: takeoffs.insideFullTwist,
-    landings: landingPositions.round,
-  },
-
-  {
-    name: 'Full Swipe',
-    notStarter: true,
-    setups: takeoffs.insideFullTwist,
-    landings: landingPositions.invertedHyper,
-  },
-
-  {
-    name: 'Full Hyper Hook',
-    notStarter: true,
-    setups: takeoffs.insideFullTwist,
-    landings: landingPositions.hyper,
-  },
-
-  {
-    name: 'Double Full',
-    notStarter: true,
-    setups: takeoffs.insideFullTwist,
-    landings: landingPositions.eagle,
-  },
-
-  {
-    name: 'Illusion Twist Feilong',
-    setups: takeoffs.btwist,
-    landings: landingPositions.round,
   },
 
   {
@@ -612,33 +688,17 @@ const level3 = [
   },
 
   {
-    name: 'Btwist Hyper',
-    setups: takeoffs.btwist,
-    landings: landingPositions.invertedHyper,
+    name: 'Wrap Front',
+    notStarter: true,
+    setups: ['turn step', 'wrap'],
+    landings: ['frontside punch', 'mega', 'semi'],
   },
 
   {
-    name: 'Btwist Swipe',
-    setups: takeoffs.btwist,
-    landings: landingPositions.invertedHyper,
-  },
-
-  {
-    name: 'Btwist Hyper Hook',
-    setups: takeoffs.btwist,
-    landings: landingPositions.invertedHyper,
-  },
-
-  {
-    name: 'Btwist Double Leg',
-    setups: takeoffs.btwist,
-    landings: ['backside punch', 'invert backside punch'],
-  },
-
-  {
-    name: 'Rodeo',
-    setups: ['invert backside punch'],
-    landings: ['backside punch', 'invert backside punch'],
+    name: 'Wrap Full Twist',
+    notStarter: true,
+    setups: ['turn step', 'wrap'],
+    landings: landingPositions.eagle,
   },
 
   // {

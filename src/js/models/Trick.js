@@ -32,7 +32,7 @@ export default class Trick {
           console.log('REFILTERING');
           console.log(prevTrick.name);
           console.log(landing);
-          possibleTricks = Model.searchLevels('level1', landing);
+          possibleTricks = Model.searchLevels('level1', landing, prevTrick);
         } else {
           throw new Error('No matching trick');
         }

@@ -90,7 +90,7 @@ export function filterTrickList(level, landing, prevTrick) {
 
 // * THIS FUNCTION IS FOR RANDOM MODE ONLY
 // Recursively search all levels from first to last
-export function searchLevels(level, landing) {
+export function searchLevels(level, landing, prevTrick) {
   // Stopping condition, TODO: needs to check against a max level
   if (level === 'level4') return undefined;
 
@@ -98,7 +98,7 @@ export function searchLevels(level, landing) {
   const levelNum = Number(level.match(/\d$/));
 
   // Try filtering the level
-  const filteredList = filterTrickList(level, landing);
+  const filteredList = filterTrickList(level, landing, prevTrick);
 
   // If couldn't filter, then search the next level, otherwise return the filtered list
   return filteredList.length ? filteredList : searchLevels(`level${levelNum + 1}`, landing);
