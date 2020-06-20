@@ -182,7 +182,12 @@ function createConnector(container, mode) {
     connector.classList.add('connector', 'build');
   }
 
-  connector.innerHTML = '&darr;';
+  const html = `
+    <svg class="connector__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14.5">
+      <path d="M6.5,14.5,0,8H3.5V0h6V8H13Z"/>
+    </svg>
+  `;
+  connector.insertAdjacentHTML('afterbegin', html);
   container.append(connector);
 }
 

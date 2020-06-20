@@ -75,9 +75,15 @@ hr {
 }
 
 .connector {
-  margin-top: -1rem;
+  margin: 1.5rem 0;
   overflow: hidden;
-  font-size: 3rem;
+
+  &__arrow {
+    margin: 0 auto;
+    height: 3rem;
+    width: 3rem;
+    fill: white;
+  }
 }
 
 .transition {
