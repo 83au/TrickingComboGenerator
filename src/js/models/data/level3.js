@@ -22,8 +22,50 @@ const level3 = [
   },
 
   {
+    name: '540 Gyro',
+    setups: takeoffs.tornado, // redirect is implied
+    landings: ['gyro backside'],
+  },
+
+  {
     name: '900',
     setups: ['frontside punch', 'frontside pop'],
+    landings: landingPositions.round.concat(['hyper', 'rapid hook']),
+  },
+
+  {
+    name: '900 Crowd Awakener',
+    setups: takeoffs.tornado,
+    landings: ['backside punch', 'hook'],
+  },
+
+  {
+    name: '900 Double',
+    setups: [
+      'cheat',
+      'vanish',
+      'skip round',
+      'hook',
+      'wrap',
+    ],
+    landings: landingPositions.round,
+  },
+
+  {
+    name: '900 Feilong',
+    setups: takeoffs.tornado,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: '900 Rodeo',
+    setups: takeoffs.tornado,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: '900 Sidekick',
+    setups: takeoffs.tornado,
     landings: landingPositions.round,
   },
 
@@ -33,6 +75,8 @@ const level3 = [
       'cheat',
       'vanish',
       'hook',
+      'frontside pop',
+      'frontside punch'
     ],
     landings: landingPositions.hook.concat(['rapid round']),
   },
@@ -49,7 +93,7 @@ const level3 = [
       'backside pop',
       'inside pop',
     ],
-    landings: landingPositions.hook.concat(['rapid round']),
+    landings: landingPositions.hook.concat(['rapid round', 'hyper']),
   },
 
   {
@@ -371,6 +415,13 @@ const level3 = [
   },
 
   {
+    name: 'Double Full',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.eagle,
+  },
+
+  {
     name: 'Dragonfly Cork',
     setups: takeoffs.swing.concat([
       'skip backswing',
@@ -380,23 +431,16 @@ const level3 = [
   },
 
   {
+    name: 'Flik Flak',
+    setups: takeoffs.swing,
+    landings: landingPositions.round,
+  },
+
+  {
     name: 'Full Terada Grab',
     notStarter: true,
     setups: takeoffs.insideFullTwist,
     landings: ['reverse vanish', 'right left redirect', 'hook', 'cheat'],
-  },
-
-  {
-    name: 'Double Full',
-    notStarter: true,
-    setups: takeoffs.insideFullTwist,
-    landings: landingPositions.eagle,
-  },
-
-  {
-    name: 'Flik Flak',
-    setups: takeoffs.swing,
-    landings: landingPositions.round,
   },
 
   {

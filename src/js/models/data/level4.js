@@ -16,7 +16,7 @@ const level4 = [
   },
 
   {
-    name: '900 Double',
+    name: '900 Double Tai-fighter',
     setups: [
       'cheat',
       'vanish',
@@ -24,7 +24,19 @@ const level4 = [
       'hook',
       'wrap',
     ],
-    landings: landingPositions.round.concat(['rapid hook']),
+    landings: landingPositions.round,
+  },
+
+  {
+    name: '900 Double Leg',
+    setups: takeoffs.tornado,
+    landings: ['backside punch', 'invert backside punch'],
+  },
+
+  {
+    name: '900 Knife',
+    setups: takeoffs.tornado,
+    landings: landingPositions.hook,
   },
 
   {
@@ -66,6 +78,7 @@ const level4 = [
   //   setups: ['backside pop', 'backside punch'],
   //   landings: 
   // },
+  // Backside 1260 Knife
 
   {
     name: 'Backside 1260',
@@ -91,7 +104,13 @@ const level4 = [
   },
 
   {
-    name: 'Hurricane',
+    name: 'Crowd Awakener Knife',
+    setups: takeoffs.tornado,
+    landings: landingPositions.hook,
+  },
+
+  {
+    name: 'Hurricane Kick',
     setups: [
       'cheat',
       'vanish',
@@ -130,7 +149,13 @@ const level4 = [
     landings: landingPositions.invertedHyper,
   },
 
-  // Setups/Transitions
+  {
+    name: 'Twist Knife',
+    setups: takeoffs.tornado,
+    landings: landingPositions.round,
+  },
+
+  // OTHER
   {
     name: 'Flare',
     setups: [

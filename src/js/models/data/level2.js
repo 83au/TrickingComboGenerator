@@ -2,7 +2,7 @@ import takeoffs from './takeoffs';
 import landingPositions from './landings';
 
 const level2 = [
-  // KICKS
+  // VERT KICKS
   {
     // 360 Crescent variations
     name: '360 Crescent',
@@ -25,7 +25,7 @@ const level2 = [
   {
     name: '720 Kick',
     setups: takeoffs.tornado,
-    landings: landingPositions.hook.concat(['rapid round']),
+    landings: landingPositions.hook.concat(['rapid round', 'hyper']),
   },
 
   {
@@ -47,15 +47,15 @@ const level2 = [
   },
 
   {
-    name: 'Double Hook',
-    setups: takeoffs.tornado,
-    landings: landingPositions.hook,
-  },
-
-  {
     name: 'Crowd Awakener',
     setups: takeoffs.tornado,
     landings: ['backside punch', 'hook'],
+  },
+
+  {
+    name: 'Double Hook',
+    setups: takeoffs.tornado,
+    landings: landingPositions.hook,
   },
 
   {
@@ -187,12 +187,6 @@ const level2 = [
 
   // TRANSITION TRICKS
   {
-    name: 'Master Swipe',
-    setups: ['master swing', 'right left redirect', 'skip masterswing', 'vanish'],
-    landings: landingPositions.hyper,
-  },
-
-  {
     name: 'Cartwheel Twist',
     setups: takeoffs.cartwheel,
     landings: ['backside punch', 'invert backside punch', 'reverse pop'],
@@ -220,6 +214,12 @@ const level2 = [
     name: 'Master Scoot',
     setups: ['master swing', 'skip masterswing', 'vanish'],
     landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Master Swipe',
+    setups: ['master swing', 'right left redirect', 'skip masterswing', 'vanish'],
+    landings: landingPositions.hyper,
   },
 
   {
@@ -492,9 +492,14 @@ const level2 = [
   },
 
   {
-    name: 'Shuriken Twist',
-    setups: ['hook', 'reverse vanish', 'turn step', 'mega'],
-    landings: ['vanish', 'hook'],
+    name: 'Lonestar',
+    notStarter: true,
+    setups: ['invert backside punch'],
+    landings: [
+      'invert frontside punch',
+      'mega',
+      'semi',
+    ],
   },
 
   {
@@ -529,14 +534,9 @@ const level2 = [
   },
 
   {
-    name: 'Lonestar',
-    notStarter: true,
-    setups: ['invert backside punch'],
-    landings: [
-      'invert frontside punch',
-      'mega',
-      'semi',
-    ],
+    name: 'Shuriken Twist',
+    setups: ['hook', 'reverse vanish', 'turn step', 'mega'],
+    landings: ['vanish', 'hook'],
   },
 
   {

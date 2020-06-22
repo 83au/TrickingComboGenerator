@@ -4,7 +4,7 @@ import landingPositions from './landings';
 // Tricks should not have transitions that only lead to tricks of a higher level
 
 const level1 = [
-  // KICKS
+  // VERT KICKS
   {
     name: '360 Crescent',
     setups: [
