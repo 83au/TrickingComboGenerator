@@ -47,15 +47,21 @@ const level2 = [
   },
 
   {
-    name: 'Crowd Awakener',
-    setups: takeoffs.tornado,
-    landings: ['backside punch', 'hook'],
+    name: 'Bkick Switch',
+    setups: takeoffs.btwist.concat(['missleg', 'inside leg reversal']),
+    landings: [
+      'invert backside pop',
+      'back swing',
+      'missleg',
+      'skip frontswing', // skip from eagle into mega for a front swing
+      'vanish',
+    ],
   },
 
   {
-    name: 'Double Hook',
+    name: 'Crowd Awakener',
     setups: takeoffs.tornado,
-    landings: landingPositions.hook,
+    landings: ['backside punch', 'hook'],
   },
 
   {
@@ -336,18 +342,6 @@ const level2 = [
   },
 
   {
-    name: 'Butterfly Switch',
-    setups: takeoffs.btwist.concat(['missleg', 'inside leg reversal']),
-    landings: [
-      'invert backside pop',
-      'back swing',
-      'missleg',
-      'skip frontswing', // skip from eagle into mega for a front swing
-      'vanish',
-    ],
-  },
-
-  {
     name: 'Butter Knife',
     setups: takeoffs.btwist.concat(['missleg', 'inside leg reversal']),
     landings: landingPositions.hook,
@@ -393,7 +387,7 @@ const level2 = [
       'skip backswing',
       'skip backswing',
     ],
-    landings: ['frontside punch', 'hook'],
+    landings: ['backside punch', 'hook'],
   },
 
   {
@@ -413,6 +407,25 @@ const level2 = [
       'skip backswing',
     ],
     landings: landingPositions.hyper,
+  },
+
+  {
+    name: 'Donut Boy Round',
+    notStarter: true,
+    setups: [
+      'invert backside pop',
+      'backside pop',
+      'invert backside punch',
+      'backside punch',
+      'back swing',
+      'skip backswing',
+      'j step',
+      'pivot step',
+      'reverse vanish',
+      'skip backswing',
+      'skip backswing',
+    ],
+    landings: landingPositions.round,
   },
 
   {

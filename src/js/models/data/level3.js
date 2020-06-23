@@ -59,7 +59,7 @@ const level3 = [
 
   {
     name: '900 Rodeo',
-    setups: takeoffs.tornado,
+    setups: ['cheat', 'right left redirect', 'hook'],
     landings: landingPositions.round,
   },
 
@@ -97,6 +97,18 @@ const level3 = [
   },
 
   {
+    name: 'Bkick Switch Hyper Hook',
+    setups: takeoffs.btwist.concat(['inside leg reversal']),
+    landings: landingPositions.hook,
+  },
+
+  {
+    name: 'Bkick Terada Grab',
+    setups: takeoffs.btwist.concat(['inside leg reversal']),
+    landings: landingPositions.hook,
+  },
+
+  {
     name: 'Hyper Feilong',
     setups: [
       'frontside pop',
@@ -122,7 +134,7 @@ const level3 = [
   {
     name: 'Palm Kick Kyro',
     notFinisher: true,
-    setups: ['reverse vanish', 'missleg', 'hook', 'mega'],
+    setups: ['reverse vanish', 'hook', 'mega'],
     landings: ['backside punch'],
   },
 

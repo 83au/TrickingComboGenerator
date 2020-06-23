@@ -70,6 +70,12 @@ const level1 = [
   },
 
   {
+    name: 'Double Hook',
+    setups: takeoffs.tornado,
+    landings: landingPositions.hook,
+  },
+
+  {
     name: 'Feilong',
     setups: [
       'inside pop',

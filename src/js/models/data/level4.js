@@ -30,7 +30,7 @@ const level4 = [
   {
     name: '900 Double Leg',
     setups: takeoffs.tornado,
-    landings: ['backside punch', 'invert backside punch'],
+    landings: ['backside punch'],
   },
 
   {
@@ -144,6 +144,19 @@ const level4 = [
   },
 
   {
+    name: 'Swing 1080',
+    setups: [
+      'back swing',
+      'reverse vanish',
+      'round carry-through',
+      'inside leg reversal',
+      'left right redirect',
+      'right first reverse pop',
+    ],
+    landings: landingPositions.hook,
+  },
+
+  {
     name: 'Swipeknife',
     setups: takeoffs.raiz,
     landings: landingPositions.invertedHyper,
@@ -152,7 +165,7 @@ const level4 = [
   {
     name: 'Twist Knife',
     setups: takeoffs.tornado,
-    landings: landingPositions.round,
+    landings: landingPositions.hook,
   },
 
   // OTHER
