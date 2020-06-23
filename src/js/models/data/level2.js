@@ -87,7 +87,13 @@ const level2 = [
 
   {
     name: 'Parafuso',
-    setups: takeoffs.tornado,
+    setups: [
+      'cheat', 
+      'vanish', 
+      'hook carry-through',
+      'right left redirect',
+      'hook'
+    ],
     landings: [
       'backside punch',
     ],
@@ -506,7 +512,6 @@ const level2 = [
     name: 'Loser',
     setups: ['Webster', 'skip frontswing'],
     landings: [
-      'inside',
       'inside pop',
       'backside pop',
       'hook',

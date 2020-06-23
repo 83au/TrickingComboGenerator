@@ -128,7 +128,7 @@ function buildTrick(maxDiff, animate) {
     }
     return undefined;
   };
-  tryGenerateTrick(trick, numTries);
+  tryGenerateTrick();
 
   trick.setName();
 
