@@ -20,9 +20,7 @@ const level4 = [
     setups: [
       'cheat',
       'vanish',
-      'skip round',
       'hook',
-      'wrap',
     ],
     landings: landingPositions.round,
   },
@@ -241,13 +239,13 @@ const level4 = [
   },
 
   {
-    name: 'Dub Btwist',
+    name: 'Double Btwist',
     setups: takeoffs.btwist,
     landings: landingPositions.eagle,
   },
 
   {
-    name: 'Dub Cork',
+    name: 'Double Cork',
     setups: takeoffs.swing,
     landings: landingPositions.eagle,
   },
