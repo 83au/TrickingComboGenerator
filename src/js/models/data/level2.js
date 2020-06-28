@@ -230,7 +230,11 @@ const level2 = [
 
   {
     name: 'Master Swipe',
-    setups: ['master swing', 'right left redirect', 'skip masterswing', 'vanish'],
+    setups: [
+      'master swing',  
+      'skip masterswing', 
+      'vanish'
+    ],
     landings: landingPositions.hyper,
   },
 

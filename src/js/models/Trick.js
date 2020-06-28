@@ -89,7 +89,7 @@ export default class Trick {
       if (this.transition === 'skip round' && this.name.includes('9')) {
         this.takeoff = 'wrap';
         this.transition = 'skip';
-      } else if (this.name.includes('Swing')) {
+      } else if (this.name.includes('Swing') && this.transition.includes('swing')) {
         console.log('ENCOUNTERED SWING');
         this.takeoff = '';
         this.transition = null;
@@ -97,6 +97,9 @@ export default class Trick {
     } else if (Data.takeoffModifiers.includes(this.takeoff)) {
       if (this.takeoff === 'wrap' && !this.transition) {
         this.takeoff = 'cheat';
+      } else if (this.name.includes('Swing')) {
+        console.log('ENCOUNTERED SWING');
+        this.takeoff = '';
       } else {
         this.takeoff = Model.formatMod(this.takeoff);
       }
