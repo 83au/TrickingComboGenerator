@@ -127,7 +127,13 @@ const level4 = [
   // Jackknife turbo and Hyper variations
   {
     name: 'Jackknife',
-    setups: takeoffs.tornado,
+    setups: [
+      'vanish',
+      'right left redirect',
+      'frontside pop',
+      'hook',
+      'cheat',
+  ],
     landings: ['turbo', 'hyper'],
   },
 
@@ -231,13 +237,14 @@ const level4 = [
   },
 
   {
-    name: 'Back Full Dleg Hyper Hook',
+    name: 'Back Full D-leg Hyper Hook',
+    notStarter: true,
     setups: takeoffs.backFullTwist,
     landings: landingPositions.invertedHyper,
   },
 
   {
-    name: 'Back Full Dleg Twist',
+    name: 'Back Full D-leg Twist',
     setups: takeoffs.backFullTwist,
     landings: [
       'backside punch',
@@ -280,6 +287,12 @@ const level4 = [
   },
 
   {
+    name: 'B-kick Helicoptero',
+    setups: takeoffs.btwist,
+    landings: landingPositions.mega,
+  },
+
+  {
     name: 'Boneless Cork',
     notStarter: true,
     setups: ['Cartwheel'],
@@ -296,12 +309,6 @@ const level4 = [
     name: 'B-twist Hawkeye',
     setups: takeoffs.btwist,
     landings: landingPositions.round,
-  },
-
-  {
-    name: 'B-twist Helicoptero',
-    setups: takeoffs.btwist,
-    landings: landingPositions.mega,
   },
 
   {

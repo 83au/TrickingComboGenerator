@@ -148,7 +148,13 @@ const level3 = [
 
   {
     name: 'Jackknife',
-    setups: takeoffs.tornado,
+    setups: [
+      'vanish',
+      'right left redirect',
+      'frontside pop',
+      'hook',
+      'cheat',
+  ],
     landings: landingPositions.hook,
   },
 
