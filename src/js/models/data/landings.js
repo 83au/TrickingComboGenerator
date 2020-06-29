@@ -75,6 +75,8 @@ const landingPositions = {
     'vanish',
     'skip round',
     'mega',
+    'left right redirect',
+    'inside leg reversal',
   ],
 
   semi: [

@@ -160,6 +160,12 @@ const level2 = [
   },
 
   {
+    name: 'Tornado Hawkeye',
+    setups: takeoffs.tornado,
+    landings: landingPositions.round,
+  },
+
+  {
     name: 'Tornado Sidekick',
     setups: [
       'vanish',

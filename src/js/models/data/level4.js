@@ -27,7 +27,7 @@ const level4 = [
 
   {
     name: '900 Double Leg',
-    setups: takeoffs.tornado,
+    setups: ['cheat'],
     landings: ['backside punch'],
   },
 
@@ -124,6 +124,13 @@ const level4 = [
     landings: landingPositions.hook.concat(['rapid round']),
   },
 
+  // Jackknife turbo and Hyper variations
+  {
+    name: 'Jackknife',
+    setups: takeoffs.tornado,
+    landings: ['turbo', 'hyper'],
+  },
+
   {
     name: 'Paraknife (Switchblade)',
     setups: [
@@ -173,6 +180,17 @@ const level4 = [
     landings: landingPositions.hook,
   },
 
+  {
+    name: 'Wackest Knife',
+    setups: [
+      'cheat',
+      'frontside pop',
+      'frontside punch',
+      'hook carry-through',
+    ],
+    landings: landingPositions.hook,
+  },
+
   // OTHER
   {
     name: 'Flare',
@@ -190,6 +208,18 @@ const level4 = [
       'skip round',
       'skip frontswing',
     ],
+  },
+
+  {
+    name: 'Spyder Twist Round',
+    setups: [
+      'vanish',
+      'outside leg reversal',
+      'hook carry-through',
+      'semi',
+      'skip frontswing',
+    ],
+    landings: landingPositions.round,
   },
 
 
@@ -257,7 +287,37 @@ const level4 = [
   },
 
   {
-    name: 'Btwist Wackknife',
+    name: 'B-twist Double Round',
+    setups: takeoffs.btwist,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'B-twist Hawkeye',
+    setups: takeoffs.btwist,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'B-twist Helicoptero',
+    setups: takeoffs.btwist,
+    landings: landingPositions.mega,
+  },
+
+  {
+    name: 'B-twist Shuriken Hyper Hook',
+    setups: takeoffs.btwist,
+    landings: landingPositions.hook,
+  },
+
+  {
+    name: 'B-twist Twist Kick',
+    setups: takeoffs.btwist,
+    landings: landingPositions.mega,
+  },
+
+  {
+    name: 'B-twist Wackknife',
     setups: takeoffs.btwist,
     landings: [
       'frontside punch',
@@ -278,7 +338,7 @@ const level4 = [
   },
 
   {
-    name: 'Double Btwist',
+    name: 'Double B-twist',
     setups: takeoffs.btwist,
     landings: landingPositions.eagle,
   },
@@ -344,6 +404,48 @@ const level4 = [
   },
 
   {
+    name: 'Gainer Triple',
+    setups: takeoffs.swing,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Gainer Wackknife',
+    setups: takeoffs.swing,
+    landings: landingPositions.hook,
+  },
+
+  {
+    name: 'G-Switch Hyper Hook',
+    setups: takeoffs.swing,
+    landings: landingPositions.hook,
+  },
+
+  {
+    name: 'Janitor Twist',
+    notStarter: true,
+    setups: ['backside punch', 'backside pop'],
+    landings: [
+      'frontside pop', 
+      'vanish', 
+      'skip round',
+      'left right redirect',
+    ],
+  },
+
+  {
+    name: 'Janitor Scissor Twist',
+    notStarter: true,
+    setups: ['backside punch', 'backside pop'],
+    landings: [
+      'frontside pop', 
+      'vanish', 
+      'skip round',
+      'left right redirect',
+    ],
+  },
+
+  {
     name: 'Popcorn',
     notStarter: true,
     setups: takeoffs.backFullTwist,
@@ -351,6 +453,18 @@ const level4 = [
       'backside punch',
       'reverse pop',
       'hyper',
+    ],
+  },
+
+  {
+    name: 'Rodeo Janitor Twist',
+    notStarter: true,
+    setups: ['backside punch', 'backside pop'],
+    landings: [
+      'frontside pop', 
+      'vanish', 
+      'skip round',
+      'left right redirect',
     ],
   },
 

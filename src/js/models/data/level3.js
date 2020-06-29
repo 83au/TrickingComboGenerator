@@ -82,17 +82,6 @@ const level3 = [
   },
 
   {
-    name: '900 Sidekick',
-    setups: [
-      'cheat', 
-      'right left redirect', 
-      'hook',
-      'vanish'
-    ],
-    landings: landingPositions.round,
-  },
-
-  {
     name: '1080',
     setups: [
       'cheat',
@@ -107,6 +96,15 @@ const level3 = [
   {
     name: 'Backside 9 Feilong',
     setups: ['backside punch', 'backside pop', 'inside pop'],
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Backside 900 Sidekick',
+    setups: [
+      'backside pop',
+      'backside punch',
+    ],
     landings: landingPositions.round,
   },
 
@@ -159,6 +157,23 @@ const level3 = [
     notFinisher: true,
     setups: ['reverse vanish', 'hook', 'mega'],
     landings: ['backside punch'],
+  },
+
+  {
+    name: 'Parafuso Hawkeye',
+    setups: [
+      'cheat', 
+      'vanish', 
+      'hook carry-through',
+      'right left redirect',
+      'hook'
+    ],
+    landings: [
+      'inside leg reversal',
+      'left right redirect',
+      'skip round',
+      'hook',
+    ],
   },
 
   {
@@ -246,6 +261,24 @@ const level3 = [
     name: 'Sailor Moon Reversao',
     setups: takeoffs.raiz,
     landings: landingPositions.round,
+  },
+
+  {
+    name: 'Spyder Twist',
+    setups: [
+      'vanish',
+      'outside leg reversal',
+      'hook carry-through',
+      'semi',
+      'skip frontswing',
+    ],
+    landings: [
+      'backside pop',
+      'frontside pop',
+      'vanish',
+      'skip round',
+      'skip frontswing',
+    ],
   },
 
   {
@@ -404,13 +437,19 @@ const level3 = [
   },
 
   {
-    name: 'B-twist Hyper',
+    name: 'B-twist Axe',
     setups: takeoffs.btwist,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions.mega,
   },
 
   {
-    name: 'B-twist Swipe',
+    name: 'B-twist DLeg',
+    setups: takeoffs.btwist,
+    landings: ['backside punch', 'invert backside punch'],
+  },
+
+  {
+    name: 'B-twist Hyper',
     setups: takeoffs.btwist,
     landings: landingPositions.invertedHyper,
   },
@@ -418,13 +457,19 @@ const level3 = [
   {
     name: 'B-twist Hyper Hook',
     setups: takeoffs.btwist,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions.hook,
   },
 
   {
-    name: 'B-twist DLeg',
+    name: 'B-twist Shuriken',
     setups: takeoffs.btwist,
-    landings: ['backside punch', 'invert backside punch'],
+    landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'B-twist Swipe',
+    setups: takeoffs.btwist,
+    landings: landingPositions.invertedHyper,
   },
 
   {
@@ -486,6 +531,30 @@ const level3 = [
       'skip backswing',
     ]),
     landings: landingPositions.round,
+  },
+
+  {
+    name: 'Dragonfly Moonkick',
+    setups: [
+      'back swing',
+      'left right redirect',
+      'round carry-through',
+      'reverse vanish',
+      'skip backswing',
+      'skip backswing',
+    ],
+    landings: landingPositions.hook.concat(['turbo']),
+  },
+
+  {
+    name: 'Flash Knife',
+    setups: [
+      'backside pop',
+      'invert backside pop',
+      'backside punch',
+      'invert backside punch',
+    ], // Pop is implied
+    landings: landingPositions.hook,
   },
 
   {
@@ -629,6 +698,15 @@ const level3 = [
   },
 
   {
+    name: 'Gainer X-out',
+    setups: takeoffs.swing.concat([
+      'skip backswing',
+      'skip backswing',
+    ]),
+    landings: ['backside punch'],
+  },
+
+  {
     name: 'Ironman Back Full',
     notStarter: true,
     setups: takeoffs.backFullTwist,
@@ -677,6 +755,20 @@ const level3 = [
       'invert backside punch',
       'complete',
     ],
+  },
+
+  {
+    name: 'Lonestar Hyper Hook',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.hook,
+  },
+
+  {
+    name: 'Lonestar Scissor',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.mega,
   },
 
   {
@@ -816,27 +908,27 @@ const level3 = [
     landings: landingPositions.eagle,
   },
 
-  // {
-  //   name: 'Double Flash Kick',
-  //   setups: [
-  //     'backside pop',
-  //     'invert backside pop',
-  //     'backside punch',
-  //     'invert backside punch',
-  //   ], // Pop is implied
-  //   landings: landingPositions.hyper,
-  // },
+  {
+    name: 'Double Flash Kick',
+    setups: [
+      'backside pop',
+      'invert backside pop',
+      'backside punch',
+      'invert backside punch',
+    ], // Pop is implied
+    landings: landingPositions.invertedHyper,
+  },
 
-  // {
-  //   name: 'Triple Flash Kick',
-  //   setups: [
-  //     'backside pop',
-  //     'invert backside pop',
-  //     'backside punch',
-  //     'invert backside punch',
-  //   ], // Pop is implied
-  //   landings: landingPositions.hyper,
-  // },
+  {
+    name: 'Triple Flash Kick',
+    setups: [
+      'backside pop',
+      'invert backside pop',
+      'backside punch',
+      'invert backside punch',
+    ], // Pop is implied
+    landings: landingPositions.invetedHyper,
+  },
 ];
 
 export default level3;

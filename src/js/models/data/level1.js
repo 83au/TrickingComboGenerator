@@ -96,6 +96,12 @@ const level1 = [
   },
 
   {
+    name: 'Hawkeye',
+    setups: ['inside leg reversal'],
+    landings: landingPositions.round,
+  },
+
+  {
     name: 'Narabong',
     setups: takeoffs.tornado,
     landings: landingPositions.hook,
