@@ -53,7 +53,6 @@ const level3 = [
       'cheat',
       'vanish',
       'right left redirect',
-      'skip round',
       'hook',
     ],
     landings: landingPositions.round,

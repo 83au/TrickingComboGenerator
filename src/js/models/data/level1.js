@@ -35,7 +35,14 @@ const level1 = [
 
   {
     name: 'Auto-Bahn',
-    setups: takeoffs.tornado,
+    setups: [
+      'vanish',
+      'hook carry-through',
+      'right left redirect',
+      'reverse pop',
+      'hook',
+      'cheat',
+  ],
     landings: landingPositions.hook,
   },
 
