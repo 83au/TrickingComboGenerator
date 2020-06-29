@@ -368,11 +368,17 @@ const level4 = [
   },
 
   {
-    name: 'Snapu Swipe',
+    name: 'Snapu',
     setups: takeoffs.raiz,
     landings: [ // hyper landing is implied
       'backside punch',
     ],
+  },
+
+  {
+    name: 'Swipe Knife',
+    setups: takeoffs.raiz,
+    landings: landingPositions.hook.concat(['turbo']),
   },
 
   {

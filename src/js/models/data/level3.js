@@ -195,6 +195,8 @@ const level3 = [
   },
 
   // TRANSITION TRICKS
+
+  // Aerial Mega variation
   {
     name: 'Aerial',
     setups: [
@@ -206,12 +208,6 @@ const level3 = [
     landings: [
       'mega',
     ],
-  },
-
-  {
-    name: 'Atwist',
-    setups: takeoffs.btwist.concat(['inside leg reversal', 'mega']),
-    landings: landingPositions.eagle,
   },
 
   {
@@ -241,25 +237,19 @@ const level3 = [
   },
 
   {
-    name: 'Raiz Scissor',
+    name: 'Raiz Reversao',
     setups: takeoffs.raiz,
     landings: landingPositions.round,
   },
 
   {
-    name: 'Sailor Moon Scissor',
+    name: 'Sailor Moon Reversao',
     setups: takeoffs.raiz,
     landings: landingPositions.round,
   },
 
   {
-    name: 'Td Atwist',
-    setups: takeoffs.btwist.concat(['inside leg reversal', 'mega']),
-    landings: landingPositions.eagle,
-  },
-
-  {
-    name: 'Td Raiz Swipe',
+    name: 'Td Swipe',
     setups: takeoffs.raiz,
     landings: landingPositions.hyper,
   },
@@ -282,6 +272,18 @@ const level3 = [
       'invert backside punch',
       'complete',
     ],
+  },
+
+  {
+    name: 'A-twist',
+    setups: takeoffs.btwist.concat(['inside leg reversal', 'mega']),
+    landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'A-twist Gumbi',
+    setups: takeoffs.btwist.concat(['inside leg reversal', 'mega']),
+    landings: landingPositions.eagle,
   },
 
   {
@@ -402,25 +404,25 @@ const level3 = [
   },
 
   {
-    name: 'Btwist Hyper',
+    name: 'B-twist Hyper',
     setups: takeoffs.btwist,
     landings: landingPositions.invertedHyper,
   },
 
   {
-    name: 'Btwist Swipe',
+    name: 'B-twist Swipe',
     setups: takeoffs.btwist,
     landings: landingPositions.invertedHyper,
   },
 
   {
-    name: 'Btwist Hyper Hook',
+    name: 'B-twist Hyper Hook',
     setups: takeoffs.btwist,
     landings: landingPositions.invertedHyper,
   },
 
   {
-    name: 'Btwist DLeg',
+    name: 'B-twist DLeg',
     setups: takeoffs.btwist,
     landings: ['backside punch', 'invert backside punch'],
   },
@@ -771,7 +773,13 @@ const level3 = [
   },
 
   {
-    name: 'TD Btwist',
+    name: 'Td A-twist',
+    setups: takeoffs.btwist.concat(['inside leg reversal', 'mega']),
+    landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'TD B-twist',
     setups: takeoffs.btwist.concat(['inside leg reversal', 'mega']),
     landings: landingPositions.eagle,
   },

@@ -205,6 +205,12 @@ const level2 = [
   },
 
   {
+    name: 'One-handed Cart Twist',
+    setups: takeoffs.cartwheel,
+    landings: ['backside punch', 'invert backside punch', 'reverse pop'],
+  },
+
+  {
     name: 'Coin Drop',
     notStarter: true,
     setups: [
@@ -341,7 +347,7 @@ const level2 = [
 
   {
     name: 'Butterfly Twist Round',
-    setups: takeoffs.btwist.concat(['missleg', 'inside leg reversal']),
+    setups: takeoffs.btwist.concat(['inside leg reversal']),
     landings: landingPositions.round,
   },
 

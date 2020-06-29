@@ -169,6 +169,12 @@ const level1 = [
   },
 
   {
+    name: 'One-handed Cartwheel',
+    setups: takeoffs.cartwheel,
+    landings: ['invert inside pop', 'wrap'],
+  },
+
+  {
     name: 'Kaydem',
     setups: ['reverse vanish'],
     landings: [
