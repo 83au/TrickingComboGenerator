@@ -37,12 +37,10 @@ const level3 = [
   {
     name: '900 Crowd Awakener',
     setups: [
-      [
       'cheat',
       'vanish',
       'right left redirect',
       'hook',
-    ],
     ],
     landings: ['backside punch', 'hook'],
   },

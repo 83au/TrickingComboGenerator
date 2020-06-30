@@ -15,8 +15,18 @@ init();
 
 
 function init() {
+  registerServiceWorker();
   reset();
   setEventListeners();
+}
+
+
+function registerServiceWorker() {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/service-worker.js')
+      .then(registration => console.log('service worker registered', registration))
+      .catch(err => console.log('service worker not registered', err));
+  }
 }
 
 
