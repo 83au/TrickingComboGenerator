@@ -2,8 +2,7 @@ const cacheName = 'app-shell';
 const assets = [
   '/',
   '/index.html',
-  '/js/main.9f4ae582d33ab94d5a79.bundle.js',
-  '/main.33182125e9d922feac74.css',
+  '/js/main.bundle.js',
   'https://fonts.googleapis.com/css?family=Bangers&display=swap'
 ];
 

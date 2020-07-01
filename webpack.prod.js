@@ -7,6 +7,7 @@ const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
 const common = require('./webpack.common');
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -31,6 +32,13 @@ module.exports = merge(common, {
         removeComments: true,
       },
     }),
+    new CopyPlugin({
+      patterns: [
+        { from: 'src/service-worker.js', to: 'service-worker.js' },
+        { from: 'src/manifest.webmanifest', to: 'manifest.webmanifest' },
+        { from: 'src/app-icons', to: 'app-icons' } 
+      ],
+    }),
   ],
   module: {
     rules: [
@@ -49,5 +57,8 @@ module.exports = merge(common, {
         ],
       },
     ],
+  },
+  devServer: {
+    writeToDisk: true,
   },
 });
