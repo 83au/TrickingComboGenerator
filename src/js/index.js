@@ -198,12 +198,14 @@ function redoTrick() {
   }, 2500);
 }
 
+
 function hideButtons() {
   DOM.redoBtn.classList.add('hide');
   DOM.nextTrickBtn.classList.add('hide');
   DOM.newCmbBtn.classList.add('hide');
   DOM.backBtn.classList.add('hide');
 }
+
 
 function nextTrick(event, delay) {
   hideButtons();
