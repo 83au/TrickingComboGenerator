@@ -127,7 +127,7 @@ const level3 = [
   },
 
   {
-    name: 'Hyper Feilong',
+    name: 'Feilong Hyper',
     setups: [
       'frontside pop',
       'frontside punch',
@@ -746,17 +746,6 @@ const level3 = [
       'vanish', 
       'skip round',
       'left right redirect',
-    ],
-  },
-
-  {
-    name: 'Kick Full',
-    notStarter: true,
-    setups: takeoffs.backFullTwist,
-    landings: [
-      'backside punch',
-      'invert backside punch',
-      'complete',
     ],
   },
 

@@ -237,6 +237,12 @@ const level4 = [
   },
 
   {
+    name: 'Back Double Full Round',
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.round,
+  },
+
+  {
     name: 'Back Full D-leg Hyper Hook',
     notStarter: true,
     setups: takeoffs.backFullTwist,
@@ -270,13 +276,106 @@ const level4 = [
   },
 
   {
+    name: 'Back Full Late Round',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Back Full Pike Round',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Back Full Rocketboii',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'hook',
+    ],
+  },
+
+  {
     name: 'Back Full Snapu',
     setups: takeoffs.backFullTwist,
     landings: [
       'backside punch',
-      'reverse pop',
-      'right first reverse pop',
+      'hook',
     ],
+  },
+
+  {
+    name: 'Back Full Shuriken Hyper Hook',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Back Full Swipeknife',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Back Full Up',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: [
+      'backside punch',
+      'hook',
+    ],
+  },
+
+  {
+    name: 'Back Ironman Full D-leg',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: [
+      'backside punch',
+      'hook',
+    ],
+  },
+
+  {
+    name: 'Back Ironman Full H.H.',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Back Ironman Full C.A.',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: [
+      'backside punch',
+      'hook',
+    ],
+  },
+
+  {
+    name: 'Back Rodeo Full D-leg',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: [
+      'backside punch',
+      'complete',
+      'hook',
+    ],
+  },
+
+  {
+    name: 'Back Rodeo Full Shuriken',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.round,
   },
 
   {
@@ -357,6 +456,13 @@ const level4 = [
   },
 
   {
+    name: 'Double Full Round',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.round,
+  },
+
+  {
     name: 'Full Dleg Hyper Hook',
     setups: takeoffs.insideFullTwist,
     landings: landingPositions.invertedHyper,
@@ -367,23 +473,61 @@ const level4 = [
     setups: takeoffs.insideFullTwist,
     landings: [
       'backside punch',
-      'backside punch',
-      'reverse pop',
+      'hook',
     ],
   },
 
   {
-    name: 'Full Snapu',
+    name: 'Full Late Round',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Full Pike Round',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Full Rocketboii',
     notStarter: true,
     setups: takeoffs.insideFullTwist,
     landings: [
       'backside punch',
-      'reverse pop',
+      'invert backside punch',
+      'hook',
     ],
   },
 
   {
-    name: 'Full Swipe Knife',
+    name: 'Full Shuriken Hyper Hook',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Full Swipeknife',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Ironman Full D-leg',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: [
+      'backside punch',
+      'hook',
+    ],
+  },
+
+  {
+    name: 'Ironman Full Hyper Hook',
     notStarter: true,
     setups: takeoffs.insideFullTwist,
     landings: landingPositions.invertedHyper,
@@ -395,7 +539,33 @@ const level4 = [
     setups: takeoffs.insideFullTwist,
     landings: [
       'backside punch',
-      'reverse pop',
+      'hook'
+    ],
+  },
+
+  {
+    name: 'Full Snapu',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: [
+      'backside punch',
+      'hook',
+    ],
+  },
+
+  {
+    name: 'Full Swipe Knife',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Full Up',
+    setups: takeoffs.insideFullTwist,
+    landings: [
+      'backside punch',
+      'hook',
     ],
   },
 
@@ -425,7 +595,17 @@ const level4 = [
   {
     name: 'G-Switch Hyper Hook',
     setups: takeoffs.swing,
-    landings: landingPositions.hook,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Ironman Full Crowd Awakener',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: [
+      'backside punch',
+      'hook',
+    ],
   },
 
   {
@@ -453,6 +633,17 @@ const level4 = [
   },
 
   {
+    name: 'Kick Full',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
     name: 'Popcorn',
     notStarter: true,
     setups: takeoffs.backFullTwist,
@@ -461,6 +652,23 @@ const level4 = [
       'reverse pop',
       'hyper',
     ],
+  },
+
+  {
+    name: 'Rodeo Full D-leg',
+    setups: takeoffs.insideFullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'complete',
+    ],
+  },
+
+  {
+    name: 'Rodeo Full Shuriken',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.round,
   },
 
   {
@@ -499,7 +707,7 @@ const level4 = [
   {
     name: 'Swipe Knife',
     setups: takeoffs.raiz,
-    landings: landingPositions.hook.concat(['turbo']),
+    landings: landingPositions.invertedHyper,
   },
 
   {

@@ -3,6 +3,7 @@ const assets = [
   '/',
   '/index.html',
   '/js/main.bundle.js',
+  '/main.css',
   'https://fonts.googleapis.com/css?family=Bangers&display=swap'
 ];
 
