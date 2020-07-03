@@ -237,6 +237,27 @@ const level4 = [
   },
 
   {
+    name: 'Back Dub Full Hyper',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Back Dub Full Swipe',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Back Dub Full Hyper Hook',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
     name: 'Back Double Full Round',
     setups: takeoffs.backFullTwist,
     landings: landingPositions.round,
@@ -399,6 +420,12 @@ const level4 = [
   },
 
   {
+    name: 'Boxcutter Turbo',
+    setups: takeoffs.swing,
+    landings: landingPositions.turbo,
+  },
+
+  {
     name: 'B-twist Double Round',
     setups: takeoffs.btwist,
     landings: landingPositions.round,
@@ -433,6 +460,30 @@ const level4 = [
   },
 
   {
+    name: 'Cork Crowd Awakener',
+    setups: takeoffs.swing,
+    landings: ['backside punch', 'hook', 'complete'],
+  },
+
+  {
+    name: 'Cork D-leg Hyper Hook',
+    setups: takeoffs.swing,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Cork Feilong',
+    setups: takeoffs.swing,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Cork Sidewinder',
+    setups: takeoffs.swing,
+    landings: landingPositions.eagle,
+  },
+
+  {
     name: 'Double Back Tuck',
     notStarter: true,
     setups: ['invert backside punch'],
@@ -453,6 +504,39 @@ const level4 = [
     name: 'Double Cork',
     setups: takeoffs.swing,
     landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Double Full Hyper',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Double Full Swipe',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Dragonfly Boxcutter',
+    setups: takeoffs.swing,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Dragonfly Cork D-leg',
+    setups: takeoffs.swing,
+    landings: ['backside punch', 'hook'],
+  },
+
+  {
+    name: 'Dub Full Hyper Hook',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.invertedHyper,
   },
 
   {
@@ -641,6 +725,12 @@ const level4 = [
       'invert backside punch',
       'complete',
     ],
+  },
+
+  {
+    name: 'Outstretched Cork',
+    setups: takeoffs.swing,
+    landings: landingPositions.eagle,
   },
 
   {

@@ -440,6 +440,12 @@ const level3 = [
   },
 
   {
+    name: 'Boxcutter',
+    setups: takeoffs.swing,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
     name: 'B-twist Axe',
     setups: takeoffs.btwist,
     landings: landingPositions.mega,
@@ -476,21 +482,9 @@ const level3 = [
   },
 
   {
-    name: 'Boxcutter',
-    setups: takeoffs.swing,
-    landings: landingPositions.invertedHyper,
-  },
-
-  {
     name: 'Cork D-leg',
     setups: takeoffs.swing,
     landings: ['backside punch', 'invert backside punch'],
-  },
-
-  {
-    name: 'Cork Feilong',
-    setups: takeoffs.swing,
-    landings: landingPositions.round,
   },
 
   {

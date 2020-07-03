@@ -88,22 +88,27 @@ const landingPositions = {
   turbo: [
     'frontside punch',
     'right first reverse pop',
+    'hook',
   ],
 
   'gyro frontside': [
     'frontside punch',
+    'hook',
   ],
 
   'gyro backside': [
     'backside punch',
+    'hook',
   ],
 
   'half gyro frontside': [
     'frontside punch',
+    'hook',
   ],
 
   'half gyro backside': [
     'backside punch',
+    'hook',
   ],
 
   'rapid round': [

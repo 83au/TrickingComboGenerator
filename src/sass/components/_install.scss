@@ -12,14 +12,20 @@
 
   &__promo {
     margin: 1rem 0;
+    letter-spacing: 1px;
     font-size: 2rem;
   }
 
   &__close {
     position: absolute;
-    right: 1rem;
+    right: 2rem;
     top: 1rem;
     cursor: pointer;
     font-size: 3rem;
+
+    &:hover {
+      opacity: .8;
+      transform: scale(1.1);
+    }
   }
 }
