@@ -30,6 +30,8 @@ function registerServiceWorker() {
 }
 
 
+
+
 function reset() {
   state.mode = 'start';
   state.currTrick = undefined;
@@ -49,6 +51,10 @@ function reset() {
 
 
 function setEventListeners() {
+  window.addEventListener('beforeinstallprompt', handleInstallBanner);
+  window.addEventListener('appinstalled', trackInstall);
+  DOM.installClose.addEventListener('click', closeInstallBanner);
+  DOM.installBtn.addEventListener('click', handleInstall);
   DOM.buildCmbBtn.addEventListener('click', setBuildMode);
   DOM.buildDiffContainer.addEventListener('animationend', e => animateButtons(e));
   DOM.generateTrickBtn.addEventListener('click', createAndDisplayTrick);
@@ -58,6 +64,52 @@ function setEventListeners() {
   DOM.randomCmbBtn.addEventListener('click', setRandomMode);
   DOM.generateCmbBtn.addEventListener('click', generateCombo);
   DOM.backBtn.addEventListener('click', backToStart);
+}
+
+
+function handleInstallBanner(event) {
+  console.log('beforeinstallprompt:', event);
+
+  // Stash the event so it can be triggered later
+  window.deferredPrompt = event;
+
+  // Show custom install prompt
+  DOM.installBanner.classList.remove('hide');
+}
+
+
+function trackInstall(event) {
+  console.log('app installed', event);
+}
+
+
+function closeInstallBanner() {
+  DOM.installBanner.classList.add('hide');
+}
+
+
+function handleInstall() {
+  console.log('install button clicked');
+  
+  const promptEvent = window.deferredPrompt;
+
+  if (!promptEvent) {
+    return;
+  }
+
+  // Show install prompt
+  promptEvent.prompt();
+
+  // Log result
+  promptEvent.userChoice.then(result => {
+    console.log('user choice:', result);
+
+    // Reset deferredPrompt variable
+    window.deferredPrompt = null;
+
+    // Hide install banner
+    DOM.installBanner.classList.add('hide');    
+  });
 }
 
 

@@ -1,3 +1,4 @@
+@import "abstracts/variables";
 @import "abstracts/mixins";
 
 @import "pages/start";
@@ -10,4 +11,5 @@
 @import "components/buttons";
 @import "components/choices";
 @import "components/trick";
+@import "components/install";
 @import "components/hide"; // Must be last

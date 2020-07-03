@@ -4,6 +4,9 @@ export const elements = {
   startScreen: document.querySelector('.start-screen'),
   buildComboLine: document.querySelector('buildComboBox hr'),
   trickElement: document.querySelector('.trick'),
+  installBanner: document.querySelector('.install'),
+  installBtn: document.querySelector('.install__btn'),
+  installClose: document.querySelector('.install__close'),
 
   // Build Combo elements
   buildCmbBtn: document.getElementById('buildComboOption'),

@@ -1,0 +1,25 @@
+.install {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 4rem 1rem 1rem 1rem;
+  background: var(--blue);
+  color: white;
+  text-align: center;
+
+  animation: up 1s forwards;
+
+  &__promo {
+    margin: 1rem 0;
+    font-size: 2rem;
+  }
+
+  &__close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    cursor: pointer;
+    font-size: 3rem;
+  }
+}
