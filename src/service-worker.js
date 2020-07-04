@@ -10,8 +10,6 @@ const assets = [
 
 // Listen for install event
 self.addEventListener('install', event => {
-  console.log('service worker has been installed');
-
   // Cache assets
   event.waitUntil(
     caches.open(cacheName)
@@ -40,7 +38,7 @@ self.addEventListener('activate', event => {
 });
 
 
-// Request proxy
+// Listen for fetch and intercept
 self.addEventListener('fetch', event => {
   // Check cache for request
   event.respondWith(

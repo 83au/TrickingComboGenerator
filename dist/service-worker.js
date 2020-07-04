@@ -1,4 +1,4 @@
-const cacheName = 'app-shell-v1.1';
+const cacheName = 'app-shell-v1.8';
 const assets = [
   '/',
   '/index.html',
@@ -7,10 +7,10 @@ const assets = [
   'https://fonts.googleapis.com/css?family=Bangers&display=swap'
 ];
 
+
 // Listen for install event
 self.addEventListener('install', event => {
-  console.log('service worker has been installed');
-
+  // Cache assets
   event.waitUntil(
     caches.open(cacheName)
       .then(cache => {
@@ -20,10 +20,9 @@ self.addEventListener('install', event => {
   )
 });
 
+
 // Listen for activate event
 self.addEventListener('activate', event => {
-  // console.log('service worker has been activated');
-
   // Delete old cache
   event.waitUntil(
     caches.keys().then(keys => {
@@ -38,10 +37,10 @@ self.addEventListener('activate', event => {
   );
 });
 
-// Install event
-self.addEventListener('fetch', event => {
-  // console.log('fetch event', event);
 
+// Listen for fetch and intercept
+self.addEventListener('fetch', event => {
+  // Check cache for request
   event.respondWith(
     caches.match(event.request)
       .then(cacheRes => {

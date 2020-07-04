@@ -30,8 +30,6 @@ function registerServiceWorker() {
 }
 
 
-
-
 function reset() {
   state.mode = 'start';
   state.currTrick = undefined;
