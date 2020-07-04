@@ -36,8 +36,7 @@ module.exports = merge(common, {
       patterns: [
         { from: 'src/service-worker.js', to: 'service-worker.js' },
         { from: 'src/manifest.webmanifest', to: 'manifest.webmanifest' },
-        { from: 'src/app-icons', to: 'app-icons' },
-        { from: 'src/web.config', to: 'web.config' }
+        { from: 'src/app-icons', to: 'app-icons' }
       ],
     }),
   ],
