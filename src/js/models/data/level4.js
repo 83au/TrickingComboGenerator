@@ -548,6 +548,7 @@ const level4 = [
 
   {
     name: 'Full Dleg Hyper Hook',
+    notStarter: true,
     setups: takeoffs.insideFullTwist,
     landings: landingPositions.invertedHyper,
   },
