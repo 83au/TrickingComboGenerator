@@ -229,6 +229,18 @@ const level3 = [
   },
 
   {
+    name: 'Scrubba',
+    setups: takeoffs.raiz,
+    landings: ['broken'],
+  },
+
+  {
+    name: 'TDRaiz',
+    setups: takeoffs.raiz,
+    landings: ['broken'],
+  },
+
+  {
     name: 'Envergado',
     setups: takeoffs.raiz,
     landings: [
@@ -255,9 +267,33 @@ const level3 = [
   },
 
   {
+    name: 'Raiz Hyper Hook',
+    setups: takeoffs.raiz,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
     name: 'Raiz Reversao',
     setups: takeoffs.raiz,
     landings: landingPositions.round,
+  },
+
+  {
+    name: 'Sailor Gumbi',
+    setups: takeoffs.raiz,
+    landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Sailor Moon Hawkeye',
+    setups: takeoffs.raiz,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Sailor Moon Hyper Hook',
+    setups: takeoffs.raiz,
+    landings: landingPositions.invertedHyper,
   },
 
   {
@@ -472,7 +508,7 @@ const level3 = [
   {
     name: 'B-twist Shuriken',
     setups: takeoffs.btwist,
-    landings: landingPositions.eagle,
+    landings: landingPositions.mega.concat('complete'),
   },
 
   {
@@ -734,7 +770,7 @@ const level3 = [
   {
     name: 'Janitor Flip',
     notStarter: true,
-    setups: ['backside punch', 'backside pop'],
+    setups: ['backside punch'],
     landings: [
       'frontside pop', 
       'vanish', 
@@ -766,6 +802,12 @@ const level3 = [
       'invert backside punch',
       'complete',
     ],
+  },
+
+  {
+    name: 'Lotus Double Leg',
+    setups: takeoffs.swing,
+    landings: ['backside punch', 'invert backside punch', 'hyper'],
   },
 
   {
@@ -824,6 +866,12 @@ const level3 = [
   {
     name: 'Sideswipe',
     setups: takeoffs.raiz,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Swipe',
+    setups: ['frontside pop', 'frontside punch'],
     landings: landingPositions.invertedHyper,
   },
 
@@ -914,6 +962,17 @@ const level3 = [
       'invert backside punch',
     ], // Pop is implied
     landings: landingPositions.invetedHyper,
+  },
+
+  {
+    name: 'Webster Half',
+    setups: [
+      'reverse vanish',
+      'mega',
+    ],
+    landings: [
+      'backside punch',
+    ],
   },
 ];
 

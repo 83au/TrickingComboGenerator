@@ -16,8 +16,10 @@ init();
 
 function init() {
   registerServiceWorker();
+  // addNotifications();
   reset();
   setEventListeners();
+  // showNotification();
 }
 
 
@@ -28,6 +30,22 @@ function registerServiceWorker() {
       .catch(err => console.log('service worker not registered', err));
   }
 }
+
+
+// function addNotifications() {
+//   Notification.requestPermission(status => {
+//     console.log('Notifications status: ', status);
+//   });
+// }
+
+
+// function showNotification() {
+//   if (Notification.permission === 'granted') {
+//     navigator.serviceWorker.ready.then(reg => {
+//       reg.showNotification('Hello World!');
+//     });
+//   }
+// }
 
 
 function reset() {
@@ -90,10 +108,7 @@ function handleInstall() {
   console.log('install button clicked');
   
   const promptEvent = window.deferredPrompt;
-
-  if (!promptEvent) {
-    return;
-  }
+  if (!promptEvent) return;
 
   // Show install prompt
   promptEvent.prompt();

@@ -13,7 +13,7 @@ module.exports = merge(common, {
   mode: 'production',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'js/main.bundle.js',
+    filename: 'js/main.[hash].bundle.js',
   },
   optimization: {
     minimizer: [
@@ -22,7 +22,7 @@ module.exports = merge(common, {
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: '[name].css' }),
+    new MiniCssExtractPlugin({ filename: '[name].[hash].css' }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './src/template.html',

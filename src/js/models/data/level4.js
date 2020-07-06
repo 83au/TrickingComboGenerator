@@ -217,6 +217,16 @@ const level4 = [
   },
 
   {
+    name: 'Sailor Moon Wackknife',
+    setups: takeoffs.raiz,
+    landings: [
+      'frontside punch', 
+      'reverse pop', 
+      'right first reverse pop',
+    ],
+  },
+
+  {
     name: 'Spyder Twist Round',
     setups: [
       'vanish',
@@ -234,6 +244,12 @@ const level4 = [
     name: '720 Twist (Barrel Roll)',
     setups: ['cheat', 'vanish'],
     landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Crack Knife',
+    setups: takeoffs.raiz,
+    landings: landingPositions.hook.concat(['turbo']),
   },
 
   {
@@ -696,7 +712,7 @@ const level4 = [
   {
     name: 'Janitor Twist',
     notStarter: true,
-    setups: ['backside punch', 'backside pop'],
+    setups: ['backside punch'],
     landings: [
       'frontside pop', 
       'vanish', 
@@ -708,7 +724,7 @@ const level4 = [
   {
     name: 'Janitor Scissor Twist',
     notStarter: true,
-    setups: ['backside punch', 'backside pop'],
+    setups: ['backside punch'],
     landings: [
       'frontside pop', 
       'vanish', 
@@ -726,6 +742,24 @@ const level4 = [
       'invert backside punch',
       'complete',
     ],
+  },
+
+  {
+    name: 'Lotus Crowd Awakener',
+    setups: takeoffs.swing,
+    landings: landingPositions.mega.concat('complete'),
+  },
+
+  {
+    name: 'Lotus Rodeo',
+    setups: takeoffs.swing,
+    landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Lotus Shuriken',
+    setups: takeoffs.swing,
+    landings: landingPositions.mega.concat('complete'),
   },
 
   {
@@ -798,6 +832,13 @@ const level4 = [
   {
     name: 'Swipe Knife',
     setups: takeoffs.raiz,
+    landings: landingPositions.invertedHyper,
+  },
+
+  // Pop swipe knife variation
+  {
+    name: 'Swipe Knife',
+    setups: ['frontside pop', 'frontside punch'],
     landings: landingPositions.invertedHyper,
   },
 

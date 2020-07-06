@@ -109,7 +109,6 @@ const level2 = [
     name: 'Swing 360 Crescent',
     setups: [
       'back swing',
-      'reverse vanish',
       'round carry-through',
       'inside leg reversal',
       'left right redirect',
@@ -130,7 +129,6 @@ const level2 = [
     name: 'Swing 900 Kick',
     setups: [
       'back swing',
-      'reverse vanish',
       'round carry-through',
       'inside leg reversal',
       'left right redirect',
@@ -277,6 +275,12 @@ const level2 = [
     name: 'Sailor Moon Round',
     setups: takeoffs.raiz,
     landings: landingPositions.round,
+  },
+
+  {
+    name: 'Scrubba',
+    setups: takeoffs.raiz,
+    landings: landingPositions.eagle,
   },
 
   {

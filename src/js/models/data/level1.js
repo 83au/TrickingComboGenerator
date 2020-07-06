@@ -221,13 +221,13 @@ const level1 = [
 
   {
     name: 'Scoot',
-    setups: ['skip round', 'semi', 'hook', 'hook to scoot'],
+    setups: ['skip round', 'semi', 'hook'],
     landings: landingPositions.eagle,
   },
 
   {
     name: 'Scoot Hyper',
-    setups: ['skip round', 'semi', 'hook', 'hook to scoot'],
+    setups: ['skip round', 'semi', 'hook'],
     landings: landingPositions.hyper,
   },
 
