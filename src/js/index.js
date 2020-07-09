@@ -79,7 +79,7 @@ function handleInstallBanner(event) {
 function trackInstall(event) {
   console.log('app installed', event);
   gtag('event', 'install', {
-    'event_label': 'app install'
+    'event_category': 'app install'
   });
 }
 

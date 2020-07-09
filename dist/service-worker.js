@@ -1,9 +1,9 @@
-const cacheName = 'app-shell-v1.2';
+const cacheName = 'app-shell-v1.1';
 const assets = [
   '/',
   '/index.html',
-  '/js/main.f2f22c9a0b9b696b9159.bundle.js',
-  '/main.f2f22c9a0b9b696b9159.css',
+  '/js/main.16bf20aab20be7eb6a39.bundle.js',
+  '/main.16bf20aab20be7eb6a39.css',
   'https://fonts.googleapis.com/css?family=Bangers&display=swap'
 ];
 
