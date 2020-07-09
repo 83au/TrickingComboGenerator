@@ -1,4 +1,4 @@
-const cacheName = 'app-shell-v1.1';
+const cacheName = 'app-shell-v1';
 const assets = [
   '/',
   '/index.html',
@@ -23,6 +23,8 @@ self.addEventListener('install', event => {
 
 // Listen for activate event
 self.addEventListener('activate', event => {
+  console.log('Service worker activated');
+
   // Delete old cache
   event.waitUntil(
     caches.keys().then(keys => {

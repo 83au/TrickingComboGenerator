@@ -67,7 +67,7 @@ function setEventListeners() {
 
 function handleInstallBanner(event) {
   // Prevent mini-infobar from appearing on mobile
-  e.preventDefault();
+  event.preventDefault();
 
   // Stash the event so it can be triggered later
   window.deferredPrompt = event;
