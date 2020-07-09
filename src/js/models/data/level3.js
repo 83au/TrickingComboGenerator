@@ -465,7 +465,7 @@ const level3 = [
   {
     name: 'Boneless Gainer',
     notStarter: true,
-    setups: ['Cartwheel'],
+    setups: ['reverse vanish'],
     landings: [ // Hyper is implied
       'inside pop',
       'invert inside pop',
@@ -546,6 +546,12 @@ const level3 = [
     notStarter: true,
     setups: takeoffs.insideFullTwist,
     landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Double Leg Hyper Hook',
+    setups: ['outside pop', 'outside punch', 'frontside punch', 'invert frontside punch'],
+    landings: landingPositions.hook,
   },
 
   {

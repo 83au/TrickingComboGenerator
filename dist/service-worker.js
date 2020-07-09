@@ -1,9 +1,9 @@
-const cacheName = 'app-shell-v1.8';
+const cacheName = 'app-shell-v1.2';
 const assets = [
   '/',
   '/index.html',
-  '/js/main.bundle.js',
-  '/main.css',
+  '/js/main.f2f22c9a0b9b696b9159.bundle.js',
+  '/main.f2f22c9a0b9b696b9159.css',
   'https://fonts.googleapis.com/css?family=Bangers&display=swap'
 ];
 
@@ -48,3 +48,5 @@ self.addEventListener('fetch', event => {
     })
   )
 });
+
+

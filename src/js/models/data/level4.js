@@ -238,6 +238,12 @@ const level4 = [
     landings: landingPositions.round,
   },
 
+  {
+    name: 'TD Raiz Twist',
+    setups: takeoffs.raiz,
+    landings: ['backside punch', 'invert backside punch', 'reverse pop'],
+  },
+
 
   // FLIPS & TWISTS
   {
@@ -431,7 +437,7 @@ const level4 = [
   {
     name: 'Boneless Cork',
     notStarter: true,
-    setups: ['Cartwheel'],
+    setups: ['reverse vanish'],
     landings: landingPositions.eagle,
   },
 
