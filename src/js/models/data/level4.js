@@ -217,6 +217,21 @@ const level4 = [
   },
 
   {
+    name: 'Master Swipe Helicoptero',
+    setups: [
+      'master swing',  
+      'skip masterswing', 
+      'vanish'
+    ],
+    landings: [
+      'inside leg reversal',
+      'left right redirect',
+      'skip round',
+      'hook',
+    ],
+  },
+
+  {
     name: 'Sailor Moon Wackknife',
     setups: takeoffs.raiz,
     landings: [
@@ -250,6 +265,17 @@ const level4 = [
     name: '720 Twist (Barrel Roll)',
     setups: ['cheat', 'vanish'],
     landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Aerial Scissor',
+    setups: [
+      'reverse vanish',
+      'inside leg reversal',
+      'hook',
+      'mega',
+    ],
+    landings: ['vanish', 'skip round', 'frontside pop', 'hook'],
   },
 
   {
@@ -700,6 +726,39 @@ const level4 = [
   },
 
   {
+    name: 'GMS Knife',
+    notStarter: true,
+    setups: [
+      'master swing',
+      'hook',
+      'skip masterswing',
+      'vanish'],
+    landings: landingPositions.hyper,
+  },
+
+  {
+    name: 'Grand Master Scoot',
+    notStarter: true,
+    setups: [
+      'master swing',
+      'hook',
+      'skip masterswing',
+      'vanish'],
+    landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Grand Master Twist',
+    notStarter: true,
+    setups: [
+      'master swing',
+      'hook',
+      'skip masterswing',
+      'vanish'],
+    landings: ['backside punch'],
+  },
+
+  {
     name: 'G-Switch Hyper Hook',
     setups: takeoffs.swing,
     landings: landingPositions.invertedHyper,
@@ -849,10 +908,50 @@ const level4 = [
   },
 
   {
+    name: 'Tak Full Swipe',
+    setups: ['turn step', 'vanish'],
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'TD Tak Full',
+    setups: ['turn step', 'vanish'],
+    landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'TD Wrap Full',
+    notStarter: true,
+    setups: ['turn step', 'wrap'],
+    landings: landingPositions.eagle,
+  },
+
+  {
     name: 'Triple Full',
     notStarter: true,
     setups: takeoffs.insideFullTwist,
     landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Wrap Full D-leg',
+    notStarter: true,
+    setups: ['turn step', 'wrap'],
+    landings: ['backside punch'],
+  },
+
+  {
+    name: 'Wrap Full Round',
+    notStarter: true,
+    setups: ['turn step', 'wrap'],
+    landings: [
+      'inside leg reversal',
+      'left right redirect',
+      'skip round', 
+      'vanish',
+      'hook',
+      'outside pop', 
+    ],
   },
 ];
 
