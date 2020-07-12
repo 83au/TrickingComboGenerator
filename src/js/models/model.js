@@ -101,5 +101,5 @@ export function searchLevels(level, landing, prevTrick) {
   const filteredList = filterTrickList(level, landing, prevTrick);
 
   // If couldn't filter, then search the next level, otherwise return the filtered list
-  return filteredList.length ? filteredList : searchLevels(`level${levelNum + 1}`, landing);
+  return filteredList.length ? filteredList : searchLevels(`level${levelNum + 1}`, landing, prevTrick);
 }

@@ -457,7 +457,12 @@ const level4 = [
   {
     name: 'B-kick Helicoptero',
     setups: takeoffs.btwist,
-    landings: landingPositions.mega,
+    landings: [
+      'vanish',
+      'skip round',
+      'left right redirect',
+      'inside leg reversal',
+    ],
   },
 
   {
