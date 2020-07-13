@@ -1,9 +1,10 @@
-const cacheName = 'app-shell-v1';
+const cacheName = 'app-shell-v1.2';
 const assets = [
   '/',
   '/index.html',
-  '/js/main.2fb3fbcf4fb062d7812a.bundle.js',
-  '/main.2fb3fbcf4fb062d7812a.css',
+  '/js/main.cfcac4588706de18c15e.bundle.js',
+  '/main.cfcac4588706de18c15e.css',
+  '/assets/icon-spritesheet.svg',
   'https://fonts.googleapis.com/css?family=Bangers&display=swap'
 ];
 

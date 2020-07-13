@@ -111,7 +111,7 @@ const level3 = [
       'backside pop',
       'inside pop',
     ],
-    landings: landingPositions.hook.concat(['rapid round', 'hyper']),
+    landings: landingPositions.hook.concat(['rapid round']),
   },
 
   {
@@ -235,7 +235,7 @@ const level3 = [
   },
 
   {
-    name: 'TDRaiz',
+    name: 'Td Raiz',
     setups: takeoffs.raiz,
     landings: ['broken'],
   },
@@ -542,6 +542,17 @@ const level3 = [
   },
 
   {
+    name: 'Double Flash Kick',
+    setups: [
+      'backside pop',
+      'invert backside pop',
+      'backside punch',
+      'invert backside punch',
+    ], // Pop is implied
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
     name: 'Double Full',
     notStarter: true,
     setups: takeoffs.insideFullTwist,
@@ -729,7 +740,6 @@ const level3 = [
   {
     name: 'Gainer Switch',
     setups: takeoffs.swing.concat([
-      'reverse vanish',
       'skip backswing',
       'skip backswing',
     ]),
@@ -917,7 +927,7 @@ const level3 = [
   },
 
   {
-    name: 'TD Cork',
+    name: 'Td Cork',
     setups: [
       'back swing',
       'left right redirect',
@@ -929,7 +939,7 @@ const level3 = [
   },
 
   {
-    name: 'TD Full',
+    name: 'Td Full',
     setups: takeoffs.insideFullTwist,
     landings: landingPositions.eagle,
   },
@@ -946,17 +956,6 @@ const level3 = [
     notStarter: true,
     setups: ['turn step', 'wrap'],
     landings: landingPositions.eagle,
-  },
-
-  {
-    name: 'Double Flash Kick',
-    setups: [
-      'backside pop',
-      'invert backside pop',
-      'backside punch',
-      'invert backside punch',
-    ], // Pop is implied
-    landings: landingPositions.invertedHyper,
   },
 
   {

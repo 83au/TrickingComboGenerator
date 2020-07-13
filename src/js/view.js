@@ -7,6 +7,8 @@ export const elements = {
   installBanner: document.querySelector('.install'),
   installBtn: document.querySelector('.install__btn'),
   installClose: document.querySelector('.install__close'),
+  iosInstallPopup: document.querySelector('.ios-install'),
+  iosInstallClose: document.querySelector('.ios-install__close'),
 
   // Build Combo elements
   buildCmbBtn: document.getElementById('buildComboOption'),
@@ -186,8 +188,8 @@ function createConnector(container, mode) {
   }
 
   const html = `
-    <svg class="connector__arrow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14.5">
-      <path d="M6.5,14.5,0,8H3.5V0h6V8H13Z"/>
+    <svg class="connector__arrow">
+      <use xlink:href="icon-spritesheet.svg#icon-arrow-down"></use>
     </svg>
   `;
   connector.insertAdjacentHTML('afterbegin', html);

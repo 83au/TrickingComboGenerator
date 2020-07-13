@@ -70,6 +70,20 @@ const level4 = [
     landings: landingPositions.hyper,
   },
 
+  {
+    name: 'Backside 1080 Hyper',
+    setups: [
+      'backside pop',
+      'inside pop',
+    ],
+    landings: [
+      'vanish',
+      'skip round',
+      'left right redirect',
+      'inside leg reversal',
+    ],
+  },
+
   // EXPERT
   // {
   //   name: 'Backside 1080 Jackknife',
@@ -254,7 +268,7 @@ const level4 = [
   },
 
   {
-    name: 'TD Raiz Twist',
+    name: 'Td Raiz Twist',
     setups: takeoffs.raiz,
     landings: ['backside punch', 'invert backside punch', 'reverse pop'],
   },
@@ -267,16 +281,17 @@ const level4 = [
     landings: landingPositions.eagle,
   },
 
-  {
-    name: 'Aerial Scissor',
-    setups: [
-      'reverse vanish',
-      'inside leg reversal',
-      'hook',
-      'mega',
-    ],
-    landings: ['vanish', 'skip round', 'frontside pop', 'hook'],
-  },
+  // PRO
+  // {
+  //   name: 'Aerial Scissor',
+  //   setups: [
+  //     'reverse vanish',
+  //     'inside leg reversal',
+  //     'hook',
+  //     'mega',
+  //   ],
+  //   landings: ['vanish', 'skip round', 'frontside pop', 'hook'],
+  // },
 
   {
     name: 'Crack Knife',

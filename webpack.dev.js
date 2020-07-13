@@ -18,8 +18,9 @@ module.exports = merge(common, {
       patterns: [
         { from: 'src/service-worker.js', to: 'service-worker.js' },
         { from: 'src/manifest.webmanifest', to: 'manifest.webmanifest' },
-        { from: 'src/app-icons', to: 'app-icons' },
-        { from: 'src/apple-splash', to: 'apple-splash' } 
+        { from: 'src/assets/app-icons', to: 'app-icons' },
+        { from: 'src/assets/apple-splash', to: 'apple-splash' },
+        { from: 'src/assets/icon-spritesheet.svg', to: 'icon-spritesheet.svg' }
       ],
     }),
   ],

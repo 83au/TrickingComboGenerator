@@ -17,6 +17,7 @@ init();
 function init() {
   registerServiceWorker();
   reset();
+  initInstallPopup();
   setEventListeners();
 }
 
@@ -48,10 +49,28 @@ function reset() {
 }
 
 
+function initInstallPopup() {
+  // Detects if device is on iOS 
+  const isIos = () => {
+    const userAgent = window.navigator.userAgent.toLowerCase();
+    return /iphone|ipad|ipod/.test( userAgent );
+  }
+
+  // Detects if device is in standalone mode
+  const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+
+  // Checks if should display install popup notification:
+  if (isIos() && !isInStandaloneMode()) {
+    DOM.iosInstallPopup.classList.remove('hide');
+  }
+}
+
+
 function setEventListeners() {
   window.addEventListener('beforeinstallprompt', handleInstallBanner);
   window.addEventListener('appinstalled', trackInstall);
   DOM.installClose.addEventListener('click', closeInstallBanner);
+  DOM.iosInstallClose.addEventListener('click', closeIosPopup);
   DOM.installBtn.addEventListener('click', handleInstall);
   DOM.buildCmbBtn.addEventListener('click', setBuildMode);
   DOM.buildDiffContainer.addEventListener('animationend', e => animateButtons(e));
@@ -66,6 +85,8 @@ function setEventListeners() {
 
 
 function handleInstallBanner(event) {
+  console.log('beforeinstallpromt fired');
+
   // Prevent mini-infobar from appearing on mobile
   event.preventDefault();
 
@@ -87,6 +108,11 @@ function trackInstall(event) {
 
 function closeInstallBanner() {
   DOM.installBanner.classList.add('hide');
+}
+
+
+function closeIosPopup() {
+  DOM.iosInstallPopup.classList.add('hide');
 }
 
 
