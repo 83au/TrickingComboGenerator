@@ -945,6 +945,17 @@ const level3 = [
   },
 
   {
+    name: 'Triple Flash Kick',
+    setups: [
+      'backside pop',
+      'invert backside pop',
+      'backside punch',
+      'invert backside punch',
+    ], // Pop is implied
+    landings: landingPositions.invetedHyper,
+  },
+
+  {
     name: 'Wrap Front',
     notStarter: true,
     setups: ['turn step', 'wrap'],
@@ -956,17 +967,6 @@ const level3 = [
     notStarter: true,
     setups: ['turn step', 'wrap'],
     landings: landingPositions.eagle,
-  },
-
-  {
-    name: 'Triple Flash Kick',
-    setups: [
-      'backside pop',
-      'invert backside pop',
-      'backside punch',
-      'invert backside punch',
-    ], // Pop is implied
-    landings: landingPositions.invetedHyper,
   },
 
   {

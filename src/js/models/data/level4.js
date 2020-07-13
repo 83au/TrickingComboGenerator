@@ -294,9 +294,9 @@ const level4 = [
   // },
 
   {
-    name: 'Crack Knife',
-    setups: takeoffs.raiz,
-    landings: landingPositions.hook.concat(['turbo']),
+    name: 'A-twist D-leg',
+    setups: takeoffs.btwist,
+    landings: ['backside punch', 'invert backside punch', 'hyper'],
   },
 
   {
@@ -549,6 +549,12 @@ const level4 = [
     name: 'Cork Sidewinder',
     setups: takeoffs.swing,
     landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Crack Knife',
+    setups: takeoffs.raiz,
+    landings: landingPositions.hook.concat(['turbo']),
   },
 
   {
@@ -961,6 +967,20 @@ const level4 = [
   },
 
   {
+    name: 'Wrap Full Hyper',
+    notStarter: true,
+    setups: ['turn step', 'wrap'],
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Wrap Full Hyper Hook',
+    notStarter: true,
+    setups: ['turn step', 'wrap'],
+    landings: landingPositions.hyper,
+  },
+
+  {
     name: 'Wrap Full Round',
     notStarter: true,
     setups: ['turn step', 'wrap'],
@@ -972,6 +992,13 @@ const level4 = [
       'hook',
       'outside pop', 
     ],
+  },
+
+  {
+    name: 'Wrap Full Swipe',
+    notStarter: true,
+    setups: ['turn step', 'wrap'],
+    landings: landingPositions.invertedHyper,
   },
 ];
 
