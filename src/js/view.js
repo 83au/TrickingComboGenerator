@@ -189,7 +189,7 @@ function createConnector(container, mode) {
 
   const html = `
     <svg class="connector__arrow">
-      <use xlink:href="icon-spritesheet.svg#icon-arrow-down"></use>
+      <use xlink:href="assets/icon-spritesheet.svg#icon-arrow-down"></use>
     </svg>
   `;
   connector.insertAdjacentHTML('afterbegin', html);
