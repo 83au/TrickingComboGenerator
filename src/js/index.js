@@ -74,19 +74,26 @@ function initInstallPopup() {
 
 
 function setEventListeners() {
+  // PWA events
   window.addEventListener('beforeinstallprompt', handleInstallBanner);
   window.addEventListener('appinstalled', trackInstall);
   DOM.installClose.addEventListener('click', closeInstallBanner);
   DOM.iosInstallClose.addEventListener('click', closeIosPopup);
   DOM.installBtn.addEventListener('click', handleInstall);
+
+  // Modal events
   DOM.openModal.addEventListener('click', openModal);
   DOM.closeModal.addEventListener('click', closeModal);
+
+  // Build mode events
   DOM.buildCmbBtn.addEventListener('click', setBuildMode);
   DOM.buildDiffContainer.addEventListener('animationend', e => animateButtons(e));
   DOM.generateTrickBtn.addEventListener('click', createAndDisplayTrick);
   DOM.redoBtn.addEventListener('click', redoTrick);
   DOM.nextTrickBtn.addEventListener('click', nextTrick);
   DOM.newCmbBtn.addEventListener('click', newBuildCombo);
+
+  // Random mode events
   DOM.randomCmbBtn.addEventListener('click', setRandomMode);
   DOM.generateCmbBtn.addEventListener('click', generateCombo);
   DOM.backBtn.addEventListener('click', backToStart);
@@ -263,7 +270,7 @@ function buildTrick(maxDiff, animate) {
 
 function handleDifficulty(difficulty) {
   if (difficulty === 'random') {
-    return Model.random(4) + 1;
+    return Model.random(5) + 1;
   }
   return difficulty;
 }
@@ -343,7 +350,7 @@ function generateCombo() {
 
   clear(DOM.randomCmbContainer);
 
-  difficulty = handleDifficulty(difficulty);
+  console.log('DIFFICULTY: ' + difficulty);
 
   if (numTricks === 'random') {
     numTricks = Model.random(10) + 1;

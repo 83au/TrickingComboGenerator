@@ -3,6 +3,7 @@ import level1 from './level1';
 import level2 from './level2';
 import level3 from './level3';
 import level4 from './level4';
+import level5 from './level5';
 
 
 // *** TRANSITIONS AND MODIFIERS ***
@@ -113,8 +114,8 @@ export const difficultyLevels = {
   easy: 2,
   intermediate: 3,
   advanced: 4,
-  pro: 5,
-  'world class': 6,
+  elite: 5,
+  god: 6,
 };
 
 // TODO: Add properties for whether trick is a kick or a flip?
@@ -133,55 +134,8 @@ export const tricks = {
   // *** ADVANCE ***
   level4,
 
-  // FLIPS & TWISTS
-  // Shuriken Cork
-  // Hyper Cork
-  // Cork Swipe
-  // Boxcutter
-  // Wrap Full Twist
-  // Tak Full Twist
-  // Full Twist Double Leg
-  // Full Twist Swipe
-  // Full Twist Hyper Hook
-  // Double Full Twist
-  // Hyper Twist
-  // Butterfly Twist Hyper Hook
-  // Btwist dleg
-  // ],
-
-  // // ADVANCED
-  // level4: [
-  //   // KICKS
-  //     {
-  // name: '900 Double',
-  //   setups: [
-  //     'cheat',
-  //     'vanish',
-  //     'skip round',
-  //     'hook',
-  //     'wrap',
-  //   ],
-  //     landings: landingPositions.round.concat(['rapid hook']),
-  // },
-  //   // Cheat 1260
-  //   // Hurricane (cheat 1080 triple)
-
-  //   // FLIPS & TWISTS
-  // {
-  // name: 'Snapu Swipe',
-  //   setups: takeoffs.raiz,
-  //     landings: [ // hyper landing is implied
-  //       'backside punch',
-  //       'invert backside punch',
-  //     ],
-  // },
-  //   // Cheat 720 Twist (Barrel Roll)
-  //   // Dub Cork
-  //   // Shuriken Cutter
-  //   // Dub Btwist
-  //   // Full Snapu
-  //   // Double Back Flip
-  // ],
+  // *** ELITE ***
+  level5,
 
   // // ELITE
   // level5: [

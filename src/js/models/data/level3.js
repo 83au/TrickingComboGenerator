@@ -109,6 +109,7 @@ const level3 = [
     name: 'Backside 1080',
     setups: [
       'backside pop',
+      'backside punch',
       'inside pop',
     ],
     landings: landingPositions.hook.concat(['rapid round']),

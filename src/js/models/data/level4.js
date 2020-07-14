@@ -33,7 +33,11 @@ const level4 = [
 
   {
     name: '900 Knife',
-    setups: takeoffs.tornado,
+    setups: [
+      'vanish',
+      'hook',
+      'cheat',
+    ],
     landings: landingPositions.hook,
   },
 
@@ -74,6 +78,7 @@ const level4 = [
     name: 'Backside 1080 Hyper',
     setups: [
       'backside pop',
+      'backside punch',
       'inside pop',
     ],
     landings: [
@@ -83,14 +88,6 @@ const level4 = [
       'inside leg reversal',
     ],
   },
-
-  // EXPERT
-  // {
-  //   name: 'Backside 1080 Jackknife',
-  //   setups: ['backside pop', 'backside punch'],
-  //   landings: 
-  // },
-  // Backside 1260 Knife
 
   {
     name: 'Backside 1260',
