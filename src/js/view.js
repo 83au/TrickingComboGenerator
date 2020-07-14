@@ -10,6 +10,13 @@ export const elements = {
   iosInstallPopup: document.querySelector('.ios-install'),
   iosInstallClose: document.querySelector('.ios-install__close'),
 
+  // Info modal
+  openModal: document.querySelector('.open-info'),
+  closeModal: document.querySelector('.close-info'),
+  modal: document.querySelector('.info-modal'),
+  copy: document.querySelector('.copy'),
+  year: document.querySelector('.year'),
+
   // Build Combo elements
   buildCmbBtn: document.getElementById('buildComboOption'),
   buildScreen: document.querySelector('.build-screen'),

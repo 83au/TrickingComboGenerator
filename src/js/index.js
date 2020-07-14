@@ -17,6 +17,7 @@ init();
 function init() {
   registerServiceWorker();
   reset();
+  setCopyrightYear();
   initInstallPopup();
   setEventListeners();
 }
@@ -49,6 +50,12 @@ function reset() {
 }
 
 
+function setCopyrightYear() {
+  const year = new Date().getFullYear();
+  DOM.year.innerHTML = year;
+}
+
+
 function initInstallPopup() {
   // Detects if device is on iOS 
   const isIos = () => {
@@ -72,6 +79,8 @@ function setEventListeners() {
   DOM.installClose.addEventListener('click', closeInstallBanner);
   DOM.iosInstallClose.addEventListener('click', closeIosPopup);
   DOM.installBtn.addEventListener('click', handleInstall);
+  DOM.openModal.addEventListener('click', openModal);
+  DOM.closeModal.addEventListener('click', closeModal);
   DOM.buildCmbBtn.addEventListener('click', setBuildMode);
   DOM.buildDiffContainer.addEventListener('animationend', e => animateButtons(e));
   DOM.generateTrickBtn.addEventListener('click', createAndDisplayTrick);
@@ -135,6 +144,16 @@ function handleInstall() {
     // Hide install banner
     DOM.installBanner.classList.add('hide');    
   });
+}
+
+
+function openModal() {
+  DOM.modal.classList.add('open');
+}
+
+
+function closeModal() {
+  DOM.modal.classList.remove('open');
 }
 
 
