@@ -3,6 +3,6 @@
     @media only screen and (min-width: 600px) { @content };
   }
   @if $breakpoint == desktop {
-    @media only screen and (min-width: 700px) { @content };
+    @media only screen and (min-width: 760px) { @content };
   }
 }

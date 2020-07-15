@@ -100,6 +100,35 @@ const level5 = [
     ],
     landings: landingPositions.hook.concat(['rapid round']),
   },
+
+  {
+    name: 'Bkick Heli Round',
+    setups: takeoffs.btwist,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Swing 1260',
+    setups: [
+      'back swing',
+      'round carry-through',
+      'left right redirect',
+    ],
+    landings: landingPositions.round,
+  },
+
+  // FLIPS/TWISTS
+  {
+    name: 'Btwist Round Late Round',
+    setups: ['turn step'],
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Dub Btwist Peter Pan',
+    setups: takeoffs.btwist,
+    landings: landingPositions.eagle,
+  },
 ];
 
 export default level5;

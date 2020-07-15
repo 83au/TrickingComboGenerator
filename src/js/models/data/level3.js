@@ -348,13 +348,13 @@ const level3 = [
   },
 
   {
-    name: 'A-twist',
+    name: 'Atwist',
     setups: takeoffs.btwist.concat(['inside leg reversal', 'mega']),
     landings: landingPositions.eagle,
   },
 
   {
-    name: 'A-twist Gumbi',
+    name: 'Atwist Gumbi',
     setups: takeoffs.btwist.concat(['inside leg reversal', 'mega']),
     landings: landingPositions.eagle,
   },
@@ -399,7 +399,7 @@ const level3 = [
   },
 
   {
-    name: 'Back Full D-leg',
+    name: 'Back Full Dleg',
     setups: takeoffs.backFullTwist,
     landings: [
       'backside punch',
@@ -415,7 +415,7 @@ const level3 = [
   },
 
   {
-    name: 'Back Full Hyper Hook',
+    name: 'Back Full H.H.',
     setups: takeoffs.backFullTwist,
     landings: landingPositions.hyper.concat(['turbo']),
   },
@@ -483,43 +483,43 @@ const level3 = [
   },
 
   {
-    name: 'B-twist Axe',
+    name: 'Btwist Axe',
     setups: takeoffs.btwist,
     landings: landingPositions.mega,
   },
 
   {
-    name: 'B-twist DLeg',
+    name: 'Btwist Dleg',
     setups: takeoffs.btwist,
     landings: ['backside punch', 'invert backside punch'],
   },
 
   {
-    name: 'B-twist Hyper',
+    name: 'Btwist Hyper',
     setups: takeoffs.btwist,
     landings: landingPositions.invertedHyper,
   },
 
   {
-    name: 'B-twist Hyper Hook',
+    name: 'Btwist Hyper Hook',
     setups: takeoffs.btwist,
     landings: landingPositions.hook,
   },
 
   {
-    name: 'B-twist Shuriken',
+    name: 'Btwist Shuriken',
     setups: takeoffs.btwist,
     landings: landingPositions.mega.concat('complete'),
   },
 
   {
-    name: 'B-twist Swipe',
+    name: 'Btwist Swipe',
     setups: takeoffs.btwist,
     landings: landingPositions.invertedHyper,
   },
 
   {
-    name: 'Cork D-leg',
+    name: 'Cork Dleg',
     setups: takeoffs.swing,
     landings: ['backside punch', 'invert backside punch'],
   },
@@ -561,7 +561,7 @@ const level3 = [
   },
 
   {
-    name: 'Double Leg Hyper Hook',
+    name: 'Dleg Hyper Hook',
     setups: ['outside pop', 'outside punch', 'frontside punch', 'invert frontside punch'],
     landings: landingPositions.hook,
   },
@@ -644,7 +644,7 @@ const level3 = [
   },
 
   {
-    name: 'Full Double Leg',
+    name: 'Full Dleg',
     notStarter: true,
     setups: takeoffs.insideFullTwist,
     landings: [
@@ -822,7 +822,7 @@ const level3 = [
   },
 
   {
-    name: 'Lotus Double Leg',
+    name: 'Lotus Dleg',
     setups: takeoffs.swing,
     landings: ['backside punch', 'invert backside punch', 'hyper'],
   },
@@ -916,13 +916,13 @@ const level3 = [
   },
 
   {
-    name: 'Td A-twist',
+    name: 'Td Atwist',
     setups: takeoffs.btwist.concat(['inside leg reversal', 'mega']),
     landings: landingPositions.eagle,
   },
 
   {
-    name: 'TD B-twist',
+    name: 'TD Btwist',
     setups: takeoffs.btwist.concat(['inside leg reversal', 'mega']),
     landings: landingPositions.eagle,
   },

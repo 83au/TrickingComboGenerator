@@ -291,7 +291,7 @@ const level4 = [
   // },
 
   {
-    name: 'A-twist D-leg',
+    name: 'Atwist Dleg',
     setups: takeoffs.btwist,
     landings: ['backside punch', 'invert backside punch', 'hyper'],
   },
@@ -311,7 +311,7 @@ const level4 = [
   },
 
   {
-    name: 'Back Dub Full Hyper Hook',
+    name: 'Back Dub Full Hyper Hk',
     notStarter: true,
     setups: takeoffs.backFullTwist,
     landings: landingPositions.invertedHyper,
@@ -324,14 +324,14 @@ const level4 = [
   },
 
   {
-    name: 'Back Full D-leg Hyper Hook',
+    name: 'Back Full Dleg Hyper Hook',
     notStarter: true,
     setups: takeoffs.backFullTwist,
     landings: landingPositions.invertedHyper,
   },
 
   {
-    name: 'Back Full D-leg Twist',
+    name: 'Back Full Dleg Twist',
     setups: takeoffs.backFullTwist,
     landings: [
       'backside punch',
@@ -391,7 +391,7 @@ const level4 = [
   },
 
   {
-    name: 'Back Full Shuriken Hyper Hook',
+    name: 'Back Full Shuriken H.H.',
     notStarter: true,
     setups: takeoffs.backFullTwist,
     landings: landingPositions.invertedHyper,
@@ -415,7 +415,7 @@ const level4 = [
   },
 
   {
-    name: 'Back Ironman Full D-leg',
+    name: 'Back Ironman Full Dleg',
     notStarter: true,
     setups: takeoffs.backFullTwist,
     landings: [
@@ -442,7 +442,7 @@ const level4 = [
   },
 
   {
-    name: 'Back Rodeo Full D-leg',
+    name: 'Back Rodeo Full Dleg',
     notStarter: true,
     setups: takeoffs.backFullTwist,
     landings: [
@@ -491,31 +491,31 @@ const level4 = [
   },
 
   {
-    name: 'B-twist Double Round',
+    name: 'Btwist Double Round',
     setups: takeoffs.btwist,
     landings: landingPositions.round,
   },
 
   {
-    name: 'B-twist Hawkeye',
+    name: 'Btwist Hawkeye',
     setups: takeoffs.btwist,
     landings: landingPositions.round,
   },
 
   {
-    name: 'B-twist Shuriken Hyper Hook',
+    name: 'Btwist Shuriken Hyper Hook',
     setups: takeoffs.btwist,
     landings: landingPositions.hook,
   },
 
   {
-    name: 'B-twist Twist Kick',
+    name: 'Btwist Twist Kick',
     setups: takeoffs.btwist,
     landings: landingPositions.mega,
   },
 
   {
-    name: 'B-twist Wackknife',
+    name: 'Btwist Wackknife',
     setups: takeoffs.btwist,
     landings: [
       'frontside punch',
@@ -531,7 +531,7 @@ const level4 = [
   },
 
   {
-    name: 'Cork D-leg Hyper Hook',
+    name: 'Cork Dleg H.H.',
     setups: takeoffs.swing,
     landings: landingPositions.invertedHyper,
   },
@@ -566,7 +566,7 @@ const level4 = [
   },
 
   {
-    name: 'Double B-twist',
+    name: 'Double Btwist',
     setups: takeoffs.btwist,
     landings: landingPositions.eagle,
   },
@@ -598,7 +598,7 @@ const level4 = [
   },
 
   {
-    name: 'Dragonfly Cork D-leg',
+    name: 'Dragonfly Cork Dleg',
     setups: takeoffs.swing,
     landings: ['backside punch', 'hook'],
   },
@@ -673,7 +673,7 @@ const level4 = [
   },
 
   {
-    name: 'Ironman Full D-leg',
+    name: 'Ironman Full Dleg',
     notStarter: true,
     setups: takeoffs.insideFullTwist,
     landings: [
@@ -683,7 +683,7 @@ const level4 = [
   },
 
   {
-    name: 'Ironman Full Hyper Hook',
+    name: 'Ironman Full H.H.',
     notStarter: true,
     setups: takeoffs.insideFullTwist,
     landings: landingPositions.invertedHyper,
@@ -868,7 +868,7 @@ const level4 = [
   },
 
   {
-    name: 'Rodeo Full D-leg',
+    name: 'Rodeo Full Dleg',
     setups: takeoffs.insideFullTwist,
     landings: [
       'backside punch',
@@ -957,7 +957,7 @@ const level4 = [
   },
 
   {
-    name: 'Wrap Full D-leg',
+    name: 'Wrap Full Dleg',
     notStarter: true,
     setups: ['turn step', 'wrap'],
     landings: ['backside punch'],

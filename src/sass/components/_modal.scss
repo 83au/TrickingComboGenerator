@@ -45,7 +45,12 @@
 
     font-size: 2rem;
 
+    @include respond(desktop) {
+      align-items: center;
+    }
+
     & > * {
+      display: inline;
       margin: 2rem 0;
     }
   }
