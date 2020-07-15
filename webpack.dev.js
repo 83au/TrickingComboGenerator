@@ -20,7 +20,9 @@ module.exports = merge(common, {
         { from: 'src/manifest.webmanifest', to: 'manifest.webmanifest' },
         { from: 'src/assets/app-icons', to: 'app-icons' },
         { from: 'src/assets/apple-splash', to: 'apple-splash' },
-        { from: 'src/assets/icon-spritesheet.svg', to: 'icon-spritesheet.svg' }
+        { from: 'src/assets/icon-spritesheet.svg', to: 'icon-spritesheet.svg' },
+        { from : 'src/myFavicon.ico', to: 'myFavicon.ico'}
+
       ],
     }),
   ],

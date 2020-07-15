@@ -34,6 +34,21 @@
   &.open {
     display: block;
   }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+
+    height: 100%;
+
+    font-size: 2rem;
+
+    & > * {
+      margin: 2rem 0;
+    }
+  }
 }
 
 .copy {
@@ -44,4 +59,19 @@
 
   font-size: 1.5rem;
   text-align: center;
+}
+
+.link {
+  &:link {
+    color: lighten(rgb(255, 85, 85), 10%);
+  }
+
+  &:visited {
+    color: goldenrod;
+  }
+
+  &:hover {
+    background-color: white;
+    color: var(--blue);
+  }
 }
