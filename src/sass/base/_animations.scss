@@ -24,10 +24,10 @@
 
 @keyframes shootDown {
   from {
-    height: 0;
+    transform: translateY(-10rem);
   }
   to {
-    height: 1em;
+    transform: translateY(0);
   }
 }
 

@@ -10,8 +10,9 @@
   }
 }
 
-.connector.build {
-  animation: shootDown .3s linear;
+.connector.build .connector__arrow {
+  transform: translateY(-10rem);
+  animation: shootDown .8s linear forwards;
 }
 
 .transition.build {

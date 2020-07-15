@@ -154,14 +154,14 @@ function animateTrick(prevTrick, curTrick, container, mode, trickEl, animate) {
     setTimeout(() => {
       trickEl.classList.remove('hidden');
       trickEl.classList.add('build');
-    }, 600);
+    }, 1100);
     displayTakeoffAndName(curTrick, trickEl, container);
   } else if (prevTrick) {
     // Delay so that connector animation has time to finish
     setTimeout(() => {
       trickEl.classList.remove('hidden');
       trickEl.classList.add('build');
-    }, 200);
+    }, 800);
     displayTakeoffAndName(curTrick, trickEl, container);
   } else {
     // Animate immediately
@@ -219,7 +219,7 @@ function displayTransition(trick, container, mode) {
         setTimeout(() => {
           transEl.classList.remove('hidden');
           transEl.classList.add('build');
-        }, 500);
+        }, 1000);
       }
 
       transEl.textContent = `- ${trick.transition} -`;
