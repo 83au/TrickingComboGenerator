@@ -43,7 +43,7 @@ const level5 = [
   },
 
   {
-    name: '900 D-leg Twist',
+    name: '900 Dleg Twist',
     setups: ['cheat', 'vanish'],
     landings: ['backside punch'],
   },
@@ -119,15 +119,52 @@ const level5 = [
 
   // FLIPS/TWISTS
   {
+    name: 'Btwist Dleg Twist',
+    setups: ['turn step'],
+    landings: ['backside punch']
+  },
+
+  {
     name: 'Btwist Round Late Round',
     setups: ['turn step'],
     landings: landingPositions.round,
   },
 
   {
+    name: 'Btwist Shuriken',
+    setups: ['turn step'],
+    landings: ['backside punch']
+  },
+
+  {
+    name: 'Btwist Snapu',
+    setups: ['turn step'],
+    landings: ['backside punch']
+  },
+
+  {
+    name: 'Dub Btwist Hyper',
+    setups: takeoffs.btwist,
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
     name: 'Dub Btwist Peter Pan',
     setups: takeoffs.btwist,
     landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Dub Btwist Round',
+    setups: ['turn step'],
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Full In',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: ['backside punch']
   },
 ];
 
