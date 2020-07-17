@@ -47,6 +47,8 @@
 
     @include respond(desktop) {
       align-items: center;
+      margin: 0 auto;
+      max-width: 70%;
     }
 
     & > * {

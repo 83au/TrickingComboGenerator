@@ -135,7 +135,7 @@ const level4 = [
     landings: landingPositions.hook.concat(['rapid round']),
   },
 
-  // Jackknife turbo and Hyper variations
+  // Jackknife turbo and hyper variations
   {
     name: 'Jackknife',
     setups: [
@@ -144,8 +144,25 @@ const level4 = [
       'frontside pop',
       'hook',
       'cheat',
-  ],
-    landings: ['turbo', 'hyper'],
+    ],
+    landings: ['turbo'],
+  },
+
+  {
+    name: 'Jackknife Hyper',
+    setups: [
+      'vanish',
+      'right left redirect',
+      'frontside pop',
+      'hook',
+      'cheat',
+    ],
+    landings: [
+      'vanish',
+      'skip round',
+      'left right redirect',
+      'inside leg reversal',
+    ],
   },
 
   {
@@ -607,7 +624,7 @@ const level4 = [
     name: 'Dub Full Hyper Hook',
     notStarter: true,
     setups: takeoffs.insideFullTwist,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions.hyper,
   },
 
   {
@@ -621,7 +638,7 @@ const level4 = [
     name: 'Full Dleg Hyper Hook',
     notStarter: true,
     setups: takeoffs.insideFullTwist,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions.hyper,
   },
 
   {
@@ -630,6 +647,16 @@ const level4 = [
     landings: [
       'backside punch',
       'hook',
+    ],
+  },
+
+  {
+    name: 'Full Kyro',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: [
+      'backside punch',
+      'hook'
     ],
   },
 
@@ -659,44 +686,17 @@ const level4 = [
   },
 
   {
-    name: 'Full Shuriken Hyper Hook',
+    name: 'Full Shuriken H.H.',
     notStarter: true,
     setups: takeoffs.insideFullTwist,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions.hook,
   },
 
   {
     name: 'Full Swipeknife',
     notStarter: true,
     setups: takeoffs.insideFullTwist,
-    landings: landingPositions.invertedHyper,
-  },
-
-  {
-    name: 'Ironman Full Dleg',
-    notStarter: true,
-    setups: takeoffs.insideFullTwist,
-    landings: [
-      'backside punch',
-      'hook',
-    ],
-  },
-
-  {
-    name: 'Ironman Full H.H.',
-    notStarter: true,
-    setups: takeoffs.insideFullTwist,
-    landings: landingPositions.invertedHyper,
-  },
-
-  {
-    name: 'Full Kyro',
-    notStarter: true,
-    setups: takeoffs.insideFullTwist,
-    landings: [
-      'backside punch',
-      'hook'
-    ],
+    landings: landingPositions.hook,
   },
 
   {
@@ -713,7 +713,7 @@ const level4 = [
     name: 'Full Swipe Knife',
     notStarter: true,
     setups: takeoffs.insideFullTwist,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions.hyper,
   },
 
   {
@@ -729,17 +729,30 @@ const level4 = [
     name: 'Full Wackknife',
     notStarter: true,
     setups: takeoffs.insideFullTwist,
+    landings: ['backside punch'],
+  },
+
+  {
+    name: 'Ironman Full Dleg',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
     landings: [
       'backside punch',
-      'invert backside punch',
-      'complete',
+      'hook',
     ],
+  },
+
+  {
+    name: 'Ironman Full H.H.',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.hyper,
   },
 
   {
     name: 'Gainer Triple',
     setups: takeoffs.swing,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions.hyper,
   },
 
   {
@@ -784,7 +797,7 @@ const level4 = [
   {
     name: 'G-Switch Hyper Hook',
     setups: takeoffs.swing,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions.hyper,
   },
 
   {
@@ -920,14 +933,14 @@ const level4 = [
   {
     name: 'Swipe Knife',
     setups: takeoffs.raiz,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions.hyper,
   },
 
   // Pop swipe knife variation
   {
     name: 'Swipe Knife',
     setups: ['frontside pop', 'frontside punch'],
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions.ihyper,
   },
 
   {

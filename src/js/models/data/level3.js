@@ -562,14 +562,18 @@ const level3 = [
 
   {
     name: 'Dleg Hyper Hook',
-    setups: ['outside pop', 'outside punch', 'frontside punch', 'invert frontside punch'],
+    setups: [
+      'outside pop', 
+      'outside punch', 
+      'frontside punch', 
+      'invert frontside punch'
+    ],
     landings: landingPositions.hook,
   },
 
   {
     name: 'Dragonfly Cork',
     setups: takeoffs.swing.concat([
-      'skip backswing',
       'skip backswing',
     ]),
     landings: landingPositions.eagle,
@@ -578,7 +582,6 @@ const level3 = [
   {
     name: 'Dragonfly Cork Round',
     setups: takeoffs.swing.concat([
-      'skip backswing',
       'skip backswing',
     ]),
     landings: landingPositions.round,
@@ -590,8 +593,6 @@ const level3 = [
       'back swing',
       'left right redirect',
       'round carry-through',
-      'reverse vanish',
-      'skip backswing',
       'skip backswing',
     ],
     landings: landingPositions.hook.concat(['turbo']),
@@ -671,7 +672,7 @@ const level3 = [
     name: 'Full Hyper Hook',
     notStarter: true,
     setups: takeoffs.insideFullTwist,
-    landings: landingPositions.invertedHyper.concat(['turbo']),
+    landings: landingPositions.hook.concat(['turbo']),
   },
 
   {
@@ -715,17 +716,6 @@ const level3 = [
   },
 
   {
-    name: 'Grand Master Swipe',
-    notStarter: true,
-    setups: [
-      'master swing',
-      'hook',
-      'skip masterswing',
-      'vanish'],
-    landings: landingPositions.hyper,
-  },
-
-  {
     name: 'Gainer Rocketboii',
     notStarter: true,
     setups: takeoffs.swing,
@@ -754,6 +744,17 @@ const level3 = [
       'skip backswing',
     ]),
     landings: ['backside punch'],
+  },
+
+  {
+    name: 'Grand Master Swipe',
+    notStarter: true,
+    setups: [
+      'master swing',
+      'hook',
+      'skip masterswing',
+      'vanish'],
+    landings: landingPositions.hyper,
   },
 
   {
