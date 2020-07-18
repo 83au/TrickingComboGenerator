@@ -101,8 +101,6 @@ function setEventListeners() {
 
 
 function handleInstallBanner(event) {
-  console.log('beforeinstallpromt fired');
-
   // Prevent mini-infobar from appearing on mobile
   event.preventDefault();
 
@@ -132,9 +130,7 @@ function closeIosPopup() {
 }
 
 
-function handleInstall() {
-  console.log('install button clicked');
-  
+function handleInstall() { 
   const promptEvent = window.deferredPrompt;
   if (!promptEvent) return;
 
@@ -349,8 +345,6 @@ function generateCombo() {
   let { difficulty, numTricks } = View.getChoices(state.mode);
 
   clear(DOM.randomCmbContainer);
-
-  console.log('DIFFICULTY: ' + difficulty);
 
   if (numTricks === 'random') {
     numTricks = Model.random(10) + 1;

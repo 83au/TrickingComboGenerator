@@ -266,6 +266,7 @@ const level4 = [
       'frontside punch', 
       'reverse pop', 
       'right first reverse pop',
+      'hook'
     ],
   },
 
@@ -290,22 +291,21 @@ const level4 = [
 
   // FLIPS & TWISTS
   {
-    name: '720 Twist (Barrel Roll)',
-    setups: ['cheat', 'vanish'],
+    name: '720 Twist',
+    setups: ['cheat'],
     landings: landingPositions.eagle,
   },
 
-  // PRO
-  // {
-  //   name: 'Aerial Scissor',
-  //   setups: [
-  //     'reverse vanish',
-  //     'inside leg reversal',
-  //     'hook',
-  //     'mega',
-  //   ],
-  //   landings: ['vanish', 'skip round', 'frontside pop', 'hook'],
-  // },
+  {
+    name: 'Aerial Scissor',
+    setups: [
+      'reverse vanish',
+      'inside leg reversal',
+      'hook',
+      'mega',
+    ],
+    landings: ['vanish', 'skip round', 'frontside pop', 'hook'],
+  },
 
   {
     name: 'Atwist Dleg',
@@ -544,13 +544,19 @@ const level4 = [
   {
     name: 'Cork Crowd Awakener',
     setups: takeoffs.swing,
-    landings: ['backside punch', 'hook', 'complete'],
+    landings: [
+      'backside punch', 
+      'hook', 
+      'complete', 
+      'reverse pop',
+      'right first reverse pop',
+    ],
   },
 
   {
     name: 'Cork Dleg H.H.',
     setups: takeoffs.swing,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions.hyper,
   },
 
   {
@@ -569,6 +575,12 @@ const level4 = [
     name: 'Crack Knife',
     setups: takeoffs.raiz,
     landings: landingPositions.hook.concat(['turbo']),
+  },
+
+  {
+    name: 'Dleg Twist',
+    setups: ['outside pop', 'outside punch'],
+    landings: ['backside punch', 'hook'],
   },
 
   {
@@ -686,6 +698,12 @@ const level4 = [
   },
 
   {
+    name: 'Full Scissor',
+    setups: takeoffs.insideFullTwist.concat(takeoffs.backFullTwist), // * NEED TO DO THIS FOR OTHERS
+    landings:  ['vanish', 'skip round', 'frontside pop', 'hook'],
+  },
+
+  {
     name: 'Full Shuriken H.H.',
     notStarter: true,
     setups: takeoffs.insideFullTwist,
@@ -718,6 +736,7 @@ const level4 = [
 
   {
     name: 'Full Up',
+    notStarter: true,
     setups: takeoffs.insideFullTwist,
     landings: [
       'backside punch',
@@ -750,6 +769,12 @@ const level4 = [
   },
 
   {
+    name: 'Gainer Kyro',
+    setups: takeoffs.swing,
+    landings: ['backside punch', 'hook'],
+  },
+
+  {
     name: 'Gainer Triple',
     setups: takeoffs.swing,
     landings: landingPositions.hyper,
@@ -764,34 +789,39 @@ const level4 = [
   {
     name: 'GMS Knife',
     notStarter: true,
-    setups: [
-      'master swing',
-      'hook',
-      'skip masterswing',
-      'vanish'],
+    setups: ['master swing'],
     landings: landingPositions.hyper,
+  },
+
+  {
+    name: 'GMS Rocketboi',
+    notStarter: true,
+    setups: ['master swing'],
+    landings: ['backside punch', 'hook'],
+  },
+
+  {
+    name: 'GM Front',
+    notStarter: true,
+    setups: ['master swing'],
+    landings: [
+      'invert frontside punch',
+      'hook',
+    ],
+  },
+
+  {
+    name: 'GM Scissor',
+    notStarter: true,
+    setups: ['master swing'],
+    landings: ['vanish', 'skip round', 'frontside pop', 'hook'],
   },
 
   {
     name: 'Grand Master Scoot',
     notStarter: true,
-    setups: [
-      'master swing',
-      'hook',
-      'skip masterswing',
-      'vanish'],
+    setups: ['master swing'],
     landings: landingPositions.eagle,
-  },
-
-  {
-    name: 'Grand Master Twist',
-    notStarter: true,
-    setups: [
-      'master swing',
-      'hook',
-      'skip masterswing',
-      'vanish'],
-    landings: ['backside punch'],
   },
 
   {
@@ -813,7 +843,7 @@ const level4 = [
   {
     name: 'Janitor Twist',
     notStarter: true,
-    setups: ['backside punch'],
+    setups: ['invert backside punch'],
     landings: [
       'frontside pop', 
       'vanish', 
@@ -825,7 +855,7 @@ const level4 = [
   {
     name: 'Janitor Scissor Twist',
     notStarter: true,
-    setups: ['backside punch'],
+    setups: ['invert backside punch'],
     landings: [
       'frontside pop', 
       'vanish', 
@@ -838,11 +868,7 @@ const level4 = [
     name: 'Kick Full',
     notStarter: true,
     setups: takeoffs.backFullTwist,
-    landings: [
-      'backside punch',
-      'invert backside punch',
-      'complete',
-    ],
+    landings: landingPositions.eagle,
   },
 
   {
@@ -924,9 +950,15 @@ const level4 = [
 
   {
     name: 'Snapu',
-    setups: takeoffs.raiz,
-    landings: [ // hyper landing is implied
+    setups: takeoffs.raiz.concat([
+      'frontside pop', 
+      'outside pop', 
+      'frontside punch', 
+      'outside punch'
+    ]),
+    landings: [
       'backside punch',
+      'hook'
     ],
   },
 
@@ -940,7 +972,7 @@ const level4 = [
   {
     name: 'Swipe Knife',
     setups: ['frontside pop', 'frontside punch'],
-    landings: landingPositions.ihyper,
+    landings: landingPositions.hyper,
   },
 
   {
@@ -970,9 +1002,16 @@ const level4 = [
   },
 
   {
+    name: 'Wrap Front Scissor',
+    notStarter: true,
+    setups: ['wrap'],
+    landings: ['vanish', 'skip round', 'frontside pop', 'hook'],
+  },
+
+  {
     name: 'Wrap Full Dleg',
     notStarter: true,
-    setups: ['turn step', 'wrap'],
+    setups: ['wrap'],
     landings: ['backside punch'],
   },
 
@@ -986,14 +1025,14 @@ const level4 = [
   {
     name: 'Wrap Full Hyper Hook',
     notStarter: true,
-    setups: ['turn step', 'wrap'],
+    setups: ['wrap'],
     landings: landingPositions.hyper,
   },
 
   {
     name: 'Wrap Full Round',
     notStarter: true,
-    setups: ['turn step', 'wrap'],
+    setups: ['wrap'],
     landings: [
       'inside leg reversal',
       'left right redirect',

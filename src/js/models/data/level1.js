@@ -56,7 +56,7 @@ const level1 = [
     name: 'Back Sweep',
     notFinisher: true,
     setups: ['outside leg reversal', 'hook', 'reverse pop'],
-    landings: ['frontside pop', 'outside leg reversal'],
+    landings: ['frontside pop', 'outside leg reversal', 'hook carry-through'],
   },
 
   {
@@ -221,13 +221,13 @@ const level1 = [
 
   {
     name: 'Scoot',
-    setups: ['skip round', 'semi', 'hook'],
+    setups: ['skip round', 'semi', 'hook', 'hook carry-through'],
     landings: landingPositions.eagle,
   },
 
   {
     name: 'Scoot Hyper',
-    setups: ['skip round', 'semi', 'hook'],
+    setups: ['skip round', 'semi', 'hook', 'hook carry-through'],
     landings: landingPositions.hyper,
   },
 

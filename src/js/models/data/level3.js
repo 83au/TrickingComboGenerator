@@ -479,7 +479,7 @@ const level3 = [
   {
     name: 'Boxcutter',
     setups: takeoffs.swing,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions.hook,
   },
 
   {
@@ -507,9 +507,27 @@ const level3 = [
   },
 
   {
+    name: 'Btwist Illusion',
+    setups: ['hook', 'reverse vanish', 'hyper'],
+    landings: [
+      'reverse pop',
+      'right first reverse pop',
+      'frontside punch',
+      'hook',
+    ],
+  },
+
+  {
     name: 'Btwist Shuriken',
     setups: takeoffs.btwist,
-    landings: landingPositions.mega.concat('complete'),
+    landings: [
+      'inside leg reversal',
+      'left right redirect',
+      'skip round', 
+      'vanish',
+      'hook',
+      'outside pop',
+    ],
   },
 
   {
@@ -521,7 +539,10 @@ const level3 = [
   {
     name: 'Cork Dleg',
     setups: takeoffs.swing,
-    landings: ['backside punch', 'invert backside punch'],
+    landings: [
+      'backside punch', 
+      'hook',
+    ],
   },
 
   {
@@ -533,7 +554,23 @@ const level3 = [
   {
     name: 'Cork Shuriken',
     setups: takeoffs.swing,
-    landings: landingPositions.mega.concat('complete'),
+    landings: [
+      'inside leg reversal',
+      'left right redirect',
+      'skip round', 
+      'vanish',
+      'hook',
+      'outside pop',
+    ],
+  },
+
+  {
+    name: 'Cork Snapu',
+    setups: takeoffs.swing,
+    landings: [
+      'backside punch', 
+      'hook',
+    ],
   },
 
   {
@@ -758,6 +795,13 @@ const level3 = [
   },
 
   {
+    name: 'Handcuff Cork',
+    notStarter: true,
+    setups: takeoffs.swing,
+    landings: landingPositions.eagle,
+  },
+
+  {
     name: 'Ironman Back Full',
     notStarter: true,
     setups: takeoffs.backFullTwist,
@@ -788,7 +832,7 @@ const level3 = [
   {
     name: 'Janitor Flip',
     notStarter: true,
-    setups: ['backside punch'],
+    setups: ['invert backside punch'],
     landings: [
       'frontside pop', 
       'vanish', 
@@ -826,6 +870,13 @@ const level3 = [
     name: 'Lotus Dleg',
     setups: takeoffs.swing,
     landings: ['backside punch', 'invert backside punch', 'hyper'],
+  },
+
+  {
+    name: 'Peter Pan Cork',
+    notStarter: true,
+    setups: takeoffs.swing,
+    landings: landingPositions.eagle,
   },
 
   {
@@ -953,8 +1004,8 @@ const level3 = [
       'invert backside pop',
       'backside punch',
       'invert backside punch',
-    ], // Pop is implied
-    landings: landingPositions.invetedHyper,
+    ], 
+    landings: landingPositions.invertedHyper,
   },
 
   {

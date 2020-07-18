@@ -509,17 +509,6 @@ const level2 = [
   },
 
   {
-    name: 'Illusion Twist',
-    setups: ['hook', 'reverse vanish', 'hyper'],
-    landings: [
-      'reverse pop',
-      'right first reverse pop',
-      'frontside punch',
-      'hook',
-    ],
-  },
-
-  {
     name: 'Lonestar',
     notStarter: true,
     setups: ['invert backside punch'],
@@ -557,7 +546,7 @@ const level2 = [
     name: 'Rocketboii',
     notStarter: true,
     setups: ['invert backside punch'],
-    landings: ['invert backside punch'],
+    landings: ['backside punch', 'hook'],
   },
 
   {

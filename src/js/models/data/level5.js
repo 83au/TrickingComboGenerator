@@ -119,6 +119,59 @@ const level5 = [
 
   // FLIPS/TWISTS
   {
+    name: '720 Twist H.H.',
+    setups: ['cheat'],
+    landings: landingPositions.hook,
+  },
+
+  {
+    name: '720 Twist Round',
+    setups: ['cheat'],
+    landings: landingPositions.round,
+  },
+
+  {
+    name: '720 Twist Illusion',
+    setups: ['cheat'],
+    landings: [
+      'reverse pop',
+      'right first reverse pop',
+      'frontside punch',
+      'hook',
+    ],
+  },
+
+  {
+    name: '720 Twist Shuriken',
+    setups: ['cheat'],
+    landings: [
+      'inside leg reversal',
+      'left right redirect',
+      'skip round', 
+      'vanish',
+      'hook',
+      'outside pop',
+    ],
+  },
+
+  {
+    name: 'Cork C.A. Round',
+    setups: takeoffs.swing,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Cork Wackknife',
+    setups: takeoffs.swing,
+    landings: [
+      'invert backside punch', 
+      'hook',
+      'reverse pop',
+      'right first reverse pop',
+    ],
+  },
+
+  {
     name: 'Full Feilong Double',
     notStarter: true,
     setups: takeoffs.backFullTwist,
@@ -152,7 +205,7 @@ const level5 = [
   },
 
   {
-    name: 'Btwist Shuriken',
+    name: 'Btwist Shuriken Twist',
     setups: ['turn step'],
     landings: ['backside punch', 'hook',]
   },
@@ -164,9 +217,99 @@ const level5 = [
   },
 
   {
+    name: 'Cork C.A. Hyper',
+    notStarter: true,
+    setups: takeoffs.swing,
+    landings: landingPositions.hyper,
+  },
+
+  {
+    name: 'Cork C.A. Knife',
+    notStarter: true,
+    setups: takeoffs.swing,
+    landings: landingPositions.hyper,
+  },
+
+  {
+    name: 'Cork Dleg Twist',
+    setups: takeoffs.swing,
+    landings: [
+      'backside punch', 
+      'hook',
+    ],
+  },
+
+  {
+    name: 'Cork Feilong Knife',
+    notStarter: true,
+    setups: takeoffs.swing,
+    landings: landingPositions.hyper,
+  },
+
+  {
+    name: 'Cork Kyro',
+    setups: takeoffs.swing,
+    landings: ['backside punch', 'hook'],
+  },
+
+  {
+    name: 'Cork Snapu',
+    notStarter: true,
+    setups: takeoffs.swing,
+    landings: [
+      'backside punch', 
+      'hook',
+      'hyper'
+    ],
+  },
+  
+  {
+    name: 'Cork Swipeknife',
+    notStarter: true,
+    setups: takeoffs.swing,
+    landings: landingPositions.hyper,
+  },
+
+  {
+    name: 'Cork Swipe Late Round',
+    notStarter: true,
+    setups: takeoffs.swing,
+    landings: landingPositions.round,
+  },
+
+  {
     name: 'Crashmoon',
     setups: ['back swing'],
     landings: landingPositions.hook.concat(['turbo']),
+  },
+
+  {
+    name: 'Dleg Twist Round',
+    setups: ['outside pop', 'outside punch'],
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Dragonfly Dub Cork',
+    notStarter: true,
+    setups: takeoffs.swing,
+    landings: [
+      'backside punch', 
+      'hook',
+    ],
+  },
+
+  {
+    name: 'Dragonfly Dub Cork Round',
+    notStarter: true,
+    setups: takeoffs.swing,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Double Atwist',
+    setups: ['turn step'],
+    landings: landingPositions.eagle,
   },
 
   {
@@ -188,13 +331,83 @@ const level5 = [
   },
 
   {
+    name: 'Dub Cork Dleg',
+    notStarter: true,
+    setups: takeoffs.swing,
+    landings: [
+      'backside punch', 
+      'hook',
+    ],
+  },
+
+  {
+    name: 'Dub Cork Round',
+    setups: takeoffs.swing,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Dub Cork Shuriken',
+    setups: takeoffs.swing,
+    landings: [
+      'inside leg reversal',
+      'left right redirect',
+      'skip round', 
+      'vanish',
+      'hook',
+      'outside pop',
+    ],
+  },
+
+  {
+    name: 'Dub Full C.A.',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist.concat(takeoffs.backFullTwist),
+    landings: ['backside punch', 'hook'],
+  },
+
+  {
     name: 'Dub Full Dleg',
+    notStarter: true,
     setups: takeoffs.backFullTwist.concat(takeoffs.insideFullTwist),
-    landings: ['backside punch', 'hook',, 'hook',],
+    landings: ['backside punch', 'hook'],
+  },
+
+  {
+    name: 'Dub Full Dleg Twist',
+    notStarter: true,
+    setups: takeoffs.backFullTwist.concat(takeoffs.insideFullTwist),
+    landings: ['backside punch', 'hook'],
+  },
+
+  {
+    name: 'Dub Full Swipe Knife',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist.concat(takeoffs.backFullTwist),
+    landings: landingPositions.hyper,
+  },
+
+  {
+    name: 'Envergado Twist',
+    setups: takeoffs.raiz,
+    landings: [
+      'backside punch',
+      'hook',
+    ],
+  },
+
+  {
+    name: 'Feilong Snapu',
+    setups: ['cheat'],
+    landings: [ 
+      'backside punch',
+      'hook'
+    ],
   },
 
   {
     name: 'Filipino',
+    notStarter: true,
     setups: [
       'invert inside pop',
       'invert backside punch',
@@ -217,6 +430,13 @@ const level5 = [
   },
 
   {
+    name: 'Full Cobra Twist',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist.concat(takeoffs.backFullTwist),
+    landings: ['backside punch', 'hook'],
+  },
+
+  {
     name: 'Full Dleg Hawkeye',
     notStarter: true,
     setups: takeoffs.insideFullTwist,
@@ -228,6 +448,12 @@ const level5 = [
       'hook',
       'outside pop', 
     ],
+  },
+
+  {
+    name: 'Full Dleg Dub Twist',
+    setups: takeoffs.backFullTwist.concat(takeoffs.insideFullTwist),
+    landings: ['backside punch', 'hook'],
   },
 
   {
@@ -251,9 +477,21 @@ const level5 = [
   },
 
   {
-    name: 'Full Scissor',
-    setups: takeoffs.insideFullTwist.concat(takeoffs.backFullTwist), // * NEED TO DO THIS FOR OTHERS
-    landings:  ['vanish', 'skip round', 'frontside pop', 'hook'],
+    name: 'Full McDirty',
+    setups: takeoffs.backFullTwist.concat(takeoffs.insideFullTwist),
+    landings: [
+      'backside punch',
+      'hook',
+    ],
+  },
+
+  {
+    name: 'Full Scissor Twist',
+    setups: takeoffs.backFullTwist.concat(takeoffs.insideFullTwist),
+    landings: [
+      'backside punch',
+      'hook',
+    ],
   },
 
   {
@@ -264,17 +502,65 @@ const level5 = [
   },
 
   {
+    name: 'Full Snapu Hyper',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist.concat(takeoffs.backFullTwist),
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Full Snapu H.H.',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist.concat(takeoffs.backFullTwist),
+    landings: landingPositions.hyper,
+  },
+
+  {
+    name: 'Full Snapu Round',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist.concat(takeoffs.backFullTwist),
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Full Snapu Swipe',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist.concat(takeoffs.backFullTwist),
+    landings: landingPositions.hyper,
+  },
+
+  {
+    name: 'Full Snapu Twist',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist.concat(takeoffs.backFullTwist),
+    landings: [
+      'backside punch',
+      'hook',
+    ],
+  },
+
+  {
     name: 'Full Swipe Late Round',
     notStarter: true,
-    setups: takeoffs.insideFullTwist,
+    setups: takeoffs.insideFullTwist.concat(takeoffs.backFullTwist),
     landings: landingPositions.round,
   },
 
   {
     name: 'Full Tai-Fighter',
     notStarter: true,
-    setups: takeoffs.insideFullTwist,
+    setups: takeoffs.insideFullTwist.concat(takeoffs.backFullTwist),
     landings: landingPositions.round,
+  },
+
+  {
+    name: 'Full Up Twist',
+    notStarter: true,
+    setups: takeoffs.backFullTwist.concat(takeoffs.insideFullTwist),
+    landings: [
+      'backside punch',
+      'hook',
+    ],
   },
 
   {
@@ -289,6 +575,17 @@ const level5 = [
     notStarter: true,
     setups: takeoffs.insideFullTwist,
     landings: landingPositions.round,
+  },
+
+  {
+    name: 'Gainer Arabian Grab C.A.',
+    setups: takeoffs.swing,
+    landings: [
+      'invert backside punch', 
+      'hook',
+      'reverse pop',
+      'right first reverse pop',
+    ],
   },
 
   {
@@ -315,8 +612,45 @@ const level5 = [
 
   {
     name: 'Gainer Scissor Round',
+    notStarter: true,
     setups: takeoffs.swing,
     landings: landingPositions.round,
+  },
+
+  {
+    name: 'GM Twist',
+    notStarter: true,
+    setups: [
+      'master swing',
+      'hook',
+      'skip masterswing',
+      'vanish'],
+    landings: ['backside punch', 'hook'],
+  },
+
+  {
+    name: 'GMT Dleg',
+    notStarter: true,
+    setups: [
+      'master swing',
+      'hook',
+      'skip masterswing',
+      'vanish'],
+    landings: ['backside punch', 'hook'],
+  },
+
+  {
+    name: 'Ironman Full Rocketboi Twist',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist.concat(takeoffs.backFullTwist),
+    landings: ['backside punch', 'hook'],
+  },
+
+  {
+    name: 'Kick Double Full',
+    notStarter: true,
+    setups: takeoffs.backFullTwist,
+    landings: ['backside punch', 'hook'],
   },
 
   {
@@ -327,10 +661,71 @@ const level5 = [
   },
 
   {
-    name: 'Rodeo Full Hyper Hook',
+    name: 'Lotus Dleg H.H',
+    setups: takeoffs.swing,
+    landings: landingPositions.hook,
+  },
+
+  {
+    name: 'Lotus Late Round',
+    setups: takeoffs.swing,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Macaron',
+    setups: ['turn step'],
+    landings: landingPositions.hook,
+  },
+
+  {
+    name: 'Outstretched Boxcutter',
+    notStarter: true,
+    setups: takeoffs.swing,
+    landings: landingPositions.hyper,
+  },
+
+  {
+    name: 'Peter Pan Dub Cork',
+    notStarter: true,
+    setups: takeoffs.swing,
+    landings: [
+      'backside punch', 
+      'hook',
+    ],
+  },
+
+  {
+    name: 'Rodeo Boxcutter',
+    notStarter: true,
+    setups: takeoffs.swing,
+    landings: landingPositions.hyper,
+  },
+
+  {
+    name: 'Rodeo Cork Twist',
+    notStarter: true,
+    setups: takeoffs.swing,
+    landings: [
+      'backside punch', 
+      'hook',
+    ],
+  },
+
+  {
+    name: 'Rodeo Full H.H.',
     notStarter: true,
     setups: takeoffs.insideFullTwist,
     landings: landingPositions.hook,
+  },
+
+  {
+    name: 'Rodeo Full Snapu',
+    setups: takeoffs.backFullTwist.concat(takeoffs.insideFullTwist),
+    landings: [
+      'backside punch',
+      'hook',
+    ],
   },
 
   {
@@ -341,6 +736,140 @@ const level5 = [
   },
 
   {
+    name: 'Rodeo Snapu',
+    setups: takeoffs.raiz,
+    landings: [ // hyper landing is implied
+      'backside punch',
+      'hook'
+    ],
+  },
+
+  {
+    name: 'Rodeo Tak Full',
+    setups: ['turn step', 'vanish'],
+    landings: ['backside punch', 'hook'],
+  },
+
+  {
+    name: 'Sailor Moon Dleg',
+    setups: takeoffs.raiz,
+    landings: [
+      'backside punch',
+      'hook',
+    ],
+  },
+
+  {
+    name: 'Sailor Moon Late Round',
+    setups: takeoffs.raiz,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Sailor Moon Twist',
+    setups: takeoffs.raiz,
+    landings: ['backside punch', 'hook'],
+  },
+
+  {
+    name: 'Sheep Shearer',
+    notStarter: true,
+    setups: takeoffs.swing,
+    landings: landingPositions.hyper,
+  },
+
+  {
+    name: 'Sideswipe Late Round',
+    setups: takeoffs.raiz,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Shurikane',
+    notStarter: true,
+    setups: takeoffs.swing,
+    landings: landingPositions.hook,
+  },
+
+  {
+    name: 'Skull Snapper',
+    notStarter: true,
+    setups: takeoffs.swing,
+    landings: [
+      'backside punch', 
+      'hook',
+    ],
+  },
+
+  {
+    name: 'Snapu Hyper',
+    setups: takeoffs.raiz.concat([
+      'frontside pop', 
+      'outside pop', 
+      'frontside punch', 
+      'outside punch'
+    ]),
+    landings: landingPositions.hyper,
+  },
+
+  {
+    name: 'Snapu Hyper Hook',
+    setups: takeoffs.raiz.concat([
+      'frontside pop', 
+      'outside pop', 
+      'frontside punch', 
+      'outside punch'
+    ]),
+    landings: landingPositions.hook,
+  },
+
+  {
+    name: 'Snapu Round',
+    setups: takeoffs.raiz.concat([
+      'frontside pop', 
+      'outside pop', 
+      'frontside punch', 
+      'outside punch'
+    ]),
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Tak Dub Full',
+    setups: ['turn step', 'vanish'],
+    landings: ['backside punch', 'hook'],
+  },
+
+  {
+    name: 'Tak Dub Full Round',
+    setups: ['turn step', 'vanish'],
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Tak Dub Full Hyper',
+    setups: ['turn step', 'vanish'],
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Tak Dub Full H.H.',
+    setups: ['turn step', 'vanish'],
+    landings: landingPositions.hook,
+  },
+
+  {
+    name: 'Tak Full Wackknife',
+    setups: ['turn step', 'vanish'],
+    landings: [
+      'frontside punch', 
+      'reverse pop', 
+      'right first reverse pop',
+      'hook'
+    ],
+  },
+
+  {
     name: 'Terada Full',
     notStarter: true,
     setups: takeoffs.backFullTwist,
@@ -348,10 +877,51 @@ const level5 = [
   },
 
   {
+    name: 'Triple Cork',
+    setups: takeoffs.swing,
+    landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Triple Full Hyper',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist.concat(takeoffs.backFullTwist),
+    landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Triple Full Round',
+    notStarter: true,
+    setups: takeoffs.insideFullTwist,
+    landings: landingPositions.round,
+  },
+
+  {
     name: 'Triple Kick Full',
     notStarter: true,
     setups: takeoffs.backFullTwist,
     landings: ['backside punch', 'hook'],
+  },
+
+  {
+    name: 'Wrap Dub Full',
+    notStarter: true,
+    setups: ['wrap'],
+    landings: ['backside punch', 'hook'],
+  },
+
+  {
+    name: 'Wrap Full Snapu',
+    notStarter: true,
+    setups: ['wrap'],
+    landings: ['backside punch', 'hook'],
+  },
+
+  {
+    name: 'Wrap Full Swipe Knife',
+    notStarter: true,
+    setups: ['wrap'],
+    landings: landingPositions.hook,
   },
 
   {
