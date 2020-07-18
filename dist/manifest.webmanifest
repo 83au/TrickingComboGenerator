@@ -7,6 +7,11 @@
   "theme_color": "#5555ff",
   "icons": [
     {
+      "src": "/myFavicon.ico",
+      "type": "image/png",
+      "sizes": "16x16"
+    },
+    {
       "src": "/assets/app-icons/icon-72x72.png",
       "type": "image/png",
       "sizes": "72x72"

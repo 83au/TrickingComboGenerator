@@ -39,7 +39,7 @@ module.exports = merge(common, {
         { from: 'src/assets/app-icons', to: 'assets/app-icons' },
         { from: 'src/assets/apple-splash', to: 'assets/apple-splash' },
         { from: 'src/assets/icon-spritesheet.svg', to: 'assets/icon-spritesheet.svg' },
-        { from : 'src/favicon.ico', to: 'favicon.ico'}
+        { from : 'src/myFavicon.ico', to: 'myFavicon.ico'}
       ],
     }),
   ],

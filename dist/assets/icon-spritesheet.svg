@@ -9,7 +9,7 @@
       <path d="M1 8v16h16v-16h-4.5v1h3.5v14h-14v-14h3.5v-1h-4.5zM5.464 5.954l-0.707-0.707 4.243-4.243 4.243 4.243-0.707 0.707-3.037-3.037v13.083h-0.998v-13.081l-3.036 3.036z"></path>
     </symbol>
     <symbol id="icon-arrow-down" viewBox="0 0 32 32">
-      <path d="M16 31l15-15h-9v-16h-12v16h-9z"></path>
+      <path class="arrow-shape" d="M16 31l15-15h-9v-16h-12v16h-9z"></path>
     </symbol>
   </defs>
 </svg>
