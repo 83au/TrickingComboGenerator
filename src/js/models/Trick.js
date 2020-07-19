@@ -85,6 +85,7 @@ export default class Trick {
 
 
   handleTakeoff() {
+    // Only starter tricks will have a takeoff already
     if (!this.takeoff) {
       if (this.transition === 'skip round' && this.name.includes('9')) {
         this.takeoff = 'wrap';
@@ -92,6 +93,9 @@ export default class Trick {
       } else if (this.name.includes('Swing') && this.transition.includes('swing')) {
         console.log('ENCOUNTERED SWING');
         this.takeoff = '';
+        this.transition = null;
+      } else if (Data.takeoffModifiers.includes(this.transition)) {
+        this.takeoff = this.transition;
         this.transition = null;
       }
     } else if (Data.takeoffModifiers.includes(this.takeoff)) {

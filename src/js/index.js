@@ -253,6 +253,7 @@ function buildTrick(maxDiff, animate) {
   trick.handleLandingMod();
 
   if (trick.transition) trick.transition = Model.formatMod(trick.transition);
+  if (trick.takeoff) trick.takeoff = Model.formatMod(trick.takeoff);
 
   if (state.mode === 'random') {
     View.displayTrick(state.prevTrick, trick, DOM.randomCmbContainer, 'random');

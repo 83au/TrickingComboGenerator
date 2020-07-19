@@ -8,14 +8,14 @@ import landingPositions from './landings';
 const level5 = [
   // Kicks
   {
-    name: '360 Crescent Kyro D-leg',
+    name: '360 Crescent Kyro Dleg',
     setups: [
       'inside pop',
       'frontside pop',
       'inside punch',
       'frontside punch',
     ],
-    landings: ['backside punch'],
+    landings: ['backside punch', 'hook'],
   },
 
   {
@@ -478,6 +478,7 @@ const level5 = [
 
   {
     name: 'Full McDirty',
+    notStarter: true,
     setups: takeoffs.backFullTwist.concat(takeoffs.insideFullTwist),
     landings: [
       'backside punch',
@@ -487,6 +488,7 @@ const level5 = [
 
   {
     name: 'Full Scissor Twist',
+    notStarter: true,
     setups: takeoffs.backFullTwist.concat(takeoffs.insideFullTwist),
     landings: [
       'backside punch',
@@ -620,22 +622,14 @@ const level5 = [
   {
     name: 'GM Twist',
     notStarter: true,
-    setups: [
-      'master swing',
-      'hook',
-      'skip masterswing',
-      'vanish'],
+    setups: ['master swing'],
     landings: ['backside punch', 'hook'],
   },
 
   {
     name: 'GMT Dleg',
     notStarter: true,
-    setups: [
-      'master swing',
-      'hook',
-      'skip masterswing',
-      'vanish'],
+    setups: ['master swing'],
     landings: ['backside punch', 'hook'],
   },
 
@@ -803,63 +797,72 @@ const level5 = [
 
   {
     name: 'Snapu Hyper',
-    setups: takeoffs.raiz.concat([
+    setups: [
+      'front swing',
+      'hook',
+      'turn step',
+      'step behind',
       'frontside pop', 
       'outside pop', 
       'frontside punch', 
       'outside punch'
-    ]),
+    ],
     landings: landingPositions.hyper,
   },
 
   {
     name: 'Snapu Hyper Hook',
-    setups: takeoffs.raiz.concat([
-      'frontside pop', 
-      'outside pop', 
-      'frontside punch', 
-      'outside punch'
-    ]),
+    setups: [
+      'front swing',
+      'hook',
+      'turn step',
+      'step behind',
+    ],
     landings: landingPositions.hook,
   },
 
   {
     name: 'Snapu Round',
-    setups: takeoffs.raiz.concat([
-      'frontside pop', 
-      'outside pop', 
-      'frontside punch', 
-      'outside punch'
-    ]),
+    setups: [
+      'front swing',
+      'hook',
+      'turn step',
+      'step behind',
+    ],
     landings: landingPositions.round,
   },
 
   {
     name: 'Tak Dub Full',
+    notStarter: true,
     setups: ['turn step', 'vanish'],
     landings: ['backside punch', 'hook'],
   },
 
   {
     name: 'Tak Dub Full Round',
+    notStarter: true,
     setups: ['turn step', 'vanish'],
     landings: landingPositions.round,
   },
 
   {
     name: 'Tak Dub Full Hyper',
+    notStarter: true,
     setups: ['turn step', 'vanish'],
     landings: landingPositions.invertedHyper,
   },
 
   {
     name: 'Tak Dub Full H.H.',
+    notStarter: true,
     setups: ['turn step', 'vanish'],
     landings: landingPositions.hook,
   },
 
   {
     name: 'Tak Full Wackknife',
+    notStarter: true,
     setups: ['turn step', 'vanish'],
     landings: [
       'frontside punch', 

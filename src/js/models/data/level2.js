@@ -25,7 +25,7 @@ const level2 = [
   {
     name: '720 Kick',
     setups: takeoffs.tornado,
-    landings: landingPositions.hook.concat(['rapid round', 'hyper']),
+    landings: landingPositions.hook.concat(['rapid round']),
   },
 
   {

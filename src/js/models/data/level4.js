@@ -26,7 +26,7 @@ const level4 = [
   },
 
   {
-    name: '900 Double Leg',
+    name: '900 Dleg',
     setups: ['cheat'],
     landings: ['backside punch'],
   },
@@ -153,7 +153,6 @@ const level4 = [
     setups: [
       'vanish',
       'right left redirect',
-      'frontside pop',
       'hook',
       'cheat',
     ],
@@ -166,7 +165,7 @@ const level4 = [
   },
 
   {
-    name: 'Paraknife (Switchblade)',
+    name: 'Paraknife',
     setups: [
       'vanish',
       'hook',
@@ -210,7 +209,11 @@ const level4 = [
 
   {
     name: 'Twist Knife',
-    setups: takeoffs.tornado,
+    setups: [
+      'vanish',
+      'right left redirect',
+      'cheat',
+    ],
     landings: landingPositions.hook,
   },
 

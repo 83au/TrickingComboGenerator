@@ -116,7 +116,7 @@ const level3 = [
   },
 
   {
-    name: 'Bkick Switch Hyper Hook',
+    name: 'Bkick Switch H.H.',
     setups: takeoffs.btwist.concat(['inside leg reversal']),
     landings: landingPositions.hook,
   },
@@ -292,7 +292,7 @@ const level3 = [
   },
 
   {
-    name: 'Sailor Moon Hyper Hook',
+    name: 'Sailor Moon H.H.',
     setups: takeoffs.raiz,
     landings: landingPositions.invertedHyper,
   },
