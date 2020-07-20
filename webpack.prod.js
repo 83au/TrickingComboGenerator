@@ -1,13 +1,13 @@
 const path = require('path');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const autoprefixer = require('autoprefixer');
-const common = require('./webpack.common');
 const CopyPlugin = require('copy-webpack-plugin');
+const common = require('./webpack.common');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -39,7 +39,7 @@ module.exports = merge(common, {
         { from: 'src/assets/app-icons', to: 'assets/app-icons' },
         { from: 'src/assets/apple-splash', to: 'assets/apple-splash' },
         { from: 'src/assets/icon-spritesheet.svg', to: 'assets/icon-spritesheet.svg' },
-        { from : 'src/myFavicon.ico', to: 'myFavicon.ico'}
+        { from: 'src/myFavicon.ico', to: 'myFavicon.ico' },
       ],
     }),
   ],
@@ -56,7 +56,7 @@ module.exports = merge(common, {
               plugins: () => autoprefixer(),
             },
           },
-          'sass-loader'
+          'sass-loader',
         ],
       },
     ],

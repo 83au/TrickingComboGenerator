@@ -452,12 +452,14 @@ const level5 = [
 
   {
     name: 'Full Dleg Dub Twist',
+    notStarter: true,
     setups: takeoffs.backFullTwist.concat(takeoffs.insideFullTwist),
     landings: ['backside punch', 'hook'],
   },
 
   {
     name: 'Full Dleg Twist Dleg',
+    notStarter: true,
     setups: takeoffs.backFullTwist.concat(takeoffs.insideFullTwist),
     landings: ['backside punch', 'hook',],
   },

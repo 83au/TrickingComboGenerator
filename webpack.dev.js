@@ -1,8 +1,8 @@
 const path = require('path');
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const common = require('./webpack.common');
 const CopyPlugin = require('copy-webpack-plugin');
+const common = require('./webpack.common');
 
 module.exports = merge(common, {
   mode: 'development',
@@ -21,7 +21,7 @@ module.exports = merge(common, {
         { from: 'src/assets/app-icons', to: 'app-icons' },
         { from: 'src/assets/apple-splash', to: 'apple-splash' },
         { from: 'src/assets/icon-spritesheet.svg', to: 'icon-spritesheet.svg' },
-        { from : 'src/myFavicon.ico', to: 'myFavicon.ico'}
+        { from: 'src/myFavicon.ico', to: 'myFavicon.ico' },
 
       ],
     }),
@@ -33,7 +33,7 @@ module.exports = merge(common, {
         use: [
           'style-loader', // Injects css into DOM
           'css-loader', // Turns css into commonjs
-          'sass-loader'
+          'sass-loader',
         ],
       },
     ],
