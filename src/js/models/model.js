@@ -92,7 +92,7 @@ export function filterTrickList(level, landing, prevTrick) {
 // Recursively search all levels from first to last
 export function searchLevels(level, landing, prevTrick) {
   // Stopping condition, TODO: needs to check against a max level
-  if (level === 'level4') return undefined;
+  if (level === 'level5') return undefined;
 
   // Get level number
   const levelNum = Number(level.match(/\d$/));

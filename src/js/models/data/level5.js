@@ -83,7 +83,7 @@ const level5 = [
   // },
 
   {
-    name: '1260',
+    name: '1260 Hyper',
     setups: [
       'cheat',
       'vanish',

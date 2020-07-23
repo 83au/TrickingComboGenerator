@@ -231,7 +231,6 @@ function buildTrick(maxDiff, animate) {
     } catch (err) {
       if (numTries >= 20) return undefined;
       console.log(err);
-      console.log(trick);
       state.prevTrick = Model.redoPrevLanding(state.prevTrick);
       numTries += 1;
       tryGenerateTrick();
