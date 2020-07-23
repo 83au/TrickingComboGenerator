@@ -57,11 +57,11 @@ function setCopyrightYear() {
 
 
 function initInstallPopup() {
-  // Detects if device is on iOS 
+  // Detects if device is on iOS
   const isIos = () => {
     const userAgent = window.navigator.userAgent.toLowerCase();
-    return /iphone|ipad|ipod/.test( userAgent );
-  }
+    return /iphone|ipad|ipod/.test(userAgent);
+  };
 
   // Detects if device is in standalone mode
   const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
@@ -115,7 +115,7 @@ function handleInstallBanner(event) {
 function trackInstall(event) {
   console.log('app installed', event);
   gtag('event', 'install', {
-    'event_category': 'app install'
+    event_category: 'app install',
   });
 }
 
@@ -130,7 +130,7 @@ function closeIosPopup() {
 }
 
 
-function handleInstall() { 
+function handleInstall() {
   const promptEvent = window.deferredPrompt;
   if (!promptEvent) return;
 
@@ -145,7 +145,7 @@ function handleInstall() {
     window.deferredPrompt = null;
 
     // Hide install banner
-    DOM.installBanner.classList.add('hide');    
+    DOM.installBanner.classList.add('hide');
   });
 }
 
@@ -231,6 +231,7 @@ function buildTrick(maxDiff, animate) {
     } catch (err) {
       if (numTries >= 20) return undefined;
       console.log(err);
+      console.log(trick);
       state.prevTrick = Model.redoPrevLanding(state.prevTrick);
       numTries += 1;
       tryGenerateTrick();

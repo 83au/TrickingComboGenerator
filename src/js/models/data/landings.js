@@ -31,9 +31,8 @@ const landingPositions = {
     'frontside pop',
     'hook carry-through',
     'outside leg reversal',
-    'skip backswing', // skip from hook or round into jstep
-    // 'hook to scoot', 
-    'master swing', // * Special landing
+    'skip backswing',
+    'master swing', /* SPECIAL LANDING */
   ],
 
   complete: [

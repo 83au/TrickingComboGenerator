@@ -42,7 +42,7 @@ const level1 = [
       'reverse pop',
       'hook',
       'cheat',
-  ],
+    ],
     landings: landingPositions.hook,
   },
 
@@ -164,7 +164,12 @@ const level1 = [
     ],
   },
 
-  // Cartwheel has more instances to reflect how often it is used in combos
+  // Cartwheel is more common so it has more instances
+  {
+    name: 'Cartwheel',
+    setups: takeoffs.cartwheel,
+    landings: ['invert inside pop', 'wrap'],
+  },
   {
     name: 'Cartwheel',
     setups: takeoffs.cartwheel,
@@ -213,6 +218,12 @@ const level1 = [
     ],
   },
 
+  // Round is more common so it has more instances
+  {
+    name: 'Round Off',
+    setups: takeoffs.cartwheel,
+    landings: ['invert backside punch'],
+  },
   {
     name: 'Round Off',
     setups: takeoffs.cartwheel,

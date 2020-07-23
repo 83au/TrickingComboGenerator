@@ -1,13 +1,13 @@
 // To reduce repetition
 const takeoffs = {
   tornado: [
-      'vanish',
-      'hook carry-through',
-      'right left redirect',
-      'reverse pop',
-      'frontside pop',
-      'hook',
-      'cheat',
+    'vanish',
+    'hook carry-through',
+    'right left redirect',
+    'reverse pop',
+    'frontside pop',
+    'hook',
+    'cheat',
   ],
   swing: [
     'back swing',
@@ -29,11 +29,9 @@ const takeoffs = {
     'reverse vanish',
     'turn step',
   ],
-  backFullTwist: [
+  fullTwist: [
     'invert backside pop',
     'invert backside punch',
-  ],
-  insideFullTwist: [
     'invert inside pop',
   ],
   cartwheel: [

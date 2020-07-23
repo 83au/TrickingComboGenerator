@@ -15,10 +15,11 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    "no-console": "off",
-    "arrow-parens": ["error", "as-needed"],
-    "no-use-before-define": ["error", { "functions": false, "classes": true }],
-    "no-param-reassign": ["error", { "props": false }],
-    "import/no-extraneous-dependencies": ["error", { "devDependencies": true}]
+    'no-console': 'off',
+    'arrow-parens': ['error', 'as-needed'],
+    'no-use-before-define': ['error', { functions: false, classes: true }],
+    'no-param-reassign': ['error', { props: false }],
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'no-multiple-empty-lines': ['error', { max: 2 }],
   },
 };

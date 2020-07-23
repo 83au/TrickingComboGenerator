@@ -94,11 +94,11 @@ const level2 = [
   {
     name: 'Parafuso',
     setups: [
-      'cheat', 
-      'vanish', 
+      'cheat',
+      'vanish',
       'hook carry-through',
       'right left redirect',
-      'hook'
+      'hook',
     ],
     landings: [
       'backside punch',
@@ -241,9 +241,9 @@ const level2 = [
   {
     name: 'Master Swipe',
     setups: [
-      'master swing',  
-      'skip masterswing', 
-      'vanish'
+      'master swing',
+      'skip masterswing',
+      'vanish',
     ],
     landings: landingPositions.hyper,
   },
@@ -338,14 +338,14 @@ const level2 = [
   },
 
   {
-    name: 'Back Full Round',
-    setups: takeoffs.backFullTwist.concat(['backside pop', 'backside punch']),
+    name: 'Full Round',
+    setups: takeoffs.fullTwist.concat(['backside pop', 'backside punch']),
     landings: landingPositions.round,
   },
 
   {
-    name: 'Back Full Twist',
-    setups: takeoffs.backFullTwist.concat(['backside pop', 'backside punch']),
+    name: 'Full Twist',
+    setups: takeoffs.fullTwist.concat(['backside pop', 'backside punch']),
     landings: landingPositions.eagle,
   },
 
@@ -462,19 +462,6 @@ const level2 = [
   },
 
   {
-    name: 'Full Round',
-    notStarter: true,
-    setups: takeoffs.insideFullTwist,
-    landings: landingPositions.round,
-  },
-
-  {
-    name: 'Full Twist',
-    setups: takeoffs.insideFullTwist,
-    landings: landingPositions.eagle,
-  },
-
-  {
     name: 'Gainer Arabian',
     setups: [
       'back swing',
@@ -511,7 +498,10 @@ const level2 = [
   {
     name: 'Lonestar',
     notStarter: true,
-    setups: ['invert backside punch'],
+    setups: [
+      'invert backside pop',
+      'invert backside punch',
+    ],
     landings: [
       'invert frontside punch',
       'mega',
