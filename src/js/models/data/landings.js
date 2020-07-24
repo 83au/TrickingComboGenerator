@@ -21,6 +21,9 @@ const landingPositions = {
     'skip round', // skip from round kick into wrap or scoot
     'vanish',
     'hook',
+    'hook',
+    'hook',
+    'hook',
     'outside pop', // for double leg
   ],
 

@@ -4,6 +4,7 @@ import level2 from './level2';
 import level3 from './level3';
 import level4 from './level4';
 import level5 from './level5';
+import level6 from './level6';
 
 
 // *** TRANSITIONS AND MODIFIERS ***
@@ -118,10 +119,7 @@ export const difficultyLevels = {
   god: 6,
 };
 
-// TODO: Add properties for whether trick is a kick or a flip?
-// TODO: Every trick has some form of transition between it
 export const tricks = {
-
   // *** NOVICE ***
   level1,
 
@@ -137,35 +135,6 @@ export const tricks = {
   // *** ELITE ***
   level5,
 
-  // // ELITE
-  // level5: [
-  //   // KICKS
-  //   // Cheat 1440
-
-  //   // FLIPS & TWISTS
-  //   // Cali Roll
-  //   // Triple Full Twist
-  //   // Cork Snapu
-  //   // Cork Dleg Twist
-  //   // Triple Cork
-  //   // Shurikane
-  // ],
-
-  // // WORLD CLASS
-  // level6: [
-  //   // KICKS
-  //   // Cheat 1620
-
-  //   // FLIPS & TWISTS
-  //   {
-  //     name: 'Cork In Back Out (Snatch Cannon)',
-  //     finisherOnly: true,
-  //     setups: ['back swing'],
-  //     landings: ['backside'],
-  //   },
-  //   // Quad Full
-  //   // Quad Cork
-  //   // Triple Btwist
-  //   // Double Gainer
-  // ],
+  // *** GOD ***
+  level6,
 };

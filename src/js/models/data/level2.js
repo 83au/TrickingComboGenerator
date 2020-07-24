@@ -319,6 +319,7 @@ const level2 = [
       'inside leg reversal',
       'hook',
       'mega',
+      'right first reverse pop',
     ],
     landings: [
       'inside pop',

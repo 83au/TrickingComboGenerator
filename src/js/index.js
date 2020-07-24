@@ -267,7 +267,7 @@ function buildTrick(maxDiff, animate) {
 
 function handleDifficulty(difficulty) {
   if (difficulty === 'random') {
-    return Model.random(5) + 1;
+    return Model.random(6) + 1;
   }
   return difficulty;
 }

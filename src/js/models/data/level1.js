@@ -290,7 +290,6 @@ const level1 = [
       'invert frontside punch',
       'hook',
       'semi',
-      'mega',
     ],
   },
 
@@ -300,7 +299,6 @@ const level1 = [
     landings: [
       'invert frontside punch',
       'semi',
-      'mega',
     ],
   },
 

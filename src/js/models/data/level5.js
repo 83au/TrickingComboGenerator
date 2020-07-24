@@ -19,6 +19,16 @@ const level5 = [
   },
 
   {
+    name: '540 Gyro Knife',
+    setups: [
+      'right left redirect',
+      'hook',
+      'cheat',
+    ], // redirect is implied
+    landings: landingPositions.hook,
+  },
+
+  {
     name: 'Backside 1260 Knife',
     setups: ['backside pop', 'backside punch'],
     landings: landingPositions.hook,
@@ -71,16 +81,6 @@ const level5 = [
     ],
     landings: landingPositions.hyper,
   },
-
-  // GOD
-  // {
-  //   name: '900 Double Knife',
-  //   setups: [
-  //     'vanish',
-  //     'cheat',
-  //   ],
-  //   landings: landingPositions.hyper,
-  // },
 
   {
     name: '1260 Hyper',
@@ -451,7 +451,7 @@ const level5 = [
   },
 
   {
-    name: 'Full In Back Out',
+    name: 'Full-In Back-Out',
     notStarter: true,
     setups: [
       'invert backside pop',
