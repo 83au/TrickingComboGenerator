@@ -294,7 +294,7 @@ const level4 = [
   // FLIPS & TWISTS
   {
     name: '720 Twist',
-    setups: ['cheat'],
+    setups: ['cheat', 'right left redirect'],
     landings: landingPositions.eagle,
   },
 
