@@ -76,11 +76,11 @@
 
 .link {
   &:link {
-    color: lighten(rgb(255, 85, 85), 10%);
+    color: rgb(255, 255, 74);
   }
 
   &:visited {
-    color: yellow;
+    color: lighten(rgb(255, 85, 85), 10%);
   }
 
   &:hover {
