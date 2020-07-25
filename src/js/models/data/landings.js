@@ -1,9 +1,11 @@
 const landingPositions = {
   eagle: [
     'invert backside pop',
+    'invert backside punch',
     'missleg',
     'skip frontswing', // skip from eagle into mega for a front swing
     'vanish',
+    'invert vanish',
     // * Swings are more common and a staple of the sport, so they get higher precedence
     'back swing',
     'back swing',
@@ -20,6 +22,7 @@ const landingPositions = {
     'round carry-through',
     'skip round', // skip from round kick into wrap or scoot
     'vanish',
+    // * Hooks are more common so higher precedence
     'hook',
     'hook',
     'hook',

@@ -159,6 +159,7 @@ const level4 = [
     landings: [
       'vanish',
       'skip round',
+      'hook',
       'left right redirect',
       'inside leg reversal',
     ],
@@ -341,7 +342,7 @@ const level4 = [
 
   {
     name: 'Btwist Double Round',
-    setups: takeoffs.btwist,
+    setups: ['turn step'],
     landings: landingPositions.round,
   },
 
@@ -353,7 +354,7 @@ const level4 = [
 
   {
     name: 'Btwist Shuriken Hyper Hook',
-    setups: takeoffs.btwist,
+    setups: ['turn step'],
     landings: landingPositions.hook,
   },
 
@@ -831,13 +832,13 @@ const level4 = [
 
   {
     name: 'Tak Full Swipe',
-    setups: ['turn step', 'vanish'],
+    setups: ['turn step', 'invert vanish'],
     landings: landingPositions.invertedHyper,
   },
 
   {
     name: 'TD Tak Full',
-    setups: ['turn step', 'vanish'],
+    setups: ['turn step', 'invert vanish'],
     landings: landingPositions.eagle,
   },
 

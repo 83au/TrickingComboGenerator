@@ -812,7 +812,7 @@ const level3 = [
 
   {
     name: 'Takuraba',
-    setups: ['turn step', 'vanish'],
+    setups: ['turn step', 'invert vanish'],
     landings: [
       'frontside punch',
       'invert frontside punch',
@@ -823,13 +823,13 @@ const level3 = [
 
   {
     name: 'Tak Full Round',
-    setups: ['turn step', 'vanish'],
+    setups: ['turn step', 'invert vanish'],
     landings: landingPositions.round,
   },
 
   {
     name: 'Tak Full Twist',
-    setups: ['turn step', 'vanish'],
+    setups: ['turn step', 'invert vanish'],
     landings: landingPositions.eagle,
   },
 
@@ -871,7 +871,7 @@ const level3 = [
       'backside punch',
       'invert backside punch',
     ],
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions.hyper,
   },
 
   {

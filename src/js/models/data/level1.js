@@ -78,7 +78,14 @@ const level1 = [
 
   {
     name: 'Double Hook',
-    setups: takeoffs.tornado,
+    setups: [
+      'vanish',
+      'hook carry-through',
+      'right left redirect',
+      'reverse pop',
+      'hook',
+      'cheat',
+    ],
     landings: landingPositions.hook,
   },
 

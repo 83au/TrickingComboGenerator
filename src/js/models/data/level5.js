@@ -293,13 +293,13 @@ const level5 = [
 
   {
     name: 'Dub Btwist Hyper',
-    setups: takeoffs.btwist,
+    setups: ['turn step'],
     landings: landingPositions.invertedHyper,
   },
 
   {
     name: 'Dub Btwist Peter Pan',
-    setups: takeoffs.btwist,
+    setups: ['turn step'],
     landings: landingPositions.eagle,
   },
 
@@ -736,8 +736,8 @@ const level5 = [
 
   {
     name: 'Rodeo Tak Full',
-    setups: ['turn step', 'vanish'],
-    landings: ['backside punch', 'hook'],
+    setups: ['turn step', 'invert vanish'],
+    landings: ['backside punch', 'backside pop', 'hook'],
   },
 
   {
@@ -827,35 +827,35 @@ const level5 = [
   {
     name: 'Tak Dub Full',
     notStarter: true,
-    setups: ['turn step', 'vanish'],
+    setups: ['turn step', 'invert vanish'],
     landings: ['backside punch', 'hook'],
   },
 
   {
     name: 'Tak Dub Full Round',
     notStarter: true,
-    setups: ['turn step', 'vanish'],
+    setups: ['turn step', 'invert vanish'],
     landings: landingPositions.round,
   },
 
   {
     name: 'Tak Dub Full Hyper',
     notStarter: true,
-    setups: ['turn step', 'vanish'],
+    setups: ['turn step', 'invert vanish'],
     landings: landingPositions.invertedHyper,
   },
 
   {
     name: 'Tak Dub Full H.H.',
     notStarter: true,
-    setups: ['turn step', 'vanish'],
+    setups: ['turn step', 'invert vanish'],
     landings: landingPositions.hook,
   },
 
   {
     name: 'Tak Full Wackknife',
     notStarter: true,
-    setups: ['turn step', 'vanish'],
+    setups: ['turn step', 'invert vanish'],
     landings: [
       'frontside punch', 'reverse pop', 'right first reverse pop',
       'hook',

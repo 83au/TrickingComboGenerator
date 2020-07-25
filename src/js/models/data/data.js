@@ -69,6 +69,7 @@ export const transitions = [
 
   // Vanishes
   'vanish', // from round kick. Make invert and vert variations?
+  'invert vanish',
   'reverse vanish', // From outside leg. Was boneless before
 
   'wrap',
