@@ -484,7 +484,7 @@ const level5 = [
       'invert backside pop',
       'invert backside punch',
     ],
-    landings: ['backside punch', 'hook'],
+    landings: ['backside punch', 'hook', 'right first reverse pop'],
   },
 
   {

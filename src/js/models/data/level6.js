@@ -104,6 +104,20 @@ const level6 = [
   },
 
   {
+    name: 'Dub Full-In',
+    notStarter: true,
+    setups: [
+      'invert backside pop',
+      'invert backside punch',
+    ],
+    landings: [
+      'backside punch',
+      'hook',
+      'right first reverse pop',
+    ],
+  },
+
+  {
     name: 'Dub Full Shuriken H.H.',
     notStarter: true,
     setups: takeoffs.fullTwist,
@@ -125,6 +139,20 @@ const level6 = [
     notStarter: true,
     setups: ['invert backside punch'],
     landings: landingPositions.invertedHyper,
+  },
+
+  {
+    name: 'Full-In Full-Out',
+    notStarter: true,
+    setups: [
+      'invert backside pop',
+      'invert backside punch',
+    ],
+    landings: [
+      'backside punch',
+      'hook',
+      'right first reverse pop',
+    ],
   },
 
   {
