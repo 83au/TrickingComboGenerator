@@ -221,6 +221,16 @@ const level5 = [
   },
 
   {
+    name: 'Cork McDirty',
+    notStarter: true,
+    setups: takeoffs.swing,
+    landings: [
+      'backside punch',
+      'hook',
+    ],
+  },
+
+  {
     name: 'Cork Snapu',
     notStarter: true,
     setups: takeoffs.swing,
@@ -360,6 +370,23 @@ const level5 = [
   },
 
   {
+    name: 'Dub Full Shuriken',
+    notStarter: true,
+    setups: takeoffs.fullTwist,
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Dub Full Snapu',
+    notStarter: true,
+    setups: takeoffs.fullTwist,
+    landings: [
+      'backside punch',
+      'hook',
+    ],
+  },
+
+  {
     name: 'Dub Full Swipe Knife',
     notStarter: true,
     setups: takeoffs.fullTwist,
@@ -471,6 +498,18 @@ const level5 = [
   },
 
   {
+    name: 'Full Scissor',
+    setups: takeoffs.fullTwist,
+    landings: ['vanish', 'skip round', 'frontside pop', 'hook'],
+  },
+
+  {
+    name: 'Full Scissor Round',
+    setups: takeoffs.fullTwist,
+    landings: landingPositions.round,
+  },
+
+  {
     name: 'Full Scissor Twist',
     notStarter: true,
     setups: takeoffs.fullTwist,
@@ -485,6 +524,16 @@ const level5 = [
     notStarter: true,
     setups: takeoffs.fullTwist,
     landings: ['vanish', 'skip round', 'frontside pop', 'hook'],
+  },
+
+  {
+    name: 'Full Snapu Dleg',
+    notStarter: true,
+    setups: takeoffs.fullTwist,
+    landings: [
+      'backside punch',
+      'hook',
+    ],
   },
 
   {
@@ -685,6 +734,16 @@ const level5 = [
   },
 
   {
+    name: 'Rodeo Cork Snapu',
+    notStarter: true,
+    setups: takeoffs.swing,
+    landings: [
+      'backside punch',
+      'hook',
+    ],
+  },
+
+  {
     name: 'Rodeo Cork Twist',
     notStarter: true,
     setups: takeoffs.swing,
@@ -741,7 +800,7 @@ const level5 = [
   },
 
   {
-    name: 'Sailor Moon Dleg',
+    name: 'Sailor Moon Dleg Twist',
     setups: takeoffs.raiz,
     landings: [
       'backside punch',
@@ -913,7 +972,7 @@ const level5 = [
     name: 'Wrap Full Snapu',
     notStarter: true,
     setups: ['wrap'],
-    landings: ['backside punch', 'hook'],
+    landings: ['backside punch', 'hook', 'right first reverse pop'],
   },
 
   {

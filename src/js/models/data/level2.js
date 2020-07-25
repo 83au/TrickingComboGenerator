@@ -23,7 +23,7 @@ const level2 = [
   },
 
   {
-    name: '720 Kick',
+    name: '720',
     setups: takeoffs.tornado,
     landings: landingPositions.hook.concat(['rapid round']),
   },
@@ -35,7 +35,7 @@ const level2 = [
   },
 
   {
-    name: '900 Kick',
+    name: '900',
     setups: takeoffs.tornado.concat(['wrap']),
     landings: landingPositions.round.concat(['rapid hook', 'hyper']),
   },

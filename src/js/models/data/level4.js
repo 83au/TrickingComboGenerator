@@ -456,7 +456,7 @@ const level4 = [
   {
     name: 'Dragonfly Boxcutter',
     setups: takeoffs.swing,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions.hook,
   },
 
   {
@@ -535,15 +535,8 @@ const level4 = [
     setups: takeoffs.fullTwist,
     landings: [
       'backside punch',
-      'invert backside punch',
       'hook',
     ],
-  },
-
-  {
-    name: 'Full Scissor',
-    setups: takeoffs.fullTwist,
-    landings: ['vanish', 'skip round', 'frontside pop', 'hook'],
   },
 
   {
@@ -787,6 +780,15 @@ const level4 = [
       'vanish',
       'skip round',
       'left right redirect',
+    ],
+  },
+
+  {
+    name: 'Sailor Moon Dleg',
+    setups: takeoffs.raiz,
+    landings: [
+      'backside punch',
+      'hook',
     ],
   },
 
