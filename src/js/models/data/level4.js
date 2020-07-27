@@ -166,7 +166,7 @@ const level4 = [
   },
 
   {
-    name: 'Paraknife',
+    name: 'Switchblade',
     setups: [
       'vanish',
       'hook',
@@ -440,20 +440,6 @@ const level4 = [
   },
 
   {
-    name: 'Double Full Hyper',
-    notStarter: true,
-    setups: takeoffs.fullTwist,
-    landings: landingPositions.invertedHyper,
-  },
-
-  {
-    name: 'Double Full Swipe',
-    notStarter: true,
-    setups: takeoffs.fullTwist,
-    landings: landingPositions.invertedHyper,
-  },
-
-  {
     name: 'Dragonfly Boxcutter',
     setups: takeoffs.swing,
     landings: landingPositions.hook,
@@ -480,7 +466,7 @@ const level4 = [
   {
     name: 'Dub Full Swipe',
     setups: takeoffs.fullTwist,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions.hyper,
   },
 
   {
@@ -796,7 +782,7 @@ const level4 = [
     name: 'Shuriken Cutter',
     notStarter: true,
     setups: takeoffs.swing,
-    landings: landingPositions.hyper,
+    landings: landingPositions.hook,
   },
 
   {
@@ -822,20 +808,20 @@ const level4 = [
   {
     name: 'Swipe Knife',
     setups: takeoffs.raiz,
-    landings: landingPositions.hyper,
+    landings: landingPositions.hook,
   },
 
   // Pop swipe knife variation
   {
     name: 'Swipe Knife',
     setups: ['frontside pop', 'frontside punch'],
-    landings: landingPositions.hyper,
+    landings: landingPositions.hook,
   },
 
   {
     name: 'Tak Full Swipe',
     setups: ['turn step', 'invert vanish'],
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions.hyper,
   },
 
   {
@@ -883,7 +869,7 @@ const level4 = [
     name: 'Wrap Full Hyper Hook',
     notStarter: true,
     setups: ['wrap'],
-    landings: landingPositions.hyper,
+    landings: landingPositions.hook,
   },
 
   {
@@ -904,7 +890,7 @@ const level4 = [
     name: 'Wrap Full Swipe',
     notStarter: true,
     setups: ['turn step', 'wrap'],
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions.hyper,
   },
 ];
 

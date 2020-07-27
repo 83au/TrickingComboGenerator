@@ -485,7 +485,7 @@ const level3 = [
       'backside punch',
       'invert backside punch',
     ], // Pop is implied
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions.hyper,
   },
 
   {
@@ -610,7 +610,7 @@ const level3 = [
   {
     name: 'Full Swipe',
     setups: takeoffs.fullTwist,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions.hyper,
   },
 
   {
@@ -807,7 +807,7 @@ const level3 = [
   {
     name: 'Swipe',
     setups: ['frontside pop', 'frontside punch'],
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions.hyper,
   },
 
   {

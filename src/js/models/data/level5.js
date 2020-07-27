@@ -211,7 +211,7 @@ const level5 = [
     name: 'Cork Feilong Knife',
     notStarter: true,
     setups: takeoffs.swing,
-    landings: landingPositions.hyper,
+    landings: landingPositions.hook,
   },
 
   {
@@ -245,7 +245,7 @@ const level5 = [
     name: 'Cork Swipeknife',
     notStarter: true,
     setups: takeoffs.swing,
-    landings: landingPositions.hyper,
+    landings: landingPositions.hook,
   },
 
   {
@@ -602,7 +602,7 @@ const level5 = [
     name: 'Full Wackknife H.H.',
     notStarter: true,
     setups: takeoffs.fullTwist,
-    landings: ['backside punch', 'hook'],
+    landings: landingPositions.hook,
   },
 
   {
@@ -730,7 +730,7 @@ const level5 = [
     name: 'Rodeo Boxcutter',
     notStarter: true,
     setups: takeoffs.swing,
-    landings: landingPositions.hyper,
+    landings: landingPositions.hook,
   },
 
   {
@@ -824,7 +824,7 @@ const level5 = [
     name: 'Sheep Shearer',
     notStarter: true,
     setups: takeoffs.swing,
-    landings: landingPositions.hyper,
+    landings: landingPositions.hook,
   },
 
   {
@@ -858,7 +858,7 @@ const level5 = [
       'step behind',
       'frontside pop', 'outside pop', 'frontside punch', 'outside punch',
     ],
-    landings: landingPositions.hyper,
+    landings: landingPositions.invertedHyper,
   },
 
   {

@@ -117,7 +117,7 @@ export const difficultyLevels = {
   intermediate: 3,
   advanced: 4,
   elite: 5,
-  god: 6,
+  goat: 6,
 };
 
 export const tricks = {
