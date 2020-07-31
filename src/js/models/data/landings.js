@@ -38,7 +38,8 @@ const landingPositions = {
     'hook carry-through',
     'outside leg reversal',
     'skip backswing',
-    'master swing', /* SPECIAL LANDING */
+    'master swing',
+    'scoot master swing',
   ],
 
   complete: [

@@ -94,9 +94,6 @@ export default class Trick {
         console.log('ENCOUNTERED SWING');
         this.takeoff = '';
         this.transition = null;
-      } else if (this.name.includes('Scoot') && this.transition === 'hook carry-through') {
-        this.takeoff = null;
-        this.transition = null;
       } else if (Data.takeoffModifiers.includes(this.transition)) {
         this.takeoff = this.transition;
         this.transition = null;

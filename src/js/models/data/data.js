@@ -43,6 +43,7 @@ export const landingModifiers = [
 export const transitions = [
   'back swing',
   'front swing',
+  'scoot master swing',
   'master swing',
   'hook', // *
   'hook carry-through',
