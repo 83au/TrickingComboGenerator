@@ -245,7 +245,7 @@ const level1 = [
   {
     name: 'Scoot',
     setups: [
-      'skip round',
+      'skip masterswing',
       'semi',
       'hook',
       'scoot master swing',
@@ -255,7 +255,7 @@ const level1 = [
 
   {
     name: 'Scoot Hyper',
-    setups: ['skip round', 'semi', 'hook', 'scoot master swing'],
+    setups: ['skip masterswing', 'semi', 'hook', 'scoot master swing'],
     landings: landingPositions.hyper,
   },
 
