@@ -49,7 +49,7 @@
 
     height: 100%;
 
-    font-size: 2rem;
+    font-size: 1.8rem;
 
     @include respond(desktop) {
       align-items: center;
@@ -59,7 +59,7 @@
 
     & > * {
       display: inline;
-      margin: 2rem 0;
+      margin: 1.5rem 0;
     }
   }
 }
