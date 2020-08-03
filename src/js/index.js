@@ -11,7 +11,7 @@ const DOM = View.elements;
 const state = {};
 
 
-init();
+document.addEventListener('DOMContentLoaded', init);
 
 
 function init() {
