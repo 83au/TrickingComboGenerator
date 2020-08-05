@@ -340,13 +340,13 @@ const level2 = [
 
   {
     name: 'Full Round',
-    setups: takeoffs.fullTwist.concat(['backside pop', 'backside punch']),
+    setups: takeoffs.fullTwist.concat(['backside pop', 'backside punch', 'inside pop']),
     landings: landingPositions.round,
   },
 
   {
     name: 'Full Twist',
-    setups: takeoffs.fullTwist.concat(['backside pop', 'backside punch']),
+    setups: takeoffs.fullTwist.concat(['backside pop', 'backside punch', 'inside pop']),
     landings: landingPositions.eagle,
   },
 

@@ -801,7 +801,7 @@ const level3 = [
   {
     name: 'Sideswipe',
     setups: takeoffs.raiz,
-    landings: landingPositions.invertedHyper.concat('invert inside pop'),
+    landings: landingPositions.invertedHyper.concat('inside pop'),
   },
 
   {
