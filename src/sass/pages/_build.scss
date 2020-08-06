@@ -20,24 +20,19 @@
 }
 
 /* For delete animation */
-.build::before,
-.build::after {
+.split {
   position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 0px) rotate(0);
-  color: #fff;
-  content: attr(data-name);
   width: 100%;
-  font-size: inherit;
+  transform: translate(-50%, 0px) rotate(0);
+  content: attr(data-name);
 }
 
-.build.remove::before {
-  clip-path: polygon(0 0, 55% 0, 35% 100%, 0% 100%);
+.trick-left {
+  clip-path: polygon(0 0, 56% 0, 36% 100%, 0% 100%);
   animation: splitLeft 1.9s 10ms forwards;
 }
 
-.build.remove::after {
+.trick-right {
   clip-path: polygon(60% 0, 100% 0, 190% 110%, 40% 100%);
   animation: splitRight 1.9s 10ms forwards;
 }

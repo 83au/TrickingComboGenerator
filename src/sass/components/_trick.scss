@@ -1,18 +1,13 @@
-.takeoff, 
-.landing {
-  font-size: 2.5rem;
-}
-
 .trick {
-  font-size: 3.3rem;
+  font-size: 3rem;
   font-style: italic; 
 
   &.build {
     position: relative;
-    color: transparent;
+    color: white;
     animation: slideIn .6s;
   }
 
-  @include respond(tablet) { font-size: 3.5rem };
+  @include respond(tablet) { font-size: 3.3rem };
   @include respond(desktop) { font-size: 3.8rem };
 }

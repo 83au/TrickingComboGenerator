@@ -99,7 +99,7 @@ export function removeLastConnector() {
 }
 
 
-export function removeCurrentTrick(split, prevTrick) {
+export function removeCurrentTrick(split, currTrick, prevTrick) {
   const tricks = elements.builtCmbContainer.querySelectorAll('.trick');
   const lastTrick = tricks[tricks.length - 1];
 
@@ -112,7 +112,31 @@ export function removeCurrentTrick(split, prevTrick) {
     //   if (!prevTrick) elements.buildDiffContainer.classList.remove('hide');
     // }, { once: true });
 
-    lastTrick.classList.add('remove');
+    lastTrick.classList.remove('build');
+
+    const { takeoff, landingMod } = currTrick;
+
+    if (takeoff && landingMod) {
+      lastTrick.innerHTML = `
+        <span class="split trick-left">${`${takeoff} ${currTrick.name} ${landingMod}`}</span>
+        <span class="split trick-right">${`${takeoff} ${currTrick.name} ${landingMod}`}</span>
+      `;
+    } else if (takeoff) {
+      lastTrick.innerHTML = `
+        <span class="split trick-left">${`${takeoff} ${currTrick.name}`}</span>
+        <span class="split trick-right">${`${takeoff} ${currTrick.name}`}</span>
+      `;
+    } else if (landingMod) {
+      lastTrick.innerHTML = `
+        <span class="split trick-left">${`${currTrick.name} ${landingMod}`}</span>
+        <span class="split trick-right">${`${currTrick.name} ${landingMod}`}</span>
+      `;
+    } else {
+      lastTrick.innerHTML = `
+        <span class="split trick-left">${currTrick.name}</span>
+        <span class="split trick-right">${currTrick.name}</span>
+      `;
+    }
 
     // Delay is to ensure the animation finishes before everything else happens
     setTimeout(() => {
@@ -134,16 +158,6 @@ export function removeCurrentTrick(split, prevTrick) {
 // This only gets called in Build Mode
 function animateTrick(prevTrick, curTrick, container, mode, trickEl, animate) {
   trickEl.classList.add('trick', 'hidden');
-
-  if (curTrick.takeoff && curTrick.landingMod) {
-    trickEl.setAttribute('data-name', `${curTrick.takeoff} ${curTrick.name} ${curTrick.landingMod}`);
-  } else if (curTrick.takeoff) {
-    trickEl.setAttribute('data-name', `${curTrick.takeoff} ${curTrick.name}`);
-  } else if (curTrick.landingMod) {
-    trickEl.setAttribute('data-name', `${curTrick.name} ${curTrick.landingMod}`);
-  } else {
-    trickEl.setAttribute('data-name', curTrick.name);
-  }
 
   if (prevTrick) createConnector(container, mode);
 
@@ -235,7 +249,7 @@ function displayTransition(trick, container, mode) {
 
 function displayTakeoffAndName(trick, trickEl, container) {
   if (trick.takeoff) {
-    trickEl.innerHTML = `<span class="takeoff">${trick.takeoff}</span> ${trick.name}`;
+    trickEl.innerHTML = `${trick.takeoff} ${trick.name}`;
     container.append(trickEl);
   } else {
     trickEl.textContent = trick.name;
@@ -246,9 +260,6 @@ function displayTakeoffAndName(trick, trickEl, container) {
 
 function displayLanding(landingMod, trickEl) {
   if (landingMod) {
-    const landingEl = document.createElement('span');
-    landingEl.className = 'landing';
-    landingEl.innerHTML = `&nbsp;${landingMod}`;
-    trickEl.append(landingEl);
+    trickEl.textContent += ` ${landingMod}`;
   }
 }

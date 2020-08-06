@@ -276,8 +276,8 @@ function handleDifficulty(difficulty) {
 function redoTrick() {
   hideButtons();
 
+  View.removeCurrentTrick(true, state.currTrick, state.prevTrick);
   state.currTrick = undefined;
-  View.removeCurrentTrick(true, state.prevTrick);
 
   // Delay long enough for removal animation to finish
   setTimeout(() => {
