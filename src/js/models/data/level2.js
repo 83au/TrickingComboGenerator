@@ -220,8 +220,9 @@ const level2 = [
     setups: [
       'vanish',
       'reverse pop',
+      'outside leg reversal',
       'hook carry-through',
-      'skip round',
+      'skip frontswing',
     ],
     landings: ['cheat', 'hook'],
   },

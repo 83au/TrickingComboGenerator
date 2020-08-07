@@ -41,7 +41,7 @@ const level1 = [
       'right left redirect',
       'reverse pop',
       'hook',
-      'cheat',
+      // 'cheat', - cheat is implied
     ],
     landings: landingPositions.hook,
   },
@@ -278,7 +278,7 @@ const level1 = [
   },
 
   {
-    name: 'Transformer/Machine',
+    name: 'Machine',
     setups: [
       'vanish',
       'outside leg reversal',
