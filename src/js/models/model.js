@@ -83,9 +83,8 @@ export function formatMod(mod) {
 }
 
 
-export function filterTrickList(level, landing, prevTrick) {
-  return Data.tricks[level].filter(trick => trick.setups.includes(landing)
-  || trick.setups.includes(prevTrick.name));
+export function filterTrickList(level, landing) {
+  return Data.tricks[level].filter(trick => trick.setups.includes(landing));
 }
 
 // * THIS FUNCTION IS FOR RANDOM MODE ONLY

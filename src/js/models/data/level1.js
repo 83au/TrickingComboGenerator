@@ -266,7 +266,7 @@ const level1 = [
       'outside leg reversal',
       'hook carry-through',
       'semi',
-      'skip frontswing',
+      'skip round',
     ],
     landings: [
       'backside pop',
@@ -284,7 +284,7 @@ const level1 = [
       'outside leg reversal',
       'hook carry-through',
       'semi',
-      'skip frontswing',
+      'skip round',
     ],
     landings: [
       'backside pop',

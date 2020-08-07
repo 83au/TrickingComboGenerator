@@ -221,7 +221,6 @@ const level3 = [
       'reverse vanish',
       'inside leg reversal',
       'hook',
-      'mega',
     ],
     landings: [
       'mega',
@@ -269,7 +268,7 @@ const level3 = [
   {
     name: 'Raiz Hyper Hook',
     setups: takeoffs.raiz,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions.hook,
   },
 
   {
@@ -379,7 +378,7 @@ const level3 = [
   {
     name: 'Btwist Axe',
     setups: takeoffs.btwist,
-    landings: landingPositions.mega,
+    landings: landingPositions.round,
   },
 
   {
@@ -427,7 +426,7 @@ const level3 = [
   {
     name: 'Btwist Swipe',
     setups: takeoffs.btwist,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions.hyper,
   },
 
   {
@@ -468,7 +467,7 @@ const level3 = [
   {
     name: 'Cork Swipe',
     setups: takeoffs.swing,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions.hyper,
   },
 
   {
@@ -794,7 +793,6 @@ const level3 = [
       'cheat',
       'skip backswing',
       'wrap',
-      'broken',
     ],
   },
 

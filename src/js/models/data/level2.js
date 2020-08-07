@@ -513,7 +513,7 @@ const level2 = [
 
   {
     name: 'Loser',
-    setups: ['Webster', 'skip frontswing'],
+    setups: ['skip frontswing'],
     landings: [
       'inside pop',
       'backside pop',
@@ -538,7 +538,7 @@ const level2 = [
     name: 'Rocketboii',
     notStarter: true,
     setups: ['invert backside punch'],
-    landings: ['backside punch', 'hook'],
+    landings: ['backside punch', 'invert backside punch', 'hook'],
   },
 
   {

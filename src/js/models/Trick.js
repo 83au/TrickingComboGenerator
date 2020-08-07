@@ -23,7 +23,7 @@ export default class Trick {
       const landing = Model.adjustForLandingMod(prevTrick, this);
 
       // Filter list for tricks that have at least one setup that matches prevTrick's landing
-      possibleTricks = Model.filterTrickList(this.level, landing, prevTrick);
+      possibleTricks = Model.filterTrickList(this.level, landing);
 
       // Make adjustment if no tricks on that list match
       // * Change this to alter last trick's landing?

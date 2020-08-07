@@ -887,7 +887,10 @@ const level5 = [
     name: 'Tak Dub Full',
     notStarter: true,
     setups: ['turn step', 'invert vanish'],
-    landings: ['backside punch', 'hook'],
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'hook'],
   },
 
   {

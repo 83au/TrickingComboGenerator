@@ -470,7 +470,7 @@ const level4 = [
   },
 
   {
-    name: 'Dub Full Hyper Hook',
+    name: 'Dub Full H.H.',
     setups: takeoffs.fullTwist,
     landings: landingPositions.hook,
   },
@@ -487,6 +487,7 @@ const level4 = [
     setups: takeoffs.fullTwist,
     landings: [
       'backside punch',
+      'invert backside punch',
       'hook',
     ],
   },
@@ -497,6 +498,7 @@ const level4 = [
     setups: takeoffs.fullTwist,
     landings: [
       'backside punch',
+      'invert backside punch',
       'hook,',
     ],
   },
@@ -521,6 +523,7 @@ const level4 = [
     setups: takeoffs.fullTwist,
     landings: [
       'backside punch',
+      'invert backside punch',
       'hook',
     ],
   },
@@ -543,6 +546,7 @@ const level4 = [
     setups: takeoffs.fullTwist,
     landings: [
       'backside punch',
+      'invert backside punch',
       'hook',
     ],
   },
@@ -569,33 +573,6 @@ const level4 = [
     notStarter: true,
     setups: ['invert inside pop'],
     landings: ['backside punch'],
-  },
-
-  {
-    name: 'Ironman Full C.A.',
-    notStarter: true,
-    setups: takeoffs.fullTwist,
-    landings: [
-      'backside punch',
-      'hook',
-    ],
-  },
-
-  {
-    name: 'Ironman Full Dleg',
-    notStarter: true,
-    setups: takeoffs.fullTwist,
-    landings: [
-      'backside punch',
-      'hook',
-    ],
-  },
-
-  {
-    name: 'Ironman Full H.H.',
-    notStarter: true,
-    setups: takeoffs.fullTwist,
-    landings: landingPositions.hook,
   },
 
   {
@@ -661,13 +638,32 @@ const level4 = [
   },
 
   {
-    name: 'Ironman Full Crowd Awakener',
+    name: 'Ironman Full C.A.',
     notStarter: true,
     setups: takeoffs.fullTwist,
     landings: [
       'backside punch',
+      'invert backside punch',
       'hook',
     ],
+  },
+
+  {
+    name: 'Ironman Full Dleg',
+    notStarter: true,
+    setups: takeoffs.fullTwist,
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'hook',
+    ],
+  },
+
+  {
+    name: 'Ironman Full H.H.',
+    notStarter: true,
+    setups: takeoffs.fullTwist,
+    landings: landingPositions.hook,
   },
 
   {
@@ -788,7 +784,7 @@ const level4 = [
   {
     name: 'Sidewinder',
     setups: takeoffs.btwist,
-    landings: ['backside pop'],
+    landings: ['backside pop', 'vanish'],
   },
 
   {
