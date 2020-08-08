@@ -639,11 +639,13 @@ const level3 = [
       'left right redirect',
       'skip backswing',
     ],
-    landings: [ // Hyper is implied
+    landings: [
       'backside punch',
       'invert backside punch',
-      'complete',
-      'hyper',
+      'backside pop',
+      'invert backside pop',
+      'back swing',
+      'vanish',
     ],
   },
 
