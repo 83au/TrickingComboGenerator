@@ -54,7 +54,7 @@ const level6 = [
 
   {
     name: 'Cali Roll',
-    setups: ['cheat'],
+    setups: ['Run in'],
     landings: [
       'backside punch',
       'hook',
