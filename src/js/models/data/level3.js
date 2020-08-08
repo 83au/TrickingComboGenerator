@@ -5,7 +5,7 @@ const level3 = [
   // KICKS
   {
     // 360 Crescent variations
-    name: '360 Crescent',
+    name: '360',
     setups: [
       'inside pop',
       'frontside pop',
@@ -13,7 +13,6 @@ const level3 = [
       'frontside punch',
       'cheat',
       'hook',
-      // 'right left redirect', redirect is implied
     ],
     landings: [
       'gyro frontside',
@@ -195,6 +194,21 @@ const level3 = [
     ],
   },
 
+  { // Swing 360 variation
+    name: 'Swing 360',
+    setups: [
+      'back swing',
+      'round carry-through',
+      'inside leg reversal',
+      'left right redirect',
+      'skip backswing',
+      'right first reverse pop',
+    ],
+    landings: [
+      'half gyro backside',
+    ],
+  },
+
   {
     name: 'Swing 1080',
     setups: takeoffs.swing,
@@ -292,7 +306,7 @@ const level3 = [
   {
     name: 'Sailor Moon H.H.',
     setups: takeoffs.raiz,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions['inverted hyper'],
   },
 
   {
@@ -390,7 +404,7 @@ const level3 = [
   {
     name: 'Btwist Hyper',
     setups: takeoffs.btwist,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions['inverted hyper'],
   },
 
   {
@@ -418,7 +432,7 @@ const level3 = [
       'left right redirect',
       'skip round',
       'vanish',
-      'hoo',
+      'hook',
       'outside pop',
     ],
   },
@@ -440,7 +454,7 @@ const level3 = [
   {
     name: 'Cork Hyper',
     setups: takeoffs.swing,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions['inverted hyper'],
   },
 
   {
@@ -451,7 +465,7 @@ const level3 = [
       'left right redirect',
       'skip round',
       'vanish',
-      'hoo',
+      'hook',
       'outside pop',
     ],
   },
@@ -581,7 +595,7 @@ const level3 = [
   {
     name: 'Full Hyper',
     setups: takeoffs.fullTwist,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions['inverted hyper'],
   },
 
   {
@@ -799,7 +813,7 @@ const level3 = [
   {
     name: 'Sideswipe',
     setups: takeoffs.raiz,
-    landings: landingPositions.invertedHyper.concat('inside pop'),
+    landings: landingPositions['inverted hyper'].concat('inside pop'),
   },
 
   {

@@ -4,8 +4,8 @@ import landingPositions from './landings';
 const level2 = [
   // VERT KICKS
   {
-    // 360 Crescent variations
-    name: '360 Crescent',
+    // 360 variations
+    name: '360',
     setups: [
       'inside pop',
       'frontside pop',
@@ -16,7 +16,6 @@ const level2 = [
       // 'right left redirect', redirect is implied
     ],
     landings: [
-      'mega',
       'complete',
       'half gyro backside',
     ],
@@ -106,7 +105,7 @@ const level2 = [
   },
 
   {
-    name: 'Swing 360 Crescent',
+    name: 'Swing 360',
     setups: [
       'back swing',
       'round carry-through',
@@ -118,11 +117,22 @@ const level2 = [
     landings: [
       'frontside pop',
       'hook',
-      'turbo',
-      'right left redirect',
-      'outside leg reversal',
-      'cheat',
+      'reverse pop',
+      'right first reverse pop',
     ],
+  },
+
+  {
+    name: 'Swing 360 Hyper',
+    setups: [
+      'back swing',
+      'round carry-through',
+      'inside leg reversal',
+      'left right redirect',
+      'skip backswing',
+      'right first reverse pop',
+    ],
+    landings: landingPositions.round,
   },
 
   {
@@ -296,7 +306,7 @@ const level2 = [
   {
     name: 'Super Monkey Scoot',
     setups: takeoffs.cartwheel,
-    landings: landingPositions.eagle,
+    landings: landingPositions.eagle.concat('vanish', 'vanish', 'vanish', 'vanish', 'vanish'),
   },
 
   {
@@ -480,7 +490,7 @@ const level2 = [
   },
 
   {
-    name: 'Gainer Flash Kick',
+    name: 'Gainer Flash',
     setups: [
       'back swing',
       'left right redirect',

@@ -138,7 +138,7 @@ const level6 = [
     name: 'Frappe',
     notStarter: true,
     setups: ['invert backside punch'],
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions['inverted hyper'],
   },
 
   {

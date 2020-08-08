@@ -6,7 +6,7 @@ import landingPositions from './landings';
 const level1 = [
   // VERT KICKS
   {
-    name: '360 Crescent',
+    name: '360',
     setups: [
       'inside pop',
       'frontside pop',
@@ -18,13 +18,24 @@ const level1 = [
     ],
     landings: [
       'hook',
-      'turbo',
-      'mega',
-      'outside leg reversal',
-      'right left redirect',
-      'hook carry-through',
-      'cheat',
+      'frontside pop',
+      'reverse pop',
+      'right first reverse pop',
     ],
+  },
+
+  {
+    name: '360 Hyper',
+    setups: [
+      'inside pop',
+      'frontside pop',
+      'inside punch',
+      'frontside punch',
+      'cheat',
+      'hook',
+      // 'right left redirect', redirect is implied
+    ],
+    landings: landingPositions.round,
   },
 
   {

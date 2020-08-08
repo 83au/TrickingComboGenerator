@@ -205,7 +205,7 @@ const level4 = [
   {
     name: 'Swipeknife',
     setups: takeoffs.raiz,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions['inverted hyper'],
   },
 
   {
@@ -454,7 +454,7 @@ const level4 = [
   {
     name: 'Dub Full Hyper',
     setups: takeoffs.fullTwist,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions['inverted hyper'],
   },
 
   {
@@ -858,7 +858,7 @@ const level4 = [
     name: 'Wrap Full Hyper',
     notStarter: true,
     setups: ['turn step', 'wrap'],
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions['inverted hyper'],
   },
 
   {

@@ -304,7 +304,7 @@ const level5 = [
   {
     name: 'Dub Btwist Hyper',
     setups: ['turn step'],
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions['inverted hyper'],
   },
 
   {
@@ -540,7 +540,7 @@ const level5 = [
     name: 'Full Snapu Hyper',
     notStarter: true,
     setups: takeoffs.fullTwist,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions['inverted hyper'],
   },
 
   {
@@ -858,7 +858,7 @@ const level5 = [
       'step behind',
       'frontside pop', 'outside pop', 'frontside punch', 'outside punch',
     ],
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions['inverted hyper'],
   },
 
   {
@@ -904,7 +904,7 @@ const level5 = [
     name: 'Tak Dub Full Hyper',
     notStarter: true,
     setups: ['turn step', 'invert vanish'],
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions['inverted hyper'],
   },
 
   {
@@ -944,7 +944,7 @@ const level5 = [
     name: 'Triple Full Hyper',
     notStarter: true,
     setups: takeoffs.fullTwist,
-    landings: landingPositions.invertedHyper,
+    landings: landingPositions['inverted hyper'],
   },
 
   {

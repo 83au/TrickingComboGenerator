@@ -28,6 +28,7 @@ export const takeoffModifiers = [ // if transition is a takeoff mod, prepend new
 export const landingModifiers = [
   'complete', // backside
   'hyper', // inside (mainstream: land on inside kicking leg)
+  'inverted hyper',
   'mega', // frontside land left foot first - swings into Aerial
   'turbo', // outside kick landing frontside both feet at same time
   'semi', // frontside land right foot first, swings into Raiz

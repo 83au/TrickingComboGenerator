@@ -58,7 +58,7 @@ const landingPositions = {
     'wrap', // * Special landing
   ],
 
-  invertedHyper: [
+  'inverted hyper': [
     'reverse vanish',
     'right left redirect',
     'skip backswing',
@@ -134,7 +134,6 @@ const landingPositions = {
     'hook carry-through',
     'outside leg reversal',
     'skip backswing', // skip from hook or round into jstep
-    'hook to scoot',
   ],
 };
 
