@@ -1,7 +1,7 @@
 {
   "name": "Tricking Combo Generator",
   "short_name": "TCG",
-  "start_url": "/index.html",
+  "start_url": "https://www.trickingcombogenerator.com/",
   "display": "standalone",
   "background_color": "#5555ff",
   "theme_color": "#5555ff",
