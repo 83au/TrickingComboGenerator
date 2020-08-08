@@ -471,14 +471,6 @@ const level3 = [
   },
 
   {
-    name: 'Cork Snapu',
-    setups: takeoffs.swing,
-    landings: [
-      'backside punch',
-      'hook',
-    ],
-  },
-  {
     name: 'Cork Swipe',
     setups: takeoffs.swing,
     landings: landingPositions.hyper,
