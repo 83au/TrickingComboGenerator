@@ -164,7 +164,7 @@ const level3 = [
   {
     name: 'Parafuso Hawkeye',
     setups: [
-      'cheat',
+      // 'cheat', cheat is implied
       'vanish',
       'hook carry-through',
       'right left redirect',

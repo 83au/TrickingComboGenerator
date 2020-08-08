@@ -166,17 +166,6 @@ const level4 = [
   },
 
   {
-    name: 'Switchblade',
-    setups: [
-      'vanish',
-      'hook',
-      'hook carry-through',
-      'right left redirect', // cheat is implied
-    ],
-    landings: landingPositions.hook,
-  },
-
-  {
     name: 'Parafuso Gyro',
     setups: [
       'vanish',
@@ -206,6 +195,17 @@ const level4 = [
     name: 'Swipeknife',
     setups: takeoffs.raiz,
     landings: landingPositions['inverted hyper'],
+  },
+
+  {
+    name: 'Switchblade',
+    setups: [
+      'vanish',
+      'hook',
+      'hook carry-through',
+      'right left redirect', // cheat is implied
+    ],
+    landings: landingPositions.hook,
   },
 
   {

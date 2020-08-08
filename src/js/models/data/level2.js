@@ -93,7 +93,7 @@ const level2 = [
   {
     name: 'Parafuso',
     setups: [
-      'cheat',
+      // 'cheat', cheat is implied
       'vanish',
       'hook carry-through',
       'right left redirect',
