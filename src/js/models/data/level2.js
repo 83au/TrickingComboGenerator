@@ -374,6 +374,13 @@ const level2 = [
   },
 
   {
+    name: 'Btwist Shuriken',
+    setups: ['hook', 'reverse vanish', 'turn step', 'mega'],
+    landings: ['vanish', 'hook'],
+  },
+
+
+  {
     name: 'Butter Knife',
     setups: takeoffs.btwist.concat(['missleg', 'inside leg reversal']),
     landings: landingPositions.hook,
@@ -549,12 +556,6 @@ const level2 = [
     notStarter: true,
     setups: ['invert backside punch'],
     landings: ['backside punch', 'invert backside punch', 'hook'],
-  },
-
-  {
-    name: 'Shuriken Twist',
-    setups: ['hook', 'reverse vanish', 'turn step', 'mega'],
-    landings: ['vanish', 'hook'],
   },
 
   {
