@@ -3,6 +3,7 @@ const specialLandings = [
   'master swing',
   'wrap',
   'outside pop',
+  'skip frontswing',
 ];
 
 export default specialLandings;
