@@ -87,15 +87,17 @@ export default class Trick {
   handleTakeoff() {
     // Only starter tricks will have a takeoff already
     if (!this.takeoff) {
-      if (this.transition === 'skip round' && this.name.includes('9')) {
-        this.takeoff = 'wrap';
-        this.transition = 'skip';
+      if (this.name.includes('Wrap')) {
+        this.takeoff = '';
+        if (this.transition === 'skip round') {
+          this.transition = 'skip';
+        } else {
+          this.transition = null;
+        }
       } else if (this.name.includes('Swing') && this.transition.includes('swing') && !/^skip backswing$/.test(this.transition)) {
-        console.log('ENCOUNTERED SWING');
         this.takeoff = '';
         this.transition = null;
       } else if (this.name.includes('Swing') && /^skip backswing$/.test(this.transition)) {
-        console.log('ENCOUNTERED SWING');
         this.takeoff = '';
         this.transition = 'skip';
       } else if (Data.takeoffModifiers.includes(this.transition)) {
@@ -106,7 +108,6 @@ export default class Trick {
       if (this.takeoff === 'wrap' && !this.transition) {
         this.takeoff = 'cheat';
       } else if (this.name.includes('Swing')) {
-        console.log('ENCOUNTERED SWING');
         this.takeoff = '';
       } else {
         this.takeoff = Model.formatMod(this.takeoff);
@@ -115,13 +116,29 @@ export default class Trick {
   }
 
 
-  generateLanding(diff) {
+  generateLanding(diff, maxDiff) {
+    let filtered;
+    const modCart = maxDiff !== 'novice' && (this.trickObj.name === 'Cartwheel' || this.trickObj.name === 'One-handed Cartwheel');
+
+    const checkCartwheel = () => {
+      if (modCart) {
+        // Remove reverse vanish & inside pop Cart landings as they are not used above Novice
+        console.log('ENCOUNTERED CARTWHEEL!!!');
+        filtered = this.trickObj.landings.filter(landing => landing !== 'reverse vanish' && landing !== 'inside pop');
+        console.log(filtered);
+        this.landing = Model.randomMove(filtered);
+        return true;
+      }
+      return false;
+    };
     // If difficulty is greater than 1, no adjustments need to be made
     if (diff > 1) {
+      if (checkCartwheel()) return;
       this.landing = Model.randomMove(this.trickObj.landings);
     } else {
+      if (checkCartwheel()) return;
       // 1. Make new landings list excluding special landings
-      const filtered = this.trickObj.landings.filter(landing => !specialLandings.includes(landing));
+      filtered = this.trickObj.landings.filter(landing => !specialLandings.includes(landing));
       // 2. Set landing to a random landing from this new list
       this.landing = Model.randomMove(filtered);
     }

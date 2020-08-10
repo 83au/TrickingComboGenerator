@@ -248,8 +248,8 @@ function buildTrick(maxDiff, animate) {
   }
 
   trick.handleHook();
+  trick.generateLanding(trick.level, diff);
   trick.handleTakeoff();
-  trick.generateLanding();
   trick.handleLandingMod();
 
   if (trick.transition) trick.transition = Model.formatMod(trick.transition);

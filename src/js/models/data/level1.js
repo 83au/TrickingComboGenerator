@@ -204,28 +204,58 @@ const level1 = [
   {
     name: 'Cartwheel',
     setups: takeoffs.cartwheel,
-    landings: ['invert inside pop', 'inside pop', 'reverse vanish', 'wrap'],
+    landings: [
+      'invert inside pop',
+      'invert inside pop',
+      'wrap',
+      'inside pop',
+      'reverse vanish',
+    ],
   },
   {
     name: 'Cartwheel',
     setups: takeoffs.cartwheel,
-    landings: ['invert inside pop', 'inside pop', 'reverse vanish', 'wrap'],
+    landings: [
+      'invert inside pop',
+      'invert inside pop',
+      'wrap',
+      'inside pop',
+      'reverse vanish',
+    ],
   },
   {
     name: 'Cartwheel',
     setups: takeoffs.cartwheel,
-    landings: ['invert inside pop', 'inside pop', 'reverse vanish', 'wrap'],
+    landings: [
+      'invert inside pop',
+      'invert inside pop',
+      'wrap',
+      'inside pop',
+      'reverse vanish',
+    ],
   },
   {
     name: 'Cartwheel',
     setups: takeoffs.cartwheel,
-    landings: ['invert inside pop', 'inside pop', 'reverse vanish', 'wrap'],
+    landings: [
+      'invert inside pop',
+      'invert inside pop',
+      'wrap',
+      'inside pop',
+      'reverse vanish',
+    ],
   },
 
   {
     name: 'One-handed Cartwheel',
     setups: takeoffs.cartwheel,
-    landings: ['invert inside pop', 'inside pop', 'reverse vanish', 'wrap'],
+    landings: [
+      'invert inside pop',
+      'invert inside pop',
+      'wrap',
+      'inside pop',
+      'reverse vanish',
+    ],
   },
 
   {
