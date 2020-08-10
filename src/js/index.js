@@ -207,6 +207,7 @@ function setCurrAndPrevTrick() {
 
 
 function buildTrick(maxDiff, animate) {
+  console.log(maxDiff);
   const diff = handleDifficulty(maxDiff);
 
   const trick = new Trick();
@@ -222,6 +223,12 @@ function buildTrick(maxDiff, animate) {
     trick.setLevel(diff);
   } else {
     trick.setLevel(Data.difficultyLevels[diff]);
+
+    const changeCart = diff !== 'novice'
+    && (state.prevTrick.name === 'Cartwheel' || state.prevTrick.name === 'One-handed Cartwheel');
+    if (changeCart) {
+      Model.redoPrevLanding(state.prevTrick, diff);
+    }
   }
 
   let numTries = 0;

@@ -20,6 +20,7 @@ export default class Trick {
     let possibleTricks;
 
     if (prevTrick) {
+      console.log(prevTrick.landing);
       const landing = Model.adjustForLandingMod(prevTrick, this);
 
       // Filter list for tricks that have at least one setup that matches prevTrick's landing
@@ -117,8 +118,9 @@ export default class Trick {
 
 
   generateLanding(diff, maxDiff) {
+    console.log(diff, maxDiff);
     let filtered;
-    const modCart = maxDiff !== 'novice' && (this.trickObj.name === 'Cartwheel' || this.trickObj.name === 'One-handed Cartwheel');
+    const modCart = (maxDiff !== 'novice' && maxDiff) && (this.trickObj.name === 'Cartwheel' || this.trickObj.name === 'One-handed Cartwheel');
 
     const checkCartwheel = () => {
       if (modCart) {

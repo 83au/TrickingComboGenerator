@@ -177,13 +177,6 @@ const level1 = [
     landings: landingPositions.hook,
   },
 
-  {
-    name: 'Wrap 900',
-    notStarter: true,
-    setups: ['skip round', 'wrap'],
-    landings: landingPositions.round,
-  },
-
   // TRANSITION TRICKS
   {
     name: 'Blaster Scoot',

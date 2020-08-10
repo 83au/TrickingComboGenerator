@@ -49,8 +49,8 @@ export function adjustForLandingMod(prevTrick, obj) {
 
 
 // * THIS FUNCTION IS FOR BUILD MODE ONLY
-export function redoPrevLanding(prevTrick) {
-  prevTrick.generateLanding();
+export function redoPrevLanding(prevTrick, diff) {
+  prevTrick.generateLanding(prevTrick.level, diff);
   prevTrick.handleLandingMod();
 
   if (prevTrick.transition) {
