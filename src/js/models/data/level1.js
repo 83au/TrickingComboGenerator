@@ -132,6 +132,12 @@ const level1 = [
   },
 
   {
+    name: 'Jump Round',
+    setups: ['backside pop', 'backside punch'],
+    landings: landingPositions.round,
+  },
+
+  {
     name: 'Narabong',
     setups: takeoffs.tornado,
     landings: landingPositions.hook,
@@ -171,6 +177,13 @@ const level1 = [
     landings: landingPositions.hook,
   },
 
+  {
+    name: 'Wrap 900',
+    notStarter: true,
+    setups: ['skip round', 'wrap'],
+    landings: landingPositions.round,
+  },
+
   // TRANSITION TRICKS
   {
     name: 'Blaster Scoot',
@@ -191,28 +204,28 @@ const level1 = [
   {
     name: 'Cartwheel',
     setups: takeoffs.cartwheel,
-    landings: ['invert inside pop', 'wrap'],
+    landings: ['invert inside pop', 'inside pop', 'reverse vanish', 'wrap'],
   },
   {
     name: 'Cartwheel',
     setups: takeoffs.cartwheel,
-    landings: ['invert inside pop', 'wrap'],
+    landings: ['invert inside pop', 'inside pop', 'reverse vanish', 'wrap'],
   },
   {
     name: 'Cartwheel',
     setups: takeoffs.cartwheel,
-    landings: ['invert inside pop', 'wrap'],
+    landings: ['invert inside pop', 'inside pop', 'reverse vanish', 'wrap'],
   },
   {
     name: 'Cartwheel',
     setups: takeoffs.cartwheel,
-    landings: ['invert inside pop', 'wrap'],
+    landings: ['invert inside pop', 'inside pop', 'reverse vanish', 'wrap'],
   },
 
   {
     name: 'One-handed Cartwheel',
     setups: takeoffs.cartwheel,
-    landings: ['invert inside pop', 'wrap'],
+    landings: ['invert inside pop', 'inside pop', 'reverse vanish', 'wrap'],
   },
 
   {
@@ -276,8 +289,8 @@ const level1 = [
       'vanish',
       'outside leg reversal',
       'hook carry-through',
-      'semi',
-      'skip round',
+      'front swing',
+      'skip frontswing',
     ],
     landings: [
       'backside pop',
@@ -294,8 +307,8 @@ const level1 = [
       'vanish',
       'outside leg reversal',
       'hook carry-through',
-      'semi',
-      'skip round',
+      'front swing',
+      'skip frontswing',
     ],
     landings: [
       'backside pop',
@@ -308,41 +321,50 @@ const level1 = [
 
   // Flips & Twists
   {
-    name: 'Arabian',
+    name: 'Shant',
     setups: [
-      'invert inside pop',
-      'invert backside punch',
       'invert backside pop',
+      'backside pop',
+      'invert backside punch',
+      'backside punch',
     ],
     landings: [
-      'invert frontside punch',
-      'hook',
-      'semi',
+      'backside pop',
+      'backside punch',
+      'back swing',
+      'vanish',
+      'inside leg reversal',
+      'left right redirect',
     ],
   },
 
   {
     name: 'Front Flip',
-    setups: ['invert frontside pop', 'invert frontside punch'],
+    setups: [
+      'invert frontside pop',
+      'invert frontside punch',
+      'invert backside punch',
+    ],
     landings: [
       'invert frontside punch',
+      'reverse pop',
       'semi',
     ],
   },
 
-  {
-    name: 'Webster',
-    setups: [
-      'reverse vanish',
-      'mega',
-    ],
-    landings: [
-      'reverse vanish',
-      'invert frontside punch',
-      'mega',
-      'semi',
-    ],
-  },
+  // {
+  //   name: 'Webster',
+  //   setups: [
+  //     'reverse vanish',
+  //     'mega',
+  //   ],
+  //   landings: [
+  //     'reverse vanish',
+  //     'invert frontside punch',
+  //     'mega',
+  //     'semi',
+  //   ],
+  // },
 ];
 
 export default level1;

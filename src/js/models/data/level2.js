@@ -343,10 +343,17 @@ const level2 = [
   },
 
   {
-    name: 'Arabian Scissor',
-    notStarter: true,
-    setups: ['invert backside pop', 'invert backside punch'],
-    landings: ['vanish', 'skip round', 'frontside pop', 'hook'],
+    name: 'Arabian',
+    setups: [
+      'invert inside pop',
+      'invert backside punch',
+      'invert backside pop',
+    ],
+    landings: [
+      'invert frontside punch',
+      'hook',
+      'semi',
+    ],
   },
 
   {

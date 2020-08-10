@@ -4,6 +4,9 @@ const specialLandings = [
   'wrap',
   'outside pop',
   'skip frontswing',
+  'skip round',
+  'invert vanish',
+  'invert inside pop',
 ];
 
 export default specialLandings;

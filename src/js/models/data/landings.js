@@ -2,6 +2,8 @@ const landingPositions = {
   eagle: [
     'invert backside pop',
     'invert backside punch',
+    'inside leg reversal',
+    'left right redirect',
     'missleg',
     'skip frontswing', // skip from eagle into mega for a front swing
     'vanish',
@@ -83,6 +85,7 @@ const landingPositions = {
     'mega',
     'left right redirect',
     'inside leg reversal',
+    'hook',
   ],
 
   semi: [

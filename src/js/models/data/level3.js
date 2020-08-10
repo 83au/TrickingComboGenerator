@@ -359,6 +359,13 @@ const level3 = [
   },
 
   {
+    name: 'Arabian Scissor',
+    notStarter: true,
+    setups: ['invert backside pop', 'invert backside punch'],
+    landings: ['vanish', 'skip round', 'frontside pop', 'hook'],
+  },
+
+  {
     name: 'Atwist',
     setups: takeoffs.btwist.concat(['inside leg reversal', 'mega']),
     landings: landingPositions.eagle,
