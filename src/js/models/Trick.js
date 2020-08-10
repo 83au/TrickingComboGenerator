@@ -20,7 +20,6 @@ export default class Trick {
     let possibleTricks;
 
     if (prevTrick) {
-      console.log(prevTrick.landing);
       const landing = Model.adjustForLandingMod(prevTrick, this);
 
       // Filter list for tricks that have at least one setup that matches prevTrick's landing
@@ -125,9 +124,9 @@ export default class Trick {
     const checkCartwheel = () => {
       if (modCart) {
         // Remove reverse vanish & inside pop Cart landings as they are not used above Novice
-        console.log('ENCOUNTERED CARTWHEEL!!!');
+        // console.log('ENCOUNTERED CARTWHEEL!!!');
         filtered = this.trickObj.landings.filter(landing => landing !== 'reverse vanish' && landing !== 'inside pop');
-        console.log(filtered);
+        // console.log(filtered);
         this.landing = Model.randomMove(filtered);
         return true;
       }

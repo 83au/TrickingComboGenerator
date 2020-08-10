@@ -207,7 +207,6 @@ function setCurrAndPrevTrick() {
 
 
 function buildTrick(maxDiff, animate) {
-  console.log(maxDiff);
   const diff = handleDifficulty(maxDiff);
 
   const trick = new Trick();
