@@ -106,10 +106,7 @@ const level6 = [
   {
     name: 'Dub Full-In',
     notStarter: true,
-    setups: [
-      'invert backside pop',
-      'invert backside punch',
-    ],
+    setups: takeoffs.fullTwist,
     landings: [
       'backside punch',
       'hook',
@@ -144,10 +141,18 @@ const level6 = [
   {
     name: 'Full-In Full-Out',
     notStarter: true,
-    setups: [
-      'invert backside pop',
-      'invert backside punch',
+    setups: takeoffs.fullTwist,
+    landings: [
+      'backside punch',
+      'hook',
+      'right first reverse pop',
     ],
+  },
+
+  {
+    name: 'Full Snapu-In',
+    notStarter: true,
+    setups: takeoffs.fullTwist,
     landings: [
       'backside punch',
       'hook',

@@ -480,10 +480,7 @@ const level5 = [
   {
     name: 'Full-In Back-Out',
     notStarter: true,
-    setups: [
-      'invert backside pop',
-      'invert backside punch',
-    ],
+    setups: takeoffs.fullTwist,
     landings: ['backside punch', 'hook', 'right first reverse pop'],
   },
 

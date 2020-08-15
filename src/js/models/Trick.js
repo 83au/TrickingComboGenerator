@@ -117,7 +117,6 @@ export default class Trick {
 
 
   generateLanding(diff, maxDiff) {
-    console.log(diff, maxDiff);
     let filtered;
     const modCart = (maxDiff !== 'novice' && maxDiff) && (this.trickObj.name === 'Cartwheel' || this.trickObj.name === 'One-handed Cartwheel');
 

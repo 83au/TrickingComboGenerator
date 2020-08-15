@@ -224,7 +224,7 @@ function buildTrick(maxDiff, animate) {
     trick.setLevel(Data.difficultyLevels[diff]);
 
     const changeCart = diff !== 'novice'
-    && (state.prevTrick.name === 'Cartwheel' || state.prevTrick.name === 'One-handed Cartwheel');
+    && (state.prevTrick && (state.prevTrick.name === 'Cartwheel' || state.prevTrick.name === 'One-handed Cartwheel'));
     if (changeCart) {
       Model.redoPrevLanding(state.prevTrick, diff);
     }
