@@ -419,7 +419,7 @@ const level4 = [
   {
     name: 'Double Back Tuck',
     notStarter: true,
-    setups: ['invert backside punch'],
+    setups: ['invert backside punch', 'invert backside pop'],
     landings: [
       'backside punch',
       'invert backside punch',
