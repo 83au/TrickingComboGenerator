@@ -314,6 +314,7 @@ const level1 = [
       'hook carry-through',
       'front swing',
       'skip frontswing',
+      'reverse pop',
     ],
     landings: [
       'backside pop',
@@ -332,6 +333,7 @@ const level1 = [
       'hook carry-through',
       'front swing',
       'skip frontswing',
+      'reverse pop',
     ],
     landings: [
       'backside pop',
@@ -343,6 +345,19 @@ const level1 = [
   },
 
   // Flips & Twists
+  {
+    name: 'Back Tuck',
+    setups: [
+      'invert backside pop',
+      'invert backside punch',
+    ],
+    landings: [
+      'backside punch',
+      'reverse pop',
+      'right first reverse pop',
+    ],
+  },
+
   {
     name: 'Shant',
     setups: [
