@@ -369,26 +369,24 @@ const level1 = [
     landings: [
       'backside pop',
       'backside punch',
-      'back swing',
-      'vanish',
-      'inside leg reversal',
-      'left right redirect',
+      'complete',
+      'hyper',
     ],
   },
 
-  {
-    name: 'Front Flip',
-    setups: [
-      'invert frontside pop',
-      'invert frontside punch',
-      'invert backside punch',
-    ],
-    landings: [
-      'invert frontside punch',
-      'reverse pop',
-      'semi',
-    ],
-  },
+  // {
+  //   name: 'Front Flip',
+  //   setups: [
+  //     'invert frontside pop',
+  //     'invert frontside punch',
+  //     'invert backside punch',
+  //   ],
+  //   landings: [
+  //     'invert frontside punch',
+  //     'reverse pop',
+  //     'semi',
+  //   ],
+  // },
 
   // {
   //   name: 'Webster',

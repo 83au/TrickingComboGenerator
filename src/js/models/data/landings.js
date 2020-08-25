@@ -48,7 +48,10 @@ const landingPositions = {
     'invert backside pop',
     'missleg',
     'skip frontswing', // skip from eagle into mega for a front swing
+    'back swing',
     'vanish',
+    'inside leg reversal',
+    'left right redirect',
   ],
 
   hyper: [

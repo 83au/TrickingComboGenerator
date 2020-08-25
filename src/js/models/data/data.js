@@ -51,6 +51,7 @@ export const transitions = [
   'round carry-through',
 
   // Pops
+  // TODO: Differentiate frontside vs backside reverse pops
   'reverse pop',
   'right first reverse pop',
   'frontside pop',
@@ -92,9 +93,9 @@ export const transitions = [
   'outside leg reversal',
   'inside leg reversal',
 
-  // Redirects
-  'right left redirect',
-  'left right redirect',
+  // Redirects TODO: Remove references to right/left and replace with inside/outside
+  'right left redirect', // will be: 'inside leg redirect
+  'left right redirect', // will be: 'outside leg redirect
 
   'missleg',
 
