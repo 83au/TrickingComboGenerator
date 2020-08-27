@@ -380,7 +380,7 @@ const level3 = [
   {
     name: 'Boneless Gainer',
     notStarter: true,
-    setups: ['reverse vanish'],
+    setups: ['boneless'],
     landings: [ // Hyper is implied
       'inside pop',
       'invert inside pop',

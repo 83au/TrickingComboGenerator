@@ -207,6 +207,7 @@ function setCurrAndPrevTrick() {
 
 
 function buildTrick(maxDiff, animate) {
+  // This returns a number if the difficulty is 'random'
   const diff = handleDifficulty(maxDiff);
 
   const trick = new Trick();
@@ -254,6 +255,9 @@ function buildTrick(maxDiff, animate) {
   }
 
   trick.handleHook();
+  // trick.level = level[#] & diff = [word]
+
+  // diff = typeof diff === 'number' ? diff : Data.difficultyLevels[diff];
   trick.generateLanding(trick.level, diff);
   trick.handleTakeoff();
   trick.handleLandingMod();

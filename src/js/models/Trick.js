@@ -116,7 +116,7 @@ export default class Trick {
   }
 
 
-  generateLanding(diff, maxDiff) {
+  generateLanding(diff, maxDiff) { // diff = level# & maxDiff = word
     let filtered;
     const modCart = (maxDiff !== 'novice' && maxDiff) && (this.trickObj.name === 'Cartwheel' || this.trickObj.name === 'One-handed Cartwheel');
 
@@ -126,7 +126,9 @@ export default class Trick {
         // console.log('ENCOUNTERED CARTWHEEL!!!');
         filtered = this.trickObj.landings.filter(landing => landing !== 'reverse vanish' && landing !== 'inside pop');
         // console.log(filtered);
-        this.landing = Model.randomMove(filtered);
+        // if level is 3 or higher, add 'boneless' landing
+        if (maxDiff && maxDiff !== 'easy') filtered.push('boneless');
+        if (maxDiff) this.landing = Model.randomMove(filtered);
         return true;
       }
       return false;

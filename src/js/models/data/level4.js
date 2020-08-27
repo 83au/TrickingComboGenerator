@@ -330,8 +330,15 @@ const level4 = [
   {
     name: 'Boneless Cork',
     notStarter: true,
-    setups: ['reverse vanish'],
+    setups: ['boneless'],
     landings: landingPositions.eagle,
+  },
+
+  {
+    name: 'Boneless Boxcutter',
+    notStarter: true,
+    setups: ['boneless'],
+    landings: landingPositions.hook,
   },
 
   {
