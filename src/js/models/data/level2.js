@@ -35,7 +35,14 @@ const level2 = [
 
   {
     name: '900',
-    setups: takeoffs.tornado.concat(['wrap']),
+    setups: [
+      'vanish',
+      'wrap',
+      'right left redirect',
+      'frontside pop',
+      'hook',
+      'cheat',
+    ],
     landings: landingPositions.round.concat(['rapid hook', 'hyper']),
   },
 
