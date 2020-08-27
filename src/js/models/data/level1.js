@@ -370,7 +370,6 @@ const level1 = [
       'backside pop',
       'backside punch',
       'complete',
-      'hyper',
     ],
   },
 
