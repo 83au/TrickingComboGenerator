@@ -22,7 +22,6 @@ const takeoffs = {
     'step behind',
     'outside leg reversal',
     'skip frontswing',
-    'vanish',
   ],
   btwist: [
     'hook',

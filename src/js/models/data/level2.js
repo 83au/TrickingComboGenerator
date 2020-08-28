@@ -268,7 +268,7 @@ const level2 = [
 
   {
     name: 'Raiz',
-    setups: takeoffs.raiz,
+    setups: takeoffs.raiz.concat(['vanish']),
     landings: landingPositions.eagle.concat(['inverted hyper']),
   },
 
