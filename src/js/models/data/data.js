@@ -72,8 +72,8 @@ export const transitions = [
 
   // Vanishes
   'vanish', // from round kick. Make invert and vert variations?
-  'invert vanish',
-  'reverse vanish', // From outside leg. Was boneless before
+  'invert vanish', // for Tak Fulls *(perhaps make it for GMS as well?)
+  'reverse vanish', // From outside leg.
 
   'wrap',
 

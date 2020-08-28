@@ -224,6 +224,7 @@ function buildTrick(maxDiff, animate) {
   } else {
     trick.setLevel(Data.difficultyLevels[diff]);
 
+    // Check if last trick was cart and change its landing if the level isn't novice
     const changeCart = diff !== 'novice'
     && (state.prevTrick && (state.prevTrick.name === 'Cartwheel' || state.prevTrick.name === 'One-handed Cartwheel'));
     if (changeCart) {
