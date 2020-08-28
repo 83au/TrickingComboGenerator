@@ -1,4 +1,4 @@
-const cacheName = 'app-shell-v1.7.5';
+const cacheName = 'app-shell-v1.8';
 const assets = [
   '/',
   '/index.html',
