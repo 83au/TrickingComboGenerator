@@ -22,7 +22,13 @@ const level3 = [
   // 540 Gyro variation
   {
     name: '540',
-    setups: takeoffs.tornado, // redirect is implied
+    setups: [
+      'vanish',
+      'right left redirect',
+      'frontside pop',
+      'hook',
+      'cheat',
+    ],
     landings: ['gyro backside'],
   },
 
