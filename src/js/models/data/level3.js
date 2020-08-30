@@ -291,6 +291,12 @@ const level3 = [
     landings: landingPositions.hook,
   },
 
+  { // Raiz Semi & Mega variations
+    name: 'Raiz',
+    setups: takeoffs.raiz.concat(['vanish']),
+    landings: ['semi', 'mega'],
+  },
+
   {
     name: 'Raiz Reversao',
     setups: takeoffs.raiz,
@@ -354,6 +360,18 @@ const level3 = [
   },
 
   // FLIPS & TWISTS
+  { // Arial Semi & Mega variations
+    name: 'Aerial',
+    setups: [
+      'reverse vanish',
+      'inside leg reversal',
+      'hook',
+      'cart swing',
+      'right first reverse pop',
+    ],
+    landings: ['semi', 'mega'],
+  },
+
   {
     name: 'Arabian Half',
     setups: takeoffs.fullTwist,
@@ -416,8 +434,15 @@ const level3 = [
 
   {
     name: 'Btwist Hyper',
-    setups: takeoffs.btwist,
+    setups: takeoffs.btwist.concat(['cart swing']),
     landings: landingPositions['inverted hyper'],
+  },
+
+  // Btwist Semi & Mega variations
+  {
+    name: 'Btwist',
+    setups: takeoffs.btwist,
+    landings: ['semi', 'mega'],
   },
 
   {
@@ -452,7 +477,7 @@ const level3 = [
 
   {
     name: 'Btwist Swipe',
-    setups: takeoffs.btwist,
+    setups: takeoffs.btwist.concat(['cart swing']),
     landings: landingPositions.hyper,
   },
 
@@ -464,10 +489,18 @@ const level3 = [
       'hook',
     ],
   },
+
   {
     name: 'Cork Hyper',
     setups: takeoffs.swing,
     landings: landingPositions['inverted hyper'],
+  },
+
+  // Mega and semi variations of cork
+  {
+    name: 'Cork',
+    setups: takeoffs.swing,
+    landings: ['mega', 'semi'],
   },
 
   {
@@ -601,6 +634,13 @@ const level3 = [
     name: 'Full Hyper',
     setups: takeoffs.fullTwist,
     landings: landingPositions['inverted hyper'],
+  },
+
+  // Full Semi & Mega variations
+  {
+    name: 'Full',
+    setups: takeoffs.fullTwist,
+    landings: ['semi', 'mega'],
   },
 
   {

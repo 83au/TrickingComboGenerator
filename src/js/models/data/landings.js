@@ -27,6 +27,8 @@ const landingPositions = {
     'left right redirect',
     'missleg',
     'skip frontswing', // skip from eagle into mega for a front swing
+    // 'mega', ?
+    // 'semi' ?
   ],
 
   round: [
@@ -156,18 +158,21 @@ const landingPositions = {
   ],
 
   mega: [
-    'vanish',
-    'skip round',
     'mega',
-    'left right redirect',
-    'inside leg reversal',
+    'vanish',
+    'round carry-through',
     'hook',
+    'cart swing',
+    // 'left right redirect',
+    // 'inside leg reversal',
   ],
 
   semi: [
+    'semi',
     'reverse vanish',
     'skip backswing',
-    'semi',
+    'front swing',
+    // 'outside leg reversal',
   ],
 
   turbo: [

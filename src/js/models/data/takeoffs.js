@@ -39,6 +39,7 @@ const takeoffs = {
     'hook',
     'turn step',
     'step behind',
+    'cart swing',
   ],
 };
 

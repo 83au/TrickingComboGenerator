@@ -336,7 +336,7 @@ const level2 = [
       'reverse vanish',
       'inside leg reversal',
       'hook',
-      'mega',
+      'cart swing',
       'right first reverse pop',
     ],
     landings: [
@@ -345,7 +345,6 @@ const level2 = [
       'reverse vanish',
       'right left redirect',
       'cheat',
-      'outside leg reversal',
     ],
   },
 
@@ -377,7 +376,7 @@ const level2 = [
 
   {
     name: 'Butterfly Twist',
-    setups: takeoffs.btwist.concat(['missleg', 'inside leg reversal']),
+    setups: takeoffs.btwist.concat(['missleg', 'inside leg reversal', 'cart swing']),
     landings: landingPositions.eagle,
   },
 
@@ -507,6 +506,7 @@ const level2 = [
       'invert frontside punch',
       'reverse pop',
       'hook',
+      'semi',
     ],
   },
 

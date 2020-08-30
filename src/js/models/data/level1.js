@@ -346,19 +346,6 @@ const level1 = [
 
   // Flips & Twists
   {
-    name: 'Back Tuck',
-    setups: [
-      'invert backside pop',
-      'invert backside punch',
-    ],
-    landings: [
-      'backside punch',
-      'reverse pop',
-      'right first reverse pop',
-    ],
-  },
-
-  {
     name: 'Shant',
     setups: [
       'invert backside pop',

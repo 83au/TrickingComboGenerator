@@ -46,6 +46,7 @@ export const transitions = [
   'front swing',
   'scoot master swing',
   'master swing',
+  'cart swing',
   'hook', // *
   'hook carry-through',
   'round carry-through',
