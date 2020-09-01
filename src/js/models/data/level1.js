@@ -289,6 +289,27 @@ const level1 = [
     landings: ['invert backside punch'],
   },
 
+  // ======== SCOOT GETS HIGH PRIORITY =========
+  {
+    name: 'Scoot',
+    setups: [
+      'skip masterswing',
+      'semi',
+      'hook',
+      'scoot master swing',
+    ],
+    landings: landingPositions.eagle,
+  },
+  {
+    name: 'Scoot',
+    setups: [
+      'skip masterswing',
+      'semi',
+      'hook',
+      'scoot master swing',
+    ],
+    landings: landingPositions.eagle,
+  },
   {
     name: 'Scoot',
     setups: [
@@ -372,34 +393,6 @@ const level1 = [
       'complete',
     ],
   },
-
-  // {
-  //   name: 'Front Flip',
-  //   setups: [
-  //     'invert frontside pop',
-  //     'invert frontside punch',
-  //     'invert backside punch',
-  //   ],
-  //   landings: [
-  //     'invert frontside punch',
-  //     'reverse pop',
-  //     'semi',
-  //   ],
-  // },
-
-  // {
-  //   name: 'Webster',
-  //   setups: [
-  //     'reverse vanish',
-  //     'mega',
-  //   ],
-  //   landings: [
-  //     'reverse vanish',
-  //     'invert frontside punch',
-  //     'mega',
-  //     'semi',
-  //   ],
-  // },
 ];
 
 export default level1;
