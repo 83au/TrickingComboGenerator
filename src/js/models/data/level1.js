@@ -170,6 +170,7 @@ const level1 = [
       'round carry-through',
       'inside leg reversal',
       'skip backswing',
+      'left right redirect',
     ],
     landings: landingPositions.hook,
   },
