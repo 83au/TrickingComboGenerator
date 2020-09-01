@@ -48,7 +48,7 @@ const level2 = [
 
   {
     name: 'Backside 900',
-    setups: ['backside punch', 'backside pop', 'inside pop'],
+    setups: ['backside punch', 'backside pop'],
     landings: landingPositions.round.concat(['rapid hook', 'hyper']),
   },
 
@@ -66,7 +66,13 @@ const level2 = [
 
   {
     name: 'Crowd Awakener',
-    setups: takeoffs.tornado,
+    setups: [
+      'vanish',
+      'hook carry-through',
+      'right left redirect',
+      'hook',
+      'cheat',
+    ],
     landings: ['backside punch', 'hook'],
   },
 
@@ -256,9 +262,19 @@ const level2 = [
     setups: takeoffs.raiz,
     landings: landingPositions.eagle,
   },
+  {
+    name: 'Gumbi',
+    setups: takeoffs.raiz,
+    landings: landingPositions.eagle,
+  },
 
 
   // ==== HIGH PRIORITY ====
+  {
+    name: 'Master Scoot',
+    setups: ['master swing', 'skip masterswing', 'vanish'],
+    landings: landingPositions.eagle,
+  },
   {
     name: 'Master Scoot',
     setups: ['master swing', 'skip masterswing', 'vanish'],
@@ -283,12 +299,22 @@ const level2 = [
   // ==== HIGH PRIORITY ====
   {
     name: 'Raiz',
-    setups: takeoffs.raiz.concat(['vanish']),
+    setups: takeoffs.raiz.concat(['invert vanish']),
     landings: landingPositions.eagle.concat(['inverted hyper']),
   },
   {
     name: 'Raiz',
-    setups: takeoffs.raiz.concat(['vanish']),
+    setups: takeoffs.raiz.concat(['invert vanish']),
+    landings: landingPositions.eagle.concat(['inverted hyper']),
+  },
+  {
+    name: 'Raiz',
+    setups: takeoffs.raiz.concat(['invert vanish']),
+    landings: landingPositions.eagle.concat(['inverted hyper']),
+  },
+  {
+    name: 'Raiz',
+    setups: takeoffs.raiz.concat(['invert vanish']),
     landings: landingPositions.eagle.concat(['inverted hyper']),
   },
 
@@ -303,6 +329,12 @@ const level2 = [
     ],
   },
 
+  // === HIGH PRIORITY ===
+  {
+    name: 'Sailor Moon',
+    setups: takeoffs.raiz,
+    landings: landingPositions.eagle,
+  },
   {
     name: 'Sailor Moon',
     setups: takeoffs.raiz,
@@ -358,6 +390,11 @@ const level2 = [
     setups: takeoffs.raiz,
     landings: landingPositions.eagle,
   },
+  {
+    name: 'Touch Down Raiz',
+    setups: takeoffs.raiz,
+    landings: landingPositions.eagle,
+  },
 
   {
     name: 'Valdez',
@@ -366,7 +403,8 @@ const level2 = [
     landings: ['invert backside pop', 'invert backside punch', 'back swing', 'hyper'],
   },
 
-  // FLIPS & TWISTS
+
+  // ========== FLIPS & TWISTS ===========
 
   // ==== HIGH PRIORITY ====
   {
@@ -502,6 +540,17 @@ const level2 = [
     ],
     landings: landingPositions.eagle,
   },
+  {
+    name: 'Corkscrew',
+    setups: [
+      'back swing',
+      'left right redirect',
+      'round carry-through',
+      'skip backswing',
+      'skip backswing',
+    ],
+    landings: landingPositions.eagle,
+  },
 
   {
     name: 'Corkscrew Round',
@@ -596,7 +645,6 @@ const level2 = [
     ],
     landings: [
       'invert frontside punch',
-      'reverse pop',
       'hook',
       'semi',
     ],
@@ -617,7 +665,6 @@ const level2 = [
       'invert inside pop',
       'reverse vanish',
       'right left redirect',
-      'cheat',
     ],
   },
   {
@@ -634,7 +681,6 @@ const level2 = [
       'invert inside pop',
       'reverse vanish',
       'right left redirect',
-      'cheat',
     ],
   },
 

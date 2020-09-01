@@ -50,7 +50,6 @@ const level1 = [
       'vanish',
       'hook carry-through',
       'right left redirect',
-      'reverse pop',
       'hook',
       // 'cheat', - cheat is implied
     ],
@@ -170,8 +169,6 @@ const level1 = [
       'back swing',
       'round carry-through',
       'inside leg reversal',
-      'left right redirect',
-      'reverse pop',
       'skip backswing',
     ],
     landings: landingPositions.hook,
@@ -320,6 +317,16 @@ const level1 = [
     ],
     landings: landingPositions.eagle,
   },
+  {
+    name: 'Scoot',
+    setups: [
+      'skip masterswing',
+      'semi',
+      'hook',
+      'scoot master swing',
+    ],
+    landings: landingPositions.eagle,
+  },
 
   {
     name: 'Scoot Hyper',
@@ -374,7 +381,6 @@ const level1 = [
     ],
     landings: [
       'backside punch',
-      'reverse pop',
       'right first reverse pop',
     ],
   },

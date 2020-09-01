@@ -6,6 +6,7 @@ const takeoffs = {
     'right left redirect',
     'reverse pop',
     'frontside pop',
+    'inside pop',
     'hook',
     'cheat',
   ],
