@@ -40,6 +40,7 @@ const level2 = [
       'wrap',
       'right left redirect',
       'frontside pop',
+      'inside pop',
       'hook',
       'cheat',
     ],
