@@ -77,7 +77,12 @@ const level1 = [
   {
     name: 'Butterfly Kick',
     setups: ['turn step', 'hook', 'reverse vanish', 'right first reverse pop'],
-    landings: ['reverse vanish', 'outside leg reversal', 'inside pop'],
+    landings: [
+      'reverse vanish',
+      'outside leg reversal',
+      'inside pop',
+      'invert inside pop',
+    ],
   },
 
   {

@@ -616,7 +616,12 @@ const level2 = [
   {
     name: 'Double Leg',
     setups: ['outside pop', 'outside punch', 'frontside punch', 'invert frontside punch'],
-    landings: ['backside punch', 'invert backside punch', 'hyper'],
+    landings: [
+      'backside punch',
+      'invert backside punch',
+      'hyper',
+      'right first reverse pop',
+    ],
   },
 
   {
