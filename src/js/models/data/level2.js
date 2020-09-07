@@ -227,6 +227,12 @@ const level2 = [
 
   // TRANSITION TRICKS
   {
+    name: 'Cartwheel Switch',
+    setups: takeoffs.cartwheel,
+    landings: landingPositions.eagle,
+  },
+
+  {
     name: 'Cartwheel Twist',
     setups: takeoffs.cartwheel,
     landings: ['backside punch', 'invert backside punch', 'reverse pop'],

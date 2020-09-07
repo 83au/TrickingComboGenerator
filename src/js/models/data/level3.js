@@ -67,7 +67,14 @@ const level3 = [
       'vanish',
       'backside pop',
       'backside punch',
+      'right left redirect',
     ],
+    landings: landingPositions.round,
+  },
+
+  {
+    name: 'Whirlwind',
+    setups: ['cheat', 'right left redirect'],
     landings: landingPositions.round,
   },
 
@@ -76,7 +83,6 @@ const level3 = [
     setups: [
       'cheat',
       'right left redirect',
-      'hook',
       'vanish',
     ],
     landings: landingPositions.round,
@@ -87,7 +93,6 @@ const level3 = [
     setups: [
       'cheat',
       'vanish',
-      'hook',
       'frontside pop',
       'frontside punch',
     ],
@@ -218,7 +223,7 @@ const level3 = [
   {
     name: 'Swing 1080',
     setups: takeoffs.swing,
-    landings: landingPositions.hook.concat(['rapid round']),
+    landings: landingPositions.hook,
   },
 
   {
