@@ -459,7 +459,6 @@ const level2 = [
     landings: [
       'invert frontside punch',
       'hook',
-      'semi',
     ],
   },
 
@@ -657,7 +656,6 @@ const level2 = [
     landings: [
       'invert frontside punch',
       'hook',
-      'semi',
     ],
   },
 

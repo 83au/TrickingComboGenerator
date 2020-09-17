@@ -683,6 +683,21 @@ const level3 = [
   },
 
   {
+    // Gainer semi variation
+    name: 'Gainer',
+    setups: [
+      'back swing',
+      'left right redirect',
+      'round carry-through',
+      'skip backswing',
+      'skip backswing',
+    ],
+    landings: [
+      'semi',
+    ],
+  },
+
+  {
     name: 'Gainer Figure-4',
     setups: [
       'back swing',
