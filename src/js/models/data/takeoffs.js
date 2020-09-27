@@ -16,12 +16,12 @@ const takeoffs = {
     'right left redirect',
     'hook carry-through',
     'front swing',
-    'semi',
     'hook',
     'turn step',
     'step behind',
     'outside leg reversal',
     'skip frontswing',
+    'invert vanish',
   ],
   btwist: [
     'hook',

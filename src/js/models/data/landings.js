@@ -160,6 +160,7 @@ const landingPositions = {
   mega: [
     'mega',
     'vanish',
+    'invert vanish',
     'round carry-through',
     'hook',
     'cart swing',
