@@ -51,7 +51,6 @@ const level1 = [
       'hook carry-through',
       'right left redirect',
       'hook',
-      // 'cheat', - cheat is implied
     ],
     landings: landingPositions.hook,
   },
@@ -69,8 +68,8 @@ const level1 = [
     landings: [
       'frontside pop',
       'outside leg reversal',
-      'hook carry-through',
       'scoot master swing',
+      'hook',
     ],
   },
 
