@@ -472,12 +472,12 @@ const level2 = [
   {
     name: 'Full Twist',
     setups: takeoffs.fullTwist.concat(['backside pop', 'backside punch', 'inside pop']),
-    landings: landingPositions.eagle,
+    landings: landingPositions.eagle.concat('invert backside punch'),
   },
   {
     name: 'Full Twist',
     setups: takeoffs.fullTwist.concat(['backside pop', 'backside punch', 'inside pop']),
-    landings: landingPositions.eagle,
+    landings: landingPositions.eagle.concat('invert backside punch'),
   },
 
   // ==== HIGH PRIORITY ====
@@ -522,7 +522,7 @@ const level2 = [
       'skip backswing',
       'skip backswing',
     ],
-    landings: landingPositions.eagle,
+    landings: landingPositions.eagle.concat('invert backside punch'),
   },
   {
     name: 'Corkscrew',
@@ -533,7 +533,7 @@ const level2 = [
       'skip backswing',
       'skip backswing',
     ],
-    landings: landingPositions.eagle,
+    landings: landingPositions.eagle.concat('invert backside punch'),
   },
   {
     name: 'Corkscrew',
@@ -544,7 +544,7 @@ const level2 = [
       'skip backswing',
       'skip backswing',
     ],
-    landings: landingPositions.eagle,
+    landings: landingPositions.eagle.concat('invert backside punch'),
   },
   {
     name: 'Corkscrew',
@@ -555,7 +555,7 @@ const level2 = [
       'skip backswing',
       'skip backswing',
     ],
-    landings: landingPositions.eagle,
+    landings: landingPositions.eagle.concat('invert backside punch'),
   },
 
   {

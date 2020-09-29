@@ -22,7 +22,6 @@ const landingPositions = {
     'invert backside pop',
     'invert backside pop',
     // Less common transitions
-    'invert backside punch',
     'inside leg reversal',
     'left right redirect',
     'missleg',

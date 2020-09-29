@@ -73,7 +73,7 @@ const level3 = [
   },
 
   {
-    name: 'Whirlwind',
+    name: '720 Double Feilong', // Whirlwind
     setups: ['cheat', 'right left redirect'],
     landings: landingPositions.round,
   },
@@ -733,7 +733,7 @@ const level3 = [
       'skip backswing',
       'skip backswing',
     ]),
-    landings: landingPositions.eagle,
+    landings: landingPositions.eagle.concat('invert backside punch'),
   },
 
   {
