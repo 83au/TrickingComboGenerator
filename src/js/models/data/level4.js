@@ -198,7 +198,7 @@ const level4 = [
   },
 
   {
-    name: 'Switchblade',
+    name: 'Paraknife', // Switchblade
     setups: [
       'vanish',
       'hook',
