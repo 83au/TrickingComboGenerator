@@ -23,7 +23,6 @@ const landingPositions = {
     'invert backside pop',
     // Less common transitions
     'inside leg reversal',
-    'left right redirect',
     'missleg',
     'skip frontswing', // skip from eagle into mega for a front swing
     // 'mega', ?
