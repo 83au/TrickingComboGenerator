@@ -199,58 +199,28 @@ const level1 = [
   {
     name: 'Cartwheel',
     setups: takeoffs.cartwheel,
-    landings: [
-      'invert inside pop',
-      'invert inside pop',
-      'wrap',
-      'inside pop',
-      'reverse vanish',
-    ],
+    landings: landingPositions.cartwheel,
   },
   {
     name: 'Cartwheel',
     setups: takeoffs.cartwheel,
-    landings: [
-      'invert inside pop',
-      'invert inside pop',
-      'wrap',
-      'inside pop',
-      'reverse vanish',
-    ],
+    landings: landingPositions.cartwheel,
   },
   {
     name: 'Cartwheel',
     setups: takeoffs.cartwheel,
-    landings: [
-      'invert inside pop',
-      'invert inside pop',
-      'wrap',
-      'inside pop',
-      'reverse vanish',
-    ],
+    landings: landingPositions.cartwheel,
   },
   {
     name: 'Cartwheel',
     setups: takeoffs.cartwheel,
-    landings: [
-      'invert inside pop',
-      'invert inside pop',
-      'wrap',
-      'inside pop',
-      'reverse vanish',
-    ],
+    landings: landingPositions.cartwheel,
   },
 
   {
     name: 'One-handed Cartwheel',
     setups: takeoffs.cartwheel,
-    landings: [
-      'invert inside pop',
-      'invert inside pop',
-      'wrap',
-      'inside pop',
-      'reverse vanish',
-    ],
+    landings: landingPositions.cartwheel,
   },
 
   {

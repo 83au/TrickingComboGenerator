@@ -7,6 +7,16 @@ import * as View from './view';
 import '../sass/main.scss';
 
 
+/* TODO:
+  PWA (current version)
+    1. Users can see a list of all the tricks in each level.
+    2. Save each combo made in the session.
+    3. Have option to share a combo.
+
+  Native App (v2)
+    1. Have option to save favorite combos.
+*/
+
 const DOM = View.elements;
 const state = {};
 

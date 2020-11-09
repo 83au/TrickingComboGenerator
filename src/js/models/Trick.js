@@ -17,6 +17,8 @@ export default class Trick {
 
 
   generateTrick(prevTrick, mode) {
+    // TODO: Concat trick levels into one array and choose from that
+
     let possibleTricks;
 
     if (prevTrick) {

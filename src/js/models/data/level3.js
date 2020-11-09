@@ -253,18 +253,6 @@ const level3 = [
   },
 
   {
-    name: 'Scrubba',
-    setups: takeoffs.raiz,
-    landings: ['broken'],
-  },
-
-  {
-    name: 'Td Raiz',
-    setups: takeoffs.raiz,
-    landings: ['broken'],
-  },
-
-  {
     name: 'Envergado',
     setups: takeoffs.raiz,
     landings: [
@@ -309,6 +297,12 @@ const level3 = [
   },
 
   {
+    name: 'Raiz Wheel',
+    setups: takeoffs.raiz,
+    landings: landingPositions.cartwheel,
+  },
+
+  {
     name: 'Sailor Gumbi',
     setups: takeoffs.raiz,
     landings: landingPositions.eagle,
@@ -332,6 +326,13 @@ const level3 = [
     landings: landingPositions.round,
   },
 
+  // Broken variation
+  {
+    name: 'Scrubba',
+    setups: takeoffs.raiz,
+    landings: ['broken'],
+  },
+
   {
     name: 'Spyder Twist',
     setups: [
@@ -348,6 +349,13 @@ const level3 = [
       'skip round',
       'skip frontswing',
     ],
+  },
+
+  // Broken variation
+  {
+    name: 'Td Raiz',
+    setups: takeoffs.raiz,
+    landings: ['broken'],
   },
 
   {
