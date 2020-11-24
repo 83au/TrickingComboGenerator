@@ -9,9 +9,11 @@ import '../sass/main.scss';
 
 /* TODO:
   PWA (current version)
-    1. Users can see a list of all the tricks in each level.
-    2. Save each combo made in the session.
-    3. Have option to share a combo.
+    1. Refactor, reducing size of files
+    2. Revise algorithm (merge levels before randomly choosing a trick)
+    3. Users can see a list of all the tricks in each level.
+    4. Save each combo made in the session.
+    5. Have option to share/copy a combo.
 
   Native App (v2)
     1. Have option to save favorite combos.

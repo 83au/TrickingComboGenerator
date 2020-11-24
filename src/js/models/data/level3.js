@@ -535,6 +535,22 @@ const level3 = [
     landings: landingPositions.hyper,
   },
 
+  // HIGHER PRIORITY
+  {
+    name: 'Double Full',
+    setups: takeoffs.fullTwist,
+    landings: landingPositions.eagle,
+  },
+  {
+    name: 'Double Full',
+    setups: takeoffs.fullTwist,
+    landings: landingPositions.eagle,
+  },
+  {
+    name: 'Double Full',
+    setups: takeoffs.fullTwist,
+    landings: landingPositions.eagle,
+  },
   {
     name: 'Double Full',
     setups: takeoffs.fullTwist,
