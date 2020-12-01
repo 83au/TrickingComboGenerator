@@ -132,6 +132,16 @@ const level6 = [
   },
 
   {
+    name: 'Full Snapu Feilong Twist',
+    notStarter: true,
+    setups: takeoffs.fullTwist,
+    landings: [
+      'backside punch',
+      'hook',
+    ],
+  },
+
+  {
     name: 'Frappe',
     notStarter: true,
     setups: ['invert backside punch'],
