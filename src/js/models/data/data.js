@@ -117,9 +117,9 @@ export const transitions = [
 
 export const difficultyLevels = {
   novice: 1,
-  easy: 2,
-  intermediate: 3,
-  advanced: 4,
+  intermediate: 2,
+  advanced: 3,
+  expert: 4,
   elite: 5,
   goat: 6,
 };
@@ -128,18 +128,18 @@ export const tricks = {
   // *** NOVICE ***
   level1,
 
-  // *** BEGINNER ***
+  // *** INTERMEDIATE ***
   level2,
 
-  // *** INTERMEDIATE ***
+  // *** ADVANCE ***
   level3,
 
-  // *** ADVANCE ***
+  // *** EXPERT ***
   level4,
 
   // *** ELITE ***
   level5,
 
-  // *** GOD ***
+  // *** GOAT ***
   level6,
 };
