@@ -368,7 +368,7 @@ const level4 = [
   {
     name: 'Btwist Twist Kick',
     setups: takeoffs.btwist,
-    landings: landingPositions.mega,
+    landings: landingPositions.round,
   },
 
   {
