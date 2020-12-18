@@ -38,9 +38,7 @@ const landingPositions = {
     'back swing',
     'back swing',
     'back swing',
-    'back swing',
     // Vanish is second most common
-    'vanish',
     'vanish',
     'vanish',
     'vanish',
@@ -52,6 +50,7 @@ const landingPositions = {
     'invert backside pop',
     'invert backside pop',
     // Less common transitions
+    'inside leg reversal',
     'inside leg reversal',
     'missleg',
     'skip frontswing', // skip from eagle into mega for a front swing
