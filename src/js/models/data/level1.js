@@ -325,6 +325,7 @@ const level1 = [
       'vanish',
       'skip round',
       'skip frontswing',
+      'hook',
     ],
   },
 
@@ -344,6 +345,7 @@ const level1 = [
       'vanish',
       'skip round',
       'skip frontswing',
+      'hook',
     ],
   },
 
