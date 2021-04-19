@@ -4,6 +4,7 @@ import * as Model from './models/model';
 import * as Data from './models/data/data';
 import Trick from './models/Trick';
 import * as View from './views/view';
+import elements from './views/elements';
 import '../sass/main.scss';
 
 
@@ -19,7 +20,7 @@ import '../sass/main.scss';
     1. Have option to save favorite combos.
 */
 
-const DOM = View.elements;
+const DOM = elements;
 const state = {};
 
 
