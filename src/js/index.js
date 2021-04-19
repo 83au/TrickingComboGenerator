@@ -3,7 +3,7 @@
 import * as Model from './models/model';
 import * as Data from './models/data/data';
 import Trick from './models/Trick';
-import * as View from './view';
+import * as View from './views/view';
 import '../sass/main.scss';
 
 
