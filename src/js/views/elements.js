@@ -1,4 +1,4 @@
-const elements = {
+const DOM = {
   startScreen: document.querySelector('.start-screen'),
   buildComboLine: document.querySelector('buildComboBox hr'),
   trickElement: document.querySelector('.trick'),
@@ -38,4 +38,4 @@ const elements = {
   backBtn: document.getElementById('backToChoices'),
 };
 
-export default elements;
+export default DOM;

@@ -1,18 +1,21 @@
-// = = = = = = = = = = = = = = = = = = = APP CONTROLLER = = = = = = = = = = = = = = = = = = =
+/*
+================================================================================================
+  APP CONTROLLER
+================================================================================================
+*/
 
 import * as Model from './models/model';
 import * as Data from './models/data/data';
 import Trick from './models/Trick';
-import * as View from './views/view';
-import elements from './views/elements';
+import * as View from './views';
 import '../sass/main.scss';
 
 
 /* TODO:
   PWA (current version)
-    1. Refactor, reducing size of files
-    2. Improve algorithm (merge levels before randomly choosing a trick)
-    3. Users can see a list of all the tricks in each level.
+    1. Update packages and scss (new major version of app).
+    2. Users can see a list of all the tricks in each level.
+    3. Improve algorithm (merge levels before randomly choosing a trick)
     4. Save each combo made in the session.
     5. Have option to share/copy a combo.
 
@@ -20,7 +23,9 @@ import '../sass/main.scss';
     1. Have option to save favorite combos.
 */
 
-const DOM = elements;
+console.log('====== NEW VERSION IN PROGRESS ======');
+
+
 const state = {};
 
 
@@ -30,7 +35,7 @@ document.addEventListener('DOMContentLoaded', init);
 function init() {
   registerServiceWorker();
   reset();
-  setCopyrightYear();
+  View.setCopyrightYear();
   initInstallPopup();
   setEventListeners();
 }
@@ -51,21 +56,7 @@ function reset() {
   state.prevTrick = undefined;
   state.trickCount = 0;
 
-  DOM.buildDiffSelection.value = 'random';
-  DOM.randomDiffSelection.value = 'random';
-  DOM.numTricksSelection.value = 'random';
-
-  DOM.generateTrickBtn.classList.add('hide');
-  DOM.startScreen.classList.remove('hide');
-  DOM.randomScreen.classList.add('hide');
-  DOM.buildScreen.classList.add('hide');
-  DOM.backBtn.classList.add('hide');
-}
-
-
-function setCopyrightYear() {
-  const year = new Date().getFullYear();
-  DOM.year.innerHTML = year;
+  View.resetElements();
 }
 
 
@@ -81,7 +72,7 @@ function initInstallPopup() {
 
   // Checks if should display install popup notification:
   if (isIos() && !isInStandaloneMode()) {
-    DOM.iosInstallPopup.classList.remove('hide');
+    View.DOM.iosInstallPopup.classList.remove('hide');
   }
 }
 
@@ -90,26 +81,26 @@ function setEventListeners() {
   // PWA events
   window.addEventListener('beforeinstallprompt', handleInstallBanner);
   window.addEventListener('appinstalled', trackInstall);
-  DOM.installClose.addEventListener('click', closeInstallBanner);
-  DOM.iosInstallClose.addEventListener('click', closeIosPopup);
-  DOM.installBtn.addEventListener('click', handleInstall);
+  View.DOM.installClose.addEventListener('click', View.closeInstallBanner);
+  View.DOM.iosInstallClose.addEventListener('click', View.closeIosPopup);
+  View.DOM.installBtn.addEventListener('click', handleInstall);
 
   // Modal events
-  DOM.openModal.addEventListener('click', openModal);
-  DOM.closeModal.addEventListener('click', closeModal);
+  View.DOM.openModal.addEventListener('click', View.openModal);
+  View.DOM.closeModal.addEventListener('click', View.closeModal);
 
   // Build mode events
-  DOM.buildCmbBtn.addEventListener('click', setBuildMode);
-  DOM.buildDiffContainer.addEventListener('animationend', e => animateButtons(e));
-  DOM.generateTrickBtn.addEventListener('click', createAndDisplayTrick);
-  DOM.redoBtn.addEventListener('click', redoTrick);
-  DOM.nextTrickBtn.addEventListener('click', nextTrick);
-  DOM.newCmbBtn.addEventListener('click', newBuildCombo);
+  View.DOM.buildCmbBtn.addEventListener('click', setBuildMode);
+  View.DOM.buildDiffContainer.addEventListener('animationend', View.animateBuildDiffButtons);
+  View.DOM.generateTrickBtn.addEventListener('click', createAndDisplayTrick);
+  View.DOM.redoBtn.addEventListener('click', redoTrick);
+  View.DOM.nextTrickBtn.addEventListener('click', View.nextTrick);
+  View.DOM.newCmbBtn.addEventListener('click', newBuildCombo);
 
   // Random mode events
-  DOM.randomCmbBtn.addEventListener('click', setRandomMode);
-  DOM.generateCmbBtn.addEventListener('click', generateCombo);
-  DOM.backBtn.addEventListener('click', backToStart);
+  View.DOM.randomCmbBtn.addEventListener('click', setRandomMode);
+  View.DOM.generateCmbBtn.addEventListener('click', generateCombo);
+  View.DOM.backBtn.addEventListener('click', backToStart);
 }
 
 
@@ -121,7 +112,7 @@ function handleInstallBanner(event) {
   window.deferredPrompt = event;
 
   // Show custom install prompt
-  DOM.installBanner.classList.remove('hide');
+  View.DOM.installBanner.classList.remove('hide');
 }
 
 
@@ -130,16 +121,6 @@ function trackInstall(event) {
   gtag('event', 'install', {
     event_category: 'app install',
   });
-}
-
-
-function closeInstallBanner() {
-  DOM.installBanner.classList.add('hide');
-}
-
-
-function closeIosPopup() {
-  DOM.iosInstallPopup.classList.add('hide');
 }
 
 
@@ -158,41 +139,14 @@ function handleInstall() {
     window.deferredPrompt = null;
 
     // Hide install banner
-    DOM.installBanner.classList.add('hide');
+    View.DOM.installBanner.classList.add('hide');
   });
-}
-
-
-function openModal() {
-  DOM.modal.classList.add('open');
-}
-
-
-function closeModal() {
-  DOM.modal.classList.remove('open');
 }
 
 
 function setBuildMode() {
   state.mode = 'build';
-  DOM.startScreen.classList.add('hide');
-
-  // Hide build buttons
-  DOM.redoBtn.classList.add('hide');
-  DOM.nextTrickBtn.classList.add('hide');
-  DOM.newCmbBtn.classList.add('hide');
-
-  // Show build screen
-  DOM.buildScreen.classList.remove('hide');
-
-  // Show build options * this initiates button animation on animationend
-  DOM.buildDiffContainer.classList.remove('hide');
-}
-
-
-function animateButtons() {
-  DOM.generateTrickBtn.classList.remove('hide');
-  DOM.backBtn.classList.remove('hide');
+  View.setupElementsForBuildMode();
 }
 
 
@@ -204,10 +158,10 @@ function createAndDisplayTrick() {
   // Buttons are animated and shown in this function call
   buildTrick(difficulty, true);
 
-  DOM.backBtn.classList.add('hide');
-  DOM.generateTrickBtn.classList.add('hide');
+  View.DOM.backBtn.classList.add('hide');
+  View.DOM.generateTrickBtn.classList.add('hide');
 
-  DOM.buildDiffContainer.classList.add('hide');
+  View.DOM.buildDiffContainer.classList.add('hide');
 }
 
 
@@ -247,20 +201,18 @@ function buildTrick(maxDiff, animate) {
     }
   }
 
-  let numTries = 0;
-  const tryGenerateTrick = () => {
+  const tryGenerateTrick = numTries => {
     try {
       trick.generateTrick(state.prevTrick, state.mode);
     } catch (err) {
-      if (numTries >= 20) return undefined;
+      if (numTries < 1) return undefined;
       console.log(err);
       state.prevTrick = Model.redoPrevLanding(state.prevTrick);
-      numTries += 1;
-      tryGenerateTrick();
+      tryGenerateTrick(numTries - 1);
     }
     return undefined;
   };
-  tryGenerateTrick();
+  tryGenerateTrick(20);
 
   trick.setName();
 
@@ -282,9 +234,9 @@ function buildTrick(maxDiff, animate) {
   if (trick.takeoff) trick.takeoff = Model.formatMod(trick.takeoff);
 
   if (state.mode === 'random') {
-    View.displayTrick(state.prevTrick, trick, DOM.randomCmbContainer, 'random');
+    View.displayTrick(state.prevTrick, trick, View.DOM.randomCmbContainer, 'random');
   } else {
-    View.displayTrick(state.prevTrick, trick, DOM.builtCmbContainer, 'build', animate);
+    View.displayTrick(state.prevTrick, trick, View.DOM.builtCmbContainer, 'build', animate);
   }
   state.currTrick = trick;
   console.log(trick.takeoff, trick.name, trick.landing);
@@ -300,7 +252,7 @@ function handleDifficulty(difficulty) {
 
 
 function redoTrick() {
-  hideButtons();
+  View.hideButtons();
 
   View.removeCurrentTrick(true, state.currTrick, state.prevTrick);
   state.currTrick = undefined;
@@ -313,65 +265,41 @@ function redoTrick() {
 
       // Redisplay last trick
       View.removeCurrentTrick();
-      const hasMoreTricks = DOM.builtCmbContainer.children.length > 0;
-      View.displayTrick(hasMoreTricks, state.prevTrick, DOM.builtCmbContainer);
+      const hasMoreTricks = View.DOM.builtCmbContainer.children.length > 0;
+      View.displayTrick(hasMoreTricks, state.prevTrick, View.DOM.builtCmbContainer);
 
       // Pass in true value to set a delay for other animations to finish
-      nextTrick(null, true);
+      View.nextTrick(null, true);
     }
 
-    nextTrick(null, false);
+    View.nextTrick(null, false);
   }, 2500);
-}
-
-
-function hideButtons() {
-  DOM.redoBtn.classList.add('hide');
-  DOM.nextTrickBtn.classList.add('hide');
-  DOM.newCmbBtn.classList.add('hide');
-  DOM.backBtn.classList.add('hide');
-}
-
-
-function nextTrick(event, delay) {
-  hideButtons();
-
-  // If this function was called clicking the generate trick button
-  if (event) {
-    DOM.buildDiffContainer.classList.remove('hide');
-  }
-
-  if (delay) {
-    setTimeout(() => DOM.buildDiffContainer.classList.remove('hide'), 700);
-  }
 }
 
 
 function newBuildCombo() {
   state.currTrick = undefined;
   state.prevTrick = undefined;
-  clear(DOM.builtCmbContainer);
+  clear(View.DOM.builtCmbContainer);
 
-  DOM.backBtn.classList.add('hide');
+  View.DOM.backBtn.classList.add('hide');
   setTimeout(setBuildMode, 10);
-  DOM.buildDiffSelection.value = 'random';
+  View.DOM.buildDiffSelection.value = 'random';
 }
 
 
 function setRandomMode() {
   state.mode = 'random';
-  DOM.startScreen.classList.add('hide');
-  DOM.randomScreen.classList.remove('hide');
-  DOM.backBtn.classList.remove('hide');
-  DOM.randomCmbContainer.classList.add('hide');
+  View.setupElementsForRandomMode();
 }
 
 
 function generateCombo() {
-  DOM.randomCmbContainer.classList.remove('hide');
-  let { difficulty, numTricks } = View.getChoices(state.mode);
+  View.DOM.randomCmbContainer.classList.remove('hide');
+  let { numTricks } = View.getChoices(state.mode);
+  const { difficulty } = View.getChoices(state.mode);
 
-  clear(DOM.randomCmbContainer);
+  clear(View.DOM.randomCmbContainer);
 
   if (numTricks === 'random') {
     numTricks = Model.random(10) + 1;
@@ -396,9 +324,9 @@ function clear(container) {
 
 function backToStart() {
   if (state.mode === 'random') {
-    clear(DOM.randomCmbContainer);
+    clear(View.DOM.randomCmbContainer);
   } else {
-    clear(DOM.builtCmbContainer);
+    clear(View.DOM.builtCmbContainer);
   }
   reset();
 }

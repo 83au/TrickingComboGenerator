@@ -1,5 +1,55 @@
-// ****************************** UI CONTROLLER ***********************************
-import elements from './elements';
+/*
+================================================================================================
+  UI CONTROLLER
+================================================================================================
+*/
+
+import DOM from './elements';
+
+
+export function resetElements() {
+  DOM.buildDiffSelection.value = 'random';
+  DOM.randomDiffSelection.value = 'random';
+  DOM.numTricksSelection.value = 'random';
+
+  DOM.generateTrickBtn.classList.add('hide');
+  DOM.startScreen.classList.remove('hide');
+  DOM.randomScreen.classList.add('hide');
+  DOM.buildScreen.classList.add('hide');
+  DOM.backBtn.classList.add('hide');
+}
+
+
+export function setCopyrightYear() {
+  const year = new Date().getFullYear();
+  DOM.year.innerHTML = year;
+}
+
+
+export function closeInstallBanner() {
+  DOM.installBanner.classList.add('hide');
+}
+
+
+export function closeIosPopup() {
+  DOM.iosInstallPopup.classList.add('hide');
+}
+
+
+export function openModal() {
+  DOM.modal.classList.add('open');
+}
+
+
+export function closeModal() {
+  DOM.modal.classList.remove('open');
+}
+
+
+export function animateBuildDiffButtons() {
+  DOM.generateTrickBtn.classList.remove('hide');
+  DOM.backBtn.classList.remove('hide');
+}
 
 
 export function getChoices(mode) {
@@ -7,16 +57,62 @@ export function getChoices(mode) {
   let numTricks;
 
   if (mode === 'random') {
-    difficulty = elements.randomDiffSelection.value;
-    numTricks = elements.numTricksSelection.value;
+    difficulty = DOM.randomDiffSelection.value;
+    numTricks = DOM.numTricksSelection.value;
     return {
       difficulty,
       numTricks,
     };
   }
 
-  difficulty = elements.buildDiffSelection.value;
+  difficulty = DOM.buildDiffSelection.value;
   return difficulty;
+}
+
+
+export function hideButtons() {
+  DOM.redoBtn.classList.add('hide');
+  DOM.nextTrickBtn.classList.add('hide');
+  DOM.newCmbBtn.classList.add('hide');
+  DOM.backBtn.classList.add('hide');
+}
+
+
+export function setupElementsForBuildMode() {
+  DOM.startScreen.classList.add('hide');
+
+  // Hide build buttons
+  DOM.redoBtn.classList.add('hide');
+  DOM.nextTrickBtn.classList.add('hide');
+  DOM.newCmbBtn.classList.add('hide');
+
+  // Show build screen
+  DOM.buildScreen.classList.remove('hide');
+
+  // Show build options * this initiates button animation on animationend
+  DOM.buildDiffContainer.classList.remove('hide');
+}
+
+
+export function setupElementsForRandomMode() {
+  DOM.startScreen.classList.add('hide');
+  DOM.randomScreen.classList.remove('hide');
+  DOM.backBtn.classList.remove('hide');
+  DOM.randomCmbContainer.classList.add('hide');
+}
+
+
+export function nextTrick(event, delay) {
+  hideButtons();
+
+  // If this function was called clicking the generate trick button
+  if (event) {
+    DOM.buildDiffContainer.classList.remove('hide');
+  }
+
+  if (delay) {
+    setTimeout(() => DOM.buildDiffContainer.classList.remove('hide'), 700);
+  }
 }
 
 
@@ -43,11 +139,11 @@ export function clearContainer(container) {
 
 
 export function removeLastTransition() {
-  const transElements = elements.builtCmbContainer.querySelectorAll('.transition');
+  const transElements = DOM.builtCmbContainer.querySelectorAll('.transition');
 
   if (transElements.length) {
     const lastTransEl = transElements[transElements.length - 1];
-    if (elements.builtCmbContainer.lastElementChild === lastTransEl) {
+    if (DOM.builtCmbContainer.lastElementChild === lastTransEl) {
       lastTransEl.remove();
     }
   }
@@ -55,13 +151,13 @@ export function removeLastTransition() {
 
 
 export function removeLastConnector() {
-  const connElements = elements.builtCmbContainer.querySelectorAll('.connector');
+  const connElements = DOM.builtCmbContainer.querySelectorAll('.connector');
   if (connElements.length) connElements[connElements.length - 1].remove();
 }
 
 
 export function removeCurrentTrick(split, currTrick, prevTrick) {
-  const tricks = elements.builtCmbContainer.querySelectorAll('.trick');
+  const tricks = DOM.builtCmbContainer.querySelectorAll('.trick');
   const lastTrick = tricks[tricks.length - 1];
 
   if (split) {
@@ -70,7 +166,7 @@ export function removeCurrentTrick(split, currTrick, prevTrick) {
     //   lastTrick.remove();
     //   removeLastTransition();
     //   removeLastConnector();
-    //   if (!prevTrick) elements.buildDiffContainer.classList.remove('hide');
+    //   if (!prevTrick) DOM.buildDiffContainer.classList.remove('hide');
     // }, { once: true });
 
     lastTrick.classList.remove('build');
@@ -104,7 +200,7 @@ export function removeCurrentTrick(split, currTrick, prevTrick) {
       lastTrick.remove();
       removeLastTransition();
       removeLastConnector();
-      if (!prevTrick) elements.buildDiffContainer.classList.remove('hide');
+      if (!prevTrick) DOM.buildDiffContainer.classList.remove('hide');
     }, 1900);
   } else {
     lastTrick.remove();
@@ -147,16 +243,16 @@ function animateTrick(prevTrick, curTrick, container, mode, trickEl, animate) {
 
   if (animate) {
     // Using a terminating event listener, animate buttons after trick's animation
-    trickEl.addEventListener('animationend', animateButtons, { once: true });
+    trickEl.addEventListener('animationend', animateTrickButtons, { once: true });
   }
 }
 
 
-function animateButtons() {
-  elements.redoBtn.classList.remove('hide');
-  elements.nextTrickBtn.classList.remove('hide');
-  elements.newCmbBtn.classList.remove('hide');
-  elements.backBtn.classList.remove('hide');
+function animateTrickButtons() {
+  DOM.redoBtn.classList.remove('hide');
+  DOM.nextTrickBtn.classList.remove('hide');
+  DOM.newCmbBtn.classList.remove('hide');
+  DOM.backBtn.classList.remove('hide');
 }
 
 
