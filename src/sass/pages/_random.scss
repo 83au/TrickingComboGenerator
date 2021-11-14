@@ -1,5 +1,7 @@
 /* ===== RANDOM COMBO SCREEN ===== */
 
+@use '../abstracts/' as *;
+
 .random-screen {
   display: flex;
   flex-direction: column;

@@ -1,16 +1,4 @@
-@import "abstracts/variables";
-@import "abstracts/mixins";
-
-@import "pages/start";
-@import "pages/build";
-@import "pages/random";
-
-@import "base/animations";
-@import "base/base";
-
-@import "components/buttons";
-@import "components/choices";
-@import "components/trick";
-@import "components/install";
-@import "components/modal";
-@import "components/hide"; // Must be last
+@use "abstracts";
+@use "pages";
+@use "base";
+@use "components";

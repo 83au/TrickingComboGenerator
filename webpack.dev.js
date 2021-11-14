@@ -38,7 +38,7 @@ module.exports = merge(common, {
     ],
   },
   devServer: {
-    static: './dist',
+    static: path.join(__dirname, 'dist'),
     // writeToDisk: true,
   },
 });
