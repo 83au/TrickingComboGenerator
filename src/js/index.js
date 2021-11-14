@@ -12,14 +12,14 @@ import '../sass/main.scss';
 
 
 /* TODO:
-  PWA (current version)
+  PWA (new major version)
     1. Update packages and scss (new major version of app).
     2. Users can see a list of all the tricks in each level.
     3. Improve algorithm (merge levels before randomly choosing a trick)
     4. Save each combo made in the session.
     5. Have option to share/copy a combo.
 
-  Native App (v2)
+  Native App (TCG Plus Ultra)
     1. Have option to save favorite combos.
 */
 

@@ -38,7 +38,7 @@ module.exports = merge(common, {
     ],
   },
   devServer: {
-    contentBase: './dist',
+    static: './dist',
     // writeToDisk: true,
   },
 });
