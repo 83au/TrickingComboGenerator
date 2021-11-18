@@ -35,91 +35,104 @@
 
   <body>
 
-    <h1>Tricking Combo Generator</h1>
+    <header class="header">
+      <nav class="header__nav nav">
+        <button id="nav-build">Build</button>
+        <button id="nav-random">Random</button>
+        <button id="nav-list">Trick List</button>
+      </nav>
+    </header>
 
-    <!-- START SCREEN -->
-    <div class="start-screen">
-      <button id="buildComboOption" class="start-screen__btn btn">Build Combo?</button>
-      <button id="randomComboOption" class="start-screen__btn btn">Random Combo?</button>
-    </div>
+    <main>
+      <h1>Tricking Combo Generator</h1>
+
+      <!-- START SCREEN -->
+      <div class="start-screen">
+        <button id="buildComboOption" class="start-screen__btn btn">Build Combo?</button>
+        <button id="randomComboOption" class="start-screen__btn btn">Random Combo?</button>
+      </div>
 
 
-    <!-- BUILD COMBO SCREEN -->
-    <div class="build-screen">
-      <div id="builtCombo" class="build-screen__combo"></div>
-      <div class="build-screen__choices">
-        <div class="build-screen__choices-difficulty selection-box">
+      <!-- BUILD COMBO SCREEN -->
+      <div class="build-screen">
+        <div id="builtCombo" class="build-screen__combo"></div>
+        <div class="build-screen__choices">
+          <div class="build-screen__choices-difficulty selection-box">
+            <hr>
+            <label for="buildCmbDifficulty">Difficulty Level</label>
+            <div class="select-wrapper">
+              <select name="difficulty" id="buildCmbDifficulty">
+                <option value="random" selected>random</option>
+                <option value="novice">Novice</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+                <option value="expert">Expert</option>
+                <option value="elite">Elite</option>
+                <option value="goat">GOAT</option>
+              </select>
+            </div>
+          </div>
+          <button id="generateTrickBtn" class="btn">Generate Trick</button>
+          <button id="redo" class="btn">Redo</button>
+          <button id="next" class="btn">Next trick</button>
+          <button id="new" class="btn">New Combo</button>
+        </div>
+      </div>
+      
+
+      <!-- RANDOM COMBO SCREEN -->
+      <div class="random-screen">
+        <div class="random-screen__choices">
           <hr>
-          <label for="buildCmbDifficulty">Difficulty Level</label>
-          <div class="select-wrapper">
-            <select name="difficulty" id="buildCmbDifficulty">
-              <option value="random" selected>random</option>
-              <option value="novice">Novice</option>
-              <option value="intermediate">Intermediate</option>
-              <option value="advanced">Advanced</option>
-              <option value="expert">Expert</option>
-              <option value="elite">Elite</option>
-              <option value="goat">GOAT</option>
-            </select>
+          <div class="selection-box random-screen__selection random-screen__selection--difficulty">
+            <label for="randomCmbDifficulty">Max Difficulty</label>
+            <div class="select-wrapper">
+              <select name="difficulty" id="randomCmbDifficulty">
+                <option value="random" selected>random</option>
+                <option value="novice">Novice</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+                <option value="expert">Expert</option>
+                <option value="elite">Elite</option>
+                <option value="goat">GOAT</option>
+              </select>
+            </div>
+          </div>
+          <hr>
+          <div class="selection-box random-screen__selection random-screen__selection--numTricks">
+            <label for="numTricks">Number of Tricks</label>
+            <div class="select-wrapper">
+              <select name="Number of tricks" id="numTricks">
+                <option value="random" selected>random</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+              </select>
+            </div>
           </div>
         </div>
-        <button id="generateTrickBtn" class="btn">Generate Trick</button>
-        <button id="redo" class="btn">Redo</button>
-        <button id="next" class="btn">Next trick</button>
-        <button id="new" class="btn">New Combo</button>
+        <button id="generateRandomCombo" class="random-screen__btn btn">Generate Combo</button>
+        <div id="randomCombo" class="random-screen__combo"></div>
       </div>
-    </div>
-    
 
-    <!-- RANDOM COMBO SCREEN -->
-    <div class="random-screen">
-      <div class="random-screen__choices">
-        <hr>
-        <div class="selection-box random-screen__selection random-screen__selection--difficulty">
-          <label for="randomCmbDifficulty">Max Difficulty</label>
-          <div class="select-wrapper">
-            <select name="difficulty" id="randomCmbDifficulty">
-              <option value="random" selected>random</option>
-              <option value="novice">Novice</option>
-              <option value="intermediate">Intermediate</option>
-              <option value="advanced">Advanced</option>
-              <option value="expert">Expert</option>
-              <option value="elite">Elite</option>
-              <option value="goat">GOAT</option>
-            </select>
-          </div>
-        </div>
-        <hr>
-        <div class="selection-box random-screen__selection random-screen__selection--numTricks">
-          <label for="numTricks">Number of Tricks</label>
-          <div class="select-wrapper">
-            <select name="Number of tricks" id="numTricks">
-              <option value="random" selected>random</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-              <option value="8">8</option>
-              <option value="9">9</option>
-              <option value="10">10</option>
-            </select>
-          </div>
-        </div>
-      </div>
-      <button id="generateRandomCombo" class="random-screen__btn btn">Generate Combo</button>
-      <div id="randomCombo" class="random-screen__combo"></div>
-    </div>
+      <!-- BACK BUTTON -->
+      <button id="backToChoices" class="btn">Back</button>
+    </main>
 
-    <!-- BACK BUTTON -->
-    <button id="backToChoices" class="btn">Back</button>
 
-    <!-- Info Modal -->
-    <svg class="open-info">
-      <use xlink:href="assets/icon-spritesheet.svg#icon-question"></use>
-    </svg>
+    <footer>
+      <!-- Info Modal -->
+      <svg class="open-info">
+        <use xlink:href="assets/icon-spritesheet.svg#icon-question"></use>
+      </svg>
+    </footer>
 
     <div class="info-modal">
       <span class="close-info">&times;</span>

@@ -8,6 +8,11 @@ const DOM = {
   iosInstallPopup: document.querySelector('.ios-install'),
   iosInstallClose: document.querySelector('.ios-install__close'),
 
+  // Navigation elements
+  buildNavBtn: document.querySelector('#nav-build'),
+  randomNavBtn: document.querySelector('#nav-random'),
+  trickListNavBtn: document.querySelector('#nav-list'),
+
   // Info modal
   openModal: document.querySelector('.open-info'),
   closeModal: document.querySelector('.close-info'),

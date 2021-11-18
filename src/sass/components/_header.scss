@@ -1,0 +1,28 @@
+@use '../abstracts/' as *;
+
+.header {
+  position: fixed;
+  top: 0;
+
+  padding: 1rem 2px;
+
+  background-color: #fff;
+  width: 100%;
+  z-index: 10;
+
+  &__nav {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  button {
+    border: none;
+    background: #fff;
+    color: var(--blue);
+    cursor: pointer;
+    outline: none;
+
+    font-size: 2rem;
+    font-family: inherit;
+  }
+}

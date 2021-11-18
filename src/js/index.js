@@ -89,6 +89,7 @@ function setEventListeners() {
   View.DOM.closeModal.addEventListener('click', View.closeModal);
 
   // Build mode events
+  View.DOM.buildNavBtn.addEventListener('click', setBuildMode);
   View.DOM.buildCmbBtn.addEventListener('click', setBuildMode);
   View.DOM.buildDiffContainer.addEventListener('animationend', View.animateBuildDiffButtons);
   View.DOM.generateTrickBtn.addEventListener('click', createAndDisplayTrick);
@@ -97,6 +98,7 @@ function setEventListeners() {
   View.DOM.newCmbBtn.addEventListener('click', newBuildCombo);
 
   // Random mode events
+  View.DOM.randomNavBtn.addEventListener('click', setRandomMode);
   View.DOM.randomCmbBtn.addEventListener('click', setRandomMode);
   View.DOM.generateCmbBtn.addEventListener('click', generateCombo);
   View.DOM.backBtn.addEventListener('click', backToStart);
