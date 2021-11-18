@@ -15,7 +15,6 @@ export function randomMove(list) {
     const move = list[randomIndex];
     return move;
   }
-  return undefined;
 }
 
 
@@ -24,7 +23,6 @@ export function chooseFromList(list, modifiers) {
     const filteredList = list.filter(item => Data[modifiers].includes(item));
     return randomMove(filteredList);
   }
-  return undefined;
 }
 
 
@@ -79,7 +77,6 @@ export function formatMod(mod) {
       return mod;
     }
   }
-  return undefined;
 }
 
 
@@ -91,7 +88,7 @@ export function filterTrickList(level, landing) {
 // Recursively search all levels from first to last
 export function searchLevels(level, landing, prevTrick) {
   // Stopping condition, TODO: needs to check against a max level
-  if (level === 'level6') return undefined;
+  if (level === 'level6') return;
 
   // Get level number
   const levelNum = Number(level.match(/\d$/));

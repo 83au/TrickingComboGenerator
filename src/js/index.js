@@ -88,6 +88,9 @@ function setEventListeners() {
   View.DOM.openModal.addEventListener('click', View.openModal);
   View.DOM.closeModal.addEventListener('click', View.closeModal);
 
+  // Trick list
+  View.DOM.trickListNavBtn.addEventListener('click', () => View.showTrickList(Data.tricks));
+
   // Build mode events
   View.DOM.buildNavBtn.addEventListener('click', setBuildMode);
   View.DOM.buildCmbBtn.addEventListener('click', setBuildMode);
@@ -206,12 +209,11 @@ function buildTrick(maxDiff, animate) {
     try {
       trick.generateTrick(state.prevTrick, state.mode);
     } catch (err) {
-      if (numTries < 1) return undefined;
+      if (numTries < 1) return;
       console.log(err);
       state.prevTrick = Model.redoPrevLanding(state.prevTrick);
       tryGenerateTrick(numTries - 1);
     }
-    return undefined;
   };
   tryGenerateTrick(20);
 

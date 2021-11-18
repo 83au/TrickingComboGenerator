@@ -13,6 +13,11 @@ const DOM = {
   randomNavBtn: document.querySelector('#nav-random'),
   trickListNavBtn: document.querySelector('#nav-list'),
 
+
+  // Trick List elements to
+  trickListScreen: document.querySelector('.trick-list-screen'),
+  trickList: document.querySelector('.trick-list'),
+
   // Info modal
   openModal: document.querySelector('.open-info'),
   closeModal: document.querySelector('.close-info'),

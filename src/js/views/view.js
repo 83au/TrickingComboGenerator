@@ -7,12 +7,62 @@
 import DOM from './elements';
 
 
+function createTrickList(tricks) {
+  const trickListElement = DOM.trickList;
+
+  const levels = {
+    level1: 'Novice',
+    level2: 'Intermediate',
+    level3: 'Advanced',
+    level4: 'Expert',
+    level5: 'Elite',
+    level6: 'GOAT',
+  };
+
+  for (const level in tricks) {
+    const levelListItem = document.createElement('li');
+    const h1 = document.createElement('h1');
+    const ul = document.createElement('ul');
+
+    levelListItem.className = 'trick-list__level';
+    h1.textContent = levels[level];
+    ul.className = 'trick-list__list';
+
+    levelListItem.append(h1);
+    levelListItem.append(ul);
+
+    let trickList = [];
+    for (const trick of tricks[level]) {
+      !trickList.includes(trick.name) && trickList.push(trick.name);
+    }
+
+    for (const trick of trickList) {
+      const trickListItem = document.createElement('li');
+      trickListItem.className = 'trick-list__trick';
+      trickListItem.textContent = trick;
+      ul.append(trickListItem);
+    }
+
+    trickListElement.append(levelListItem);
+  }
+}
+
+
+export function showTrickList(data) {
+  resetElements();
+  createTrickList(data);
+  DOM.startScreen.classList.add('hide');
+  DOM.trickListScreen.classList.remove('hide');
+}
+
+
 export function resetElements() {
   DOM.buildDiffSelection.value = 'random';
   DOM.randomDiffSelection.value = 'random';
   DOM.numTricksSelection.value = 'random';
 
   DOM.generateTrickBtn.classList.add('hide');
+  DOM.trickListScreen.classList.add('hide');
   DOM.startScreen.classList.remove('hide');
   DOM.randomScreen.classList.add('hide');
   DOM.buildScreen.classList.add('hide');
@@ -79,7 +129,7 @@ export function hideButtons() {
 
 
 export function setupElementsForBuildMode() {
-  DOM.startScreen.classList.add('hide');
+  resetElements();
 
   // Hide build buttons
   DOM.redoBtn.classList.add('hide');
@@ -95,10 +145,11 @@ export function setupElementsForBuildMode() {
 
 
 export function setupElementsForRandomMode() {
-  DOM.startScreen.classList.add('hide');
+  resetElements();
+
+  DOM.randomCmbContainer.classList.add('hide');
   DOM.randomScreen.classList.remove('hide');
   DOM.backBtn.classList.remove('hide');
-  DOM.randomCmbContainer.classList.add('hide');
 }
 
 

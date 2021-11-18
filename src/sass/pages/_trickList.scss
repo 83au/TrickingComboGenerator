@@ -1,0 +1,21 @@
+.trick-list {
+  list-style: none;
+
+  &__level {
+    text-align: center;
+
+    > h1 {
+      font-size: 3rem;
+      font-family: inherit;
+    }
+  }
+
+  &__list {
+    list-style: none;
+  }
+
+  &__trick {
+    padding: 1rem 0;
+    font-size: 1.5rem;
+  }
+}

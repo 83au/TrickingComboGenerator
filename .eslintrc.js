@@ -21,5 +21,6 @@ module.exports = {
     'no-param-reassign': ['error', { props: false }],
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'no-multiple-empty-lines': ['error', { max: 2 }],
+    treatUndefinedAsUnspecified: true,
   },
 };
