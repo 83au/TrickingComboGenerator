@@ -4,7 +4,7 @@
 ================================================================================================
 */
 
-import * as Model from './models/model';
+import * as Helpers from './helpers';
 import * as Data from './models/data/data';
 import Trick from './models/Trick';
 import * as View from './views';
@@ -22,7 +22,7 @@ import '../sass/main.scss';
     1. Have option to save favorite combos.
 */
 
-console.log('****** === NEW VERSION IN PROGRESS === ******');
+console.log('================= NEW VERSION IN PROGRESS =================');
 
 
 const state = {};
@@ -56,6 +56,8 @@ function reset() {
   state.trickCount = 0;
 
   View.resetElements();
+  View.activateNavItem();
+  View.DOM.startScreen.classList.remove('hide');
 }
 
 
@@ -90,6 +92,10 @@ function setEventListeners() {
 
   // Trick list
   View.DOM.trickListNavBtn.addEventListener('click', () => View.showTrickList(Data.tricks));
+
+
+  // Start screen addEventListener
+  View.DOM.home.addEventListener('click', backToStart);
 
   // Build mode events
   View.DOM.buildNavBtn.addEventListener('click', setBuildMode);
@@ -149,6 +155,7 @@ function handleInstall() {
 
 
 function setBuildMode() {
+  backToStart();
   state.mode = 'build';
   View.setupElementsForBuildMode();
 }
@@ -201,7 +208,7 @@ function buildTrick(maxDiff, animate) {
       && (state.prevTrick.name === 'Cartwheel'
         || state.prevTrick.name === 'One-handed Cartwheel'));
     if (changeCart) {
-      Model.redoPrevLanding(state.prevTrick, diff);
+      Helpers.redoPrevLanding(state.prevTrick, diff);
     }
   }
 
@@ -211,7 +218,7 @@ function buildTrick(maxDiff, animate) {
     } catch (err) {
       if (numTries < 1) return;
       console.log(err);
-      state.prevTrick = Model.redoPrevLanding(state.prevTrick);
+      state.prevTrick = Helpers.redoPrevLanding(state.prevTrick);
       tryGenerateTrick(numTries - 1);
     }
   };
@@ -222,7 +229,7 @@ function buildTrick(maxDiff, animate) {
   if (state.prevTrick) {
     trick.generateTransition(state.prevTrick.landing);
   } else {
-    trick.takeoff = Model.chooseFromList(trick.trickObj.setups, 'takeoffModifiers');
+    trick.takeoff = Helpers.chooseFromList(trick.trickObj.setups, 'takeoffModifiers');
   }
 
   trick.handleHook();
@@ -233,8 +240,8 @@ function buildTrick(maxDiff, animate) {
   trick.handleTakeoff();
   trick.handleLandingMod();
 
-  if (trick.transition) trick.transition = Model.formatMod(trick.transition);
-  if (trick.takeoff) trick.takeoff = Model.formatMod(trick.takeoff);
+  if (trick.transition) trick.transition = Helpers.formatMod(trick.transition);
+  if (trick.takeoff) trick.takeoff = Helpers.formatMod(trick.takeoff);
 
   if (state.mode === 'random') {
     View.displayTrick(state.prevTrick, trick, View.DOM.randomCmbContainer, 'random');
@@ -248,7 +255,7 @@ function buildTrick(maxDiff, animate) {
 
 function handleDifficulty(difficulty) {
   if (difficulty === 'random') {
-    return Model.random(6) + 1;
+    return Helpers.random(6) + 1;
   }
   return difficulty;
 }
@@ -264,7 +271,7 @@ function redoTrick() {
   setTimeout(() => {
     if (state.prevTrick) {
       // Remove previous trick and put it back with new landing
-      state.prevTrick = Model.redoPrevLanding(state.prevTrick);
+      state.prevTrick = Helpers.redoPrevLanding(state.prevTrick);
 
       // Redisplay last trick
       View.removeCurrentTrick();
@@ -292,6 +299,7 @@ function newBuildCombo() {
 
 
 function setRandomMode() {
+  backToStart();
   state.mode = 'random';
   View.setupElementsForRandomMode();
 }
@@ -305,7 +313,7 @@ function generateCombo() {
   clear(View.DOM.randomCmbContainer);
 
   if (numTricks === 'random') {
-    numTricks = Model.random(10) + 1;
+    numTricks = Helpers.random(10) + 1;
   }
 
   do {

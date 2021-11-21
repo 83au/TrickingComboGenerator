@@ -1,9 +1,9 @@
 @use '../abstracts/' as *;
 
 .header {
+  display: flex;
   position: fixed;
   top: 0;
-
   padding: 1rem 2px;
 
   background-color: #fff;
@@ -13,6 +13,7 @@
   &__nav {
     display: flex;
     justify-content: space-around;
+    flex: 2;
   }
 
   button {
@@ -24,5 +25,25 @@
 
     font-size: 2rem;
     font-family: inherit;
+
+    &.active {
+      border-bottom: 2px solid var(--blue);
+    }
+  }
+}
+
+.logo {
+  height: 2rem;
+  width: 2rem;
+
+  margin-left: 1rem;
+  overflow: hidden;
+
+
+  cursor: pointer;
+
+  img {
+    height: auto;
+    max-width: 100%;
   }
 }

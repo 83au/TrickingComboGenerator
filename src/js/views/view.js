@@ -5,55 +5,7 @@
 */
 
 import DOM from './elements';
-
-
-function createTrickList(tricks) {
-  const trickListElement = DOM.trickList;
-
-  const levels = {
-    level1: 'Novice',
-    level2: 'Intermediate',
-    level3: 'Advanced',
-    level4: 'Expert',
-    level5: 'Elite',
-    level6: 'GOAT',
-  };
-
-  for (const level in tricks) {
-    const levelListItem = document.createElement('li');
-    const h1 = document.createElement('h1');
-    const ul = document.createElement('ul');
-
-    levelListItem.className = 'trick-list__level';
-    h1.textContent = levels[level];
-    ul.className = 'trick-list__list';
-
-    levelListItem.append(h1);
-    levelListItem.append(ul);
-
-    let trickList = [];
-    for (const trick of tricks[level]) {
-      !trickList.includes(trick.name) && trickList.push(trick.name);
-    }
-
-    for (const trick of trickList) {
-      const trickListItem = document.createElement('li');
-      trickListItem.className = 'trick-list__trick';
-      trickListItem.textContent = trick;
-      ul.append(trickListItem);
-    }
-
-    trickListElement.append(levelListItem);
-  }
-}
-
-
-export function showTrickList(data) {
-  resetElements();
-  createTrickList(data);
-  DOM.startScreen.classList.add('hide');
-  DOM.trickListScreen.classList.remove('hide');
-}
+import { formatMod, isTakeoff, isLanding } from '../helpers';
 
 
 export function resetElements() {
@@ -63,10 +15,16 @@ export function resetElements() {
 
   DOM.generateTrickBtn.classList.add('hide');
   DOM.trickListScreen.classList.add('hide');
-  DOM.startScreen.classList.remove('hide');
+  DOM.startScreen.classList.add('hide');
   DOM.randomScreen.classList.add('hide');
   DOM.buildScreen.classList.add('hide');
   DOM.backBtn.classList.add('hide');
+}
+
+
+export function activateNavItem(item) {
+  DOM.nav.children.forEach(navItem => navItem.classList.remove('active'));
+  if (item) item.classList.add('active');
 }
 
 
@@ -93,6 +51,112 @@ export function openModal() {
 
 export function closeModal() {
   DOM.modal.classList.remove('open');
+}
+
+
+function createTrickList(tricks) {
+  const trickListElement = DOM.trickList;
+
+  const levels = {
+    level1: 'Novice',
+    level2: 'Intermediate',
+    level3: 'Advanced',
+    level4: 'Expert',
+    level5: 'Elite',
+    level6: 'GOAT',
+  };
+
+  for (const level in tricks) {
+    const levelListItem = document.createElement('li');
+    const h1 = document.createElement('h1');
+    const ul = document.createElement('ul');
+
+    levelListItem.className = 'trick-list__level';
+    h1.textContent = levels[level];
+    ul.className = 'trick-list__list';
+
+    levelListItem.append(h1);
+    levelListItem.append(ul);
+
+    const trickList = [];
+
+    for (const trick of tricks[level]) {
+      let formattedTakeoffs = [];
+      for (const setup of trick.setups) {
+        if (isTakeoff(setup)) {
+          formattedTakeoffs.push(formatMod(setup));
+        }
+      }
+
+      let formattedLandings = [];
+      for (const landing of trick.landings) {
+        if (isLanding(landing)) {
+          formattedLandings.push(formatMod(landing));
+        }
+      }
+
+      if (!trickList.includes(trick.name)) {
+        if (!formattedTakeoffs.length) {
+          if (formattedLandings.length) {
+            for (const landing of formattedLandings) {
+              trickList.push(`${trick.name} ${landing}`);
+            }
+          } 
+        } else if (!formattedLandings.length) {
+          if (formattedTakeoffs.length) {
+            for (const takeoff of formattedTakeoffs) {
+              trickList.push(`${takeoff} ${trick.name}`);
+            }
+          }
+        } else if (formattedTakeoffs.length && formattedLandings.length) {
+          for (const takeoff of formattedTakeoffs) {
+            trickList.push(`${takeoff} ${trick.name}`)
+            for (const landing of formattedLandings) {
+              trickList.push(`${takeoff || ''} ${trick.name} ${landing || ''}`);
+            }
+          }
+        } else {
+          trickList.push(trick.name);
+        }
+      }
+    }
+
+    const filteredTrickList = new Set(trickList);
+
+
+    for (const trick of filteredTrickList.values()) {
+      const trickListItem = document.createElement('li');
+      trickListItem.className = 'trick-list__trick';
+      trickListItem.textContent = trick;
+      ul.append(trickListItem);
+    }
+
+    trickListElement.append(levelListItem);
+  }
+}
+
+
+export function showTrickList(data) {
+  resetElements();
+  activateNavItem(DOM.trickListNavBtn);
+  createTrickList(data);
+  DOM.startScreen.classList.add('hide');
+  DOM.trickListScreen.classList.remove('hide');
+
+  DOM.trickList.querySelectorAll('h1').forEach(trigger => {
+    trigger.addEventListener('click', toggleList);
+  });
+}
+
+
+export function toggleList(event) {
+  const list = event.target.nextElementSibling;
+
+  if (list.classList.contains('show')) {
+    list.classList.remove('show');
+  } else {
+    list.classList.add('show');
+  }
 }
 
 
@@ -130,6 +194,7 @@ export function hideButtons() {
 
 export function setupElementsForBuildMode() {
   resetElements();
+  activateNavItem(DOM.buildNavBtn);
 
   // Hide build buttons
   DOM.redoBtn.classList.add('hide');
@@ -146,6 +211,7 @@ export function setupElementsForBuildMode() {
 
 export function setupElementsForRandomMode() {
   resetElements();
+  activateNavItem(DOM.randomNavBtn);
 
   DOM.randomCmbContainer.classList.add('hide');
   DOM.randomScreen.classList.remove('hide');
@@ -262,6 +328,7 @@ export function removeCurrentTrick(split, currTrick, prevTrick) {
 
 
 // * * * * PRIVATE FUNCTIONS * * * *
+
 
 // This only gets called in Build Mode
 function animateTrick(prevTrick, curTrick, container, mode, trickEl, animate) {

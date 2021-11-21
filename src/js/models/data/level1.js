@@ -51,6 +51,7 @@ const level1 = [
       'hook carry-through',
       'right left redirect',
       'hook',
+      'cheat'
     ],
     landings: landingPositions.hook,
   },

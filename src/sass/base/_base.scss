@@ -42,14 +42,11 @@ hr {
 }
 
 .app-heading {
-  margin: 2rem 0;
+  margin: 4rem 0;
   font-size: 5rem;
   text-align: center;
 
-  @include respond(tablet) {
-    margin-top: 4rem;
-    font-size: 6rem;
-  }
+  @include respond(tablet) { font-size: 6rem };
 
   @include respond(desktop) { font-size: 7rem };
 }

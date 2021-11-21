@@ -1,11 +1,21 @@
 // ****************** DATA CONTROLLER ********************
 
-import * as Data from './data/data';
-import landingPositions from './data/landings';
+import * as Data from './models/data/data';
+import landingPositions from './models/data/landings';
 
 
 export function random(num) {
   return Math.floor(Math.random() * num);
+}
+
+
+export function isTakeoff(setup) {
+  return /(carry-through|reverse pop|pop|punch|cheat)/.test(setup);
+}
+
+
+export function isLanding(landing) {
+  return /^(mega|turbo|semi|gyro frontside|gyro backside|half gyro frontside|half gyro backside|rapid round|rapid hook|broken)$/.test(landing);
 }
 
 
@@ -70,8 +80,8 @@ export function formatMod(mod) {
     const isTrans = /(pop|punch|vanish|reversal|redirect|carry-through|swing|hyper)$/.test(mod);
     if (isTrans) return mod.split(' ').pop();
 
-    const isLanding = /^(mega|turbo|semi|gyro frontside|gyro backside|half gyro frontside|half gyro backside|rapid round|rapid hook|broken)$/.test(mod);
-    if (isLanding) {
+    const isALanding = isLanding(mod);
+    if (isALanding) {
       if (mod.startsWith('gyro')) return 'gyro';
       if (mod.startsWith('half')) return 'half gyro';
       return mod;

@@ -1,21 +1,56 @@
+@use '../abstracts' as *;
+
 .trick-list {
+  padding: 1rem;
+
   list-style: none;
 
   &__level {
     text-align: center;
 
     > h1 {
+      background-color: #fff;
+      color: var(--blue);
+      cursor: pointer;
       font-size: 3rem;
       font-family: inherit;
+
+      border: 2px solid var(--blue);
+
+      &:hover {
+        opacity: .8;
+      }
+    }
+
+    &:not(:last-child) > h1 {
+      border-bottom-width: 1px;
     }
   }
 
   &__list {
+    height: 0;
+
+    overflow: hidden;
+
+    columns: 2;
     list-style: none;
+
+    &.show {
+      height: auto;
+      padding: 2rem 0;
+    }
+
+    @include respond(tablet) { 
+      columns: 3;
+    }
+
+    @include respond(desktop) { 
+      columns: 4;
+    }
   }
 
   &__trick {
-    padding: 1rem 0;
+    padding: 5px 0;
     font-size: 1.5rem;
   }
 }

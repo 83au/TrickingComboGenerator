@@ -36,8 +36,9 @@
   bottom: 0;
   transform: translateY(100%);
 
-  background: var(--blue);
+  background-color: var(--blue);
   transition: .3s;
+  z-index: 100;
 
   &.open {
     transform: translateY(0);

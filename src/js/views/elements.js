@@ -9,6 +9,8 @@ const DOM = {
   iosInstallClose: document.querySelector('.ios-install__close'),
 
   // Navigation elements
+  home: document.querySelector('.logo'),
+  nav: document.querySelector('.nav'),
   buildNavBtn: document.querySelector('#nav-build'),
   randomNavBtn: document.querySelector('#nav-random'),
   trickListNavBtn: document.querySelector('#nav-list'),
