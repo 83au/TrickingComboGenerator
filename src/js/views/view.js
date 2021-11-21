@@ -54,7 +54,7 @@ export function closeModal() {
 }
 
 
-function createTrickList(tricks) {
+export function createTrickList(tricks) {
   const trickListElement = DOM.trickList;
 
   const levels = {
@@ -88,12 +88,17 @@ function createTrickList(tricks) {
         }
       }
 
+      formattedTakeoffs.sort();
+
       let formattedLandings = [];
       for (const landing of trick.landings) {
         if (isLanding(landing)) {
           formattedLandings.push(formatMod(landing));
         }
       }
+
+      formattedLandings.sort();
+
 
       if (!trickList.includes(trick.name)) {
         if (!formattedTakeoffs.length) {
@@ -136,10 +141,9 @@ function createTrickList(tricks) {
 }
 
 
-export function showTrickList(data) {
+export function showTrickList() {
   resetElements();
   activateNavItem(DOM.trickListNavBtn);
-  createTrickList(data);
   DOM.startScreen.classList.add('hide');
   DOM.trickListScreen.classList.remove('hide');
 

@@ -13,7 +13,7 @@ import '../sass/main.scss';
 
 /* TODO:
   PWA (new major version)
-    1. Users can see a list of all the tricks in each level.
+    1. Users can see a list of all the tricks in each level. (STATUS: COMPLETE)
     2. Improve algorithm (merge levels before randomly choosing a trick)
     3. Save each combo made in the session.
     4. Have option to share/copy a combo.
@@ -35,6 +35,7 @@ function init() {
   registerServiceWorker();
   reset();
   View.setCopyrightYear();
+  View.createTrickList(Data.tricks);
   initInstallPopup();
   setEventListeners();
 }
@@ -91,7 +92,7 @@ function setEventListeners() {
   View.DOM.closeModal.addEventListener('click', View.closeModal);
 
   // Trick list
-  View.DOM.trickListNavBtn.addEventListener('click', () => View.showTrickList(Data.tricks));
+  View.DOM.trickListNavBtn.addEventListener('click', View.showTrickList);
 
 
   // Start screen addEventListener
