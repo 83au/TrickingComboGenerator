@@ -1,6 +1,6 @@
 /*
 ================================================================================================
-  APP CONTROLLER
+======================================== APP CONTROLLER ========================================
 ================================================================================================
 */
 
@@ -10,19 +10,21 @@ import Trick from './models/Trick';
 import * as View from './views';
 import '../sass/main.scss';
 
+console.log('================= VERSION 2.7 =================');
 
-/* TODO:
-  PWA (new major version)
+/*
+TODO:
+PWA (new major version) - try to complete by end of 2022
     1. Users can see a list of all the tricks in each level. (STATUS: COMPLETE)
     2. Improve algorithm (merge levels before randomly choosing a trick)
-    3. Save each combo made in the session.
-    4. Have option to share/copy a combo.
+    3. Save each combo made in the session so user can go back to previously made combo.
+    5. Add Hook as it's own trick not just a transition (make sure it doesn't use hook as transition)
+    6. Have option to share/copy a combo.
 
-  Native App (TCG Plus Ultra)
-    1. Have option to save favorite combos.
+  Version 3.0 (Native App) - to complete by end of 2023
+    1. User can save their favorite combos.
+    2. User can select which tricks they can do from the trick list, and only use those to generate combos.
 */
-
-console.log('================= NEW VERSION IN PROGRESS =================');
 
 
 const state = {};
@@ -213,6 +215,7 @@ function buildTrick(maxDiff, animate) {
     }
   }
 
+  // TODO: numTries is confusing; change it to count up to 20
   const tryGenerateTrick = numTries => {
     try {
       trick.generateTrick(state.prevTrick, state.mode);

@@ -1,5 +1,3 @@
-// ****************** DATA CONTROLLER ********************
-
 import * as Data from './models/data/data';
 import landingPositions from './models/data/landings';
 
@@ -95,6 +93,8 @@ export function filterTrickList(level, landing) {
 }
 
 // * THIS FUNCTION IS FOR RANDOM MODE ONLY
+// TODO: Decide whether it is more efficient to use a regular loop instead of recursion
+
 // Recursively search all levels from first to last
 export function searchLevels(level, landing, prevTrick) {
   // Stopping condition, TODO: needs to check against a max level
