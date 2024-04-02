@@ -10,18 +10,19 @@ import Trick from './models/Trick';
 import * as View from './views';
 import '../sass/main.scss';
 
-console.log('================= VERSION 2.8 =================');
+console.log('================= VERSION 2.12 =================');
 
 /*
 TODO:
-PWA (new major version) - try to complete by end of 2022
+PWA (new major version) - try to complete by end of 2024
     1. Users can see a list of all the tricks in each level. (STATUS: COMPLETE)
-    2. Improve algorithm (merge levels before randomly choosing a trick)
-    3. Save each combo made in the session so user can go back to previously made combo.
+    2. Fix so that page doesn't temporarily lose styling inbetween udpates
+    3. Improve algorithm (merge levels before randomly choosing a trick)
+    4. Add feature for user to be able to undo as many tricks in the combo as they want.
     5. Add Hook as it's own trick not just a transition (make sure it doesn't use hook as transition)
     6. Have option to share/copy a combo.
 
-  Version 3.0 (Native App) - to complete by end of 2023
+  Version 3.0 (Native App) - to complete by end of 2025
     1. User can save their favorite combos.
     2. User can select which tricks they can do from the trick list, and only use those to generate combos.
 */

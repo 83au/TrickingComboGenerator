@@ -23,14 +23,13 @@ export function resetElements() {
 
 
 export function activateNavItem(item) {
-  DOM.nav.children.forEach(navItem => navItem.classList.remove('active'));
+  [...DOM.nav.children].forEach(navItem => navItem.classList.remove('active'));
   if (item) item.classList.add('active');
 }
 
 
 export function setCopyrightYear() {
-  const year = new Date().getFullYear();
-  DOM.year.innerHTML = year;
+  DOM.year.innerHTML = new Date().getFullYear();
 }
 
 
@@ -99,35 +98,27 @@ export function createTrickList(tricks) {
 
       formattedLandings.sort();
 
-
-      if (!trickList.includes(trick.name)) {
-        if (!formattedTakeoffs.length) {
-          if (formattedLandings.length) {
-            for (const landing of formattedLandings) {
-              trickList.push(`${trick.name} ${landing}`);
-            }
-          } 
-        } else if (!formattedLandings.length) {
-          if (formattedTakeoffs.length) {
-            for (const takeoff of formattedTakeoffs) {
-              trickList.push(`${takeoff} ${trick.name}`);
-            }
-          }
-        } else if (formattedTakeoffs.length && formattedLandings.length) {
-          for (const takeoff of formattedTakeoffs) {
-            trickList.push(`${takeoff} ${trick.name}`)
-            for (const landing of formattedLandings) {
-              trickList.push(`${takeoff || ''} ${trick.name} ${landing || ''}`);
-            }
-          }
-        } else {
-          trickList.push(trick.name);
+      if (!trickList.includes(trick.name) && !formattedTakeoffs.length && formattedLandings.length) {
+        for (const landing of formattedLandings) {
+          trickList.push(`${trick.name} ${landing}`);
         }
+      } else if (!formattedLandings.length && formattedTakeoffs.length) {
+        for (const takeoff of formattedTakeoffs) {
+          trickList.push(`${takeoff} ${trick.name}`);
+        }
+      } else if (formattedTakeoffs.length && formattedLandings.length) {
+        for (const takeoff of formattedTakeoffs) {
+          trickList.push(`${takeoff} ${trick.name}`)
+          for (const landing of formattedLandings) {
+            trickList.push(`${takeoff || ''} ${trick.name} ${landing || ''}`);
+          }
+        }
+      } else {
+        trickList.push(trick.name);
       }
     }
 
     const filteredTrickList = new Set(trickList);
-
 
     for (const trick of filteredTrickList.values()) {
       const trickListItem = document.createElement('li');

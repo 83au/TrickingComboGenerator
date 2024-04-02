@@ -22,7 +22,7 @@ module.exports = merge(common, {
     ],
   },
   plugins: [
-    new MiniCssExtractPlugin({ filename: '[name].[hash].css' }),
+    new MiniCssExtractPlugin({ filename: '[name].css' }),
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: './src/template.html',
