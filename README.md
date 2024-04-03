@@ -7,9 +7,10 @@
 ## Make changes
 1. Make change and save 
 2. Update cacheName inside service worker
-3. `npm run build`
-4. Update script and css file names inside './dist/service-worker.js' by copying them over from './dist/index.html'
-5. `npm start` 
+3. If changing styles add hash to stylesheet name
+4. `npm run build`
+5. Update script and css file names inside './dist/service-worker.js' by copying them over from './dist/index.html'
+6. `npm start` 
 
 <!-- <p>Creates random combinations of tricks from the sport called Tricking. 
 Tricking consists of combinations of "tricks" inspired by martial arts, gymnastics, and break dancing. </p>

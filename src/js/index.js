@@ -10,17 +10,18 @@ import Trick from './models/Trick';
 import * as View from './views';
 import '../sass/main.scss';
 
-console.log('================= VERSION 2.12 =================');
+console.log('================= VERSION 2.13 =================');
 
 /*
 TODO:
 PWA (new major version) - try to complete by end of 2024
     1. Users can see a list of all the tricks in each level. (STATUS: COMPLETE)
-    2. Fix so that page doesn't temporarily lose styling inbetween udpates
-    3. Improve algorithm (merge levels before randomly choosing a trick)
-    4. Add feature for user to be able to undo as many tricks in the combo as they want.
-    5. Add Hook as it's own trick not just a transition (make sure it doesn't use hook as transition)
-    6. Have option to share/copy a combo.
+    2. Fix so that page doesn't temporarily lose styling inbetween udpates (STATUS: COMPLETE)
+    3. Change theme color so that nav background doesn't appear as a strip
+    4. Improve algorithm (merge levels before randomly choosing a trick)
+    5. Add feature for user to be able to undo as many tricks in the combo as they want.
+    6. Add Hook as it's own trick not just a transition (make sure it doesn't use hook as transition)
+    7. Have option to share/copy a combo.
 
   Version 3.0 (Native App) - to complete by end of 2025
     1. User can save their favorite combos.
