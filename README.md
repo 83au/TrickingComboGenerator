@@ -6,8 +6,8 @@
 
 ## Make changes
 1. Make change and save 
-2. Update cacheName inside service worker
-3. If changing styles add hash to stylesheet name
+2. Update cacheName inside ./src/service-worker.js
+3. If changing styles add hash to stylesheet name in webpack config
 4. `npm run build`
 5. Update script and css file names inside './dist/service-worker.js' by copying them over from './dist/index.html'
 6. `npm start` 

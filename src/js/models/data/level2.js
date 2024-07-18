@@ -557,6 +557,52 @@ const level2 = [
     ],
     landings: landingPositions.eagle.concat('invert backside punch'),
   },
+  {
+    name: 'Corkscrew',
+    setups: [
+      'back swing',
+      'left right redirect',
+      'round carry-through',
+      'skip backswing',
+      'skip backswing',
+    ],
+    landings: landingPositions.eagle.concat('invert backside punch'),
+  },
+  {
+    name: 'Corkscrew',
+    setups: [
+      'back swing',
+      'left right redirect',
+      'round carry-through',
+      'skip backswing',
+      'skip backswing',
+    ],
+    landings: landingPositions.eagle.concat('invert backside punch'),
+  },
+  {
+    name: 'Corkscrew',
+    setups: [
+      'back swing',
+      'left right redirect',
+      'round carry-through',
+      'skip backswing',
+      'skip backswing',
+    ],
+    landings: landingPositions.eagle.concat('invert backside punch'),
+  },
+  {
+    name: 'Corkscrew',
+    setups: [
+      'back swing',
+      'left right redirect',
+      'round carry-through',
+      'skip backswing',
+      'skip backswing',
+    ],
+    landings: landingPositions.eagle.concat('invert backside punch'),
+  },
+
+  // ========================
 
   {
     name: 'Corkscrew Round',
