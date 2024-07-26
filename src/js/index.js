@@ -10,7 +10,7 @@ import Trick from './models/Trick';
 import * as View from './views';
 import '../sass/main.scss';
 
-console.log('================= VERSION 2.20 =================');
+console.log('================= VERSION 2.22 =================');
 
 /*
 TODO:

@@ -75,7 +75,7 @@ export function formatMod(mod) {
     if (/skip backswing|skip frontswing| skip masterswing/.test(mod)) return 'skip swing';
     if (/left right redirect/.test(mod)) return 'redirect swing';
 
-    const isTrans = /(pop|punch|vanish|reversal|redirect|carry-through|hyper)$/.test(mod);
+    const isTrans = /(pop|punch|vanish|reversal|redirect|carry-through|hyper|swing)$/.test(mod);
     if (isTrans) return mod.split(' ').pop();
 
     const isALanding = isLanding(mod);
