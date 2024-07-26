@@ -81,6 +81,7 @@ export function createTrickList(tricks) {
 
     for (const trick of tricks[level]) {
       let formattedTakeoffs = [];
+      
       for (const setup of trick.setups) {
         if (isTakeoff(setup)) {
           formattedTakeoffs.push(formatMod(setup));

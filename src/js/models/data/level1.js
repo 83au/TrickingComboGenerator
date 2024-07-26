@@ -25,7 +25,7 @@ const level1 = [
   },
 
   {
-    name: '360 Hyper',
+    name: '360 Shuriken',
     setups: [
       'inside pop',
       'frontside pop',
@@ -169,7 +169,7 @@ const level1 = [
   },
 
   {
-    name: 'Tsunami Kick',
+    name: 'Skip Hook (Tsunami)',
     setups: [
       'back swing',
       'round carry-through',

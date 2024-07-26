@@ -119,7 +119,7 @@ const level2 = [
   },
 
   {
-    name: 'Swing 360',
+    name: 'Swing 360 (Tsunami)',
     setups: [
       'back swing',
       'round carry-through',
@@ -137,7 +137,7 @@ const level2 = [
   },
 
   {
-    name: 'Swing 360 Hyper',
+    name: 'Swing 360 Shuriken',
     setups: [
       'back swing',
       'round carry-through',
