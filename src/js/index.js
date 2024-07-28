@@ -10,7 +10,7 @@ import Trick from './models/Trick';
 import * as View from './views';
 import '../sass/main.scss';
 
-console.log('================= VERSION 2.22 =================');
+console.log('================= VERSION 2.25 =================');
 
 /*
 TODO:
@@ -18,8 +18,8 @@ PWA (new major version) - try to complete by end of 2024
     1. Users can see a list of all the tricks in each level. (STATUS: COMPLETE)
     2. Fix so that page doesn't temporarily lose styling inbetween udpates (STATUS: COMPLETE)
     3. Change theme color so that nav background doesn't appear as a strip on mobile app (STATUS: COMPLETE)
-    4. ===== CHANGE TSUNAMI KICK NAME TO SKIP HOOK AND SWING 360 =====
-    5. ===== CHANGE TRICK LIST TO NOT SHOW SETUP VARIATIONS FOR EACH TRICK =====
+    4. Change Tsunami Kick name (STATUS: COMPLETE)
+    5. Change trick list to not show setup variations (STATUS: COMPLETE)
     6. Improve algorithm (+ merge levels before randomly choosing a trick)
     7. Add Hook as it's own trick not just a transition (make sure it doesn't use hook as transition)
     8. Add feature for user to be able to undo as many tricks in the combo as they want.

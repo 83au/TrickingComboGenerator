@@ -80,15 +80,15 @@ export function createTrickList(tricks) {
     const trickList = [];
 
     for (const trick of tricks[level]) {
-      let formattedTakeoffs = [];
+      // let formattedTakeoffs = [];
       
-      for (const setup of trick.setups) {
-        if (isTakeoff(setup)) {
-          formattedTakeoffs.push(formatMod(setup));
-        }
-      }
+      // for (const setup of trick.setups) {
+      //   if (isTakeoff(setup)) {
+      //     formattedTakeoffs.push(formatMod(setup));
+      //   }
+      // }
 
-      formattedTakeoffs.sort();
+      // formattedTakeoffs.sort();
 
       let formattedLandings = [];
       for (const landing of trick.landings) {
@@ -99,20 +99,9 @@ export function createTrickList(tricks) {
 
       formattedLandings.sort();
 
-      if (!trickList.includes(trick.name) && !formattedTakeoffs.length && formattedLandings.length) {
+      if (!trickList.includes(trick.name) && formattedLandings.length) {
         for (const landing of formattedLandings) {
           trickList.push(`${trick.name} ${landing}`);
-        }
-      } else if (!formattedLandings.length && formattedTakeoffs.length) {
-        for (const takeoff of formattedTakeoffs) {
-          trickList.push(`${takeoff} ${trick.name}`);
-        }
-      } else if (formattedTakeoffs.length && formattedLandings.length) {
-        for (const takeoff of formattedTakeoffs) {
-          trickList.push(`${takeoff} ${trick.name}`)
-          for (const landing of formattedLandings) {
-            trickList.push(`${takeoff || ''} ${trick.name} ${landing || ''}`);
-          }
         }
       } else {
         trickList.push(trick.name);
