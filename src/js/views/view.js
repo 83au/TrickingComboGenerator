@@ -5,7 +5,7 @@
 */
 
 import DOM from './elements';
-import { formatMod, isTakeoff, isLanding } from '../helpers';
+import { formatMod, isLanding } from '../helpers';
 
 
 export function resetElements() {
@@ -21,7 +21,11 @@ export function resetElements() {
   DOM.backBtn.classList.add('hide');
 }
 
-
+/**
+ * 
+ * @param {HTMLElement} item - The nav item to activate
+ * @returns {void} 
+ */
 export function activateNavItem(item) {
   [...DOM.nav.children].forEach(navItem => navItem.classList.remove('active'));
   if (item) item.classList.add('active');
@@ -52,7 +56,11 @@ export function closeModal() {
   DOM.modal.classList.remove('open');
 }
 
-
+/**
+ * Creates a list of tricks and appends them to the trick list element in the DOM.
+ * @param {object} tricks - The tricks object containing trick levels and their respective tricks
+ * @returns {void}
+ */
 export function createTrickList(tricks) {
   const trickListElement = DOM.trickList;
 
@@ -80,16 +88,6 @@ export function createTrickList(tricks) {
     const trickList = [];
 
     for (const trick of tricks[level]) {
-      // let formattedTakeoffs = [];
-      
-      // for (const setup of trick.setups) {
-      //   if (isTakeoff(setup)) {
-      //     formattedTakeoffs.push(formatMod(setup));
-      //   }
-      // }
-
-      // formattedTakeoffs.sort();
-
       let formattedLandings = [];
       for (const landing of trick.landings) {
         if (isLanding(landing)) {
@@ -203,7 +201,12 @@ export function setupElementsForRandomMode() {
   DOM.backBtn.classList.remove('hide');
 }
 
-
+/**
+ * 
+ * @param {object} event - The event object from the button click
+ * @param {Boolean} delay - Whether to delay the display of the build diff container
+ * @returns {void}
+ */
 export function nextTrick(event, delay) {
   hideButtons();
 
@@ -218,20 +221,20 @@ export function nextTrick(event, delay) {
 }
 
 
-// Too many parameters?
-export function displayTrick(prevTrick, curTrick, container, mode, animate) {
+
+export function displayTrick({ previousTrick, currentTrick, container, mode, animate }) {
   const trickEl = document.createElement('div');
 
   if (mode === 'random') {
     trickEl.className = 'trick';
-    if (prevTrick) createConnector(container, mode);
-    displayTransition(curTrick, container, mode);
-    displayTakeoffAndName(curTrick, trickEl, container);
+    if (previousTrick) createConnector(container, mode);
+    displayTransition(currentTrick, container, mode);
+    displayTakeoffAndName(currentTrick, trickEl, container);
   } else {
-    animateTrick(prevTrick, curTrick, container, mode, trickEl, animate);
+    animateTrick({ previousTrick, currentTrick, container, mode, trickEl, animate });
   }
 
-  displayLanding(curTrick.landingMod, trickEl);
+  displayLanding(currentTrick.landingMod, trickEl);
 }
 
 
@@ -258,19 +261,11 @@ export function removeLastConnector() {
 }
 
 
-export function removeCurrentTrick(split, currTrick, prevTrick) {
+export function removeCurrentTrick(split, currTrick, previousTrick) {
   const tricks = DOM.builtCmbContainer.querySelectorAll('.trick');
   const lastTrick = tricks[tricks.length - 1];
 
   if (split) {
-    // In safari the animation doesn't always fire for some reason
-    // lastTrick.addEventListener('animationend', () => {
-    //   lastTrick.remove();
-    //   removeLastTransition();
-    //   removeLastConnector();
-    //   if (!prevTrick) DOM.buildDiffContainer.classList.remove('hide');
-    // }, { once: true });
-
     lastTrick.classList.remove('build');
 
     const { takeoff, landingMod } = currTrick;
@@ -302,7 +297,7 @@ export function removeCurrentTrick(split, currTrick, prevTrick) {
       lastTrick.remove();
       removeLastTransition();
       removeLastConnector();
-      if (!prevTrick) DOM.buildDiffContainer.classList.remove('hide');
+      if (!previousTrick) DOM.buildDiffContainer.classList.remove('hide');
     }, 1900);
   } else {
     lastTrick.remove();
@@ -316,12 +311,21 @@ export function removeCurrentTrick(split, currTrick, prevTrick) {
 
 
 // This only gets called in Build Mode
-function animateTrick(prevTrick, curTrick, container, mode, trickEl, animate) {
+/**
+ * 
+ * @param {object} previousTrick - The previous trick object 
+ * @param {object} currentTrick - The current trick object 
+ * @param {HTMLElement} container - The container element to append the trick to
+ * @param {string} mode - The mode of the app (random or build)
+ * @param {HTMLElement} trickEl - The trick element to animate  
+ * @param {boolean} animate - Whether to animate the trick buttons
+ * @returns {void} 
+ */
+function animateTrick({ previousTrick, currentTrick, container, mode, trickEl, animate }) {
   trickEl.classList.add('trick', 'hidden');
 
-  if (prevTrick) createConnector(container, mode);
-
-  const transition = displayTransition(curTrick, container, mode);
+  if (previousTrick) createConnector(container, mode);
+  const transition = displayTransition(currentTrick, container, mode);
 
   if (transition) {
     // Delay so that connector & transition animations have time to finish
@@ -329,19 +333,19 @@ function animateTrick(prevTrick, curTrick, container, mode, trickEl, animate) {
       trickEl.classList.remove('hidden');
       trickEl.classList.add('build');
     }, 1100);
-    displayTakeoffAndName(curTrick, trickEl, container);
-  } else if (prevTrick) {
+    displayTakeoffAndName(currentTrick, trickEl, container);
+  } else if (previousTrick) {
     // Delay so that connector animation has time to finish
     setTimeout(() => {
       trickEl.classList.remove('hidden');
       trickEl.classList.add('build');
     }, 800);
-    displayTakeoffAndName(curTrick, trickEl, container);
+    displayTakeoffAndName(currentTrick, trickEl, container);
   } else {
     // Animate immediately
     trickEl.classList.remove('hidden');
     trickEl.classList.add('build');
-    displayTakeoffAndName(curTrick, trickEl, container);
+    displayTakeoffAndName(currentTrick, trickEl, container);
   }
 
   if (animate) {
@@ -378,7 +382,7 @@ function createConnector(container, mode) {
 }
 
 
-function displayTransition(trick, container, mode) {
+function displayTransition(trick, container, mode) { 
   if (trick.transition) {
     const notTakeoff = trick.transition !== trick.takeoff;
 

@@ -10,24 +10,42 @@ import Trick from './models/Trick';
 import * as View from './views';
 import '../sass/main.scss';
 
-console.log('================= VERSION 2.25 =================');
+console.log('================= VERSION 2.26 =================');
 
 /*
 TODO:
-PWA (new major version) - try to complete by end of 2024
-    1. Users can see a list of all the tricks in each level. (STATUS: COMPLETE)
-    2. Fix so that page doesn't temporarily lose styling inbetween udpates (STATUS: COMPLETE)
-    3. Change theme color so that nav background doesn't appear as a strip on mobile app (STATUS: COMPLETE)
-    4. Change Tsunami Kick name (STATUS: COMPLETE)
-    5. Change trick list to not show setup variations (STATUS: COMPLETE)
-    6. Improve algorithm (+ merge levels before randomly choosing a trick)
-    7. Add Hook as it's own trick not just a transition (make sure it doesn't use hook as transition)
-    8. Add feature for user to be able to undo as many tricks in the combo as they want.
-    9. Have option to share/copy a combo.
+    TRICKS TO ADD:
+      - ===== Viking Sweep (front sweep semi) =====
+      - Wikkilash
 
-  Version 3.0 (Native App) - to complete by end of 2025
-    1. User can save their favorite combos.
-    2. User can select which tricks they can do from the trick list, and only use those to generate combos.
+TODO:
+PWA (new major version)
+    1. Users can see a list of all the tricks in each level. (COMPLETE)
+    2. Fix so that page doesn't temporarily lose styling inbetween udpates (COMPLETE)
+    3. Change theme color so that nav background doesn't appear as a strip on mobile app (COMPLETE)
+    4. Change Tsunami Kick name (COMPLETE)
+    5. Change trick list to not show setup variations (COMPLETE)
+    6. Deprioritize corks slightly, and remove swing from takeoffs (COMPLETE)
+    7. ===== Improve algorithm (merge levels before randomly choosing a trick) =====
+    8. Add footer (include copyright and help(?) link) 
+    8. NEW FEATURE: Add choice in build mode to set maximum difficulty level for a random trick.
+    9. Fix bugs: 
+      - Custom input styles need to be adjusted for mobile
+      - Bottom of screen getting cut off when click on redo button
+      - Styles breaking when user scrolls during trick animation.
+    10. NEW FEATURE: user able to undo as many tricks in the combo as they want.
+    11. NEW FEATURE: Have option to share/copy a combo.
+    12: NEW FEATURE: User can prioritize specific tricks to have higher chance of being in a combo
+    13: NEW FEATURE: User can tap/click on a trick and be taken to a website with info/video example of the trick.
+
+  Version 3.0 / Tricking Combo Generator + (Native App) - to complete by end of 2025
+    1. User can create their own set of tricks from the tricks dataset to use for the generator.
+    2. User can save their favorite combos, and attach labels (which they can view as combo lists).
+    3. User can create their own tricks and add them to their personal trick set or create a whole trick set of their own.
+    4. User can share combos, tricks, and trick lists with other users.
+    5. User can submit videos of them performing a trick or a combo. Those tricks will be viewable when users click on a trick.
+    6. 
+
 */
 
 
@@ -58,7 +76,7 @@ function registerServiceWorker() {
 
 function reset() {
   state.mode = 'start';
-  state.currTrick = undefined;
+  state.currentTrick = undefined;
   state.prevTrick = undefined;
   state.trickCount = 0;
 
@@ -184,9 +202,9 @@ function createAndDisplayTrick() {
 
 
 function setCurrAndPrevTrick() {
-  if (state.currTrick) {
-    state.prevTrick = state.currTrick;
-    state.currTrick = undefined;
+  if (state.currentTrick) {
+    state.prevTrick = state.currentTrick;
+    state.currentTrick = undefined;
   }
 }
 
@@ -241,9 +259,7 @@ function buildTrick(maxDiff, animate) {
   }
 
   trick.handleHook();
-  // trick.level = level[#] & diff = [word]
 
-  // diff = typeof diff === 'number' ? diff : Data.difficultyLevels[diff];
   trick.generateLanding(trick.level, diff);
   trick.handleTakeoff();
   trick.handleLandingMod();
@@ -252,11 +268,22 @@ function buildTrick(maxDiff, animate) {
   if (trick.takeoff) trick.takeoff = Helpers.formatMod(trick.takeoff);
 
   if (state.mode === 'random') {
-    View.displayTrick(state.prevTrick, trick, View.DOM.randomCmbContainer, 'random');
+    View.displayTrick({ 
+      previousTrick: state.prevTrick, 
+      currentTrick: trick, 
+      container: View.DOM.randomCmbContainer, 
+      mode: 'random' 
+    });
   } else {
-    View.displayTrick(state.prevTrick, trick, View.DOM.builtCmbContainer, 'build', animate);
+    View.displayTrick({ 
+      previousTrick: state.prevTrick, 
+      currentTrick: trick, 
+      container: View.DOM.builtCmbContainer, 
+      mode: 'build', 
+      animate 
+    });
   }
-  state.currTrick = trick;
+  state.currentTrick = trick;
   console.log(trick.takeoff, trick.name, trick.landing);
 }
 
@@ -272,8 +299,8 @@ function handleDifficulty(difficulty) {
 function redoTrick() {
   View.hideButtons();
 
-  View.removeCurrentTrick(true, state.currTrick, state.prevTrick);
-  state.currTrick = undefined;
+  View.removeCurrentTrick(true, state.currentTrick, state.prevTrick);
+  state.currentTrick = undefined;
 
   // Delay long enough for removal animation to finish
   setTimeout(() => {
@@ -284,7 +311,7 @@ function redoTrick() {
       // Redisplay last trick
       View.removeCurrentTrick();
       const hasMoreTricks = View.DOM.builtCmbContainer.children.length > 0;
-      View.displayTrick(hasMoreTricks, state.prevTrick, View.DOM.builtCmbContainer);
+      View.displayTrick({ previousTrick: hasMoreTricks, currentTrick: state.prevTrick, container: View.DOM.builtCmbContainer });
 
       // Pass in true value to set a delay for other animations to finish
       View.nextTrick(null, true);
@@ -296,7 +323,7 @@ function redoTrick() {
 
 
 function newBuildCombo() {
-  state.currTrick = undefined;
+  state.currentTrick = undefined;
   state.prevTrick = undefined;
   clear(View.DOM.builtCmbContainer);
 
@@ -337,7 +364,7 @@ function clear(container) {
   View.clearContainer(container);
   state.trickCount = 0;
   state.prevTrick = undefined;
-  state.currTrick = undefined;
+  state.currentTrick = undefined;
 }
 
 

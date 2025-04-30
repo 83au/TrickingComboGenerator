@@ -18,8 +18,7 @@ export const takeoffModifiers = [ // if transition is a takeoff mod, prepend new
   'invert inside pop',
   'outside pop',
   'backside pop',
-  'invert backside pop',
-  'front swing',
+  'invert backside pop',  
   'master swing',
   'wrap',
 ];

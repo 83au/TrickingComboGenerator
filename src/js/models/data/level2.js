@@ -215,6 +215,14 @@ const level2 = [
   },
 
   {
+    name: 'Viking Sweep',
+    notFinisher: true,
+    setups: ['inside leg reversal', 'right first reverse pop'],
+    landings: ['semi'],
+  },
+
+
+  {
     name: 'Wackknife',
     setups: [
       'cheat',
@@ -324,6 +332,16 @@ const level2 = [
     setups: takeoffs.raiz.concat(['invert vanish']),
     landings: landingPositions.eagle.concat(['inverted hyper']),
   },
+  {
+    name: 'Raiz',
+    setups: takeoffs.raiz.concat(['invert vanish']),
+    landings: landingPositions.eagle.concat(['inverted hyper']),
+  },
+  {
+    name: 'Raiz',
+    setups: takeoffs.raiz.concat(['invert vanish']),
+    landings: landingPositions.eagle.concat(['inverted hyper']),
+  },
 
   {
     name: 'Reversao',
@@ -377,6 +395,11 @@ const level2 = [
 
 
   // ==== HIGH PRIORITY ====
+  {
+    name: 'Touch Down Raiz',
+    setups: takeoffs.raiz,
+    landings: landingPositions.eagle,
+  },
   {
     name: 'Touch Down Raiz',
     setups: takeoffs.raiz,
@@ -579,28 +602,7 @@ const level2 = [
     ],
     landings: landingPositions.eagle.concat('invert backside punch'),
   },
-  {
-    name: 'Corkscrew',
-    setups: [
-      'back swing',
-      'left right redirect',
-      'round carry-through',
-      'skip backswing',
-      'skip backswing',
-    ],
-    landings: landingPositions.eagle.concat('invert backside punch'),
-  },
-  {
-    name: 'Corkscrew',
-    setups: [
-      'back swing',
-      'left right redirect',
-      'round carry-through',
-      'skip backswing',
-      'skip backswing',
-    ],
-    landings: landingPositions.eagle.concat('invert backside punch'),
-  },
+
 
   // ========================
 

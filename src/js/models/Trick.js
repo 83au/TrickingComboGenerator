@@ -16,7 +16,7 @@ export default class Trick {
     this.level = `level${random}`;
   }
 
-
+  // TODO: Create copy of level so that we can alter it to increase number of certain tricks for higher priority
   setLevel(num) {
     this.level = `level${num}`;
   }
@@ -126,10 +126,10 @@ export default class Trick {
 
   generateLanding(diff, maxDiff) { // diff = level# & maxDiff = word
     let filtered;
-    const modCart = (maxDiff !== 'novice' && maxDiff) && (this.trickObj.name === 'Cartwheel' || this.trickObj.name === 'One-handed Cartwheel');
+    const modifyCartwheel = (maxDiff !== 'novice' && maxDiff) && (this.trickObj.name === 'Cartwheel' || this.trickObj.name === 'One-handed Cartwheel');
 
     const checkCartwheel = () => {
-      if (modCart) {
+      if (modifyCartwheel) {
         // Remove reverse vanish & inside pop Cart landings as they are not used above Novice
         // console.log('ENCOUNTERED CARTWHEEL!!!');
         filtered = this.trickObj.landings.filter(landing => landing !== 'reverse vanish' && landing !== 'inside pop');
