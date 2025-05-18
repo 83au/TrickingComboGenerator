@@ -1,6 +1,6 @@
 {
   "name": "trickingcombogenerator",
-  "version": "1.0.0",
+  "version": "1.0.27",
   "description": "Tricking Combo Generator app project",
   "main": "tricks.js",
   "scripts": {

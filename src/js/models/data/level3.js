@@ -220,6 +220,22 @@ const level3 = [
     ],
   },
 
+  { 
+    name: 'Tsunami Double',
+    alternameName: 'Swing 360 Double',
+    setups: [
+      'back swing',
+      'round carry-through',
+      'inside leg reversal',
+      'left right redirect',
+      'skip backswing',
+      'right first reverse pop',
+    ],
+    landings: [
+      landingPositions.hook.concat(['turbo']),
+    ],
+  },
+
   {
     name: 'Swing 1080',
     setups: takeoffs.swing,

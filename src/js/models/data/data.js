@@ -129,7 +129,7 @@ export const tricks = {
   // *** INTERMEDIATE ***
   level2,
 
-  // *** ADVANCE ***
+  // *** ADVANCED ***
   level3,
 
   // *** EXPERT ***

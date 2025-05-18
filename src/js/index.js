@@ -10,7 +10,7 @@ import Trick from './models/Trick';
 import * as View from './views';
 import '../sass/main.scss';
 
-console.log('================= VERSION 2.26 =================');
+console.log('================= VERSION 1.0.26 =================');
 
 /*
 TODO:
@@ -29,14 +29,15 @@ PWA (new major version)
     7. ===== Improve algorithm (merge levels before randomly choosing a trick) =====
     8. Add footer (include copyright and help(?) link) 
     8. NEW FEATURE: Add choice in build mode to set maximum difficulty level for a random trick.
-    9. Fix bugs: 
+    9. Fix styling bugs: 
       - Custom input styles need to be adjusted for mobile
       - Bottom of screen getting cut off when click on redo button
       - Styles breaking when user scrolls during trick animation.
-    10. NEW FEATURE: user able to undo as many tricks in the combo as they want.
-    11. NEW FEATURE: Have option to share/copy a combo.
-    12: NEW FEATURE: User can prioritize specific tricks to have higher chance of being in a combo
-    13: NEW FEATURE: User can tap/click on a trick and be taken to a website with info/video example of the trick.
+    10. NEW FEATURE: User can hover over a trick and see an alternate name for the trick that better describes it.
+    11. NEW FEATURE: user able to undo as many tricks in the combo as they want.
+    12. NEW FEATURE: Have option to share/copy a combo.
+    13: NEW FEATURE: User can prioritize specific tricks to have higher chance of being in a combo
+    14: NEW FEATURE: User can tap/click on a trick and be taken to a website with info/video example of the trick.
 
   Version 3.0 / Tricking Combo Generator + (Native App) - to complete by end of 2025
     1. User can create their own set of tricks from the tricks dataset to use for the generator.
