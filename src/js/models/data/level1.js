@@ -212,11 +212,6 @@ const level1 = [
     setups: takeoffs.cartwheel,
     landings: landingPositions.cartwheel,
   },
-  {
-    name: 'Cartwheel',
-    setups: takeoffs.cartwheel,
-    landings: landingPositions.cartwheel,
-  },
 
   {
     name: 'One-handed Cartwheel',

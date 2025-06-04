@@ -215,7 +215,8 @@ const level2 = [
   },
 
   {
-    name: 'Viking Sweep',
+    name: 'Front Sweep',
+    alternateName: 'Viking Sweep',
     notFinisher: true,
     setups: ['inside leg reversal', 'right first reverse pop'],
     landings: ['semi'],
@@ -234,6 +235,71 @@ const level2 = [
   },
 
   // TRANSITION TRICKS
+
+  // ==== TEMPORARILY HIGH PRIORITY ====
+  {
+    name: 'Cartwheel',
+    setups: takeoffs.cartwheel,
+    landings: ['mega'],
+  },
+  {
+    name: 'Cartwheel',
+    setups: takeoffs.cartwheel,
+    landings: ['mega'],
+  },
+  {
+    name: 'Cartwheel',
+    setups: takeoffs.cartwheel,
+    landings: ['mega'],
+  },
+  {
+    name: 'Cartwheel',
+    setups: takeoffs.cartwheel,
+    landings: ['mega'],
+  },
+  {
+    name: 'Cartwheel',
+    setups: takeoffs.cartwheel,
+    landings: ['mega'],
+  },
+  {
+    name: 'Cartwheel',
+    setups: takeoffs.cartwheel,
+    landings: ['mega'],
+  },
+  {
+    name: 'Cartwheel',
+    setups: takeoffs.cartwheel,
+    landings: ['mega'],
+  },
+  {
+    name: 'Cartwheel',
+    setups: takeoffs.cartwheel,
+    landings: ['mega'],
+  },
+  {
+    name: 'Cartwheel',
+    setups: takeoffs.cartwheel,
+    landings: ['mega'],
+  },
+  {
+    name: 'Cartwheel',
+    setups: takeoffs.cartwheel,
+    landings: ['mega'],
+  },
+  {
+    name: 'Cartwheel',
+    setups: takeoffs.cartwheel,
+    landings: ['mega'],
+  },
+  {
+    name: 'Cartwheel',
+    setups: takeoffs.cartwheel,
+    landings: ['mega'],
+  },
+
+  // ==== END TEMPORARILY HIGH PRIORITY ====
+
   {
     name: 'Cartwheel Switch',
     setups: takeoffs.cartwheel,
@@ -420,11 +486,6 @@ const level2 = [
     setups: takeoffs.raiz,
     landings: landingPositions.eagle,
   },
-  {
-    name: 'Touch Down Raiz',
-    setups: takeoffs.raiz,
-    landings: landingPositions.eagle,
-  },
 
   {
     name: 'Valdez',
@@ -536,17 +597,6 @@ const level2 = [
 
 
   // ==== HIGH PRIORITY ====
-  {
-    name: 'Corkscrew',
-    setups: [
-      'back swing',
-      'left right redirect',
-      'round carry-through',
-      'skip backswing',
-      'skip backswing',
-    ],
-    landings: landingPositions.eagle.concat('invert backside punch'),
-  },
   {
     name: 'Corkscrew',
     setups: [
